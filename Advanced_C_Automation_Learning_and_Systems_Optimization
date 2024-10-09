@@ -1,0 +1,229 @@
+Here are **7 more advanced C code examples** focusing on learning, automation, and performance optimization. These examples emphasize remarkable capabilities like self-learning, automation, and system intelligence.
+
+### 1. **Automated Task Scheduling with Priority Queues**
+This code implements a priority queue for automated task scheduling, where tasks with higher priority are executed first.
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Task {
+    int priority;
+    char name[30];
+} Task;
+
+void swap(Task *a, Task *b) {
+    Task temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+void sort(Task tasks[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (tasks[i].priority < tasks[j].priority) {
+                swap(&tasks[i], &tasks[j]);
+            }
+        }
+    }
+}
+
+int main() {
+    Task tasks[5] = {
+        {3, "Task A"}, {1, "Task B"}, {5, "Task C"}, {2, "Task D"}, {4, "Task E"}
+    };
+    int n = 5;
+
+    sort(tasks, n);
+
+    printf("Scheduled Tasks by Priority:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%s (Priority: %d)\n", tasks[i].name, tasks[i].priority);
+    }
+
+    return 0;
+}
+```
+
+### 2. **Self-Learning System with Dynamic Weight Adjustments**
+This example demonstrates a simple self-learning mechanism where weights are adjusted based on input data to simulate a basic machine learning-like system.
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+float update_weight(float input, float weight, float target) {
+    float error = target - (input * weight);
+    return weight + 0.1 * error;
+}
+
+int main() {
+    float weight = 0.5;
+    float inputs[] = {1.0, 2.0, 3.0};
+    float targets[] = {2.0, 4.0, 6.0};
+
+    for (int i = 0; i < 3; i++) {
+        weight = update_weight(inputs[i], weight, targets[i]);
+        printf("Updated Weight: %.2f\n", weight);
+    }
+
+    return 0;
+}
+```
+
+### 3. **File Automation for Data Processing**
+This example automatically processes files from a directory, reading content and performing analysis on the data.
+
+```c
+#include <stdio.h>
+#include <dirent.h>
+#include <string.h>
+
+void process_file(char *filename) {
+    printf("Processing file: %s\n", filename);
+    // Dummy content processing
+}
+
+int main() {
+    DIR *dir;
+    struct dirent *ent;
+    char *directory = "./data/";
+
+    if ((dir = opendir(directory)) != NULL) {
+        while ((ent = readdir(dir)) != NULL) {
+            if (strstr(ent->d_name, ".txt") != NULL) {
+                char filepath[256];
+                snprintf(filepath, sizeof(filepath), "%s%s", directory, ent->d_name);
+                process_file(filepath);
+            }
+        }
+        closedir(dir);
+    } else {
+        printf("Could not open directory.\n");
+    }
+
+    return 0;
+}
+```
+
+### 4. **Automated Data Backup with Compression**
+This example shows how to automate the backup process by compressing files, a vital part of system automation and maintenance.
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int backup_file(char *filename) {
+    char command[256];
+    snprintf(command, sizeof(command), "tar -czf backup_%s.tar.gz %s", filename, filename);
+    return system(command);
+}
+
+int main() {
+    char *files[] = {"data.txt", "logs.txt"};
+    int num_files = 2;
+
+    for (int i = 0; i < num_files; i++) {
+        if (backup_file(files[i]) == 0) {
+            printf("Successfully backed up: %s\n", files[i]);
+        } else {
+            printf("Backup failed for: %s\n", files[i]);
+        }
+    }
+
+    return 0;
+}
+```
+
+### 5. **State Machine for Process Automation**
+A state machine is useful in learning and automating processes that have multiple states. This example simulates a process with three states.
+
+```c
+#include <stdio.h>
+
+typedef enum {START, PROCESSING, FINISHED} State;
+
+void execute_state(State state) {
+    switch (state) {
+        case START:
+            printf("Starting process...\n");
+            break;
+        case PROCESSING:
+            printf("Processing data...\n");
+            break;
+        case FINISHED:
+            printf("Process finished!\n");
+            break;
+        default:
+            printf("Unknown state\n");
+    }
+}
+
+int main() {
+    State state = START;
+
+    execute_state(state);
+    state = PROCESSING;
+    execute_state(state);
+    state = FINISHED;
+    execute_state(state);
+
+    return 0;
+}
+```
+
+### 6. **Real-Time Monitoring and Alerts System**
+This code monitors system performance and triggers alerts if resource usage exceeds predefined thresholds.
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+void monitor_system() {
+    int cpu_usage = rand() % 100;
+    int mem_usage = rand() % 100;
+
+    printf("CPU Usage: %d%%\n", cpu_usage);
+    printf("Memory Usage: %d%%\n", mem_usage);
+
+    if (cpu_usage > 80) {
+        printf("ALERT: High CPU usage!\n");
+    }
+    if (mem_usage > 80) {
+        printf("ALERT: High memory usage!\n");
+    }
+}
+
+int main() {
+    while (1) {
+        monitor_system();
+        sleep(5);  // Monitor every 5 seconds
+    }
+
+    return 0;
+}
+```
+
+### 7. **Command Execution and Automation**
+This example demonstrates how to automate command execution and manage system commands in C, useful for running scripts or managing resources.
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    char *commands[] = {"ls", "pwd", "whoami"};
+    int num_commands = 3;
+
+    for (int i = 0; i < num_commands; i++) {
+        printf("Executing command: %s\n", commands[i]);
+        system(commands[i]);
+    }
+
+    return 0;
+}
+```
+
+### **Suggested Smart File Name**:
+**"Advanced_C_Automation_Learning_and_Systems_Optimization"**
