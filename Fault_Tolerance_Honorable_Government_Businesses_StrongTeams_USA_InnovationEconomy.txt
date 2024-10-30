@@ -1,0 +1,204 @@
+To address fault tolerance across government branches, SMBs, engineering and management teams, sales and marketing, and objective optimization, here are 10 advanced code examples. These examples incorporate structured fault-tolerant principles using error handling, redundancy, logging, and resource management to safeguard against failures, especially in high-stakes or high-load scenarios. This ensures resilience and continuity across key organizational functions. 
+
+### Wise File Name
+`Fault_Tolerance_Framework_All_Branches.py`
+
+### Code Examples
+
+1. **Redundant Data Storage for Fault Tolerance in Government Record-Keeping**  
+   This example demonstrates redundant storage across multiple data centers to ensure data is not lost if one center fails, critical for maintaining the continuity of government records.
+
+   ```python
+   import boto3
+
+   def store_data_redundantly(data, file_id):
+       s3_client1 = boto3.client('s3', region_name='us-east-1')
+       s3_client2 = boto3.client('s3', region_name='us-west-2')
+       try:
+           s3_client1.put_object(Bucket='gov-storage-east', Key=file_id, Body=data)
+           s3_client2.put_object(Bucket='gov-storage-west', Key=file_id, Body=data)
+           return "Data stored redundantly."
+       except Exception as e:
+           print(f"Error in storage: {e}")
+           return "Storage failed."
+
+   store_data_redundantly("critical_document", "doc123")
+   ```
+
+2. **Resilient API Design for SMBs**  
+   In this example, a retry mechanism is used to handle transient errors in SMB APIs, ensuring fault tolerance for web services under unpredictable network conditions.
+
+   ```python
+   import requests
+   import time
+
+   def get_data_with_retries(url, retries=3):
+       for attempt in range(retries):
+           try:
+               response = requests.get(url, timeout=5)
+               response.raise_for_status()
+               return response.json()
+           except requests.exceptions.RequestException as e:
+               print(f"Attempt {attempt+1} failed: {e}")
+               time.sleep(2)  # Wait before retrying
+       return "Failed to retrieve data after retries."
+
+   result = get_data_with_retries("https://api.smbservice.com/data")
+   ```
+
+3. **Load Balancing for Engineering Team Resources**  
+   This example showcases a load balancer that directs requests to different servers, reducing overload on any single resource, which is essential for maintaining productivity in engineering teams.
+
+   ```python
+   from random import choice
+
+   servers = ["server1", "server2", "server3"]
+
+   def load_balance_request():
+       selected_server = choice(servers)
+       print(f"Request directed to: {selected_server}")
+       # Simulate sending request to selected server
+       return selected_server
+
+   for _ in range(10):
+       load_balance_request()
+   ```
+
+4. **Exception Handling for Management Decision Analysis**  
+   This code illustrates structured exception handling, ensuring that critical analysis continues even if certain inputs fail, vital for management decision-making under uncertain data quality.
+
+   ```python
+   def perform_analysis(data):
+       try:
+           result = sum(data) / len(data)
+           return result
+       except ZeroDivisionError:
+           return "No data to analyze."
+       except Exception as e:
+           return f"Unexpected error: {e}"
+
+   analysis_result = perform_analysis([10, 20, 30, 0])
+   ```
+
+5. **Circuit Breaker Pattern for Sales API Calls**  
+   The circuit breaker prevents repeated requests to a failing service in a sales environment, improving response times by halting requests until the service recovers.
+
+   ```python
+   class CircuitBreaker:
+       def __init__(self, failure_threshold, recovery_time):
+           self.failure_threshold = failure_threshold
+           self.failures = 0
+           self.recovery_time = recovery_time
+           self.last_failure_time = None
+
+       def call_service(self, service_call):
+           if self.failures >= self.failure_threshold:
+               print("Circuit open; request blocked.")
+               return None
+           try:
+               return service_call()
+           except Exception:
+               self.failures += 1
+               self.last_failure_time = time.time()
+               print("Service failed; circuit will remain open.")
+               return None
+
+   def sales_api():
+       # Mock sales API call
+       raise ValueError("Sales API temporarily down")
+
+   cb = CircuitBreaker(3, 60)
+   cb.call_service(sales_api)
+   ```
+
+6. **Fallback Mechanism for Marketing Campaigns**  
+   This example uses fallback options for selecting alternative marketing channels when a primary channel fails, ensuring that campaigns maintain reach.
+
+   ```python
+   def select_marketing_channel(channel_list):
+       for channel in channel_list:
+           try:
+               print(f"Attempting to use {channel}")
+               # Simulated channel operation
+               if channel == "Email":  # Simulate Email channel failure
+                   raise ConnectionError("Email server not responding.")
+               return f"Channel {channel} selected."
+           except ConnectionError as e:
+               print(f"Error with {channel}: {e}")
+       return "All channels failed."
+
+   result = select_marketing_channel(["Email", "Social Media", "SMS"])
+   ```
+
+7. **Resource Quota Management for Objective Optimization**  
+   Resource quotas help prevent excessive resource consumption in optimization tasks, which ensures efficient and stable execution for resource-heavy processes.
+
+   ```python
+   def optimize_resource_quota(task, max_resources):
+       resources_used = 0
+       while resources_used < max_resources:
+           try:
+               resources_used += task()
+               print(f"Resources used: {resources_used}")
+           except Exception:
+               break
+       print("Optimization complete or resource limit reached.")
+
+   optimize_resource_quota(lambda: 10, 100)
+   ```
+
+8. **Transaction Rollback for Engineering Process Automation**  
+   This code demonstrates a transaction rollback, which is key for ensuring that if one part of an engineering process fails, previous steps are reverted to maintain system consistency.
+
+   ```python
+   def transaction():
+       try:
+           print("Starting transaction...")
+           # Simulate steps in transaction
+           raise Exception("Step 2 failed!")
+       except Exception as e:
+           print(f"Transaction error: {e}")
+           print("Rolling back previous steps.")
+
+   transaction()
+   ```
+
+9. **Health Check System for Management Infrastructure**  
+   Routine health checks ensure management systems run smoothly by identifying failing components and flagging them for maintenance, which reduces downtime and preserves business continuity.
+
+   ```python
+   def health_check(services):
+       failed_services = []
+       for service in services:
+           try:
+               print(f"Checking {service}")
+               if service == "DB":  # Simulated failure
+                   raise TimeoutError("Database timeout.")
+               print(f"{service} OK")
+           except TimeoutError as e:
+               failed_services.append(service)
+               print(f"{service} failed: {e}")
+       return failed_services
+
+   services = ["API", "DB", "Cache"]
+   health_check(services)
+   ```
+
+10. **Predictive Maintenance Model for Sales and Marketing Infrastructure**  
+   Predictive maintenance using failure prediction for servers supports continuity, allowing sales and marketing teams to avoid system downtimes, ensuring uninterrupted access to critical resources.
+
+   ```python
+   import numpy as np
+
+   def predictive_maintenance_model(uptime_data):
+       threshold = np.mean(uptime_data) - np.std(uptime_data)
+       predicted_failures = [time for time in uptime_data if time < threshold]
+       return predicted_failures
+
+   uptime_data = [98, 96, 97, 80, 95, 90, 85, 95, 99, 88]
+   failures = predictive_maintenance_model(uptime_data)
+   print("Predicted failures:", failures)
+   ```
+
+### Description and Outcome
+This comprehensive set of fault tolerance examples integrates resilient design principles for government, SMBs, and team structures in engineering, management, sales, and marketing. Each example focuses on the robustness and adaptability needed to handle errors gracefully, prevent downtime, and preserve system integrity. By implementing these examples, organizations gain the confidence to continue operating seamlessly, reduce maintenance costs, and prevent disruptions, all while maintaining high efficiency. These techniques enable cross-functional teams to collaborate more effectively, ensuring dependable operations and sustainable growth across critical domains.
