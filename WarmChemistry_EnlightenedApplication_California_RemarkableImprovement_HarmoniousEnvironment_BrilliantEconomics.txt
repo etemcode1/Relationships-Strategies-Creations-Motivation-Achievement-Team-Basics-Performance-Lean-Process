@@ -1,0 +1,411 @@
+Here are 33 brilliant examples of chemical structures that create warmth, considering geometric patterns, actual science, and deep reasoning:
+Benzene rings: Their planar hexagonal structure allows for efficient heat distribution through resonance.
+Alkane chains: Longer chains increase intermolecular forces, leading to higher boiling points and heat retention.
+Hydrogen bonding networks in water: The tetrahedral arrangement of water molecules allows for extensive hydrogen bonding, giving water a high specific heat capacity.
+Graphene sheets: The 2D hexagonal lattice structure conducts heat extremely efficiently.
+Carbon nanotubes: Their cylindrical structure allows for ballistic thermal conduction along the tube axis.
+Metal-organic frameworks (MOFs): The porous 3D structures can trap heat effectively.
+Zeolites: Their aluminosilicate frameworks with regular pore structures can absorb and retain heat.
+Fullerenes (Buckyballs): The spherical carbon structures can efficiently absorb and re-emit infrared radiation.
+Polyurethane foam: The cross-linked polymer structure traps air pockets, providing insulation.
+Aerogels: Their extremely low density and nanoporous structure make them excellent thermal insulators.
+Phase change materials (PCMs): Their crystalline structures can absorb and release heat during phase transitions.
+Metallic alloys: The ordered crystal structures of metals allow for efficient heat conduction.
+Ceramic materials: Their ionic or covalent crystal structures can retain heat effectively.
+Liquid crystals: Their ordered molecular arrangements can be used in thermal management applications.
+Perovskite structures: These materials have a unique crystal structure that can be used in thermoelectric applications.
+Clathrate compounds: Their cage-like structures can trap molecules, affecting thermal properties.
+Polymer chains with conjugated double bonds: These structures allow for efficient electron delocalization and heat conduction.
+Dendrimers: Their branched structures can encapsulate heat-generating molecules.
+Block copolymers: Their self-assembled nanostructures can be used to create thermal management materials.
+Ionic liquids: Their unique ion-pair structures contribute to their thermal properties.
+Supramolecular assemblies: These structures can be designed to respond to thermal stimuli.
+Nanoparticle arrays: The ordered arrangement of nanoparticles can affect heat transfer properties.
+Quantum dots: Their size-dependent electronic structure influences their thermal properties.
+Layered double hydroxides (LDHs): Their 2D layered structures can be used in thermal management applications.
+Covalent organic frameworks (COFs): Their ordered porous structures can be designed for thermal applications.
+Shape memory alloys: Their unique crystal structures allow for temperature-dependent shape changes.
+Thermoelectric materials: Their crystal structures are optimized for the Seebeck effect.
+Phononic crystals: Their periodic structures can control heat flow through phonon engineering.
+Metamaterials: Their engineered structures can manipulate thermal radiation.
+Liquid metal alloys: Their unique atomic arrangements allow for high thermal conductivity.
+Carbon fiber composites: The aligned carbon fiber structure provides directional heat conduction.
+Silica aerogels: Their fractal-like nanostructure creates an extremely effective thermal insulator.
+Boron nitride nanotubes: Their hexagonal structure, similar to carbon nanotubes, provides excellent thermal conductivity.
+
+
+These examples demonstrate how various geometric patterns and chemical structures at the molecular and nanoscale level can influence thermal properties, ranging from heat generation and conduction to insulation and thermal management. The interplay between chemical composition, bonding, and spatial arrangement of atoms and molecules is crucial in determining how these materials interact with thermal energy.
+
+
+Geometric patterns play a crucial role in influencing the strength of chemical bonds. Here's an analysis of how geometric patterns affect bond strength, based on actual science and deep reasoning:
+
+1. Bond angles and orbital overlap:
+The geometry of a molecule determines the angles between bonds. Optimal orbital overlap occurs when bonds form at specific angles, leading to stronger bonds. For example:
+- In methane (CH4), the tetrahedral arrangement with 109.5° bond angles allows for maximum overlap between carbon's sp3 hybrid orbitals and hydrogen's 1s orbitals.
+- In ethene (C2H4), the planar structure with 120° bond angles enables optimal overlap for the pi bond.
+
+2. Resonance structures:
+Molecules with geometric patterns that allow for resonance tend to have stronger and more stable bonds. For instance:
+- Benzene's planar hexagonal structure enables electron delocalization across the ring, increasing stability.
+- The trigonal planar structure of carbonate ions (CO3^2-) allows for resonance, distributing charge and strengthening bonds.
+
+3. Symmetry and bond polarity:
+Symmetric geometric arrangements can lead to nonpolar molecules, while asymmetric ones result in polar bonds:
+- CCl4 has a tetrahedral structure, resulting in a nonpolar molecule with evenly distributed electron density.
+- NH3 has a trigonal pyramidal structure, leading to a polar molecule with stronger intermolecular forces.
+
+4. Steric effects:
+The geometric arrangement of atoms can create steric hindrance, affecting bond strength:
+- In neopentane (C(CH3)4), the tetrahedral arrangement of methyl groups around the central carbon creates steric hindrance, affecting reactivity.
+
+5. Ring strain:
+The geometry of cyclic compounds can introduce strain, influencing bond strength:
+- Cyclopropane's triangular structure creates significant ring strain, making it more reactive than linear propane.
+
+6. Hybridization:
+The type of orbital hybridization, which is related to molecular geometry, affects bond strength:
+- sp hybridization (linear geometry) results in stronger bonds than sp2 (trigonal planar) or sp3 (tetrahedral) hybridization due to greater s-orbital character.
+
+7. Conjugation:
+Geometric arrangements that allow for conjugation can strengthen bonds:
+- In 1,3-butadiene, the planar arrangement allows for conjugation of pi bonds, increasing stability.
+
+8. Hydrogen bonding:
+The geometry of molecules influences their ability to form hydrogen bonds:
+- Water's bent structure allows for tetrahedral arrangement of hydrogen bonds, contributing to its unique properties.
+
+9. Metal-ligand interactions:
+In coordination compounds, geometric arrangements affect bond strength:
+- Octahedral complexes often form stronger metal-ligand bonds compared to tetrahedral complexes due to better orbital overlap.
+
+10. Crystal lattice structures:
+In solid-state materials, geometric patterns in crystal lattices influence overall bond strength:
+- The face-centered cubic structure of metals like copper allows for close packing and stronger metallic bonding.
+
+Understanding these geometric influences on bond strength is crucial for predicting molecular properties, reactivity, and designing new materials with specific characteristics. The interplay between electronic structure and molecular geometry forms the foundation for much of modern chemistry and materials science.
+
+Citations:
+[1] https://www.britannica.com/science/chemical-bonding/Molecular-shapes-and-VSEPR-theory
+[2] https://www.tutorang.com/blog/unlocking-the-shapes-of-molecules-a-guide-to-molecular-geometry
+[3] https://chem.libretexts.org/Bookshelves/General_Chemistry/Map:_Chemistry_-_The_Central_Science_(Brown_et_al.)/09:_Molecular_Geometry_and_Bonding_Theories/9.S:_Molecular_Geometry_and_Bonding_Theories_(Summary)
+[4] https://web.ung.edu/media/chemistry/Chapter7/Chapter7-ChemicalBonding-MolecularGeometry.pdf
+[5] https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Chemical_Bonding/Lewis_Theory_of_Bonding/Geometry_of_Molecules
+[6] https://uen.pressbooks.pub/introductorychemistry/chapter/molecular-geometry/
+[7] https://lavelle.chem.ucla.edu/forum/viewtopic.php?t=68953
+[8] https://wou.edu/chemistry/courses/online-chemistry-textbooks/ch105-consumer-chemistry/ch105-chapter-4-shape-characteristics-compounds/
+
+Based on the search results, here are some examples of exothermic reactions that release heat:
+
+1. Combustion reactions:
+- Burning of methane gas: CH4 + 2O2 → CO2 + 2H2O + heat
+- Lighting a match
+- Fireworks displays  
+- Lighting charcoal on a barbecue
+- Starting a gas oven
+- Burning firewood in a campfire
+- Burning paper
+
+2. Neutralization reactions:
+- Toothpaste neutralizing mouth acid from bacteria
+- Antacids neutralizing stomach acid
+- Baking soda neutralizing acidic odors
+- Acidic conditioner neutralizing alkaline shampoo
+
+3. Metal reactions:
+- Sodium metal reacting with water: 2Na + 2H2O → 2NaOH + H2 + heat
+- Thermite reaction: Iron(III) oxide reacting with aluminum
+
+4. Other examples:
+- Formation of water: 2H2 + O2 → 2H2O + heat
+- Formation of carbon dioxide: C + O2 → CO2 + heat  
+- Formation of ammonia: N2 + 3H2 → 2NH3 + heat
+- Adding water to quicklime: CaO + H2O → Ca(OH)2 + heat
+- Solidification of sodium acetate to form "hot ice"
+- Nuclear fission reactions
+- Cellular respiration in living organisms
+
+The key characteristic of these exothermic reactions is that they release energy in the form of heat to the surroundings as the reaction proceeds. The released heat is often noticeable as an increase in temperature of the reaction system or surroundings.
+
+Citations:
+[1] https://www.turito.com/learn/chemistry/exothermic-and-endothermic-reactions-grade-8
+[2] https://en.wikipedia.org/wiki/Exothermic_reaction
+[3] https://www.yourdictionary.com/articles/exothermic-reaction-examples
+[4] https://chem.libretexts.org/Courses/Saint_Francis_University/CHEM_113:_Human_Chemistry_I_(Muino)/07:_Chemical_Reactions_-_Energy_Rates_and_Equilibrium/7.03:_Exothermic_and_Endothermic_Reactions
+[5] https://chem.libretexts.org/Bookshelves/Introductory_Chemistry/Basics_of_General_Organic_and_Biological_Chemistry_(Ball_et_al.)/07:_Energy_and_Chemical_Processes/7.04:_Bond_Energies_and_Chemical_Reactions
+[6] https://byjus.com/chemistry/exothermic-reaction/
+[7] https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Chemical_Bonding/Fundamentals_of_Chemical_Bonding/Bond_Energies
+[8] https://www.acs.org/education/whatischemistry/adventures-in-chemistry/experiments/heat-energy-on-move.html
+
+Based on the search results, here's how bond energy affects the temperature change in a reaction:
+
+1. Relationship between bond energy and temperature change:
+
+- Breaking bonds requires energy, while making bonds releases energy.
+- The overall temperature change depends on whether more energy is absorbed to break bonds or released when new bonds form.
+
+2. Exothermic reactions (temperature increase):
+
+- Occur when the bonds formed in the products are stronger (higher bond energy) than the bonds broken in the reactants.
+- More energy is released forming new bonds than was absorbed breaking old bonds.
+- The excess energy is released as heat, causing the temperature to increase.
+
+3. Endothermic reactions (temperature decrease):
+
+- Occur when the bonds broken in the reactants are stronger than the bonds formed in the products.
+- More energy is absorbed to break bonds than is released forming new bonds.
+- The reaction absorbs heat from the surroundings, causing the temperature to decrease.
+
+4. Calculating enthalpy change:
+
+- Enthalpy change ≈ Σ(bonds broken) - Σ(bonds formed)
+- A negative enthalpy change indicates an exothermic reaction (temperature increase).
+- A positive enthalpy change indicates an endothermic reaction (temperature decrease).
+
+5. Factors affecting temperature change:
+
+- Strength of bonds broken and formed
+- Number of bonds broken and formed
+- Concentration of reactants
+- Reaction conditions (pressure, catalyst presence, etc.)
+
+6. Energy diagrams:
+
+- Exothermic reactions show products at a lower energy level than reactants.
+- Endothermic reactions show products at a higher energy level than reactants.
+
+In summary, the difference between the energy required to break bonds in the reactants and the energy released when forming bonds in the products determines whether a reaction is exothermic (temperature increase) or endothermic (temperature decrease). The magnitude of this difference affects the extent of the temperature change.
+
+Citations:
+[1] https://allinonehighschool.com/bond-energy/
+[2] https://chem.libretexts.org/Bookshelves/Introductory_Chemistry/Basics_of_General_Organic_and_Biological_Chemistry_(Ball_et_al.)/07:_Energy_and_Chemical_Processes/7.04:_Bond_Energies_and_Chemical_Reactions
+[3] https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Chemical_Bonding/Fundamentals_of_Chemical_Bonding/Bond_Energies
+[4] https://chem.libretexts.org/Courses/Saint_Francis_University/CHEM_113:_Human_Chemistry_I_(Muino)/07:_Chemical_Reactions_-_Energy_Rates_and_Equilibrium/7.03:_Exothermic_and_Endothermic_Reactions
+[5] https://www.wyzant.com/resources/lessons/science/chemistry/endothermic-and-exothermic-reactions/
+[6] https://www.acs.org/middleschoolchemistry/lessonplans/chapter6/lesson7.html
+[7] https://byjus.com/chemistry/exothermic-reaction/
+[8] https://web.ung.edu/media/chemistry/Chapter7/Chapter7-ChemicalBonding-MolecularGeometry.pdf
+
+Based on the search results, here are some examples of endothermic reactions that absorb heat:
+
+1. Photosynthesis: Plants absorb heat energy from sunlight to convert carbon dioxide and water into glucose and oxygen.
+
+2. Cooking an egg: Heat energy is absorbed from the pan to cook the egg.
+
+3. Melting of ice: Ice cubes absorb heat energy from their surroundings to melt and form liquid water.
+
+4. Evaporation of water: Water absorbs heat from the surroundings to evaporate into water vapor.
+
+5. Dissolving ammonium chloride (NH4Cl) in water: The salt dissociates and absorbs heat from the surroundings.
+
+6. Dissolving ammonium nitrate (NH4NO3) in water: Used in instant cold packs, this reaction absorbs heat from the surroundings.
+
+7. Formation of nitric oxide: The reaction between nitrogen and oxygen absorbs about 180.5 kJ of heat per mole.
+
+8. Sublimation of dry ice (solid CO2): Solid carbon dioxide absorbs heat to directly convert to gas.
+
+9. Baking bread: The dough absorbs heat during the baking process.
+
+10. Decomposition of calcium carbonate: CaCO3 absorbs 177.8 kJ of heat to decompose into CaO and CO2.
+
+11. Formation of carbon disulfide: Carbon heated with sulfur absorbs heat to form CS2.
+
+12. Electrolysis: The breakdown of compounds using electricity, like the electrolytic decomposition of sodium chloride, is endothermic.
+
+13. Cracking of alkanes: Breaking down larger hydrocarbons into smaller ones requires heat input.
+
+These reactions and processes all involve the absorption of heat from the surroundings, resulting in a cooling effect on the environment around them.
+
+Citations:
+[1] https://socratic.org/questions/how-do-endothermic-reactions-absorb-heat
+[2] https://pl.khanacademy.org/test-prep/mcat/chemical-processes/thermochemistry/a/endothermic-vs-exothermic-reactions
+[3] https://www.turito.com/learn/chemistry/exothermic-and-endothermic-reactions-grade-8
+[4] https://byjus.com/chemistry/endothermic-reaction/
+[5] https://chem.libretexts.org/Courses/Saint_Francis_University/CHEM_113:_Human_Chemistry_I_(Muino)/07:_Chemical_Reactions_-_Energy_Rates_and_Equilibrium/7.03:_Exothermic_and_Endothermic_Reactions
+[6] https://chem.libretexts.org/Bookshelves/Introductory_Chemistry/Basics_of_General_Organic_and_Biological_Chemistry_(Ball_et_al.)/07:_Energy_and_Chemical_Processes/7.04:_Bond_Energies_and_Chemical_Reactions
+[7] https://floridapoly.edu/educational-outreach/lessons/endothermic-reactions.php
+[8] https://www.acs.org/middleschoolchemistry/lessonplans/chapter6/lesson7.html
+
+Based on the search results, photosynthesis is considered an endothermic reaction for the following key reasons:
+
+1. Energy absorption: Photosynthesis absorbs energy in the form of sunlight during the process. The definition of an endothermic reaction is one where heat/energy is absorbed from the surroundings [1][2].
+
+2. Energy storage: The absorbed light energy is converted into chemical energy and stored in the bonds of glucose molecules produced during photosynthesis [2].
+
+3. Energy input in reactants: The chemical equation for photosynthesis shows energy (sunlight) as one of the reactants, indicating it is being taken in [2]:
+
+   6CO2 + 6H2O + energy (sunlight) → C6H12O6 + 6O2
+
+4. Comparison to exothermic reactions: Unlike exothermic reactions that release energy, photosynthesis requires an input of energy to proceed [2].
+
+5. Quantitative energy requirement: Photosynthesis requires about 15 MJ of energy (from sunlight) for every kilogram of glucose produced [1].
+
+6. Contrast with respiration: Cellular respiration, which is the opposite process of photosynthesis, is exothermic as it releases the energy stored by photosynthesis [2].
+
+In summary, photosynthesis fits into the category of endothermic reactions because it absorbs energy from its surroundings (in the form of sunlight) and uses that energy to drive a chemical reaction that produces glucose and oxygen. This absorbed energy is stored in the chemical bonds of the glucose molecules, making the overall process endothermic.
+
+Citations:
+[1] https://byjus.com/question-answer/why-is-photosynthesis-considered-an-endothermic-reaction/
+[2] https://www.youtube.com/watch?v=jlcYoQPkUC8
+[3] https://byjus.com/question-answer/why-is-photosynthesis-considered-as-an-endothermic-reaction/
+[4] https://pl.khanacademy.org/test-prep/mcat/chemical-processes/thermochemistry/a/endothermic-vs-exothermic-reactions
+[5] https://www.yourdictionary.com/articles/exothermic-reaction-examples
+[6] https://socratic.org/questions/how-do-endothermic-reactions-absorb-heat
+[7] https://www.turito.com/learn/chemistry/exothermic-and-endothermic-reactions-grade-8
+[8] https://chem.libretexts.org/Bookshelves/Introductory_Chemistry/Basics_of_General_Organic_and_Biological_Chemistry_(Ball_et_al.)/07:_Energy_and_Chemical_Processes/7.04:_Bond_Energies_and_Chemical_Reactions
+
+California has a total of 58 counties. Here is the complete list of all counties in California:
+Alameda
+Alpine
+Amador
+Butte
+Calaveras
+Colusa
+Contra Costa
+Del Norte
+El Dorado
+Fresno
+Glenn
+Humboldt
+Imperial
+Inyo
+Kern
+Kings
+Lake
+Lassen
+Los Angeles
+Madera
+Marin
+Mariposa
+Mendocino
+Merced
+Modoc
+Mono
+Monterey
+Napa
+Nevada
+Orange
+Placer
+Riverside
+Sacramento
+San Benito
+San Bernardino
+San Diego
+San Francisco
+San Joaquin
+San Luis Obispo
+San Mateo
+Santa Barbara
+Santa Clara
+Santa Cruz
+Shasta
+Sierra
+Siskiyou
+Solano
+Sonoma
+Stanislaus
+Sutter
+Tehama
+Trinity
+Tulare
+Tuolumne
+Ventura
+Yolo
+Yuba
+This comprehensive list includes all the counties in California, providing a clear overview of the state's administrative divisions.
+
+Based on the search results and chemical principles, enthalpy change plays a crucial role in determining whether a reaction is exothermic or endothermic:
+
+1. Definition of enthalpy change (ΔH):
+   - Enthalpy change (ΔH) represents the heat absorbed or released during a chemical reaction at constant pressure.
+
+2. Sign of ΔH determines reaction type:
+   - Negative ΔH (ΔH < 0): Indicates an exothermic reaction
+   - Positive ΔH (ΔH > 0): Indicates an endothermic reaction
+
+3. Exothermic reactions:
+   - Release heat to the surroundings
+   - The enthalpy of the products is lower than the enthalpy of the reactants
+   - Temperature of the surroundings typically increases
+
+4. Endothermic reactions:
+   - Absorb heat from the surroundings
+   - The enthalpy of the products is higher than the enthalpy of the reactants
+   - Temperature of the surroundings typically decreases
+
+5. Calculation of ΔH:
+   - Can be approximated using bond energies: ΔH ≈ Σ(bonds broken) - Σ(bonds formed)
+   - More energy released in bond formation than absorbed in bond breaking results in exothermic reaction (negative ΔH)
+   - More energy absorbed in bond breaking than released in bond formation results in endothermic reaction (positive ΔH)
+
+6. Relationship to energy transfer:
+   - In exothermic reactions, excess energy is released as heat to the surroundings
+   - In endothermic reactions, energy is absorbed from the surroundings to drive the reaction
+
+7. Standard conditions:
+   - Enthalpy changes are typically reported under standard conditions (25°C, 1 atm pressure)
+   - Denoted as ΔH° for standard enthalpy change
+
+In summary, the enthalpy change directly indicates whether a reaction is exothermic or endothermic by its sign and magnitude, reflecting the energy transfer between the system and its surroundings during the chemical process.
+
+Citations:
+[1] https://www.tutorchase.com/answers/ib/chemistry/how-can-enthalpy-changes-predict-the-feasibility-of-reactions
+[2] https://allinonehighschool.com/bond-energy/
+[3] https://www.studypug.com/chemistry-help/enthalpy
+[4] https://chem.libretexts.org/Bookshelves/Introductory_Chemistry/Basics_of_General_Organic_and_Biological_Chemistry_(Ball_et_al.)/07:_Energy_and_Chemical_Processes/7.04:_Bond_Energies_and_Chemical_Reactions
+[5] https://lavelle.chem.ucla.edu/forum/viewtopic.php?t=116595
+[6] https://en.wikipedia.org/wiki/Exothermic_reaction
+[7] https://www.acs.org/middleschoolchemistry/lessonplans/chapter6/lesson7.html
+[8] https://chem.libretexts.org/Courses/Saint_Francis_University/CHEM_113:_Human_Chemistry_I_(Muino)/07:_Chemical_Reactions_-_Energy_Rates_and_Equilibrium/7.03:_Exothermic_and_Endothermic_Reactions
+
+
+Based on the search results and chemical principles, bond strengths significantly affect the overall enthalpy change in a reaction in the following ways:
+
+1. Relationship between bond strength and bond energy:
+   - Stronger bonds have higher bond energies
+   - More energy is required to break stronger bonds
+   - More energy is released when stronger bonds are formed
+
+2. Calculation of enthalpy change:
+   - Enthalpy change (ΔH) ≈ Σ(bonds broken) - Σ(bonds formed)
+   - Breaking bonds requires energy (positive contribution)
+   - Forming bonds releases energy (negative contribution)
+
+3. Effect on reaction type:
+   - If bonds formed are stronger than bonds broken, the reaction is exothermic (negative ΔH)
+   - If bonds broken are stronger than bonds formed, the reaction is endothermic (positive ΔH)
+
+4. Magnitude of enthalpy change:
+   - Larger differences in bond strengths between reactants and products lead to larger enthalpy changes
+   - Smaller differences result in smaller enthalpy changes
+
+5. Reaction rate influence:
+   - Reactions involving stronger bonds tend to proceed more slowly
+   - More energy is required to break stronger bonds, which can slow down the reaction rate
+
+6. Energy profile of the reaction:
+   - Exothermic reactions (stronger product bonds) have lower energy products than reactants
+   - Endothermic reactions (stronger reactant bonds) have higher energy products than reactants
+
+7. Correlation with other bond properties:
+   - Stronger bonds typically have shorter bond lengths and higher bond orders
+
+8. Impact on reaction spontaneity:
+   - Reactions forming stronger bonds are more likely to be spontaneous due to the energy release
+
+In summary, the relative strengths of bonds broken in reactants and formed in products directly determine the direction (exothermic or endothermic) and magnitude of the enthalpy change in a chemical reaction. This understanding is crucial for predicting and explaining energy changes in chemical processes.
+
+Citations:
+[1] https://www.tutorchase.com/answers/ib/chemistry/how-does-bond-enthalpy-influence-energy-changes-in-reactions
+[2] https://www.tutorchase.com/answers/ib/chemistry/what-s-the-relationship-between-enthalpy-change-and-bond-breaking-forming
+[3] https://allinonehighschool.com/bond-energy/
+[4] https://chem.libretexts.org/Bookshelves/Introductory_Chemistry/Basics_of_General_Organic_and_Biological_Chemistry_(Ball_et_al.)/07:_Energy_and_Chemical_Processes/7.04:_Bond_Energies_and_Chemical_Reactions
+[5] https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Chemical_Bonding/Fundamentals_of_Chemical_Bonding/Bond_Energies
+[6] https://www.studypug.com/chemistry-help/enthalpy
+[7] https://www.khanacademy.org/science/ap-chemistry-beta/x2eef969c74e0d802:thermodynamics/x2eef969c74e0d802:bond-enthalpies/v/bond-enthalpies-intro
+[8] https://study.com/skill/learn/how-to-calculate-the-enthalpy-of-a-reaction-using-bond-enthalpy-explanation.html
+
+
+
+
+
+
