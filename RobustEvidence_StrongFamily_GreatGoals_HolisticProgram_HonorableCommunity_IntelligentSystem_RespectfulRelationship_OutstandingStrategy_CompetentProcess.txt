@@ -1,0 +1,9724 @@
+
+Creating **brilliant code for fluid intelligence** involves crafting algorithms and simulations that mimic cognitive flexibility, problem-solving, and adaptive reasoning. Below is an **outstanding strategy** with a **breakthrough approach** implemented in C. These examples are designed to explore dynamic pattern recognition, adaptive learning, and reasoning under uncertainty.
+
+---
+
+### **Smart File Name**  
+`fluid_intelligence_simulation.c`
+
+---
+
+### **1. Dynamic Pattern Recognition Using Neural Activation Maps**  
+**Purpose**: Simulate a flexible neural network that dynamically adapts to detect patterns in a changing environment.
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+#define INPUT_SIZE 5
+#define OUTPUT_SIZE 3
+#define EPOCHS 50
+#define LEARNING_RATE 0.1
+
+// Initialize weights randomly
+void initialize_weights(double weights[INPUT_SIZE][OUTPUT_SIZE]) {
+    for (int i = 0; i < INPUT_SIZE; i++) {
+        for (int j = 0; j < OUTPUT_SIZE; j++) {
+            weights[i][j] = (double)rand() / RAND_MAX * 2 - 1; // Range [-1, 1]
+        }
+    }
+}
+
+// Forward pass
+void forward_pass(double input[INPUT_SIZE], double weights[INPUT_SIZE][OUTPUT_SIZE], double output[OUTPUT_SIZE]) {
+    for (int j = 0; j < OUTPUT_SIZE; j++) {
+        output[j] = 0.0;
+        for (int i = 0; i < INPUT_SIZE; i++) {
+            output[j] += input[i] * weights[i][j];
+        }
+        output[j] = tanh(output[j]); // Activation function
+    }
+}
+
+// Update weights dynamically
+void update_weights(double input[INPUT_SIZE], double output[OUTPUT_SIZE], double target[OUTPUT_SIZE], double weights[INPUT_SIZE][OUTPUT_SIZE]) {
+    for (int i = 0; i < INPUT_SIZE; i++) {
+        for (int j = 0; j < OUTPUT_SIZE; j++) {
+            double error = target[j] - output[j];
+            weights[i][j] += LEARNING_RATE * error * input[i];
+        }
+    }
+}
+
+int main() {
+    srand(42);
+
+    double weights[INPUT_SIZE][OUTPUT_SIZE];
+    initialize_weights(weights);
+
+    double input[INPUT_SIZE] = {1, 0.5, -0.5, 0.3, -0.2};
+    double target[OUTPUT_SIZE] = {0.8, 0.1, -0.4};
+    double output[OUTPUT_SIZE];
+
+    for (int epoch = 0; epoch < EPOCHS; epoch++) {
+        forward_pass(input, weights, output);
+        update_weights(input, output, target, weights);
+
+        printf("Epoch %d: ", epoch + 1);
+        for (int j = 0; j < OUTPUT_SIZE; j++) {
+            printf("Output[%d]=%.4f ", j, output[j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+
+**Reasoning**: This code dynamically adjusts its weights through a feedback loop, enabling adaptive pattern recognition akin to flexible neural processes.
+
+---
+
+### **2. Real-Time Problem-Solving via Genetic Algorithms**  
+**Purpose**: Solve optimization problems adaptively using genetic algorithms to simulate reasoning and decision-making.
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+#define POP_SIZE 10
+#define GENES 5
+#define GENERATIONS 50
+#define MUTATION_RATE 0.1
+
+typedef struct {
+    double genes[GENES];
+    double fitness;
+} Individual;
+
+// Fitness function (target sum = 1.0)
+double fitness_function(double genes[GENES]) {
+    double sum = 0.0;
+    for (int i = 0; i < GENES; i++) {
+        sum += genes[i];
+    }
+    return 1.0 / fabs(1.0 - sum); // Closer to 1.0, higher the fitness
+}
+
+// Initialize population
+void initialize_population(Individual population[POP_SIZE]) {
+    for (int i = 0; i < POP_SIZE; i++) {
+        for (int j = 0; j < GENES; j++) {
+            population[i].genes[j] = (double)rand() / RAND_MAX * 2 - 1; // Range [-1, 1]
+        }
+        population[i].fitness = fitness_function(population[i].genes);
+    }
+}
+
+// Perform mutation
+void mutate(Individual *ind) {
+    for (int j = 0; j < GENES; j++) {
+        if ((double)rand() / RAND_MAX < MUTATION_RATE) {
+            ind->genes[j] += (double)rand() / RAND_MAX * 0.2 - 0.1; // Small random change
+        }
+    }
+    ind->fitness = fitness_function(ind->genes);
+}
+
+// Perform crossover
+void crossover(Individual parent1, Individual parent2, Individual *child) {
+    for (int j = 0; j < GENES; j++) {
+        child->genes[j] = (parent1.genes[j] + parent2.genes[j]) / 2.0;
+    }
+    child->fitness = fitness_function(child->genes);
+}
+
+// Select the best individuals
+void select_best(Individual population[POP_SIZE]) {
+    for (int i = 0; i < POP_SIZE - 1; i++) {
+        for (int j = i + 1; j < POP_SIZE; j++) {
+            if (population[i].fitness < population[j].fitness) {
+                Individual temp = population[i];
+                population[i] = population[j];
+                population[j] = temp;
+            }
+        }
+    }
+}
+
+int main() {
+    srand(42);
+
+    Individual population[POP_SIZE];
+    initialize_population(population);
+
+    for (int gen = 0; gen < GENERATIONS; gen++) {
+        select_best(population);
+
+        // Retain top 50%, replace others with offspring
+        for (int i = POP_SIZE / 2; i < POP_SIZE; i++) {
+            crossover(population[rand() % (POP_SIZE / 2)], population[rand() % (POP_SIZE / 2)], &population[i]);
+            mutate(&population[i]);
+        }
+
+        // Display best fitness
+        printf("Generation %d: Best Fitness = %.4f\n", gen + 1, population[0].fitness);
+    }
+
+    return 0;
+}
+```
+
+**Reasoning**: This genetic algorithm mimics evolutionary problem-solving by iteratively refining solutions, promoting optimal reasoning strategies.
+
+---
+
+### **3. Decision-Making Under Uncertainty Using Monte Carlo Simulation**  
+**Purpose**: Apply Monte Carlo methods to model uncertainty and make flexible decisions.
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+#define SIMULATIONS 10000
+
+double random_decision() {
+    return (double)rand() / RAND_MAX * 2 - 1; // Range [-1, 1]
+}
+
+double evaluate_decision(double decision) {
+    return decision * decision; // Example: Maximizing a quadratic reward
+}
+
+double monte_carlo_simulation() {
+    double best_decision = 0.0;
+    double best_score = -1e9;
+
+    for (int i = 0; i < SIMULATIONS; i++) {
+        double decision = random_decision();
+        double score = evaluate_decision(decision);
+
+        if (score > best_score) {
+            best_score = score;
+            best_decision = decision;
+        }
+    }
+
+    return best_decision;
+}
+
+int main() {
+    srand(42);
+    double optimal_decision = monte_carlo_simulation();
+    printf("Optimal Decision: %.4f\n", optimal_decision);
+    return 0;
+}
+```
+
+**Reasoning**: Monte Carlo methods allow exploration of a vast decision space, emulating flexible reasoning in uncertain environments.
+
+---
+
+These programs provide **breakthrough strategies** by simulating dynamic adaptation, problem-solving, and decision-making under fluid conditions. 
+
+### **Breakthrough Code Examples for Motivational Events and Systems**
+
+Motivational systems and events can be simulated and analyzed using structured programs to inspire individuals or teams. These examples incorporate **goal setting, reward mechanisms, tracking progress, and reinforcing positive behaviors**. Below are advanced examples tailored for personal and organizational success.
+
+---
+
+### **1. Goal Setting System**  
+A program to help users define goals, set deadlines, and prioritize them.
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+typedef struct {
+    char goal[100];
+    char deadline[20];
+    int priority; // 1 (High) to 3 (Low)
+} Goal;
+
+void display_goals(Goal goals[], int count) {
+    printf("\n--- Goals List ---\n");
+    for (int i = 0; i < count; i++) {
+        printf("Goal: %s | Deadline: %s | Priority: %d\n", goals[i].goal, goals[i].deadline, goals[i].priority);
+    }
+}
+
+int main() {
+    int n;
+    printf("How many goals do you want to set? ");
+    scanf("%d", &n);
+    getchar(); // Clear input buffer
+
+    Goal goals[n];
+    for (int i = 0; i < n; i++) {
+        printf("\nEnter Goal %d: ", i + 1);
+        fgets(goals[i].goal, 100, stdin);
+        goals[i].goal[strcspn(goals[i].goal, "\n")] = 0;
+
+        printf("Enter Deadline for Goal %d (YYYY-MM-DD): ", i + 1);
+        fgets(goals[i].deadline, 20, stdin);
+        goals[i].deadline[strcspn(goals[i].deadline, "\n")] = 0;
+
+        printf("Enter Priority for Goal %d (1=High, 3=Low): ", i + 1);
+        scanf("%d", &goals[i].priority);
+        getchar(); // Clear buffer
+    }
+
+    display_goals(goals, n);
+
+    return 0;
+}
+```
+
+*Example Usage*:  
+Input:  
+- Goal: "Complete team project."  
+- Deadline: "2024-12-01"  
+- Priority: 1  
+Output:  
+**Goal: Complete team project | Deadline: 2024-12-01 | Priority: 1**
+
+---
+
+### **2. Motivational Reward System**  
+Design a point-based reward system for achieving goals.
+
+```c
+#include <stdio.h>
+
+typedef struct {
+    char task[50];
+    int points;
+    int completed; // 0 (No), 1 (Yes)
+} Task;
+
+void calculate_rewards(Task tasks[], int count) {
+    int total_points = 0;
+    for (int i = 0; i < count; i++) {
+        if (tasks[i].completed) {
+            total_points += tasks[i].points;
+        }
+    }
+    printf("\nTotal Reward Points Earned: %d\n", total_points);
+}
+
+int main() {
+    int n;
+    printf("How many tasks to add? ");
+    scanf("%d", &n);
+    getchar();
+
+    Task tasks[n];
+    for (int i = 0; i < n; i++) {
+        printf("\nEnter Task %d: ", i + 1);
+        fgets(tasks[i].task, 50, stdin);
+        tasks[i].task[strcspn(tasks[i].task, "\n")] = 0;
+
+        printf("Enter Points for Task %d: ", i + 1);
+        scanf("%d", &tasks[i].points);
+        printf("Is Task %d completed? (1=Yes, 0=No): ", i + 1);
+        scanf("%d", &tasks[i].completed);
+        getchar(); // Clear buffer
+    }
+
+    calculate_rewards(tasks, n);
+
+    return 0;
+}
+```
+
+*Example Usage*:  
+Input:  
+- Task: "Exercise 30 minutes."  
+- Points: 10  
+- Completed: 1  
+Output:  
+**Total Reward Points Earned: 10**
+
+---
+
+### **3. Progress Tracker with Milestones**  
+Track progress toward achieving milestones.
+
+```c
+#include <stdio.h>
+
+typedef struct {
+    char milestone[50];
+    int progress; // Percentage (0-100)
+} Milestone;
+
+void display_progress(Milestone milestones[], int count) {
+    printf("\n--- Progress Tracker ---\n");
+    for (int i = 0; i < count; i++) {
+        printf("Milestone: %s | Progress: %d%%\n", milestones[i].milestone, milestones[i].progress);
+    }
+}
+
+int main() {
+    int n;
+    printf("How many milestones to track? ");
+    scanf("%d", &n);
+    getchar();
+
+    Milestone milestones[n];
+    for (int i = 0; i < n; i++) {
+        printf("\nEnter Milestone %d: ", i + 1);
+        fgets(milestones[i].milestone, 50, stdin);
+        milestones[i].milestone[strcspn(milestones[i].milestone, "\n")] = 0;
+
+        printf("Enter Progress for Milestone %d (0-100): ", i + 1);
+        scanf("%d", &milestones[i].progress);
+        getchar(); // Clear buffer
+    }
+
+    display_progress(milestones, n);
+
+    return 0;
+}
+```
+
+*Example Usage*:  
+Input:  
+- Milestone: "Read 5 chapters of a book."  
+- Progress: 60  
+Output:  
+**Milestone: Read 5 chapters of a book | Progress: 60%**
+
+---
+
+### **4. Inspirational Message Generator**  
+Randomly display motivational quotes to boost morale.
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void display_quote() {
+    const char *quotes[] = {
+        "Believe in yourself and all that you are.",
+        "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+        "Your limitation—it’s only your imagination.",
+        "Dream it. Wish it. Do it.",
+        "Don’t stop when you’re tired. Stop when you’re done."
+    };
+
+    srand(time(0)); // Seed the random number generator
+    int index = rand() % 5;
+    printf("\nMotivational Quote: %s\n", quotes[index]);
+}
+
+int main() {
+    printf("Welcome to the Motivational System\n");
+    display_quote();
+    return 0;
+}
+```
+
+*Example Output*:  
+**Motivational Quote: Success is not final, failure is not fatal: It is the courage to continue that counts.**
+
+---
+
+### **5. Habit Formation Tracker**  
+Encourage consistent behaviors by tracking daily habits.
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+typedef struct {
+    char habit[30];
+    int days_tracked[7];
+} Habit;
+
+void display_habit_tracker(Habit habits[], int count) {
+    printf("\n--- Weekly Habit Tracker ---\n");
+    for (int i = 0; i < count; i++) {
+        printf("Habit: %s\n", habits[i].habit);
+        for (int j = 0; j < 7; j++) {
+            printf("  Day %d: %s\n", j + 1, habits[i].days_tracked[j] ? "Completed" : "Not Completed");
+        }
+    }
+}
+
+int main() {
+    int n;
+    printf("How many habits to track? ");
+    scanf("%d", &n);
+    getchar();
+
+    Habit habits[n];
+    for (int i = 0; i < n; i++) {
+        printf("\nEnter Habit %d: ", i + 1);
+        fgets(habits[i].habit, 30, stdin);
+        habits[i].habit[strcspn(habits[i].habit, "\n")] = 0;
+
+        printf("Enter completion for 7 days (1=Yes, 0=No):\n");
+        for (int j = 0; j < 7; j++) {
+            printf("  Day %d: ", j + 1);
+            scanf("%d", &habits[i].days_tracked[j]);
+        }
+    }
+
+    display_habit_tracker(habits, n);
+
+    return 0;
+}
+```
+
+---
+
+### **Practical Applications**
+1. **For Families**: Motivate children to achieve milestones (e.g., study goals or chores).  
+2. **For Teams**: Use rewards and progress tracking to inspire productivity.  
+3. **For Self-Improvement**: Build habits, track growth, and stay inspired with quotes.  
+4. **For Organizations**: Align team members with motivational milestones and reward systems.
+
+
+### **Outstanding Meta-Cognitive Strategies with Advanced Insights**  
+Meta-cognitive strategies involve thinking about thinking, planning, monitoring, and evaluating one’s own cognitive processes. These strategies are essential for learning, problem-solving, self-improvement, and personal growth. Below is a framework to implement **outstanding meta-cognitive strategies** with robust logic and practical application.
+
+---
+
+### **Core Meta-Cognitive Strategies**  
+
+1. **Goal Setting and Strategic Planning**
+   - Define clear, achievable objectives.
+   - Break goals into smaller, manageable tasks.
+   - Use SMART criteria (Specific, Measurable, Achievable, Relevant, Time-bound).
+
+2. **Self-Monitoring and Reflection**
+   - Continuously assess performance and adapt strategies.
+   - Reflect on successes and areas needing improvement.
+
+3. **Self-Regulation**
+   - Develop discipline to stay on task.
+   - Manage emotional responses to challenges.
+
+4. **Error Analysis**
+   - Identify mistakes without judgment.
+   - Learn from errors to prevent recurrence.
+
+5. **Adaptive Flexibility**
+   - Be willing to change strategies when needed.
+   - Cultivate resilience and adaptability.
+
+---
+
+### **C Code Examples for Meta-Cognitive Applications**
+
+---
+
+#### **1. Goal Setting Assistant**  
+Helps users create SMART goals and evaluate their effectiveness.
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+typedef struct {
+    char goal[100];
+    int isSpecific;
+    int isMeasurable;
+    int isAchievable;
+    int isRelevant;
+    int isTimeBound;
+} Goal;
+
+void evaluate_goal(Goal *g) {
+    int score = g->isSpecific + g->isMeasurable + g->isAchievable + g->isRelevant + g->isTimeBound;
+    printf("\nGoal: %s\n", g->goal);
+    printf("SMART Criteria Met: %d/5\n", score);
+    if (score == 5) {
+        printf("This is a SMART goal. Excellent!\n");
+    } else {
+        printf("Consider refining your goal to meet more SMART criteria.\n");
+    }
+}
+
+int main() {
+    Goal g;
+    printf("Enter your goal: ");
+    fgets(g.goal, 100, stdin);
+    g.goal[strcspn(g.goal, "\n")] = 0;
+
+    printf("Is it Specific? (1/0): ");
+    scanf("%d", &g.isSpecific);
+    printf("Is it Measurable? (1/0): ");
+    scanf("%d", &g.isMeasurable);
+    printf("Is it Achievable? (1/0): ");
+    scanf("%d", &g.isAchievable);
+    printf("Is it Relevant? (1/0): ");
+    scanf("%d", &g.isRelevant);
+    printf("Is it Time-Bound? (1/0): ");
+    scanf("%d", &g.isTimeBound);
+
+    evaluate_goal(&g);
+
+    return 0;
+}
+```
+
+---
+
+#### **2. Self-Monitoring Tracker**  
+Logs user progress and provides feedback for continuous improvement.
+
+```c
+#include <stdio.h>
+
+typedef struct {
+    char task[50];
+    int progress; // Percentage
+    char notes[100];
+} Task;
+
+void log_task(Task *t) {
+    printf("Task: %s\nProgress: %d%%\nNotes: %s\n", t->task, t->progress, t->notes);
+}
+
+int main() {
+    Task t;
+    printf("Enter your task: ");
+    getchar(); // Clear buffer
+    fgets(t.task, 50, stdin);
+    t.task[strcspn(t.task, "\n")] = 0;
+
+    printf("Enter your progress (0-100): ");
+    scanf("%d", &t.progress);
+    getchar(); // Clear buffer
+    printf("Enter notes for this task: ");
+    fgets(t.notes, 100, stdin);
+    t.notes[strcspn(t.notes, "\n")] = 0;
+
+    printf("\n--- Self-Monitoring Log ---\n");
+    log_task(&t);
+
+    return 0;
+}
+```
+
+---
+
+#### **3. Error Analysis Tool**  
+Encourages learning from mistakes and tracking improvements.
+
+```c
+#include <stdio.h>
+
+typedef struct {
+    char error[100];
+    char cause[100];
+    char lesson[100];
+} ErrorLog;
+
+void log_error(ErrorLog *e) {
+    printf("\nError: %s\nCause: %s\nLesson Learned: %s\n", e->error, e->cause, e->lesson);
+}
+
+int main() {
+    ErrorLog e;
+    printf("Describe the error: ");
+    getchar(); // Clear buffer
+    fgets(e.error, 100, stdin);
+    e.error[strcspn(e.error, "\n")] = 0;
+
+    printf("What caused this error? ");
+    fgets(e.cause, 100, stdin);
+    e.cause[strcspn(e.cause, "\n")] = 0;
+
+    printf("What lesson did you learn? ");
+    fgets(e.lesson, 100, stdin);
+    e.lesson[strcspn(e.lesson, "\n")] = 0;
+
+    printf("\n--- Error Analysis ---\n");
+    log_error(&e);
+
+    return 0;
+}
+```
+
+---
+
+#### **4. Strategy Comparison Simulator**  
+Evaluates different strategies to find the most effective approach.
+
+```c
+#include <stdio.h>
+
+typedef struct {
+    char strategy[50];
+    int effectiveness; // Scale 1-10
+    int adaptability;  // Scale 1-10
+} Strategy;
+
+void compare_strategies(Strategy s1, Strategy s2) {
+    printf("\n--- Strategy Comparison ---\n");
+    printf("Strategy 1: %s (Effectiveness: %d, Adaptability: %d)\n", s1.strategy, s1.effectiveness, s1.adaptability);
+    printf("Strategy 2: %s (Effectiveness: %d, Adaptability: %d)\n", s2.strategy, s2.effectiveness, s2.adaptability);
+
+    int score1 = s1.effectiveness + s1.adaptability;
+    int score2 = s2.effectiveness + s2.adaptability;
+
+    if (score1 > score2) {
+        printf("Strategy 1 is more effective overall.\n");
+    } else if (score2 > score1) {
+        printf("Strategy 2 is more effective overall.\n");
+    } else {
+        printf("Both strategies are equally effective.\n");
+    }
+}
+
+int main() {
+    Strategy s1, s2;
+
+    printf("Enter Strategy 1 name: ");
+    getchar(); // Clear buffer
+    fgets(s1.strategy, 50, stdin);
+    s1.strategy[strcspn(s1.strategy, "\n")] = 0;
+    printf("Enter Strategy 1 effectiveness (1-10): ");
+    scanf("%d", &s1.effectiveness);
+    printf("Enter Strategy 1 adaptability (1-10): ");
+    scanf("%d", &s1.adaptability);
+
+    printf("Enter Strategy 2 name: ");
+    getchar(); // Clear buffer
+    fgets(s2.strategy, 50, stdin);
+    s2.strategy[strcspn(s2.strategy, "\n")] = 0;
+    printf("Enter Strategy 2 effectiveness (1-10): ");
+    scanf("%d", &s2.effectiveness);
+    printf("Enter Strategy 2 adaptability (1-10): ");
+    scanf("%d", &s2.adaptability);
+
+    compare_strategies(s1, s2);
+
+    return 0;
+}
+```
+
+---
+
+### **Benefits of These Meta-Cognitive Strategies**
+
+1. **Self-Awareness**: Boosts the ability to evaluate and understand one’s cognitive processes.  
+2. **Efficiency**: Guides users to focus efforts on high-impact tasks and effective strategies.  
+3. **Adaptability**: Prepares individuals to pivot effectively in response to challenges.  
+4. **Enhanced Problem-Solving**: Fosters learning from errors and improving decision-making skills.  
+5. **Scalable Applications**: Useful for individuals, teams, educators, and organizations.  
+
+Meta-cognitive strategies can be tailored for husbands, fathers, wives, and mothers to promote strong relationships, effective parenting, and personal growth. Below are **targeted examples with robust reasoning** that focus on their unique roles and responsibilities, ensuring meaningful and positive outcomes for the family.
+
+---
+
+### **1. Daily Reflection Tracker (For Self-Awareness and Growth)**  
+
+This program encourages reflection on key roles (husband, father, wife, mother) to track daily accomplishments and areas for improvement.
+
+```c
+#include <stdio.h>
+
+typedef struct {
+    char role[20];
+    char success[100];
+    char improvement[100];
+} Reflection;
+
+void log_reflection(Reflection *r) {
+    printf("\n--- Reflection for Role: %s ---\n", r->role);
+    printf("Success Today: %s\n", r->success);
+    printf("Area to Improve: %s\n", r->improvement);
+}
+
+int main() {
+    Reflection r;
+
+    printf("Enter your role (Husband/Father/Wife/Mother): ");
+    fgets(r.role, 20, stdin);
+    r.role[strcspn(r.role, "\n")] = 0;
+
+    printf("What went well today in this role? ");
+    fgets(r.success, 100, stdin);
+    r.success[strcspn(r.success, "\n")] = 0;
+
+    printf("What can be improved in this role? ");
+    fgets(r.improvement, 100, stdin);
+    r.improvement[strcspn(r.improvement, "\n")] = 0;
+
+    log_reflection(&r);
+
+    return 0;
+}
+```
+
+---
+
+### **2. Family Priority Planner (For Balancing Responsibilities)**  
+
+This program helps prioritize family-related tasks based on importance and urgency.
+
+```c
+#include <stdio.h>
+
+typedef struct {
+    char task[50];
+    int importance; // Scale 1-10
+    int urgency;    // Scale 1-10
+} Task;
+
+void prioritize(Task tasks[], int size) {
+    printf("\n--- Task Prioritization ---\n");
+    for (int i = 0; i < size; i++) {
+        printf("Task: %s | Priority Score: %d\n", tasks[i].task, tasks[i].importance + tasks[i].urgency);
+    }
+}
+
+int main() {
+    int n;
+    printf("How many tasks do you want to prioritize? ");
+    scanf("%d", &n);
+
+    Task tasks[n];
+    for (int i = 0; i < n; i++) {
+        printf("\nEnter Task %d: ", i + 1);
+        getchar(); // Clear buffer
+        fgets(tasks[i].task, 50, stdin);
+        tasks[i].task[strcspn(tasks[i].task, "\n")] = 0;
+
+        printf("Rate Importance (1-10): ");
+        scanf("%d", &tasks[i].importance);
+        printf("Rate Urgency (1-10): ");
+        scanf("%d", &tasks[i].urgency);
+    }
+
+    prioritize(tasks, n);
+
+    return 0;
+}
+```
+
+---
+
+### **3. Love and Gratitude Logger (For Strengthening Bonds)**  
+
+This tool fosters communication and appreciation between partners and family members.
+
+```c
+#include <stdio.h>
+
+typedef struct {
+    char recipient[30];
+    char gratitude[100];
+} Gratitude;
+
+void display_gratitude(Gratitude *g) {
+    printf("\n--- Love and Gratitude ---\n");
+    printf("To: %s\nMessage: %s\n", g->recipient, g->gratitude);
+}
+
+int main() {
+    Gratitude g;
+
+    printf("Who do you want to appreciate today? (Spouse/Child/Parent): ");
+    getchar(); // Clear buffer
+    fgets(g.recipient, 30, stdin);
+    g.recipient[strcspn(g.recipient, "\n")] = 0;
+
+    printf("What do you want to express gratitude for? ");
+    fgets(g.gratitude, 100, stdin);
+    g.gratitude[strcspn(g.gratitude, "\n")] = 0;
+
+    display_gratitude(&g);
+
+    return 0;
+}
+```
+
+---
+
+### **4. Parenting Style Evaluator (For Better Parenting Decisions)**  
+
+This program provides insights into how parenting styles impact child development.
+
+```c
+#include <stdio.h>
+
+typedef struct {
+    char style[30];
+    int consistency; // Scale 1-10
+    int warmth;      // Scale 1-10
+    int discipline;  // Scale 1-10
+} ParentingStyle;
+
+void evaluate_parenting(ParentingStyle *p) {
+    printf("\n--- Parenting Style Evaluation ---\n");
+    printf("Style: %s\n", p->style);
+    printf("Consistency: %d/10\nWarmth: %d/10\nDiscipline: %d/10\n", p->consistency, p->warmth, p->discipline);
+
+    int score = p->consistency + p->warmth + p->discipline;
+    printf("Overall Parenting Effectiveness: %d/30\n", score);
+}
+
+int main() {
+    ParentingStyle p;
+
+    printf("What parenting style are you using? (Authoritative/Permissive/Strict): ");
+    getchar(); // Clear buffer
+    fgets(p.style, 30, stdin);
+    p.style[strcspn(p.style, "\n")] = 0;
+
+    printf("Rate your Consistency (1-10): ");
+    scanf("%d", &p.consistency);
+    printf("Rate your Warmth (1-10): ");
+    scanf("%d", &p.warmth);
+    printf("Rate your Discipline (1-10): ");
+    scanf("%d", &p.discipline);
+
+    evaluate_parenting(&p);
+
+    return 0;
+}
+```
+
+---
+
+### **5. Emotional Support Reminder (For Loving Communication)**  
+
+This tool reminds family members to provide emotional support in times of need.
+
+```c
+#include <stdio.h>
+#include <time.h>
+
+void emotional_support_reminder(char *role) {
+    printf("\n--- Reminder ---\n");
+    printf("As a %s, have you provided emotional support today?\n", role);
+    printf("Suggestions:\n");
+    printf("- Listen attentively.\n");
+    printf("- Show empathy.\n");
+    printf("- Offer words of encouragement.\n");
+    printf("- Spend quality time together.\n");
+}
+
+int main() {
+    char role[20];
+
+    printf("Enter your role (Husband/Father/Wife/Mother): ");
+    fgets(role, 20, stdin);
+    role[strcspn(role, "\n")] = 0;
+
+    time_t now = time(NULL);
+    printf("Current Date & Time: %s", ctime(&now));
+
+    emotional_support_reminder(role);
+
+    return 0;
+}
+```
+
+---
+
+### **Practical Benefits**  
+
+1. **For Husbands and Wives**: Strengthens marital bonds through reflection, gratitude, and emotional support.  
+2. **For Fathers and Mothers**: Promotes thoughtful parenting and balanced priorities.  
+3. **For the Family**: Encourages communication, understanding, and shared growth.  
+4. **Long-Term Impact**: Builds a strong foundation for love, trust, and collaboration.  
+
+
+
+Language development and reasoning are foundational for both child and adult communication. Here’s a structured approach with **advanced code examples** designed to:
+
+1. **Promote language acquisition in children.**  
+2. **Enhance reasoning through language-based exercises.**  
+3. **Facilitate strong communication between adults and children.**  
+
+Each example integrates **robust reasoning**, **practical application**, and is tailored for **child development** as well as **advanced language learning**.
+
+---
+
+### **Smart File Name**  
+`language_learning_framework.c`
+
+---
+
+### **1. Vocabulary Acquisition Simulator for Children**  
+**Purpose**: Teach children new words through an adaptive learning system.
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+typedef struct {
+    char word[30];
+    char meaning[100];
+    int difficulty;  // Scale from 1 (easy) to 5 (hard)
+    int learned;     // 0 = not learned, 1 = learned
+} Vocabulary;
+
+void introduce_word(Vocabulary *vocab) {
+    if (!vocab->learned) {
+        printf("Learn this word: %s\n", vocab->word);
+        printf("Meaning: %s\n", vocab->meaning);
+    }
+}
+
+void mark_as_learned(Vocabulary *vocab) {
+    vocab->learned = 1;
+    printf("Word '%s' marked as learned!\n", vocab->word);
+}
+
+int main() {
+    Vocabulary words[] = {
+        {"apple", "A round fruit of a tree.", 1, 0},
+        {"habitat", "The natural home of an organism.", 3, 0},
+        {"synergy", "Interaction of elements to produce a greater effect.", 5, 0}
+    };
+
+    int total_words = sizeof(words) / sizeof(words[0]);
+    for (int i = 0; i < total_words; i++) {
+        introduce_word(&words[i]);
+        // Simulating user marking as learned
+        mark_as_learned(&words[i]);
+    }
+
+    return 0;
+}
+```
+
+**Impact**: Helps children progressively learn words of increasing complexity while tracking progress.
+
+---
+
+### **2. Sentence Formation Game**  
+**Purpose**: Improve reasoning and sentence construction.
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+typedef struct {
+    char subject[20];
+    char verb[20];
+    char object[20];
+} Sentence;
+
+void create_sentence(Sentence *s) {
+    printf("Forming a sentence: %s %s %s.\n", s->subject, s->verb, s->object);
+}
+
+int main() {
+    Sentence sentences[] = {
+        {"The cat", "chased", "the mouse"},
+        {"She", "reads", "a book"},
+        {"John", "plays", "guitar"}
+    };
+
+    int num_sentences = sizeof(sentences) / sizeof(sentences[0]);
+    for (int i = 0; i < num_sentences; i++) {
+        create_sentence(&sentences[i]);
+    }
+
+    return 0;
+}
+```
+
+**Impact**: Enhances grammatical understanding and logical reasoning in sentence formation.
+
+---
+
+### **3. Contextual Question-Answering**  
+**Purpose**: Develop comprehension and reasoning based on context.
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+typedef struct {
+    char question[100];
+    char answer[50];
+} QA;
+
+void ask_question(QA qa) {
+    printf("Q: %s\n", qa.question);
+    printf("Your Answer: ");
+    char user_answer[50];
+    fgets(user_answer, 50, stdin);
+    user_answer[strcspn(user_answer, "\n")] = 0;  // Remove trailing newline
+
+    if (strcmp(user_answer, qa.answer) == 0) {
+        printf("Correct!\n\n");
+    } else {
+        printf("Wrong! The correct answer is: %s\n\n", qa.answer);
+    }
+}
+
+int main() {
+    QA qa_pairs[] = {
+        {"What is the color of the sky?", "blue"},
+        {"What do cows drink?", "water"},
+        {"What is 2 + 2?", "4"}
+    };
+
+    int total_qas = sizeof(qa_pairs) / sizeof(qa_pairs[0]);
+    for (int i = 0; i < total_qas; i++) {
+        ask_question(qa_pairs[i]);
+    }
+
+    return 0;
+}
+```
+
+**Impact**: Promotes active learning and tests comprehension in real-time.
+
+---
+
+### **4. Phonics Practice Tool**  
+**Purpose**: Strengthen foundational reading skills by matching sounds with letters or words.
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+typedef struct {
+    char letter[5];
+    char sound[10];
+    char example_word[20];
+} Phonics;
+
+void teach_phonics(Phonics p) {
+    printf("Letter: %s, Sound: %s, Example Word: %s\n", p.letter, p.sound, p.example_word);
+}
+
+int main() {
+    Phonics phonics[] = {
+        {"A", "Ah", "Apple"},
+        {"B", "Buh", "Ball"},
+        {"C", "Cuh", "Cat"}
+    };
+
+    int total_phonics = sizeof(phonics) / sizeof(phonics[0]);
+    for (int i = 0; i < total_phonics; i++) {
+        teach_phonics(phonics[i]);
+    }
+
+    return 0;
+}
+```
+
+**Impact**: Lays the groundwork for reading and pronunciation accuracy.
+
+---
+
+### **5. Advanced Language Reasoning Simulator**  
+**Purpose**: Train adults and older children to draw logical inferences from given statements.
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+void reasoning_simulator(char *statement, char *question, char *correct_answer) {
+    printf("Statement: %s\n", statement);
+    printf("Q: %s\n", question);
+
+    char user_answer[50];
+    printf("Your Answer: ");
+    fgets(user_answer, 50, stdin);
+    user_answer[strcspn(user_answer, "\n")] = 0;  // Remove trailing newline
+
+    if (strcmp(user_answer, correct_answer) == 0) {
+        printf("Correct reasoning!\n");
+    } else {
+        printf("Incorrect. The right answer is: %s\n", correct_answer);
+    }
+}
+
+int main() {
+    reasoning_simulator("All cats are mammals.", "Is a tiger a mammal?", "Yes");
+    reasoning_simulator("Water is essential for life.", "Can humans survive without water?", "No");
+
+    return 0;
+}
+```
+
+**Impact**: Encourages critical thinking and logical reasoning based on language.
+
+---
+
+### **6. Adaptive Dialogue Builder for Family Communication**  
+**Purpose**: Enhance inter-generational dialogue by generating responses tailored to context.
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+void generate_response(char *input) {
+    if (strcmp(input, "How was school?") == 0) {
+        printf("Child: It was great! I learned something new.\n");
+    } else if (strcmp(input, "Can you help with chores?") == 0) {
+        printf("Child: Sure! What should I do?\n");
+    } else {
+        printf("Child: I'm not sure how to respond.\n");
+    }
+}
+
+int main() {
+    char input[50];
+    printf("Enter a question or statement: ");
+    fgets(input, 50, stdin);
+    input[strcspn(input, "\n")] = 0;  // Remove trailing newline
+
+    generate_response(input);
+    return 0;
+}
+```
+
+**Impact**: Builds stronger, empathetic communication with children.
+
+---
+
+### **Core Benefits**  
+1. **Language Development**: Encourages vocabulary, phonics, and sentence-building skills.  
+2. **Reasoning Enhancement**: Promotes comprehension and logical thinking.  
+3. **Effective Communication**: Strengthens family and peer connections.  
+4. **Robust Application**: Scalable across various age groups and contexts.  
+
+Let me know if you'd like additional examples or refinements! 🌟
+
+
+Creating a stable and loving family environment requires strategies that emphasize **strong relevant logic**, **fluid reasoning**, and **focused attention**. Below are detailed approaches, presented as algorithms and frameworks, for achieving **successful marriage dynamics**, **great parenting practices**, and a **harmonious family life**. These strategies aim to ensure emotional connection, shared growth, and pragmatic problem-solving.
+
+---
+
+### **Smart File Name**  
+`strong_family_foundations.c`
+
+---
+
+### **1. Adaptive Conflict Resolution Algorithm for Marriage**  
+**Purpose**: Prevent and resolve conflicts using weighted emotional and logical parameters.
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+typedef struct {
+    char issue[50];
+    double emotional_impact;  // [0, 1]
+    double logical_impact;    // [0, 1]
+    double resolution_priority;
+} Conflict;
+
+// Calculate resolution priority
+double calculate_priority(Conflict conflict) {
+    return 0.6 * conflict.emotional_impact + 0.4 * conflict.logical_impact;
+}
+
+// Resolve conflicts adaptively
+void resolve_conflicts(Conflict conflicts[], int size) {
+    for (int i = 0; i < size - 1; i++) {
+        for (int j = i + 1; j < size; j++) {
+            if (conflicts[i].resolution_priority < conflicts[j].resolution_priority) {
+                Conflict temp = conflicts[i];
+                conflicts[i] = conflicts[j];
+                conflicts[j] = temp;
+            }
+        }
+    }
+
+    printf("Resolution Plan:\n");
+    for (int i = 0; i < size; i++) {
+        printf("- %s (Priority: %.2f)\n", conflicts[i].issue, conflicts[i].resolution_priority);
+    }
+}
+
+int main() {
+    Conflict conflicts[] = {
+        {"Financial planning", 0.7, 0.8, 0.0},
+        {"Parenting approach", 0.9, 0.6, 0.0},
+        {"Work-life balance", 0.8, 0.5, 0.0},
+        {"Household chores", 0.6, 0.7, 0.0}
+    };
+
+    int size = sizeof(conflicts) / sizeof(conflicts[0]);
+    for (int i = 0; i < size; i++) {
+        conflicts[i].resolution_priority = calculate_priority(conflicts[i]);
+    }
+
+    resolve_conflicts(conflicts, size);
+    return 0;
+}
+```
+
+**Impact**: Focuses on resolving high-impact issues first, maintaining balance between emotions and logic in marriage.
+
+---
+
+### **2. Dynamic Parenting Plan Using Behavioral Feedback**  
+**Purpose**: Adapt parenting strategies based on a child’s emotional state and developmental needs.
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+typedef struct {
+    char name[30];
+    double emotional_needs;  // [0, 1]
+    double developmental_needs;  // [0, 1]
+    double current_satisfaction;
+} Child;
+
+void update_satisfaction(Child *child, double attention_given) {
+    child->current_satisfaction = fmin(1.0, child->current_satisfaction + attention_given);
+}
+
+void adaptive_parenting(Child children[], int size) {
+    for (int i = 0; i < size; i++) {
+        double required_attention = 0.6 * children[i].emotional_needs + 0.4 * children[i].developmental_needs;
+        printf("%s needs %.2f attention units.\n", children[i].name, required_attention);
+        update_satisfaction(&children[i], required_attention / 2);  // Simulate partial fulfillment
+        printf("%s's satisfaction now: %.2f\n\n", children[i].name, children[i].current_satisfaction);
+    }
+}
+
+int main() {
+    Child children[] = {
+        {"Alice", 0.8, 0.7, 0.5},
+        {"Bob", 0.6, 0.9, 0.4}
+    };
+
+    int size = sizeof(children) / sizeof(children[0]);
+    adaptive_parenting(children, size);
+
+    return 0;
+}
+```
+
+**Impact**: Promotes attentive parenting tailored to children’s unique emotional and developmental requirements.
+
+---
+
+### **3. Family Time Optimization Planner**  
+**Purpose**: Allocate quality time for shared family activities considering individual schedules.
+
+```c
+#include <stdio.h>
+
+typedef struct {
+    char member[30];
+    int available_hours[7];  // Hours available each day (0-24)
+} FamilyMember;
+
+void find_shared_time(FamilyMember members[], int size) {
+    int shared_hours[7] = {24, 24, 24, 24, 24, 24, 24};
+    for (int i = 0; i < size; i++) {
+        for (int d = 0; d < 7; d++) {
+            if (members[i].available_hours[d] < shared_hours[d]) {
+                shared_hours[d] = members[i].available_hours[d];
+            }
+        }
+    }
+
+    printf("Shared Available Time:\n");
+    for (int d = 0; d < 7; d++) {
+        printf("Day %d: %d hours\n", d + 1, shared_hours[d]);
+    }
+}
+
+int main() {
+    FamilyMember members[] = {
+        {"Parent 1", {8, 8, 6, 8, 10, 12, 8}},
+        {"Parent 2", {6, 7, 6, 7, 10, 12, 6}},
+        {"Child", {4, 5, 4, 5, 6, 8, 4}}
+    };
+
+    int size = sizeof(members) / sizeof(members[0]);
+    find_shared_time(members, size);
+
+    return 0;
+}
+```
+
+**Impact**: Identifies optimal times for family bonding and ensures work-life harmony.
+
+---
+
+### **4. Emotional Bonding Index Simulation**  
+**Purpose**: Track and improve family emotional closeness over time.
+
+```c
+#include <stdio.h>
+
+double update_bonding(double current_bonding, double shared_time, double meaningful_interaction) {
+    return current_bonding + 0.5 * shared_time + 0.5 * meaningful_interaction;
+}
+
+int main() {
+    double bonding = 0.7;  // Initial bonding level [0, 1]
+    double shared_time = 3.0;  // Hours
+    double interaction_quality = 0.8;  // Interaction quality [0, 1]
+
+    bonding = update_bonding(bonding, shared_time, interaction_quality);
+    printf("Updated Emotional Bonding Level: %.2f\n", bonding);
+
+    return 0;
+}
+```
+
+**Impact**: Tracks and quantifies the quality of family relationships, enabling targeted improvements.
+
+---
+
+### **Core Insights and Benefits**  
+1. **Marriage Stability**: Conflict resolution emphasizes logic-emotion balance, strengthening mutual respect.  
+2. **Great Parenting**: Adaptive strategies focus on addressing specific child needs, nurturing growth and happiness.  
+3. **Family Harmony**: Time optimization ensures balance, while bonding indices track progress in relationships.  
+4. **Focused Attention**: Each solution is actionable, measurable, and adaptable to evolving family dynamics.  
+
+These solutions support families in achieving **stable, loving, and purpose-driven lives**, ensuring long-term happiness and success. ❤️
+
+
+Mnemonic strategies and techniques are powerful tools for improving memory retention and recall. These strategies can be tailored to enhance learning, organization, and productivity. Here are **great answers** with practical applications, clear examples, and effective approaches.
+
+---
+
+### **1. Acronym Builder**  
+Create a program that generates acronyms from lists of words for easy memorization.  
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+void generate_acronym(char words[][20], int count, char *acronym) {
+    for (int i = 0; i < count; i++) {
+        acronym[i] = words[i][0];
+    }
+    acronym[count] = '\0'; // Null-terminate the string
+}
+
+int main() {
+    int n;
+    printf("Enter the number of words: ");
+    scanf("%d", &n);
+    getchar(); // Clear input buffer
+
+    char words[n][20];
+    for (int i = 0; i < n; i++) {
+        printf("Enter word %d: ", i + 1);
+        fgets(words[i], 20, stdin);
+        words[i][strcspn(words[i], "\n")] = 0; // Remove newline
+    }
+
+    char acronym[n + 1];
+    generate_acronym(words, n, acronym);
+
+    printf("\nGenerated Acronym: %s\n", acronym);
+    return 0;
+}
+```
+
+*Example Usage*:  
+Input: `Self, Care, Optimism, Responsibility`  
+Output: **SCOR**
+
+---
+
+### **2. Keyword Association Tool**  
+Associate key information with memorable phrases or keywords.  
+
+```c
+#include <stdio.h>
+
+typedef struct {
+    char key[30];
+    char association[100];
+} Mnemonic;
+
+void display_associations(Mnemonic mnemonics[], int count) {
+    printf("\n--- Mnemonic Associations ---\n");
+    for (int i = 0; i < count; i++) {
+        printf("Key: %s -> Association: %s\n", mnemonics[i].key, mnemonics[i].association);
+    }
+}
+
+int main() {
+    int n;
+    printf("How many keys do you want to associate? ");
+    scanf("%d", &n);
+    getchar(); // Clear input buffer
+
+    Mnemonic mnemonics[n];
+    for (int i = 0; i < n; i++) {
+        printf("\nEnter Key %d: ", i + 1);
+        fgets(mnemonics[i].key, 30, stdin);
+        mnemonics[i].key[strcspn(mnemonics[i].key, "\n")] = 0;
+
+        printf("Enter Association for %s: ", mnemonics[i].key);
+        fgets(mnemonics[i].association, 100, stdin);
+        mnemonics[i].association[strcspn(mnemonics[i].association, "\n")] = 0;
+    }
+
+    display_associations(mnemonics, n);
+
+    return 0;
+}
+```
+
+*Example Usage*:  
+Input:  
+- Key: "Planets"  
+- Association: "My Very Educated Mother Just Served Us Nachos"  
+Output: **Key: Planets -> Association: My Very Educated Mother Just Served Us Nachos**
+
+---
+
+### **3. Number-to-Image Mapping**  
+Link numbers to images using the Peg System for better recall.
+
+```c
+#include <stdio.h>
+
+void peg_system(int number) {
+    const char *images[] = {"Sun", "Shoes", "Tree", "Door", "Hive", "Sticks", "Heaven", "Gate", "Wine", "Hen"};
+
+    if (number >= 1 && number <= 10) {
+        printf("Number %d -> Peg Image: %s\n", number, images[number - 1]);
+    } else {
+        printf("Number out of range! Please enter a number between 1 and 10.\n");
+    }
+}
+
+int main() {
+    int number;
+
+    printf("Enter a number (1-10): ");
+    scanf("%d", &number);
+
+    peg_system(number);
+
+    return 0;
+}
+```
+
+*Example Usage*:  
+Input: `4`  
+Output: **Number 4 -> Peg Image: Door**
+
+---
+
+### **4. Memory Palace Navigator**  
+A program to organize items into "rooms" for memory enhancement.
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+typedef struct {
+    char room[30];
+    char items[5][30];
+} MemoryPalace;
+
+void display_palace(MemoryPalace palace[], int count) {
+    printf("\n--- Memory Palace ---\n");
+    for (int i = 0; i < count; i++) {
+        printf("Room: %s\n", palace[i].room);
+        for (int j = 0; j < 5; j++) {
+            if (strlen(palace[i].items[j]) > 0) {
+                printf("  Item %d: %s\n", j + 1, palace[i].items[j]);
+            }
+        }
+    }
+}
+
+int main() {
+    int n;
+    printf("How many rooms do you want to create? ");
+    scanf("%d", &n);
+    getchar(); // Clear input buffer
+
+    MemoryPalace palace[n];
+    for (int i = 0; i < n; i++) {
+        printf("\nEnter Room Name: ");
+        fgets(palace[i].room, 30, stdin);
+        palace[i].room[strcspn(palace[i].room, "\n")] = 0;
+
+        for (int j = 0; j < 5; j++) {
+            printf("Enter Item %d for Room %s (or press Enter to skip): ", j + 1, palace[i].room);
+            fgets(palace[i].items[j], 30, stdin);
+            palace[i].items[j][strcspn(palace[i].items[j], "\n")] = 0;
+
+            if (strlen(palace[i].items[j]) == 0) break;
+        }
+    }
+
+    display_palace(palace, n);
+
+    return 0;
+}
+```
+
+*Example Usage*:  
+- **Room**: Kitchen  
+- **Items**: Knife, Pan, Stove  
+- **Room**: Bedroom  
+- **Items**: Pillow, Blanket  
+
+---
+
+### **5. Chunking Assistant**  
+Break large information into manageable chunks for easier memorization.
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+void chunk_text(const char *text, int chunk_size) {
+    int length = strlen(text);
+    printf("\n--- Chunked Text ---\n");
+    for (int i = 0; i < length; i += chunk_size) {
+        printf("%.*s\n", chunk_size, text + i);
+    }
+}
+
+int main() {
+    char text[200];
+    int chunk_size;
+
+    printf("Enter the text to chunk: ");
+    getchar(); // Clear buffer
+    fgets(text, 200, stdin);
+    text[strcspn(text, "\n")] = 0;
+
+    printf("Enter chunk size: ");
+    scanf("%d", &chunk_size);
+
+    chunk_text(text, chunk_size);
+
+    return 0;
+}
+```
+
+*Example Usage*:  
+Input: `"The quick brown fox jumps over the lazy dog."`, Chunk Size: `10`  
+Output:  
+- The quick  
+- brown fox  
+- jumps over  
+
+---
+
+### **Practical Applications**  
+1. **Child Development**: Enhance memory recall during learning.  
+2. **Adult Learning**: Organize large volumes of data into manageable patterns.  
+3. **Business Use**: Use acronyms, chunking, and memory palace techniques to remember key project details.  
+4. **Daily Life**: Associate numbers or tasks with images for effortless recall.  
+
+
+
+The **Locus of Control** theory addresses how individuals attribute control over events in their lives to internal or external factors. Below is a **brilliantly designed code framework** in C to **reinforce positive internal locus of control**. This framework:
+
+1. **Promotes self-awareness and decision-making skills.**
+2. **Strengthens accountability and empowerment.**
+3. **Provides practical exercises to reflect on control dynamics.**
+
+---
+
+### **Smart File Name**  
+`locus_of_control_reinforcement.c`
+
+---
+
+### **1. Internal vs. External Reflection Quiz**  
+**Purpose**: Identify whether the user leans toward internal or external locus of control.
+
+```c
+#include <stdio.h>
+
+void quiz() {
+    int score = 0;
+    char response;
+
+    printf("Answer each question with (Y/N):\n");
+    printf("1. Do you believe your success depends mostly on your own efforts? ");
+    scanf(" %c", &response);
+    if (response == 'Y' || response == 'y') score++;
+
+    printf("2. Do you think luck plays a bigger role than hard work in success? ");
+    scanf(" %c", &response);
+    if (response == 'N' || response == 'n') score++;
+
+    printf("3. When things go wrong, do you first look at what you could have done differently? ");
+    scanf(" %c", &response);
+    if (response == 'Y' || response == 'y') score++;
+
+    printf("4. Do you feel powerless to change things in your life? ");
+    scanf(" %c", &response);
+    if (response == 'N' || response == 'n') score++;
+
+    printf("Your score: %d/4\n", score);
+    if (score >= 3) {
+        printf("You demonstrate a strong internal locus of control.\n");
+    } else {
+        printf("You may lean toward an external locus of control. Consider focusing on areas where you have control.\n");
+    }
+}
+
+int main() {
+    quiz();
+    return 0;
+}
+```
+
+**Impact**: Helps users introspect and assess their attribution style.
+
+---
+
+### **2. Positive Reinforcement Tracker**  
+**Purpose**: Reinforce internal locus of control by tracking actions and their outcomes.
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+typedef struct {
+    char action[50];
+    char outcome[50];
+} Activity;
+
+void track_activity(Activity *a) {
+    printf("Action: %s\n", a->action);
+    printf("Outcome: %s\n", a->outcome);
+}
+
+int main() {
+    Activity activities[3];
+    for (int i = 0; i < 3; i++) {
+        printf("Enter an action you took: ");
+        getchar(); // Clear buffer
+        fgets(activities[i].action, 50, stdin);
+        activities[i].action[strcspn(activities[i].action, "\n")] = 0;
+
+        printf("Enter the outcome of this action: ");
+        fgets(activities[i].outcome, 50, stdin);
+        activities[i].outcome[strcspn(activities[i].outcome, "\n")] = 0;
+    }
+
+    printf("\n--- Tracking Your Actions and Outcomes ---\n");
+    for (int i = 0; i < 3; i++) {
+        track_activity(&activities[i]);
+    }
+
+    return 0;
+}
+```
+
+**Impact**: Encourages reflection on personal actions and their impact.
+
+---
+
+### **3. Control vs. Influence Decision Helper**  
+**Purpose**: Differentiate between what is within one’s control and what is merely influenceable.
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+void decide_control(const char *situation) {
+    if (strstr(situation, "my actions") != NULL) {
+        printf("This situation is within your control. Focus on what you can do.\n");
+    } else {
+        printf("This situation is outside your control. Focus on adapting or influencing indirectly.\n");
+    }
+}
+
+int main() {
+    char situation[100];
+    printf("Describe your situation briefly: ");
+    fgets(situation, 100, stdin);
+    situation[strcspn(situation, "\n")] = 0;
+
+    decide_control(situation);
+
+    return 0;
+}
+```
+
+**Impact**: Builds clarity and reduces anxiety by focusing on controllable aspects.
+
+---
+
+### **4. Daily Empowerment Planner**  
+**Purpose**: Create daily goals that emphasize control and responsibility.
+
+```c
+#include <stdio.h>
+
+typedef struct {
+    char goal[50];
+    int priority;  // 1 = high, 2 = medium, 3 = low
+} Goal;
+
+void print_plan(Goal *goals, int n) {
+    printf("\nYour Daily Empowerment Plan:\n");
+    for (int i = 0; i < n; i++) {
+        printf("Goal: %s, Priority: %d\n", goals[i].goal, goals[i].priority);
+    }
+}
+
+int main() {
+    int n;
+    printf("How many goals will you set today? ");
+    scanf("%d", &n);
+
+    Goal goals[n];
+    for (int i = 0; i < n; i++) {
+        printf("Enter goal %d: ", i + 1);
+        getchar(); // Clear buffer
+        fgets(goals[i].goal, 50, stdin);
+        goals[i].goal[strcspn(goals[i].goal, "\n")] = 0;
+
+        printf("Set priority (1 = high, 2 = medium, 3 = low): ");
+        scanf("%d", &goals[i].priority);
+    }
+
+    print_plan(goals, n);
+
+    return 0;
+}
+```
+
+**Impact**: Reinforces personal accountability by setting actionable goals.
+
+---
+
+### **5. Positive Language Reinforcer**  
+**Purpose**: Shift language toward empowerment and responsibility.
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+void reinforce_language(char *input) {
+    if (strstr(input, "I can't") != NULL) {
+        printf("Replace 'I can't' with 'I will try' or 'I will learn how'.\n");
+    } else if (strstr(input, "It's their fault") != NULL) {
+        printf("Consider: 'What could I do differently next time?'\n");
+    } else {
+        printf("Great! Keep using empowering language.\n");
+    }
+}
+
+int main() {
+    char input[100];
+    printf("Enter a statement you often say: ");
+    fgets(input, 100, stdin);
+    input[strcspn(input, "\n")] = 0;
+
+    reinforce_language(input);
+
+    return 0;
+}
+```
+
+**Impact**: Encourages the use of constructive and proactive language.
+
+---
+
+### **6. Feedback Loop Evaluator**  
+**Purpose**: Help evaluate personal decisions and feedback loops.
+
+```c
+#include <stdio.h>
+
+void evaluate_feedback(int effort, int result) {
+    if (effort > 7 && result > 7) {
+        printf("Your strong effort led to great results. Keep it up!\n");
+    } else if (effort > 7) {
+        printf("Your effort is commendable, but results need improvement. Review your strategy.\n");
+    } else {
+        printf("Increase your effort to see better outcomes. Focus on consistency.\n");
+    }
+}
+
+int main() {
+    int effort, result;
+    printf("Rate your effort on a scale of 1 to 10: ");
+    scanf("%d", &effort);
+    printf("Rate your result on a scale of 1 to 10: ");
+    scanf("%d", &result);
+
+    evaluate_feedback(effort, result);
+
+    return 0;
+}
+```
+
+**Impact**: Helps users connect effort with outcomes, reinforcing accountability.
+
+---
+
+### **Key Benefits**  
+1. **Empowerment**: Encourages users to take responsibility for their actions.  
+2. **Reflection**: Promotes self-awareness and logical thinking.  
+3. **Behavioral Change**: Drives a shift toward an internal locus of control.  
+4. **Practical Application**: Adaptable for personal development, coaching, and parenting.  
+
+
+Direct Chemistry (Honorable Parents, Competent Family, Brilliant Improvement, Ethical Love, Wise Application, Supportive Network, Enlightened Management, Brilliant Recommendations, Strong Relevant Logic, Successful Path, Trustworthy Time, Authentic Respect, Reasonable Communication)
+A
+A Personal Skill of Caring for Oneself
+Pages 1-1
+ABC
+Pages 1-1
+Abecedarian Project
+Tasha R. Howe
+Pages 1-2
+Abilify
+Jeffrey S. Trotter, Andrew S. Davis
+Pages 2-3
+Ability Grouping
+Janet Ward Schofield
+Pages 3-5
+Abnormal Presentation
+Pages 5-5
+Abort
+Pages 5-5
+Abortion
+Lacy Allen
+Pages 5-7
+Abstract Mapping
+Molly Millians
+Pages 7-8
+Abused Children
+Pages 8-8
+Academic Ability
+Pages 8-8
+Academic Achievement
+Nicholas Bolt
+Pages 8-9
+Academic Delay of Gratification
+Héfer Bembenutty
+Pages 9-10
+Academic Problem-Solving Skills
+Pages 10-10
+Academic Readiness
+Jordan Luther
+Pages 10-13
+Acceptability
+Pages 13-13
+Acceptance and Commitment Therapy
+R. Trent Codd III, Steven C. Hayes
+Pages 13-16
+Accommodation
+Pages 16-16
+Accommodations, Classroom
+Elisheva Konstam, Devorah Neuhaus
+Pages 16-17
+
+A
+Accommodations, Piagetian
+Jackie Kibler
+Pages 17-18
+Acculturation
+Kai Kok “Zeb” Lim
+Pages 18-19
+Accuracy
+Pages 19-19
+Acetylcholine
+Tony Wu
+Pages 19-20
+Achievement Motivation
+Pei-Hsuan Hsieh
+Pages 20-21
+Achievement Testing
+Mei Y. Chang, Andrew S. Davis
+Pages 21-22
+Acne
+Joy Jansen
+Pages 22-22
+Acquired Autism
+Judah B. Axe
+Pages 22-23
+Acquired Epileptic Aphasia
+Pages 23-23
+Acquired Immune Deficiency Syndrome (AIDS)
+Pages 23-23
+Acquired Immunodeficiency Syndrome
+Brian P. Daly, Cindy Buchanan
+Pages 23-25
+Acquired Knowledge
+Pages 25-25
+ACT
+Pages 25-25
+Action
+Pages 25-25
+Active Euthanasia
+Lawrence Liggett, Shelia M. Kennison
+Pages 25-26
+Active Exploration
+Thomas G. Reio Jr.
+Pages 26-27
+Active Exploration Without Achieving Identity
+Pages 27-27
+Active Learning
+Pages 27-27
+Active Listening
+Sandra F. Teniente, Norma S. Guerra
+Pages 27-28
+Activities of Daily Living
+Norma S. Guerra
+Pages 28-29
+
+A
+Acute HIV Infection
+Pages 29-29
+Acute Leukemia
+Pages 29-29
+Acute Lymphocytic Leukemia (ALL)
+Pages 29-29
+Acute Myelogenous Leukemia (AML)
+Pages 29-29
+Acute Promyelocytic Leukemia (APL)
+Pages 29-29
+Adaptability
+Octaviana Hemmy Asamsama, Brett R. Nelson, Dudley Wiest, Diana Nelson
+Pages 29-31
+Adaptation
+Pages 31-31
+Adaptive
+Pages 31-31
+Adaptive Behavior
+Emily A. Bullington
+Pages 31-32
+Adaptive Behaviour Scales
+Pages 32-32
+Adderall
+Pages 33-33
+Adderall (Amphetamine)
+Jana Sander
+Pages 33-33
+Adderall/Adderall XR (Mixture with Other Amphetamines)
+Pages 33-33
+Addiction
+Pages 33-33
+Addictive Drugs
+Nicholas J. Balogh
+Pages 33-35
+ADHD Medication
+Pages 35-35
+Adjustment
+Norma S. Guerra
+Pages 35-37
+Adjustment Disorder in Children
+Ginny Kington
+Pages 37-41
+Adler, Alfred
+Anne Fierro Vanderlaan
+Pages 41-45
+Adlerian Play Therapy
+Pages 45-45
+
+A
+Adolescence
+Kendall Cotton Bronk
+Pages 45-48
+Adolescent and Child Behavior Therapy
+Pages 48-48
+Adolescent Egocentrism
+Jeremy Jewell, Nicole Pepin
+Pages 48-49
+Adolescent Family Life Act (AFLA)
+Lynna Lan Tien Nguyen Do
+Pages 49-49
+Adolescent Mothers
+Merith Cosden
+Pages 50-52
+Adolescent Offending
+Pages 52-52
+Adrenalin
+Pages 52-52
+Adult Attachment Interview (AAI)
+Raquel Plotka
+Pages 52-54
+Adult Children of Divorce
+Pages 54-54
+Adult Premature Aging Syndrome
+Pages 55-55
+Adult Progeria
+Pages 55-55
+Advertising
+Pages 55-55
+Affect
+Chris Leeth
+Pages 55-55
+Affect Lability
+Pages 55-55
+Affective Aggression
+Pages 55-55
+Affective Disorders
+Mysti S. Frazier
+Pages 55-56
+Affliction
+Pages 56-56
+African American English
+Stacy A. S. Williams
+Pages 56-58
+African American Vernacular English
+Pages 58-58
+AFT
+Pages 58-58
+
+A
+Afterbirth
+Pages 58-58
+Age Attribution
+Pages 58-58
+Age Bias
+Thomas G. Reio Jr.
+Pages 59-60
+Age Equivalent
+Laura Tinsley
+Pages 60-61
+Age Equivalent Score
+Pages 61-61
+Age of Viability
+Carol Patrick
+Pages 61-61
+Age of Youth
+Pages 62-62
+Age Prejudice
+Pages 62-62
+Age Score
+Pages 62-62
+Age-Equivalent
+Pages 62-62
+Age-Graded Influences: Cohort
+Carol Patrick
+Pages 62-63
+Ageism
+Pages 63-63
+Ageist Stereotype
+Pages 63-63
+Agenesis of the Corpus Callosum
+Brady I. Phelps
+Pages 63-64
+Age-Related Attitudes
+Pages 64-64
+Age-Related Play Therapy
+Pages 64-64
+Aggression
+Janett M. Naylor
+Pages 64-66
+Aggression
+Pages 66-66
+Aggressive Behavior Problems
+Pages 66-66
+Aggressive Behaviors
+Pages 66-66
+
+A
+Agnosia
+David Morrison, Mary Joann Lang
+Pages 66-68
+Agnosis Primary
+Pages 68-68
+Agrammatic Dysphasia
+Pages 68-68
+Agraphia
+Pages 68-68
+Aid to Families with Dependent Children (AFDC)
+Lynna Lan Tien Nguyen Do
+Pages 69-69
+AIDS
+Pages 69-69
+Ainsworth’s Procedure
+Raquel Plotka
+Pages 69-73
+Albinism
+Pages 73-73
+Alcohol
+Nathaniel John Cooney
+Pages 73-76
+Alcohol
+Pages 76-76
+Alcohol Exposed
+Pages 76-76
+Alcohol Exposure
+Lisa Kilanowski-Press
+Pages 76-78
+Alcohol Related Birth Defects (ARBD)
+Pages 78-78
+Alcohol Related Neurodevelopmental Disorder (ARND)
+Pages 78-78
+Alcoholism
+Pages 78-78
+Alexia
+Pages 78-78
+Allele
+Pages 78-78
+Allowance
+Pages 78-78
+Allport, Gordon Willard
+Jim Anderson
+Pages 78-79
+Ally
+Pages 79-79
+
+A
+Alpha-Galactosidase Deficiency
+Pages 79-79
+Alpoxid
+Pages 79-79
+Alteration
+Pages 80-80
+Alternative Assessment
+Pages 80-80
+Altricial
+Merry Sleigh
+Pages 80-80
+Altruism
+Pages 80-80
+Ambien (Zolpidem)
+Nicholas J. Balogh
+Pages 80-81
+Ambisexuality
+Pages 81-81
+Ambivalent Attachment
+Raquel Plotka
+Pages 81-83
+American College of Obstetricians and Gynecologists (ARCOG)
+Lynna Lan Tien Nguyen Do
+Pages 83-84
+American Psychiatric Association
+Lynna Lan Tien Nguyen Do
+Pages 84-84
+American Psychiatric Association Diagnostic and Statistical Manual of Mental Disorders (DSM-IV)
+Lynna Lan Tien Nguyen Do
+Pages 84-85
+American Psychological Association (APA)
+Lynna Lan Tien Nguyen Do
+Pages 85-85
+American Sign Language (ASL)
+Lynna Lan Tien Nguyen Do
+Pages 85-85
+Americans with Disabilities Act (ADA)
+Lynna Lan Tien Nguyen Do
+Pages 85-86
+Amfebutamone
+Pages 86-86
+Amitriptyline
+Pages 86-86
+Amniocentesis
+Robert Sean Bannon
+Pages 86-86
+Amniotic Fluid Test
+Pages 86-86
+Amphetamine Salts
+Pages 87-87
+
+A
+Amygdala
+Nava R. Silton, Ariel Brandwein
+Pages 87-88
+Amygdaloid Nucleus
+Pages 89-89
+Anabolic Steroids
+Steuart T. Watson, Tonya S. Watson
+Pages 89-89
+Analeptics
+Pages 90-90
+Analysis of Covariance Structures
+Pages 90-90
+Analysis of Variance
+Elizabeth G. E. Kyonka
+Pages 90-91
+Analytic Intelligence
+Nava R. Silton
+Pages 92-93
+Anastasi, Ann
+Daniel Patanella, Chandra Ebanks
+Pages 93-94
+Anderson-Fabry Syndrome
+Pages 94-94
+Androgyny
+Angela D. Mitchell, Lacy Allen
+Pages 94-95
+Anencephaly
+Brady I. Phelps
+Pages 95-96
+Angelman Syndrome
+Samantha M. Nelson, Maria G. Valdovinos
+Pages 96-101
+Anger
+Pages 101-101
+Angiokeratoma Corporis Diffusum
+Pages 101-101
+Anguished
+Pages 101-101
+Angular Gyrus
+Chad A. Noggle
+Pages 101-102
+Angular Gyrus Syndrome
+Pages 102-102
+Anhedonia
+Kristine Augustyniak
+Pages 102-103
+Animism
+Brian Vandenberg
+Pages 104-104
+Announcement
+Pages 104-104
+
+A
+Anomia
+Pages 104-104
+Anomic Aphasia
+Pages 105-105
+Anorexia
+Pages 105-105
+Anorexia Nervosa
+Jenna J. Barry
+Pages 105-106
+Anorexic
+Pages 106-106
+Anorthography
+Pages 106-107
+Anosmia
+Brady I. Phelps
+Pages 107-107
+ANOVA
+Pages 107-107
+Anovular Cycle
+Pages 107-108
+Anovulation
+Pages 108-108
+Anovulatory Cycle
+Merry Sleigh
+Pages 108-108
+Anoxia
+Laura Bruder
+Pages 108-109
+Anoxic Episode
+Pages 109-109
+Anoxic Ischemia
+Pages 109-109
+Antagonism
+Pages 109-109
+Antecedent Management of Behavior
+James K. Luiselli, Derek D. Reed
+Pages 109-110
+Anterior Frontal Lobes
+Pages 110-110
+Anthropology
+Norissa Atingdui
+Pages 110-111
+Anti-Anxiety Medications
+Pages 111-111
+Anticipatory Bereavement
+Pages 111-111
+
+A
+Anticipatory Grief
+Rachel Hibberd, Rachel Wamser, Brian Vandenberg
+Pages 111-112
+Anticipatory Mourning
+Pages 112-112
+Anticonvulsants
+Mark Pennick
+Pages 112-116
+Antidepressants
+Erin Shae Johns
+Pages 116-118
+Antiepileptic Drugs
+Pages 118-118
+Antipsychotics
+Pages 118-118
+Antiseizure Drugs
+Pages 118-118
+Antisocial Behavior
+Mysti S. Frazier
+Pages 118-120
+Antisocial Personality Disorder
+Pages 120-120
+Anxiety
+Dominic A. Candido
+Pages 120-124
+Anxiety Disorders
+Pages 124-125
+Anxiolytics
+Pages 125-125
+Anxiolytics/Hypnotics
+Kristine Augustyniak
+Pages 125-128
+Anxious Attachment
+Pages 128-128
+Apathetic
+Pages 128-129
+Apgar
+Laura Bruder
+Pages 129-129
+Apgar Score
+Lydia Aydlett
+Pages 129-130
+Aphasia
+Anna Mazur-Mosiewicz, Raymond S. Dean
+Pages 130-133
+Aphasia Screening Test
+Matthew J. Holcomb, Raymond S. Dean
+Pages 133-134
+Aphasia Voluntaria
+Pages 134-134
+
+A
+Aphasia with Convulsive Disorder
+Pages 134-134
+Aphemia
+Pages 134-134
+Aplenzin
+Pages 134-134
+Apnea
+Anne Fierro Vanderlaan
+Pages 134-135
+Appearance Satisfaction
+Pages 135-135
+Appearance-Reality Task
+Pages 135-135
+Applied Behavior Analysis (ABA)
+Shelly Harker
+Pages 135-138
+Applied Behavioral Assessment
+Mary Ann Zipprich
+Pages 139-140
+Apprehension
+Pages 140-140
+Appropriateness
+Pages 140-140
+Apraxia
+Pages 140-140
+Archival Research
+Maria Assunta Cuffaro
+Pages 140-141
+Arcuate Fasciculus
+Chad A. Noggle
+Pages 141-141
+Aripiprazole (Generic Name)
+Pages 141-141
+Arithmetic
+Molly Millians
+Pages 141-142
+Arithmetic Operations
+Pages 142-142
+Army Alpha Examination
+Pages 142-142
+Army Alpha Intelligence Test
+David Brandwein
+Pages 142-143
+Army Beta Examination
+Pages 143-143
+Army Beta Intelligence Test
+David Brandwein
+Pages 143-144
+
+A
+Art as Therapy
+Pages 144-144
+Art Psychotherapy
+Pages 144-144
+Art Therapy
+Kathy DeOrnellas, Anne Fierro Vanderlaan
+Pages 144-145
+Articulation Disorder
+Maria Assunta Cuffaro
+Pages 145-146
+Articulation Voice, or Fluency Therapy
+Pages 146-146
+Articulatory Loop
+Pages 146-146
+Asperger’s Disorder
+Crystal Short, Kathy DeOrnellas
+Pages 146-148
+Asperger’s Syndrome
+Pages 148-148
+Asphyxia
+Michelle A. Prosje
+Pages 148-151
+Assault
+Pages 151-151
+Assessment
+Elizabeth Levin
+Pages 151-152
+Assessment for Learning
+Pages 152-152
+Assessment Observations
+Pages 152-152
+Assessment of Major Maternal and Fetal Risk Factors
+Pages 152-152
+Assimilation
+Jackie Kibler
+Pages 152-152
+Assisted Suicide
+Pages 152-152
+Associated Factors
+Pages 152-152
+Association
+Pages 154-154
+Association for Retarded Citizens (ARC)
+Lynna Lan Tien Nguyen Do
+Pages 154-154
+Assumption of Normality
+Pages 154-154
+
+A
+Asthma
+Angelica R. Eddington
+Pages 154-155
+At Risk
+Beverly West King, Norma S. Guerra
+Pages 155-156
+At Risk Infants
+Pages 156-156
+Ataxic Aphasia
+Pages 156-156
+ATC Therapeutic Classification Code N05BA02
+Pages 156-156
+Atomoxetine
+Pages 156-156
+Attachment
+Pages 156-156
+Attachment Behaviors
+Pages 156-156
+Attachment Classifications
+Pages 156-156
+Attachment Disorder
+Pages 156-156
+Attachment Measures
+Pages 157-157
+Attachment Patterns
+Pages 157-157
+Attachment Representations
+Pages 157-157
+Attachment Styles
+Pages 157-157
+Attachment Theory
+Cynthia Field
+Pages 157-158
+Attention
+Elizabeth Levin, Jennifer Bernier
+Pages 158-160
+Attention Control
+Pages 160-160
+Attention Deficit Disorder
+Jeremy R. Sullivan
+Pages 160-161
+Attention Deficit Hyperactivity Disorder (ADHD)
+Pages 161-163
+Attention Span
+Elizabeth Levin, Jennifer Bernier
+Pages 163-163
+
+A
+Attentional Strategies
+Iris Montoya-Rodriguez, Betty Dooley Awbrey
+Pages 163-164
+Attention-Deficit Disorder
+Pages 164-164
+Attention-Deficit/Hyperactivity Disorder
+Melissa K. Stern
+Pages 164-169
+Attentive Listening
+Pages 169-169
+Attitudes
+Pages 169-169
+Attribution
+Pei-Hsuan Hsieh
+Pages 169-170
+Atypical and Major Lifetime Events
+Pages 170-170
+Atypical Antipsychotics
+Pages 170-170
+Atypical Delivery
+Pages 170-170
+Atypical Neuroleptics
+Nina Foster
+Pages 170-171
+Auditory Cortex
+Chad A. Noggle
+Pages 171-172
+Auditory Memory
+Maria Assunta Cuffaro
+Pages 172-172
+Auditory Processing
+Pages 172-172
+(Central) Auditory Processing Disorder
+Taylor Pelchar
+Pages 173-175
+Augmentative and Alternative Communication (AAC)
+Pages 175-175
+Augmentative Communication
+Judah B. Axe
+Pages 175-175
+Authoritarian Parenting Style
+Paul Borden Ingram
+Pages 175-176
+Authoritative Parenting
+Pages 176-176
+Autism
+Eva R. Markham
+Pages 176-182
+Autism Behavior Checklist
+Teresa L. Davenport
+Pages 182-183
+
+A
+Autism Spectrum Disorders
+Eva R. Markham
+Pages 184-185
+Autistic
+Pages 185-185
+Autistic Behaviors
+Judah B. Axe
+Pages 185-186
+Autistic Disorder
+Pages 186-186
+Autistic Savant
+Pages 186-187
+Autobiographical Memory
+Lauren Gregory
+Pages 187-187
+Autoeroticism
+Pages 187-187
+Automized Naming
+Pages 187-187
+Autonomic Arousal
+Pages 187-187
+Autonomic Nervous System
+Pages 187-187
+Autonomous
+Pages 187-187
+Autonomous Motivation
+Pages 187-187
+Autonomy
+Temi Bidjerano
+Pages 187-189
+Autonomy Versus Shame and Doubt
+Jennifer L. Stapel-Wax
+Pages 189-190
+Average
+Pages 190-190
+Aversive Stimulus
+Josh Pritchard, Ivy Chong
+Pages 190-190
+Avoidance
+Pages 190-190
+Avoidance Learning
+Brady I. Phelps
+Pages 190-193
+Avoidance Responding
+Pages 193-193
+Avoidant Attachment
+Jill Driest
+Pages 193-194
+
+B
+Babbling
+Meredith L. McKee
+Pages 197-197
+Babinski (or Babinsky) Phenomenon or Sign
+Pages 197-197
+Babinski Reflex
+Jordana E. Mortimer, Denise E. Maricle, Devorah Neuhaus, Elisheva Konstam
+Pages 197-199
+Babinski’s Sign
+Pages 199-199
+Babinsky Response
+Amie Senland
+Pages 199-199
+Baby
+Pages 199-199
+Baby Talk
+Pages 200-200
+Babyhood
+Pages 200-200
+Bad Dreams
+Pages 200-200
+BADDS
+Pages 200-200
+Baer, Donald M.
+Derek D. Reed, James K. Luiselli
+Pages 200-201
+Baldwin, James Mark
+Jacy L. Young
+Pages 201-202
+Balls
+Pages 202-202
+Bandura, Albert
+Frank Pajares
+Pages 202-204
+Barbiturates
+Pages 204-204
+Barbs
+Pages 204-204
+Barf
+Pages 204-204
+Barkley Home Situations Questionnaire
+Pages 204-205
+Barkley School Situations Questionnaire
+Pages 205-205
+
+B
+Barkley, Russell A.
+Eva Benmeleh
+Pages 205-206
+Barr-Shaver-Carr Syndrome
+Pages 206-206
+Basal Ganglia
+Audrey McKinlay
+Pages 206-209
+Basal Ganglion
+Pages 209-209
+Base Rate
+Teresa L. Davenport
+Pages 209-210
+Bashfulness
+Pages 210-210
+Basic Number Facts
+Pages 210-210
+Battelle Developmental Inventory: 2nd Edition
+Angela Hilton-Mounger
+Pages 210-212
+Battered Child Syndrome
+Stephanie Dvorak, Tasha R. Howe
+Pages 212-213
+Baumrind’s Parenting Styles
+Elizabeth Levin
+Pages 213-215
+Bayley Scales of Infant Development: Third Edition
+David Michalec
+Pages 215-215
+BDI-2
+Pages 215-215
+Beauty Hypochondria
+Pages 215-215
+Beck Anxiety Inventory
+Michael M. Grant
+Pages 215-217
+Beck Depression Inventory
+Preston Visser, R. Trent Codd III
+Pages 217-218
+Beck Therapy
+Elaine A. Thomas
+Pages 219-220
+Bedwetting
+Pages 220-221
+Bed-Wetting
+Pages 221-221
+Beery VMI
+Pages 221-221
+Beery-Buktenica Developmental Test of Visual-Motor Integration
+Pages 221-221
+
+B
+Behavior
+Steuart T. Watson, Dale Brown
+Pages 221-222
+Behavior Analysis
+Pages 222-222
+Behavior Assessment
+Ivy Chong
+Pages 222-222
+Behavior Assessment System for Children: Second Edition (BASC-2)
+Jessica R. Gurley
+Pages 222-223
+Behavior Change
+Pages 223-223
+Behavior Disorders
+Alandra Weller-Clarke
+Pages 223-225
+Behavior Management
+Pages 225-225
+Behavior Modeling
+Judith Husband, Ivy Chong
+Pages 225-226
+Behavior Modification
+Jason Levi
+Pages 226-227
+Behavior Rating Scale
+Robert Walrath
+Pages 228-228
+Behavior Rehearsal
+Pages 228-228
+Behavior Therapy
+Steuart T. Watson, Tonya S. Watson
+Pages 228-229
+Behavioral Assessment
+Pages 229-229
+Behavioral Consultation
+Danielle R. Palmer, Andy V. Pham, John S. Carlson
+Pages 229-231
+Behavioral Disorders
+Pages 231-231
+Behavioral Disturbances
+Pages 231-231
+Behavioral Inhibition
+Pages 231-231
+Behavioral Intervention for Repetitive Behavior Disorders
+Pages 231-231
+Behavioral Observation
+Jennifer L. Stapel-Wax
+Pages 231-232
+Behavioral Style
+Pages 232-232
+
+B
+Behaviorally Disorganized Children
+Pages 232-232
+Behaviorism
+Pages 232-233
+Behaviours
+Pages 233-233
+Beliefs
+Pages 233-233
+Bell Curve
+Pages 233-233
+Bender Gestalt II
+Pages 233-233
+Bender Gestalt Test (BGT)
+Pages 233-233
+Bender Visual Motor Gestalt Test
+Robert Walrath
+Pages 233-234
+Benzodiazepines
+Pages 234-234
+Bereavement
+Morgan Brooks
+Pages 234-235
+Best Friends
+Pages 235-235
+Bias
+Pages 235-235
+Bias, Race
+Stacy A. S. Williams
+Pages 235-237
+Bibliocounseling
+Pages 237-237
+Bibliopsychology
+Pages 237-237
+Bibliotherapy
+Susanne Long
+Pages 237-238
+Bicultural Identity
+Tony Wu
+Pages 238-239
+Bicycle Accidents
+MaryBeth Bailar-Heath
+Pages 239-240
+Bicycle Unintentional Injuries
+Pages 240-240
+Bigotry
+Pages 240-240
+
+B
+Bili-Lights
+Pages 240-240
+Bilingualism
+Corey E. Ray-Subramanian
+Pages 240-241
+Bilirubin Lights
+Bryan Rotella
+Pages 241-242
+Billboards
+Pages 242-242
+Binet, Alfred
+Anna Mazur-Mosiewicz, Andrew S. Davis
+Pages 242-243
+Binge Eating Disorder
+Pages 243-243
+Binge/Purge Eating
+Tiffany Rush-Wilson
+Pages 244-246
+Bingeing
+Maria Assunta Cuffaro
+Pages 246-246
+Bioecological Approach to Development
+Tasha R. Howe
+Pages 246-247
+Bioecological Systems Theory
+Pages 247-247
+Bioecological Theory of Development
+Purvita A. Patel
+Pages 247-249
+Biofeedback
+Pages 249-249
+Bipolar Disorder
+Jeffrey S. Trotter, Andrew S. Davis
+Pages 249-253
+Birth Cohort
+Audrey McKinlay
+Pages 253-253
+Birth Complications
+Renee Grizzle
+Pages 254-255
+Birth Cord
+Pages 255-255
+Birth Defects
+Renee Grizzle
+Pages 255-256
+Birth Mark
+Pages 256-256
+Birth Order
+Anne Fierro Vanderlaan
+Pages 256-257
+Birth Process
+Renee Grizzle
+Pages 257-258
+
+B
+Birth Trauma
+Pages 258-258
+Birth Weight
+Matthew J. Holcomb, Raymond S. Dean
+Pages 258-258
+Bisexual
+Lisa Kilanowski-Press
+Pages 258-261
+Bisexual Identity
+Pages 261-261
+Black Dialect
+Pages 261-261
+Black English
+Pages 261-261
+Black English Vernacular
+Pages 261-261
+Black Intelligence Test of Cultural Homogeneity
+LaRicka R. Wingate
+Pages 261-262
+Black Language
+Pages 262-262
+Blackheads
+Pages 262-262
+Blank Slate
+Pages 262-262
+Blastocyst
+Jill A. Anderson
+Pages 262-263
+Blastodermic Vesicle
+Pages 263-263
+Blended Families
+Pages 263-263
+Blended Gender
+Pages 263-263
+Blind
+Pages 263-263
+Blindness
+Stephanie A. Grote-Garcia
+Pages 263-264
+Blood-Clotting Disorder
+Pages 264-264
+Blue Devils
+Pages 264-264
+Bobo Doll Experiment
+Lynna Lan Tien Nguyen Do
+Pages 264-264
+
+
+B
+Bodily-Kinesthetic Intelligence
+Pages 264-264
+Body Dysmorphic Disorder (BDD)
+Pages 265-265
+Body Esteem
+Pages 265-265
+Body Image
+Shannon S. Rich, Sonia LeClere
+Pages 265-266
+Body Language
+Pages 266-266
+Body Mass
+Pages 266-266
+Body Mass Index (BMI)
+Jeffrey S. Anderson
+Pages 266-267
+Body Satisfaction
+Pages 267-267
+Body Weight
+Pages 267-267
+Bonding
+Douglas K. Symons
+Pages 267-268
+Bonnevie-Ullrich-Turner Syndrome
+Pages 268-268
+Book Learning
+Pages 268-268
+Book Matching
+Pages 268-268
+Books
+Pages 268-268
+Borderline Personality Disorder
+Greta Winograd
+Pages 268-272
+Bottom-Up Approach
+Pages 272-272
+Bowenians
+Pages 272-272
+Bowlby’s Attachment Theory
+Jerry Gold
+Pages 272-275
+Bowlby’s Stages of Attachment
+Cynthia Field
+Pages 275-277
+Braille
+Stephanie A. Grote-Garcia
+Pages 277-278
+
+B
+Brain
+Sean Cunningham
+Pages 278-282
+Brain Abnormalities
+Matthew J. Holcomb, Raymond S. Dean
+Pages 282-284
+Brain Cells
+Pages 284-284
+Brain Damage
+Audrey McKinlay
+Pages 284-286
+Brain Development
+Tracey McLellan
+Pages 286-288
+Brain Disorders
+Madeline Gross
+Pages 288-289
+Brain Hemispheres
+Pages 289-289
+Brain Imaging
+Nina Foster
+Pages 289-290
+Brain Impairment
+Pages 290-290
+Brain Injury
+Pages 290-290
+Brain Malleability
+Pages 290-290
+Brain Mapping MRI
+Pages 290-290
+Brain MRI
+Pages 290-290
+Brain Stem
+Erin Hambrick
+Pages 290-293
+Brain Structure
+Pages 293-293
+Brainwave Test
+Pages 293-293
+Brazelton NBAS
+Pages 293-293
+Brazelton Scale
+Pages 293-293
+Breastfeeding
+Laura Bruder
+Pages 293-294
+Brigance
+Pages 294-294
+
+B
+Brigance Diagnostic Inventory of Early Development
+Jana Sander
+Pages 294-295
+Broadcast
+Pages 295-295
+Broca, Paul Pierre
+Matthew J. Holcomb, Andrew S. Davis
+Pages 295-296
+Broca’s Aphasia
+David Morrison, Mary Joann Lang
+Pages 296-298
+Broca’s Area
+Nickilynn Aubuchon-Endsley
+Pages 298-299
+Broca’s Dysphasia
+Pages 299-299
+Brodmann’s Areas 44 and 45
+Pages 299-299
+Bronchial Asthma
+Pages 299-299
+Bronfenbrenner, Urie
+Asil Ali Özdoğru
+Pages 299-300
+Bronfenbrenner’s Ecological Theory
+Asil Ali Özdoğru
+Pages 300-301
+Bronfenbrenner’s Theory
+Pages 301-301
+Brown ADD Rating Scales (BADDS)
+Pages 301-301
+Brown Attention-Deficit Disorder Scales
+Teresa L. Davenport, Andrew S. Davis
+Pages 302-303
+Brown Attention-Deficit Disorder Scales for Children and Adolescents
+Pages 303-303
+Brown Attention-Deficit-Disorder Scales for Adolescents and Adults
+Pages 303-303
+Brown, Ronald T.
+Brian P. Daly, Mary Kral, Avi Madan-Swain
+Pages 304-305
+Bruner, Jerome Seymour
+Brenda L. Verastigi, Bernadette Hassan Solórzano
+Pages 305-306
+Buddies
+Pages 306-306
+Bulimia
+Pages 306-306
+Bulimia Nervosa
+Maria Assunta Cuffaro
+Pages 306-306
+
+B
+Bullies
+Andrea Morillas-Brown, Grace Boyd, Brett R. Nelson
+Pages 306-308
+Bullying
+Janett M. Naylor
+Pages 308-309
+Buoyancy
+Pages 309-309
+Bupropion
+Pages 309-309
+C
+7-Chloro-1,3-Dihydro-1-Methyl-5-Phenyl-2H-1,4-Benzodiazepin-2-One
+Pages 311-311
+7-Chloro-2-Methylamino-5-Phenyl-3H-1,4-Benzodiazepine-4-Oxide
+Pages 311-311
+Cable
+Pages 311-311
+Cackle
+Pages 311-311
+Café au Lait Macules
+Pages 311-311
+Café au Lait Spots
+Pages 311-311
+Caffeine
+Daniel Patanella
+Pages 311-312
+Cain Complex
+Pages 312-312
+Calculation
+Pages 312-312
+Callosal Agenesis
+Pages 312-312
+Cant
+Pages 313-313
+Capacity of the Brain to Change
+Pages 313-313
+Carbolith
+Pages 313-313
+Cardiac Disorders
+Pages 313-313
+Cardiovascular Disease
+Pages 313-313
+Card-Sorting Test
+Pages 313-313
+
+C
+Caregiving Youth
+Pages 313-313
+Carisoprodol (Soma)
+Pages 313-313
+CAS # 58-25-3
+Pages 313-313
+CASL
+Pages 313-313
+CAT
+Pages 314-314
+Catapres® (Clonidine)
+Lauren Connell Pavelka
+Pages 314-314
+Catell-Horn-Carroll Theory of Intelligence
+Heath Marrs
+Pages 314-315
+Caudate Nucleus
+Chad A. Noggle
+Pages 315-316
+Celeration
+Pages 316-316
+Center for Epidemiologic Studies Depression Scale (CES-D)
+Pages 316-316
+Central Aphasia
+Pages 316-316
+Central Auditory Processes
+Pages 316-316
+Central Auditory Processing Disorder
+Stacy E. Levin
+Pages 316-318
+Central Auditory Processing Disorder
+Pages 318-318
+Central Executive
+Pages 318-318
+Central Hemispheres
+Jana Sander
+Pages 318-319
+Central Nervous System
+Chad A. Noggle, Jennifer N. Hall
+Pages 319-320
+Centration
+Pages 320-320
+Cephalocaudal Principle
+Edalmarys Santos, Chad A. Noggle
+Pages 321-321
+Ceramide Trihexosidase Deficiency
+Pages 321-321
+
+C
+Cerebella Cortex
+Chad A. Noggle
+Pages 321-322
+Cerebellar Cortex
+Pages 322-322
+Cerebellum
+Chad A. Noggle
+Pages 322-322
+Cerebellum
+Pages 323-323
+Cerebral Blood Flow
+Marie C. McGrath
+Pages 323-323
+Cerebral Cortex
+Chad A. Noggle, John Joshua Hall
+Pages 323-324
+Cerebral Dominance
+Pages 324-324
+Cerebral Function (Lateralization)
+Matthew J. Holcomb, Raymond S. Dean
+Pages 324-326
+Cerebral Giganticism
+Pages 326-326
+Cerebral Hemispheres
+Pages 326-326
+Cerebral Infarction
+Edalmarys Santos, Chad A. Noggle
+Pages 326-327
+Cerebral Lateralization
+Pages 327-327
+Cerebral Palsy
+Jacqueline P. Parsons
+Pages 327-328
+Cerebrospinal Fluid
+Chad A. Noggle
+Pages 328-328
+Cerebrospinal Fluid (CSF)
+Pages 329-329
+Cerebrovascular Accident (CVA)
+Pages 329-329
+Cervix
+Pamelyn M. MacDonald
+Pages 329-329
+CGAS
+Pages 329-329
+C-GAS
+Pages 329-329
+Change
+Pages 329-329
+
+C
+Changes to the Brain
+Pages 329-329
+Character Deciphering Abilities
+Pages 329-329
+Characterized by Commitment to Something Without Personal Exploration
+Pages 329-329
+CHC Theory
+Pages 330-330
+Chemical Compound
+Pages 330-330
+Chemical Dependency
+Kasey Claborn
+Pages 330-331
+Chemical Synapses
+Pages 331-332
+Chemical Transmitters
+Pages 332-332
+Chemometric Spectroscopy
+Pages 332-332
+Child Abuse
+Samantha Miller
+Pages 332-333
+Child and Family Therapist
+Kimberly D. Litwinowich, Amy Ball, Carrie L. Castañeda-Sound, Shannon Stovall
+Pages 334-335
+Child Clinical Psychology
+Katherine E. Kiker
+Pages 335-336
+Child Counseling
+Pages 336-336
+Child Counselors
+Pages 337-337
+Child Development
+Elizabeth Levin
+Pages 337-339
+Child Health Psychology
+Pages 339-339
+Child Maltreatment
+Merith Cosden
+Pages 339-344
+Child Neglect
+Lindsay Weymouth, Tasha R. Howe
+Pages 344-345
+Child Physical Abuse
+Pages 345-345
+Child Psychology
+Pages 345-345
+
+C
+Child Psychotherapy
+Janet L. Etzi
+Pages 346-346
+Child Rape
+Pages 346-346
+Child Rearing Practices
+Maria Perdikogianni, Xenia Anastassiou-Hadjicharalambous
+Pages 346-348
+Child Relationship Enhancement Family Therapy (CREFT)
+Pages 348-348
+Child Sexual Abuse
+Pages 348-348
+Child Therapists
+Pages 348-348
+Child Therapy
+Pages 348-348
+Child Victimization
+Pages 348-348
+Child’s Position
+Pages 348-348
+Childbirth
+Pages 348-348
+Child-Center Assessment
+Pages 349-349
+Child-Centered Parenting
+Pages 349-349
+Child-Centered Play Therapy
+Pages 349-349
+Child-Centered Therapy
+Pages 349-349
+Child-Directed Speech
+Pages 349-349
+Childhood
+Stephanie A. Grote-Garcia, Forrest D. McDowell
+Pages 349-349
+Childhood Amnesia
+Maria Perdikogianni, Xenia Anastassiou-Hadjicharalambous
+Pages 350-351
+Childhood Aphasia
+Jeremy Hertza, William Schiff
+Pages 351-353
+Childhood Disintegrative Disorder
+Mark Tovar
+Pages 353-353
+Childhood Leukemia
+Bernadette Hassan Solórzano, Karissa M. Gilmore
+Pages 353-355
+
+C
+Childhood Onset Schizophrenia
+Pages 355-355
+Childhood Psychosis
+Xenia Anastassiou-Hadjicharalambous
+Pages 355-359
+Childhood Schizophrenia
+Pages 359-360
+Childhood-Onset Diabetes
+Pages 360-360
+Child-Parent Relationship (CPR) Training
+Pages 360-360
+Child-Rearing
+Pages 360-360
+Children of High Emotionality
+Pages 360-360
+Children’s Depression Inventory (CDI)
+Pages 360-360
+Children’s Embedded Figures Test
+Pages 360-360
+Children’s Global Functioning
+Pages 360-360
+Chloral Hydrate (Noctec)
+Pages 360-360
+Chlordiazepoxide
+Nicholas J. Balogh
+Pages 360-361
+Chlorpromazine
+Pages 361-361
+Choice Theory
+Pages 362-362
+Chorea
+Lauren Connell Pavelka
+Pages 362-362
+Chortle
+Pages 362-362
+Christmas Disease
+Pages 362-362
+Chromosomal Abnormalities
+Pages 362-362
+Chronic Conditions
+Pages 362-362
+Chronic Disease
+Pages 362-362
+
+C
+Chronic Grief
+Emily A. Bullington
+Pages 362-363
+Chronic Hair Pulling
+Pages 363-363
+Chronic Health Conditions
+Pages 363-363
+Chronic Health Problems
+Cindy Trevino
+Pages 363-364
+Chronic Illness
+Pages 364-364
+Chronic Lymphocytic Leukemia (CLL)
+Pages 364-364
+Chronic Myelogenous Leukemia (CML)
+Pages 364-364
+Chronic Physical Conditions
+Pages 364-364
+Chuckle
+Pages 365-365
+Chums
+Pages 365-365
+Chunking
+Maria Assunta Cuffaro
+Pages 365-365
+Cibalith-S
+Pages 365-365
+Citizenship
+Pages 365-365
+Clark, Kenneth Bancroft
+Heath Marrs, Kenny Foster
+Pages 365-366
+Classical Autism
+Pages 366-366
+Classical Conditioning
+Pei-Hsuan Hsieh
+Pages 366-367
+Classroom Climate
+Gary Alderman
+Pages 367-370
+Classroom Environment
+Pages 370-370
+Classroom Integration
+Molly Millians
+Pages 370-370
+Classroom Management
+Jackie Kibler
+Pages 370-371
+
+C
+Classroom Modifications
+Pages 371-371
+Classwide Peer Tutoring
+Pages 371-371
+Cleaning
+Pages 371-371
+Cleft
+Pages 371-371
+Cleft Palate
+Cheryl L. Giddens
+Pages 371-373
+Client-Centered Therapy
+Tony Wu
+Pages 373-373
+Clinical Art Therapy
+Pages 373-373
+Clinical Child Psychology
+Pages 373-373
+Clinical Health Psychology
+Pages 374-374
+Clinician
+Pages 374-374
+Clique
+Pages 374-374
+Clonazepam (Generic)
+Pages 374-374
+Clonidine (Generic)
+Pages 374-374
+Close Friend
+Pages 374-374
+Closed Head Injury
+Pages 374-374
+Closed Head Trauma
+Pages 374-374
+Clotting Disorders
+Pages 374-374
+Clozapine (Generic)
+Pages 374-374
+Clozaril® (Clozapine)
+Lauren Connell Pavelka
+Pages 374-375
+CLS
+Pages 375-375
+
+C
+Clumsy Child Syndrome
+Pages 375-375
+Cocaine
+Pages 375-375
+Coefficient of Correlation
+Pages 375-375
+Coercion Model
+Pages 375-375
+Coercion Theory
+Elaine A. Thomas
+Pages 375-376
+Coffin Syndrome
+Pages 376-376
+Coffin-Lowry Syndrome
+Anne L. Corcoran, Maria G. Valdovinos
+Pages 376-379
+Cognitive Assessment System
+Jack A. Naglieri
+Pages 379-380
+Cognitive Control
+Pages 380-380
+Cognitive Curiosity
+Pages 380-380
+Cognitive Disabilities
+Pages 380-380
+Cognitive Disequilibrium
+Jackie Kibler
+Pages 380-380
+Cognitive Dissonance
+Norissa Atingdui
+Pages 380-381
+Cognitive Equilibrium
+Jackie Kibler
+Pages 381-381
+Cognitive Impairment
+Pages 381-381
+Cognitive Psychology
+Pages 381-381
+Cognitive Schemas
+Jackie Kibler
+Pages 382-382
+Cognitive Skills
+Jana Sander
+Pages 382-382
+Cognitive Strategies
+Pages 382-382
+Cognitive Structure
+Pages 382-382
+
+C
+Cognitive Styles
+Heath Marrs
+Pages 382-383
+Cognitive Testing
+Pages 383-383
+Cognitive Theories
+Pages 383-384
+Cognitive Therapy
+Pages 384-384
+Cognitive Therapy (CT)
+Jeremy Jewell
+Pages 384-385
+Cognitive-Behavioral Play Therapy (CBPT)
+Pages 385-385
+Cognitive-Behavioral Therapy
+Kristy Wakefield, Stephen D. A. Hupp
+Pages 385-388
+Cognitive-Behaviorism
+Pages 388-388
+Cognitivism
+Pages 388-388
+Cohort
+Audrey McKinlay
+Pages 388-389
+Cohort Effect
+Norissa Atingdui
+Pages 389-389
+Colic
+Pages 389-389
+Collaborative
+Pages 389-389
+Collative Motivation
+Pages 389-389
+Collectivism
+Pages 390-390
+Collectivist Cultures
+Silvia L. Mazzula
+Pages 390-391
+Color Word Task
+Pages 391-391
+Commercials
+Pages 391-391
+Committees for the Protection of Human Subjects
+Pages 391-391
+Common Sense
+Pages 391-391
+
+C
+Communicating Hydrocephalus
+Pages 391-391
+Communication
+Pages 391-391
+Communication Disorders
+Pages 391-392
+Communication Skills
+Pages 392-392
+Community Study
+Pages 392-392
+Community-Oriented Cultures
+Pages 392-392
+Comorbidity
+Douglas K. Symons
+Pages 392-393
+Companions
+Pages 393-393
+Compassion
+Pages 393-393
+Complete Habit Reversal
+Pages 393-393
+Complex Figure
+Pages 393-393
+Complex Instruction (CI)
+Pages 393-393
+Complex Partial Seizure
+Pages 393-393
+Complex Trail Making Test
+Pages 393-393
+Compliance
+Pages 393-393
+Complicated Grief
+Pages 393-393
+Componential Knowledge
+Pages 394-394
+Comprehensible Input
+Pages 394-394
+Comprehension
+Pages 394-394
+Comprehension Deficit
+Pages 394-394
+
+C
+Comprehension-Knowledge
+Pages 394-394
+Comprehensive Assessment of Spoken Language
+DaNella Knight
+Pages 394-395
+Computation
+Pages 395-395
+Computational Fluency
+Pages 396-396
+Computational Skills
+Molly Millians
+Pages 396-396
+Computerized Assessment of Attention and Self Control
+Pages 396-396
+Computerized Axial Tomography
+Lauren Connell Pavelka
+Pages 397-397
+Computerized Behavior Assessment
+Pages 397-397
+Computerized Tomography (CT)
+Pages 397-397
+Concentration
+Pages 397-397
+Concept Formation
+Jana Sander
+Pages 397-398
+Concerta
+Pages 398-398
+Concerta® (Methylphenidate)
+Lauren Connell Pavelka
+Pages 398-398
+Conditional Discrimination
+Pages 398-398
+Conditioned Reinforcement
+Pages 398-398
+Conditioning
+Daniel Patanella
+Pages 399-401
+Conduct Disorder
+Tony Wu
+Pages 401-402
+Conduction Aphasia
+Pages 402-402
+Confirmatory Factory Analysis
+Pages 402-402
+Conformists
+Pages 402-402
+
+C
+Conformity Among Adolescents
+Ashlea Smith
+Pages 402-403
+Congenital Maladroitness
+Pages 403-403
+Congenital Morbidity
+Pages 403-403
+Conjoint Therapy
+Pages 404-404
+Conners’ Parent Rating Scale – Revised
+Pages 404-404
+Conners’ Parent Rating Scale: Revised
+Pages 404-404
+Conners’ Parent Rating Scales – Revised
+Jessica R. Gurley
+Pages 404-405
+Conners’ Teacher Rating Scale – Revised
+Pages 405-405
+Conners’ Teacher Rating Scales: Revised
+Jessica R. Gurley
+Pages 405-406
+Conners-Wells Adolescent Self Report Scale
+Jessica R. Gurley
+Pages 407-408
+Conners–Wells Adolescent Self Report Scale
+Pages 408-408
+Conners-Wells Adolescent Self Report Scale Personality testing
+Pages 408-408
+Consequences
+Nina Foster
+Pages 408-409
+Consistency
+Pages 409-409
+Console Games
+Pages 409-409
+Constructive Controversy (CC)
+Pages 409-409
+Constructive Play
+Rebekah R. Pender
+Pages 409-410
+Constructivist Family Therapy
+Pages 410-410
+Constructivist Psychotherapy
+Bernadette Hassan Solórzano
+Pages 410-411
+Constructivist View (Piaget)
+Kathleen Brown
+Pages 411-413
+
+C
+Contact
+Pages 413-413
+Contextual Intelligence
+Pages 413-413
+Contingency-Maintained Behavior
+Pages 413-413
+Continuous Performance Task
+Pages 413-413
+Continuous Performance Test (CPT)
+Pages 413-413
+Control
+Pages 413-413
+Conventional Level
+Pages 413-413
+Conventional Moral Reasoning
+Amie Senland
+Pages 413-414
+Cooing
+Meredith L. McKee
+Pages 414-415
+Cooperative Integrated Reading and Composition (CIRC)
+Pages 415-415
+Cooperative Learning
+Janet Ward Schofield
+Pages 415-416
+Cooperative Play
+Jordan Luther
+Pages 416-418
+Coping
+Steven L. Proctor
+Pages 418-419
+Coping–Skills Training
+David Hackett
+Pages 419-420
+Copycat Suicides
+David N. Miller
+Pages 420-420
+Copying
+Pages 420-420
+Cord Injuries
+Pages 420-420
+Corporal (Physical) Punishment
+Stephanie Dvorak, Tasha R. Howe
+Pages 421-421
+Corporal Punishment
+Pages 421-421
+Corpulence
+Pages 421-421
+
+C
+Corpus Amygdaloideum
+Pages 421-421
+Corpus Callosum
+Tracey McLellan
+Pages 421-422
+Correlation
+Pages 423-423
+Correlation Coefficient
+Pages 423-423
+Correlation CoefficientM
+Pages 423-423
+Correlational Statistics
+Pages 423-423
+Correlativity
+Pages 423-423
+Correspondence
+Pages 424-424
+Corruption
+Pages 424-424
+Cortex
+Pages 424-424
+Cortical Motor Dysphasia
+Pages 424-424
+Counseling
+Pages 424-424
+Counseling Method
+Pages 424-424
+Counselors
+Pages 424-424
+Covariance Structure Analysis
+Pages 424-424
+Covariance Structure Modeling
+Pages 424-424
+Covert Bullying
+Pages 424-424
+CP
+Pages 424-424
+Craniosacral Therapy
+Pages 424-425
+Creative Dramatics
+Pages 425-425
+
+C
+Creativeness
+Pages 425-425
+Creativity
+Megan E. Tudor, Tessy T. Pumaccahua, Bethany A. Pritchard, James C. Kaufman
+Pages 425-430
+Creativity Assessment
+Ryan Holt, Megan E. Tudor, James C. Kaufman
+Pages 430-431
+Creativity Measure
+Pages 431-431
+Creativity Test
+Pages 431-431
+Crime, Adolescence
+Jessica R. Gurley
+Pages 431-433
+Criterion-Referenced Assessment
+Pages 433-433
+Criterion-Referenced-Curriculum-Based Assessment
+Pages 433-433
+Critical Health Psychology
+Pages 433-433
+Critical Thinking
+Héfer Bembenutty
+Pages 433-434
+Cross-Cultural Research
+Cecilia A. Essau, Harshad C. Keval
+Pages 434-438
+Cross-Cultural Studies
+Stelios Papayiannis, Xenia Anastassiou-Hadjicharalambous
+Pages 438-440
+Cross-Culture Perspective on Bereavement Springer
+Anne Fierro Vanderlaan
+Pages 441-441
+Cross-Race Friendships
+Matthew J. Taylor
+Pages 441-444
+Cross-Sectional Research
+Carol D. Daniels
+Pages 444-444
+Crystallized Intelligence
+Robert Walrath
+Pages 444-445
+CST
+Pages 445-445
+Cued Memory
+Pages 445-445
+Cultural Adaptation
+Pages 445-445
+Cultural Assimilation Model
+Silvia L. Mazzula
+Pages 445-445
+
+C
+Cultural Bias
+Tom E. Yingst III
+Pages 446-446
+Cultural Deficit Perspective
+Sarah Kozel Silverman
+Pages 446-447
+Cultural Difference
+Anthony Jackson, Norma S. Guerra
+Pages 447-448
+Cultural Diversity
+Pages 448-448
+Cultural Learning
+Pages 448-448
+Cultural Transmission
+Matthew J. Taylor, Candace A. Thoth
+Pages 448-451
+Culture
+Stacy A. S. Williams
+Pages 451-452
+Culture Development
+Pages 452-453
+Curiosity
+Thomas G. Reio Jr.
+Pages 453-454
+Curriculum-Based Assessment
+Becky Stefanko
+Pages 454-458
+Curriculum-Based Evaluation
+Pages 458-458
+Curriculum-Based Measurement
+Pages 458-458
+Customs
+Pages 458-458
+Cutting
+Pages 458-458
+Cybernetics
+Pages 458-458
+Cymbalta
+Pages 458-459
+Cytoplasm
+Pages 459-459
+D
+D’Amato, Rik
+Matthew J. Hertenstein, Raymond S. Dean
+Pages 461-461
+Darwin’s Theory of Natural Selection
+Daniel Patanella
+Pages 461-463
+Darwinism
+Pages 463-463
+
+D
+Deaf Culture
+Gary Schaffer, Lisa Kilanowski-Press
+Pages 463-468
+Deaf Overview
+Katherine Simpson Spencer
+Pages 468-476
+Deaf-Mutism
+Pages 476-476
+Deception
+Pages 476-476
+Declarative Memory
+Stephanie A. Grote-Garcia, Forrest D. McDowell
+Pages 476-476
+Decoding
+Pages 476-476
+Decoding Skills
+Elisheva Konstam, Devorah Neuhaus
+Pages 477-477
+Deductive Logic
+Pages 477-477
+Deductive Reasoning
+Stephanie A. Grote-Garcia, Douglas J. Loveless
+Pages 477-478
+Defense Mechanisms
+Janet G. Benton
+Pages 478-479
+Defenses
+Pages 479-479
+Deferred Gratification
+Pages 479-479
+Defiance and Norm Violation
+Pages 479-479
+Defobin
+Pages 479-479
+Delay of Gratification
+Pages 479-479
+Delayed Language
+Pages 479-479
+Delayed Speech
+Pages 479-479
+Deliberate
+Pages 479-479
+Delinquency
+Gretchen Schoenfield
+Pages 479-481
+Delusional Disorder
+Pages 481-481
+
+D
+Dementia Infantiles
+Pages 481-481
+Dementia Praecossima
+Pages 481-481
+Democratic-Indulgent Parenting Style
+Pages 481-481
+Demonstrating
+Pages 481-481
+Dendrite
+Robert Walrath
+Pages 481-481
+Deoxyhemoglobin
+Pages 481-481
+Dependability
+Pages 481-481
+Dependent Variables
+Pages 481-481
+Depersonalization Disorder
+Pages 481-481
+Depressants
+Nicholas J. Balogh
+Pages 481-482
+Deprivation
+Pages 482-482
+Depth Therapy
+Pages 482-482
+Derived Score
+Pages 482-482
+Destitute Family
+Pages 482-482
+Development of Moral Sense
+Pages 482-482
+Developmental Age
+Pages 482-482
+Developmental Apraxia
+Michelle A. Prosje
+Pages 482-486
+Developmental Constructivism
+Pages 486-486
+Developmental Coordination Disorder
+Xenia Anastassiou-Hadjicharalambous, Maria Stylianou
+Pages 486-488
+Developmental Delay
+Pages 488-488
+
+D
+Developmental Disabilities
+Charles L. Spirrison, Xenia Anastassiou-Hadjicharalambous
+Pages 489-490
+Developmental Disorder of Motor Function
+Pages 490-490
+Developmental Dyslexia
+Andy V. Pham, John S. Carlson
+Pages 490-492
+Developmental Dyspraxia
+Pages 492-492
+Developmental Milestones
+Jana Sander
+Pages 492-492
+Developmental Neuroscience
+Randall R. Lyle
+Pages 492-493
+Developmental Norms
+Marie C. McGrath
+Pages 493-493
+Developmental Outcomes
+Pages 494-494
+Developmental Pathways
+Pages 494-494
+Developmental Periods
+Pages 494-494
+Developmental Phonological Disorders
+Pages 494-494
+Developmental Psychology
+Pages 494-494
+Developmental Stages
+Pages 494-494
+Developmental Test of Visual-Motor Integration
+Pages 494-494
+Developmental Trajectories
+Pages 494-494
+Deviation IQ
+Marie C. McGrath
+Pages 494-495
+Dewey, John
+Phyllis Curtis-Tweed
+Pages 495-497
+Dex
+Pages 497-497
+Dexadrine
+Pages 497-497
+Dexamphetamine
+Pages 497-497
+
+D
+Dexamyl (Mixture with Amobarbital)
+Pages 498-498
+Dextroamphetamine
+Pages 498-498
+Dextroamphetamine (Dexedrine, Dextrostat)
+Nicholas J. Balogh
+Pages 498-499
+Dextrostat
+Pages 499-499
+Diabetes
+Eva Benmeleh
+Pages 499-501
+Diabetes Mellitus
+Pages 501-501
+Dialect
+Judit Simo
+Pages 501-502
+Dialectal Thought
+Pages 502-502
+Diaries
+Pages 502-502
+Diastat
+Pages 502-502
+Diathesis-stress Model
+Anisa N. Goforth, Andy V. Pham, John S. Carlson
+Pages 502-503
+Diazepam
+Nicholas J. Balogh
+Pages 503-504
+Diencephalon
+Chad A. Noggle
+Pages 504-505
+Diet
+Pages 505-505
+Diethyl Ether
+Pages 505-505
+Difficult Children
+Pages 505-505
+Dilation and Evacuation (D&E)
+Pages 505-505
+Diphenhydramine (Benadryl)
+Pages 505-505
+Diplo-Y Syndrome
+Pages 505-505
+Direct Observation
+Pages 505-505
+
+D
+Directing Attention
+Pages 506-506
+Directive Play Therapy
+Pages 506-506
+Disability
+Maria Assunta Cuffaro
+Pages 506-506
+Disabling Chronic Conditions
+Pages 506-506
+Discipline
+Elizabeth Levin
+Pages 507-508
+Discriminate
+Pages 508-508
+Discrimination
+Pages 508-508
+Discrimination Learning
+Kimberley Zonneveld, Ivy Chong
+Pages 508-509
+Disengaged Parenting Style
+Pages 509-509
+Dishabituation
+Brady I. Phelps
+Pages 509-512
+Dishonesty
+Victoria Talwar
+Pages 512-514
+Disinhibition
+Pages 514-514
+Disintegrative Psychosis
+Pages 514-514
+Disorder of Written Expression
+Pages 514-514
+Disorganized/Disoriented Attachment
+Tasha R. Howe
+Pages 514-515
+Disposal
+Pages 515-515
+Disposition
+Pages 515-515
+Disruptive Behavior Disorder
+Pages 515-515
+Dissocial Personality Disorder
+Pages 515-515
+Distractibility
+Despina Stavrinos, Benjamin K. Barton
+Pages 516-517
+
+D
+Distress
+Pages 517-517
+Disturbed Dreaming
+Pages 517-517
+Divergent Thinking
+Pages 517-517
+Divergent Thinking Task
+Pages 517-517
+Diversity
+Pages 517-517
+Diversive Exploration
+Pages 517-517
+Divorce
+Pages 517-517
+Divorce-Stress-Adjustment Perspective
+Amy B. Rosenberg
+Pages 517-518
+Dizygotic (DZ) Twins
+Merry Sleigh
+Pages 518-519
+Dominance
+Pages 519-519
+Dopamine
+Edalmarys Santos, Chad A. Noggle
+Pages 520-520
+Double Blind Design
+Xenia Anastassiou-Hadjicharalambous, Maria Stylianou
+Pages 520-521
+Double-Egg Twins
+Pages 521-521
+Down Syndrome
+Chris Leeth
+Pages 521-522
+Down’s Syndrome
+Pages 522-522
+Downers
+Pages 522-522
+Dramatic Play
+Rebekah R. Pender
+Pages 522-523
+Draw-a-Man DAP
+Pages 523-523
+Draw-A-Person Test
+Crystal Short, Kathy DeOrnellas, Robert Walrath
+Pages 523-524
+Dream Sleep
+Pages 524-524
+
+D
+Dream State
+Pages 524-524
+Drinking
+Nathaniel John Cooney
+Pages 524-528
+Drive
+Pages 528-528
+Drug Addiction
+Pages 528-528
+Drug Habit
+Pages 528-528
+DrugBank #APRD00682
+Pages 528-528
+Dual Diagnosis
+Pages 528-528
+Duloxetine
+Pages 528-528
+Duplicity
+Pages 528-528
+Duralith
+Pages 528-528
+Dusting
+Pages 528-528
+Dwarfism
+Pages 528-529
+Dyadic Therapist
+Pages 529-529
+Dynamic Assessment
+Douglas K. Symons
+Pages 529-530
+Dynamic Psychotherapy
+Janet G. Benton
+Pages 530-531
+Dyscalculia
+Nava R. Silton, Denise E. Maricle
+Pages 531-533
+Dysgraphia
+Raychel C. Muenke, Denise E. Maricle
+Pages 533-535
+Dyskinesia
+Anthony P. Odland, Wiley Mittenberg
+Pages 535-540
+Dyslexia
+Sherry Mee Bell, Tamara Bowlin
+Pages 540-542
+Dysmorfia
+Pages 542-542
+
+D
+Dysmorphia
+Ashlea Smith
+Pages 542-543
+Dysmorphic
+Pages 543-543
+Dysmorphic Syndrome
+Pages 543-543
+Dysmorphology
+Pages 543-543
+Dysmorphophobia
+Pages 543-543
+Dysnomia
+Denise E. Maricle
+Pages 544-545
+Dysphoria
+Pages 545-545
+E
+2004 Education for All Handicapped Children Act
+Lynna Lan Tien Nguyen Do
+Pages 547-547
+2008 Education for All Handicapped Children Act
+Lynna Lan Tien Nguyen Do
+Pages 547-548
+Early Academic Skills
+Pages 548-548
+Early Childhood
+Judah B. Axe
+Pages 548-549
+Early Head Start
+Caroline McKnight
+Pages 549-550
+Early Intervention
+Carrie R. Ball
+Pages 550-551
+Early Literacy
+Pages 551-551
+Early Onset Schizophrenia
+Pages 551-551
+Early Predictors
+Pages 551-551
+Early Reading
+Pages 551-551
+Early-Childhood Evaluation
+Pages 551-551
+Eating Disorders
+Jennifer N. Hall, Chad A. Noggle
+Pages 551-553
+Ebonics
+Stacy A. S. Williams
+Pages 553-555
+
+E
+Eccentricities of a Ethnic or Racial Group
+Pages 555-555
+Echokinesia
+Pages 555-555
+Echolalia
+Tara Waddell
+Pages 555-557
+Echomatism
+Pages 557-557
+Echomimia
+Pages 557-557
+Echomotism
+Pages 557-557
+Echopathy
+Pages 557-557
+Echophenomena
+Pages 557-557
+Echopraxia
+Anthony P. Odland, Wiley Mittenberg
+Pages 557-558
+Echo-Reaction
+Pages 559-559
+Eco-Behavioral Consultation
+Pages 559-559
+Ecological Systems Theory
+Pages 559-559
+Ecological Theory
+Pages 559-559
+Ecological Theory of Development
+Pages 559-559
+Ecological-Transactional Model of Development
+Pages 559-559
+Educational
+Pages 559-559
+Educational Aims
+Pages 559-559
+Educational Environment
+Pages 559-559
+Educational Psychology
+Alandra Weller-Clarke
+Pages 559-560
+Educational Therapy
+Fatima Watt
+Pages 560-561
+
+E
+Effect
+Pages 561-561
+Effects of Physical Abuse
+Pages 561-561
+Effeminate
+Pages 561-561
+Effete
+Pages 561-561
+Effexor XR®
+Pages 561-561
+Effexor®
+Anisa Fornoff
+Pages 561-562
+Effortful Control
+Pages 562-562
+Egg
+Pages 562-562
+Ego Development Stages
+Pages 562-562
+Egocentric Speech
+Pages 562-562
+Egocentrism
+Pages 562-562
+Eight Intelligences
+Pages 562-562
+Ejection
+Pages 563-563
+Elavil®
+Anisa Fornoff
+Pages 563-563
+Elective Mutism
+Pages 563-563
+Electroencephalogram (EEG)
+Lauren Connell Pavelka
+Pages 563-564
+Elenium
+Pages 564-564
+Elimination
+Pages 564-564
+Emaciation
+Pages 564-564
+Embedded Figures Test
+Pages 564-565
+
+E
+Embrace Reflex
+Pages 565-565
+Embryonic and Fetal Development
+Pages 565-565
+Emergent Literacy
+Carrie R. Ball
+Pages 565-566
+Emotion Control
+Pages 566-566
+Emotion False Belief
+Pages 566-566
+Emotion Management
+Pages 566-566
+Emotion Regulation
+Pages 566-566
+Emotional Abuse
+Lindsay Weymouth, Tasha R. Howe
+Pages 566-567
+Emotional and Behavioral Disorders (EBD)
+Pages 567-567
+Emotional Bond
+Pages 567-567
+Emotional Connection, Parent-Child
+Theodora Koulenti, Xenia Anastassiou-Hadjicharalambous
+Pages 567-568
+Emotional Disorders
+Pages 569-569
+Emotional Disturbance
+Xenia Anastassiou-Hadjicharalambous, Nikos Georgiou
+Pages 569-573
+Emotional Disturbances or Behavioral Disorders (ED/BD)
+Pages 573-573
+Emotional Incontinence
+Pages 574-574
+Emotional Intelligence
+Norma S. Guerra
+Pages 574-576
+Emotional Lability
+Nicholas Bolt
+Pages 576-576
+Emotional Self-Control
+Pages 577-577
+Emotional Self-Efficacy
+Pages 577-577
+Emotional Self-Monitoring
+Pages 577-577
+
+E
+Emotional Self-Regulation
+Tammy L. Sonnentag, Mark A. Barnett
+Pages 577-578
+Emotions
+Pages 578-578
+Empathizing
+Pages 578-578
+Empathy
+Anne Fierro Vanderlaan
+Pages 578-579
+Emulation
+Pages 579-579
+Encephalitis
+Lena Prinzi, Wiley Mittenberg
+Pages 579-581
+Encopresis
+Lisa Kilanowski-Press
+Pages 581-585
+Enculturation
+Pages 585-585
+Endophenotype
+Pages 585-585
+Endorphins
+Pages 585-585
+End-Stage Disease
+Pages 585-585
+Enlightenment
+Pages 585-585
+Enterocolitis
+Pages 585-585
+Enuresis
+Steuart T. Watson, Dale Brown
+Pages 585-586
+Epicanthic Fold
+Pages 586-586
+Epidemiology
+Cecilia A. Essau, Stefano Palazzi
+Pages 587-592
+Epinephrine
+Edalmarys Santos, Chad A. Noggle
+Pages 592-593
+Episodic Memory
+Robert Walrath
+Pages 593-593
+Epistemic Behavior
+Pages 593-593
+Equity
+Pages 593-593
+
+E
+Erikson, Erik H.
+John Snarey, Sarah Poole
+Pages 593-598
+Erikson’s Preschool Stage of Social-Emotional Development
+Pages 598-598
+Erikson’s Stages of the Life Cycle
+Sarah Poole, John Snarey
+Pages 599-603
+Errorless Learning
+Judah B. Axe
+Pages 603-604
+Errorless Teaching
+Pages 604-604
+Escitalopram
+Pages 604-604
+Eskalith
+Pages 604-604
+Eskalith®
+Pages 604-604
+Eskalith-CR®
+Pages 604-604
+Essential Amino Acids
+Pages 604-604
+Establishing Operations
+Pages 605-605
+Estrogen
+Chris Leeth
+Pages 605-605
+Estrogen Breakthrough Bleeding
+Pages 605-605
+Estrogen Withdrawal Bleeding
+Pages 605-605
+Ethanol
+Pages 605-605
+Ethchlorvynol (Placidyl)
+Pages 605-605
+Ethical Development
+Pages 605-605
+Ethical Reasoning
+Pages 605-605
+Ethics
+Shannon Stovall, Carrie L. Castañeda-Sound
+Pages 605-607
+Ethnic Identification
+Pages 607-607
+
+E
+Ethnic Tradition
+Pages 607-607
+Ethnicity
+Francien Chenoweth Dorliae
+Pages 607-607
+Ethnocentrism
+Norissa Atingdui
+Pages 607-608
+Ethyl Alcohol
+Pages 608-608
+Etiological Attachment Theory
+Steve Farnfield, Cecilia A. Essau
+Pages 608-614
+Evacuation
+Pages 614-614
+Evaluation
+Pages 614-614
+Evaluation Anxiety
+Pages 614-614
+Evolution
+Pages 614-614
+Exceptional Education
+Pages 614-614
+Excessive Shyness
+Pages 614-614
+Excretion
+Pages 614-614
+Executive Control
+Pages 614-614
+Executive Dysfunction
+Erin K. Avirett, Denise E. Maricle
+Pages 614-616
+Executive Function
+Erin K. Avirett, Denise E. Maricle
+Pages 616-618
+Executive Function Difficulties
+Pages 618-618
+Executive Function Disorder
+Pages 618-618
+Executive Function Dysfunction
+Pages 618-618
+Executive Functioning
+Pages 618-618
+Executive System
+Pages 618-618
+
+E
+Existentialism
+Pages 618-618
+Expectancy Effect
+Pages 618-618
+Experimenter Bias
+Pages 618-618
+Explicit Memory
+Pages 618-618
+Exploration
+Pages 618-618
+Exposed
+Pages 619-619
+Expressive Aphasia
+Pages 619-619
+Expressive Aphasia, Fluent Aphasia, Infantile Acquired Aphasia
+Pages 619-619
+Expressive Dysphasia
+Mei Y. Chang, Raymond S. Dean
+Pages 619-619
+Expressive Group Therapy
+Pages 620-620
+Expressive Language
+Mysti S. Frazier
+Pages 620-621
+Expressive Language Disorders
+Cassandra Means
+Pages 621-622
+Expressive Therapy
+Pages 622-622
+Expressive Vocabulary Test, Second Edition
+Jessica R. Gurley
+Pages 622-623
+Expulsion
+Pages 623-623
+Extended Families
+Stacy A. S. Williams
+Pages 623-624
+Extensor Plantar Reflex (Pathological) Toe Phenomenon
+Pages 624-624
+Extensor Plantar Response or Extensor Response
+Pages 624-624
+External Motivation
+Stephanie A. Grote-Garcia, Forrest D. McDowell
+Pages 624-625
+Extinction
+Brady I. Phelps
+Pages 625-626
+
+E
+Extinction Burst
+Robert Walrath
+Pages 626-627
+Extrafamilial Home
+Pages 627-627
+Extrinsic
+Pages 627-627
+Extrinsic Motivation
+Pei-Hsuan Hsieh
+Pages 627-628
+Extrinsically Motivated Behavior
+Steuart T. Watson, Darrell Davis
+Pages 628-628
+Eye Fixations
+Pages 628-628
+Eye Movements
+Alicia MacKay
+Pages 628-629
+Eye–Hand Coordination
+Jana Sander
+Pages 629-629
+F
+Fabry Syndrome
+Anthony P. Odland, Wiley Mittenberg
+Pages 631-633
+Face Blindness or Facial Agnosia
+Pages 633-633
+Face Perception
+Pages 633-633
+Facial Identification
+Pages 633-633
+Facial Recognition
+Mark Pennick
+Pages 634-634
+Factor IX Deficiency
+Pages 634-634
+Factor VIII Deficiency
+Pages 634-634
+Failing a Grade
+Pages 634-634
+Failure to Thrive
+Pages 634-634
+Failure to Thrive Syndrome
+Micah S. Brosbe
+Pages 635-636
+Fairbairn's Psychoanalytic Theory
+Pages 636-636
+False Belief Task
+Douglas K. Symons
+Pages 637-639
+
+F
+Falter
+Pages 639-639
+Family Constellation
+Pages 639-639
+Family Dissolution
+Pages 639-639
+Family Drawing
+Rebekah R. Pender
+Pages 639-640
+Family Drawing Global Rating Scales
+Pages 640-640
+Family Relationships
+Pages 640-640
+Family Structure
+Pages 640-640
+Family Systems Theory
+Pages 640-640
+Family Therapist
+Bernadette Hassan Solórzano
+Pages 640-641
+Family Therapy
+Robert Walrath
+Pages 641-642
+Fantasy Play
+Nayla Daou
+Pages 642-642
+FAS
+Pages 642-642
+Fascia
+Arthur E. Hernandez
+Pages 642-642
+Fatal Illness
+Pages 643-643
+Father Only Families
+Pages 643-643
+Fathers
+Bady Quintar
+Pages 643-644
+Fatness
+Pages 644-644
+FBA
+Pages 644-644
+Fear
+Pages 644-644
+Fear of Strangers
+Pages 644-644
+
+F
+Fecal Soiling
+Pages 644-644
+Feeding
+Pages 644-644
+Feeding Disorder
+Jessica Sparling, Ivy Chong
+Pages 644-645
+Feelings
+Pages 645-645
+Feingold Diet
+Jana Sander
+Pages 645-646
+Female
+Pages 646-646
+Female Gamete
+Pages 646-646
+Female Germ Cell
+Pages 646-646
+Femaleness
+Pages 646-646
+Feminine
+Pages 646-646
+Femininity
+Ashlea Smith
+Pages 646-648
+Fertile
+Pages 648-648
+Festinger, Leon
+Bernadette Hassan Solórzano
+Pages 648-649
+Fetal Alcohol Effects
+Ashley N. Pettoni
+Pages 649-650
+Fetal Alcohol Spectrum Disorder
+Pages 650-650
+Fetal Alcohol Spectrum Disorder (FASD)
+Pages 650-650
+Fetal Alcohol Syndrome
+John Joshua Hall, Chad A. Noggle
+Pages 651-652
+Fetal Alcohol Syndrome (FAS)
+Pages 652-652
+Fetal Death
+Pages 652-652
+Fetal Development
+Jana Sander
+Pages 652-652
+
+F
+Fetal Distress
+Jana Sander
+Pages 653-653
+Fetal Survival
+Pages 653-653
+Fetus
+Elisheva Konstam, Devorah Neuhaus
+Pages 653-654
+Fidelity
+Pages 654-654
+Fidgety
+Pages 654-654
+Field Observation
+Pages 654-654
+Fight or Flight
+Pages 654-654
+Fighting
+Pages 654-654
+Filial Family Therapy (FFT)
+Pages 654-657
+Filial Therapy
+Jeff L. Cochran, Nancy H. Cochran
+Pages 657-657
+Fine Motor Skills
+Maria Assunta Cuffaro
+Pages 657-657
+Fire Setting
+Micah S. Brosbe, Angela Waguespack
+Pages 657-659
+Firestarting
+Pages 659-659
+First Language Acquisition
+Pages 659-659
+First-Generation Immigrant Children
+Pages 659-659
+Fixed Interval Schedule
+Steuart T. Watson, Christine Griffes
+Pages 659-660
+Floppy Baby Syndrome
+Pages 660-660
+Floppy Infant Syndrome
+Pages 660-660
+Fluency
+Pages 660-660
+Fluid Intelligence
+Robert Walrath
+Pages 660-660
+
+F
+Fluid Reasoning
+Pages 660-660
+Fluoxetine
+Pages 660-661
+Flurazepam
+Pages 661-661
+Focused Attention
+Pages 661-661
+Food
+Pages 661-661
+Food Refusal/Selectivity
+Pages 661-661
+Formative Assessment
+Susan K. Green
+Pages 661-662
+Formative Evaluation
+Pages 662-662
+Formative Year
+Pages 662-662
+Foster Care
+Stephanie Dvorak, Tasha R. Howe
+Pages 662-663
+Fragile X Syndrome
+Randal J. McCallian, Maria G. Valdovinos
+Pages 663-667
+Frame of Mind
+Pages 667-667
+Fraternal Twins
+Pages 667-667
+Fraudulence
+Pages 667-667
+Frequency
+Pages 667-667
+Frequency Curve
+Pages 667-667
+Freud, Anna
+Rachel Wamser, Rachel Hibberd, Brian Vandenberg
+Pages 667-669
+Friends
+Cynthia A. Erdley, Douglas W. Nangle, Alana M. Burns
+Pages 669-671
+Friendship
+Janett M. Naylor
+Pages 671-672
+Fromm, Erich
+Janet G. Benton
+Pages 672-673
+
+F
+Frontal Cortex
+Pages 673-673
+Frontal Lesion
+Tracey McLellan
+Pages 673-675
+Frontal Lobe Dysfunction
+Pages 675-675
+Frontal Lobe Injury
+Pages 675-675
+Frontal Lobes
+Audrey McKinlay
+Pages 675-677
+Full Inclusion
+Judah B. Axe
+Pages 678-678
+Full Scale IQ
+Pages 678-678
+Functional Analysis
+Pages 678-678
+Functional Assessment
+Pages 678-678
+Functional Behavior Analysis
+Pages 678-678
+Functional Behavioral Assessment
+Pages 678-678
+Functional Imaging
+Pages 678-678
+Functional Magnetic Resonance Imaging
+Lauren Connell Pavelka
+Pages 679-679
+Functional Mutism
+Pages 679-679
+Function-Based Diagnostic Classification Systems: Problem Behavior
+Ennio Cipani
+Pages 679-680
+FXS
+Pages 680-680
+G
+GAD
+Pages 681-681
+GAF
+Pages 681-681
+Galantamine
+Pages 681-681
+Gammahydroxybutyrate (GHB)
+Pages 681-681
+
+G
+GAPD
+Pages 681-681
+Gardner’s Theory of Multiple Intelligences
+Daniel Patanella, Chandra Ebanks
+Pages 681-682
+Gaussian Distribution
+Pages 682-682
+Gay
+Pages 682-682
+Gaze following
+Pages 682-682
+Gc
+Pages 682-682
+GDS
+Pages 683-683
+Gender Conformity
+Pages 683-683
+Gender Development
+Jessie Kosorok Mellor
+Pages 683-684
+Gender Identity
+Lisa Kilanowski-Press
+Pages 684-685
+Gender Identity Disorder
+Stacee Reicherzer
+Pages 686-687
+Gender Roles
+Kevin L. Nadal
+Pages 687-690
+Gender Schema Theory
+Jonathan Perle, Angela Waguespack
+Pages 690-691
+Gender Socialization
+Pages 691-691
+Gender Variance
+Pages 691-691
+Gene–Environment Interaction
+Pages 691-691
+General Cognitive Aptitude Testing
+Pages 691-691
+General Intelligence
+Pages 691-691
+General System Theory
+Pages 691-691
+Generalization
+Gina Coffee
+Pages 691-693
+
+G
+Generalized Anxiety Disorder
+Jill Driest
+Pages 693-694
+Generation
+Pages 694-694
+Generational Effects
+Pages 694-694
+Generativity versus Stagnation (Erikson’s Middle Age)
+Sarah Poole, John Snarey
+Pages 695-696
+Genetic Blueprint
+Pages 696-696
+Genetic Disorder
+Pages 697-697
+Genotype
+Arthur E. Hernandez
+Pages 697-697
+Geodon®
+Anisa Fornoff
+Pages 697-697
+Gerstmann Syndrome
+Kristen Domboski, Wiley Mittenberg
+Pages 697-701
+GEs
+Pages 701-701
+Gestalt Play Therapy
+Pages 701-701
+Gestalt Therapy
+Pages 701-701
+Gestures
+Seongwon Yun
+Pages 701-702
+Gf
+Pages 702-702
+Gibberish
+Pages 702-702
+Gifted and Talented Children
+Megan Parker
+Pages 703-703
+Giggle
+Pages 703-703
+Gilles de la Tourette’s Syndrome
+Pages 703-703
+Girlhood
+Pages 703-703
+Girly
+Pages 703-703
+
+G
+GLA Deficiency
+Pages 704-704
+GLBTQ
+Pages 704-704
+Global Assessment of Functioning Scales
+Lori J. Warner
+Pages 704-704
+Globus Pallidus
+Chad A. Noggle
+Pages 705-705
+Glutethimide (Doriden)
+Pages 705-705
+Go/No-Go Task
+George Georgiou, Cecilia A. Essau
+Pages 705-706
+Gonads
+Carol D. Daniels
+Pages 706-707
+Good-Enough Mother
+Pages 707-707
+Goodenough/Harris Drawing Test
+Pages 707-707
+Goofballs
+Pages 707-707
+Gordon Diagnostic System
+Nina Foster
+Pages 707-707
+Grade Equivalents
+Marie C. McGrath
+Pages 708-708
+Grade Retention
+Priscilla Jones, Angela Waguespack
+Pages 708-709
+Grade Scores
+Pages 710-710
+Graduated Learning
+Pages 710-710
+Grain Alcohol
+Pages 710-710
+Grammar
+Pages 710-710
+GRE/SAT Score
+Pages 710-710
+Grey Matter
+Chad A. Noggle
+Pages 710-710
+Grief
+Pages 710-710
+
+G
+Grief Work
+Emily A. Bullington
+Pages 710-711
+Grieving
+Emily A. Bullington
+Pages 711-713
+Gross Impairment in Reality Testing
+Pages 713-713
+Group Activity Therapy
+Pages 713-713
+Group Embedded Figures Test
+Pages 713-713
+Group Homes
+Mysti S. Frazier
+Pages 713-714
+Group Investigation (GI)
+Pages 714-714
+Group Play Therapy
+Pages 714-714
+Group Psychotherapy
+Pages 714-714
+Group Therapy
+Michael Block
+Pages 714-715
+Group-Oriented Cultures
+Pages 715-715
+Growth
+Pages 715-715
+Growth Faltering
+Pages 716-716
+Guaranine
+Pages 716-716
+Guardianship
+Pages 716-716
+Guffaw
+Pages 716-716
+Guilt
+Temi Bidjerano
+Pages 716-717
+Gurgle
+Pages 717-717
+H
+Habit
+Pages 719-719
+Habit Reversal
+Jesse M. Crosby, Michael P. Twohig
+Pages 719-721
+
+H
+Habituation
+Brady I. Phelps
+Pages 721-724
+Haemoglobin
+Pages 724-724
+Hair Pulling
+Pages 724-724
+Halcion®
+Anisa Fornoff
+Pages 724-724
+Hallucinogenic Drugs
+Pages 724-724
+Hallucinogens
+Ioana Boie
+Pages 725-725
+Halo Effect
+Pages 725-725
+Halstead, Ward C.
+Anna Mazur-Mosiewicz, Raymond S. Dean
+Pages 725-726
+Halstead-Reitan Battery
+Pages 726-726
+Halstead-Reitan Neuropsychological Test Battery
+Anna Mazur-Mosiewicz, Raymond S. Dean
+Pages 727-731
+Handwriting
+Pages 731-731
+Harsh Discipline
+Pages 731-731
+Hawthorne Effect
+Renee L. Allen, Andrew S. Davis
+Pages 731-732
+Hb
+Pages 732-732
+Head Injury
+Pages 732-732
+Head Start
+Justin A. Barterian, Andy V. Pham, John S. Carlson
+Pages 733-734
+Head Trauma
+Pages 734-734
+Health
+Pages 734-734
+Health Psychology
+Maria Kyriakaki, George Georgiou, Cecilia A. Essau
+Pages 734-735
+Heart Disease
+Pages 735-735
+
+H
+Heave
+Pages 735-735
+Hebb, Donald O.
+Audrey McKinlay
+Pages 735-736
+HELLP Pregnancy Syndrome
+Pages 736-736
+HELLP Syndrome
+Maria Stylianou, Xenia Anastassiou-Hadjicharalambous
+Pages 736-738
+Helping Behavior
+Pages 738-738
+Hematinoglobulin
+Pages 738-738
+Hemidecortication
+Pages 738-738
+Hemispherectomy
+Brady I. Phelps
+Pages 738-739
+Hemispheres of the Brain
+Chad A. Noggle, Andrea R. Moreau
+Pages 739-740
+Hemispheres of the Brain, Lateralization of
+Chad A. Noggle, John Joshua Hall
+Pages 740-741
+Hemispheric Differences
+Pages 741-741
+Hemispheric Dominance
+Pages 741-741
+Hemispheric Lateralization
+Pages 742-742
+Hemoglobin
+Marie C. McGrath
+Pages 742-742
+Hemophilia
+Pages 742-743
+Hemoprotein
+Pages 743-743
+Hereditary Dystopic Lipidosis
+Pages 743-743
+Heredity
+Pages 743-743
+Heritability
+Ioana Boie
+Pages 743-744
+Hermaphrodite
+Pages 744-744
+
+H
+Hermaphroditic
+Pages 744-744
+Heteronomous
+Pages 744-744
+Heterosexism
+Pages 744-744
+Heterosexual Identity
+Pages 744-744
+Hierarchical Linear Modeling
+Scott Graves
+Pages 744-745
+Hindbrain
+Pages 745-745
+Hippocampus
+Ioana Boie
+Pages 745-746
+Histories
+Pages 746-746
+Hold Fast to Another’s View
+Pages 746-746
+Holistic Health
+Pages 746-746
+Holophrases
+Gyasi Bramos Hantman
+Pages 746-746
+Holtzman Ink Blot Test (HIT)
+Pages 747-747
+Home Situations Questionnaire
+Pages 747-747
+Homeless Families
+Jessica Mackelprang
+Pages 747-749
+Homeless Household
+Pages 749-749
+Homework
+Lori Unruh
+Pages 749-751
+Homogeneity of Variance
+Pages 751-751
+Homonegativity
+Pages 751-751
+Homophobia
+James E. Vaughn III
+Pages 751-752
+Homoscedasticity
+Marie-Anne Issa, Kevin L. Nadal
+Pages 752-752
+
+H
+Homosexual
+Pages 752-752
+Homosexual Identity
+Pages 752-752
+Homosexuality
+Ronald R. Holder
+Pages 753-755
+Homozygous
+Mysti S. Frazier
+Pages 755-755
+Hormones
+Pages 755-755
+Hospice
+Pages 755-755
+Hospital Admissions for Young Children
+Pages 756-756
+Hospitalization of Preschoolers
+Margaux Barnes, Avi Madan-Swain
+Pages 756-757
+Hostile Aggression
+Micah S. Brosbe
+Pages 757-758
+Hostility
+Pages 758-758
+House-Tree-Person (H-T-P)
+Pages 758-758
+HRB
+Pages 759-759
+HRNB
+Pages 759-759
+HSQ
+Pages 759-759
+Huffing
+Pages 759-759
+Human Cell
+Pages 759-759
+Human Development
+Pages 759-759
+Human Evolution
+Daniel Patanella
+Pages 759-761
+Human Figure Drawing
+Pages 761-761
+Human Immunodeficiency Virus (HIV)
+Melissa R. Mignogna, Lisa Lay
+Pages 761-764
+
+H
+Human Subjects Review Boards
+Pages 764-764
+Humanism
+Pages 764-764
+Humanistic Perspective
+Chris Leeth
+Pages 764-765
+Humanistic Psychology
+Pages 765-765
+Humanistic Therapy
+Michael Block
+Pages 765-766
+Humor
+Pages 766-766
+Hunger
+Pages 766-766
+Huntington’s Chorea
+Pages 766-766
+Huntington’s Disease
+Brady I. Phelps
+Pages 766-767
+Hurl
+Pages 767-767
+Hydrargyrum
+Pages 767-767
+Hydrocephalus
+John Joshua Hall, Chad A. Noggle
+Pages 767-768
+Hyperactivity
+R. Matt Alderson, Kristen L. Hudec
+Pages 768-770
+Hyperarousal
+Pages 770-770
+Hypercoagulability
+Pages 770-770
+Hyperkinesia Syndromes
+Pages 770-770
+Hyperkinesias
+Pages 770-770
+Hyperkinesis
+Pages 770-770
+Hyperkinetic
+Pages 770-770
+Hyperkinetic Disorder
+Pages 770-770
+
+H
+Hyperkinetic Syndrome
+Pages 770-770
+Hyperlexia
+Robert Walrath
+Pages 771-771
+Hypnogen
+Pages 771-771
+Hypnosis
+Brian Vandenberg
+Pages 771-772
+Hypoactivity
+Jana Sander
+Pages 772-773
+Hypothalamus
+Edalmarys Santos, Chad A. Noggle
+Pages 773-773
+Hypotonia
+David Ritchie, Barry Nierenberg
+Pages 773-774
+I
+I.Q. Assessment
+Pages 775-775
+Iconic Memory
+Robert Walrath
+Pages 775-775
+Icterus
+Pages 775-775
+Id
+Pages 775-775
+Identical Twins
+Pages 775-775
+Identification
+Pages 775-775
+Identity
+Kenneth Foster
+Pages 775-778
+Identity Crisis
+Ray Wooten
+Pages 778-778
+Identity Diffusion
+Ray Wooten
+Pages 778-778
+Identity Foreclosure
+Ray Wooten
+Pages 779-779
+Identity Formation
+William E. Herman
+Pages 779-781
+Identity Formation and Development
+Pages 781-781
+Identity Moratorium
+Ray Wooten
+Pages 781-781
+
+I
+Identity Status
+Amanda Bozack
+Pages 781-782
+Identity Styles
+Stacy A. S. Williams
+Pages 782-785
+Identity Versus Role Confusion
+Michael Block
+Pages 785-786
+Idiot Savant
+Judah B. Axe
+Pages 786-786
+IDM
+Pages 786-786
+IEP
+Pages 786-786
+Illegal Drug Use/Abuse
+Pages 786-786
+Illegal Substance Use/Abuse
+Pages 786-786
+Illicit Drug Use in Adolescence
+Sharon Morgillo Freeman
+Pages 787-790
+Illicit Drugs
+Pages 790-790
+Illicit Substance Use/Abuse
+Pages 790-790
+Images
+Pages 790-790
+Imaginary Audience
+Marie-Anne Issa, Kevin L. Nadal
+Pages 790-792
+Imaginative Play
+Pages 792-792
+Imaginativeness
+Pages 792-792
+Imaging Techniques
+Norma S. Guerra
+Pages 792-792
+Imitation
+Pages 792-792
+Imitation Syndrome
+Pages 792-792
+Imitation Training
+Pages 792-792
+Immediate Memory
+Pages 792-792
+
+I
+Immigrant Children
+Carrie L. Castañeda-Sound, Cynthia G. González
+Pages 792-795
+Immigrant Youth
+Pages 795-795
+Imminent Justice
+Pages 795-795
+Immunodeficiency Syndrome Acquired
+Pages 795-795
+Immunologic Deficiency Syndrome Acquired
+Pages 795-795
+Impaired Language
+Pages 795-795
+Implicit Knowledge
+Pages 795-795
+Imprinting
+Pages 795-795
+Impulse Control
+Brooke A. Bailer, Jennifer J. Lindwall, Brian P. Daly
+Pages 795-798
+Impulsive Aggression
+Pages 798-798
+Impulsivity
+Despina Stavrinos, David C. Schwebel
+Pages 798-799
+In Danger: in Jeopardy, Threatened, Susceptible
+Pages 800-800
+In Residence
+Pages 800-800
+Inadequate Growth
+Pages 800-800
+Inattention
+Pages 800-800
+Inattentiveness
+Pages 800-800
+Incentives
+Pages 800-800
+Incest
+Pages 800-800
+Inclination
+Pages 800-800
+Inclusion
+Pages 800-800
+
+I
+Inclusive Education
+Pages 800-800
+Inconsolable
+Pages 800-800
+Independent Decision Making
+Pages 800-800
+Independent Variables
+Pages 800-800
+Indifferent Parenting Style
+Maria-Eva Tsola, Xenia Anastassiou-Hadjicharalambous
+Pages 800-802
+Indifferent Parents
+Pages 802-802
+Indigent Family
+Pages 802-802
+Indirect Aggression
+Pages 802-802
+Individual Education Plans
+Anitra Shelton-Quinn
+Pages 802-804
+Individual Education Programs
+Pages 804-804
+Individualized Education
+Pages 804-804
+Individuals with Disabilities Education Act (IDEA)
+Sharon Judge
+Pages 804-806
+Individuation
+Pages 806-806
+Inductive Parenting
+Robert Sean Bannon
+Pages 807-807
+Inductive Reasoning
+Pages 807-807
+Indulgent Parenting Style
+Pages 807-807
+Infancy
+Jana Sander
+Pages 807-808
+Infant Death
+Pages 808-808
+Infant Mortality
+Angelina Stavrou, Xenia Anastassiou-Hadjicharalambous
+Pages 809-810
+Infantile Amnesia
+Maria Perdikogianni, Xenia Anastassiou-Hadjicharalambous
+Pages 810-812
+
+I
+Infantile Hypotonia
+Pages 812-812
+Infant–Mother Attachment Studies, of Ainsworth
+Douglas K. Symons
+Pages 812-813
+Inference
+Pages 813-813
+Infix
+Pages 813-813
+Inflexible-Explosive Children
+Pages 813-813
+Information Persistence
+Pages 813-813
+Information Processing
+Pages 814-814
+Ingestion
+Pages 814-814
+Inhalants
+Preciosa Calderon
+Pages 814-814
+Inhibition
+Despina Stavrinos, Katherine W. Byington
+Pages 814-816
+Initiative Versus Guilt
+Matthew C. Lambert, Heather M. Kelley
+Pages 816-817
+Inkblot Test
+Pages 817-817
+Innate Language Acquisition
+Pages 817-817
+Inner City Destitution
+Pages 817-817
+Inner City Poverty
+Tony Wu
+Pages 817-818
+Inner Landscapes
+Pages 818-818
+Inner Speech
+Jana Sander
+Pages 818-818
+Innovation
+Pages 818-818
+Inpatient Care for Preschool Children
+Pages 818-818
+Inquisitive Behavior
+Pages 818-818
+
+I
+Inquisitiveness
+Pages 818-818
+Insanity of Early Life
+Pages 818-818
+Insecure Attachment
+Pages 819-819
+Insecure-Ambivalent Attachment
+Pages 819-819
+Insecure-Resistant Attachment
+Douglas K. Symons, Alicia L. Szielasko
+Pages 819-820
+Insecurity
+Pages 820-820
+Insight-Oriented Approaches
+Pages 820-820
+Inspective Behavior
+Pages 820-820
+Inspiration
+Pages 820-820
+Institutional Review Boards
+Marie C. McGrath
+Pages 821-822
+Instruction
+Pages 822-822
+Instructional Hierarchy
+Derek D. Reed, James K. Luiselli
+Pages 822-823
+Instrumental Aggression
+Tamara Del Vecchio
+Pages 823-824
+Instrumental Aggressors
+Pages 824-824
+Instrumental Conditioning
+Pages 824-824
+Insulin Dependent Diabetes
+Pages 824-824
+Integrated Education
+Pages 824-824
+Integrated Language
+Pages 824-824
+Integration
+Pages 824-824
+Integrative Classroom
+Pages 824-824
+
+I
+Intellectual Ability
+Pages 824-824
+Intellectual Disability
+Pages 824-824
+Intellectual Testing/Assessment
+Pages 824-824
+Intelligence
+Pages 824-824
+Intelligence Norms
+Marie C. McGrath
+Pages 824-825
+Intelligence Quotient
+Marie C. McGrath
+Pages 825-826
+Intelligence Testing
+R. Steve McCallum
+Pages 826-829
+Intelligence Testing Without Verbal Communication
+Pages 830-830
+Intentionality
+Tamara Del Vecchio
+Pages 830-830
+Interaction Theory of Language Development
+Loretta C. Rudd, Matthew C. Lambert
+Pages 830-831
+Interethnic Friendships
+Pages 831-831
+Intergenerational Transmission of Divorce
+Pages 831-831
+Internal Conflict with One’s Views of the World
+Pages 831-831
+Internal Dialogue
+Pages 831-831
+Internal Monologue
+Pages 831-831
+Internal Motivation
+Lindsay Lennertz
+Pages 831-833
+Internal Symbols
+Pages 833-833
+Internal Working Models
+Pages 833-833
+Interpersonal Cognitive Problem Solving
+Pages 833-833
+Interpersonal Engagement
+Pages 833-833
+
+I
+Interpersonal Intelligence
+Pages 833-833
+Interpersonal Problem Solving
+Pages 833-833
+Interpersonal Processes
+Pages 833-833
+Interpersonal Skills
+Pages 833-833
+Interpersonal Understanding
+Pages 833-833
+Interracial Friendships
+Pages 833-833
+Intervention Satisfaction
+Pages 833-833
+Intimacy Versus Isolation (Erikson’s Young Adult Stage)
+Gregory C. Ellison II
+Pages 833-835
+Intimate Friend
+Julie Newman Kingery, Tyson R. Reuter
+Pages 835-837
+Intimate Relationships
+Pages 837-837
+Intimidators
+Pages 837-837
+Intoxication
+Pages 837-837
+Intrapersonal Intelligence
+Pages 837-837
+Intrauterine Fetal Death
+Pages 837-837
+Intrauterine Growth Restriction
+Pages 837-838
+Intrauterine Growth Retardation
+Pages 838-838
+Intrinsic Motivation
+Pei-Hsuan Hsieh
+Pages 838-838
+Involuntary Swallow
+Pages 838-838
+IQ
+Pages 838-838
+IQ Testing
+Pages 839-839
+
+I
+IRBs
+Pages 839-839
+Isolation Aphasia
+Pages 839-839
+IUGR
+Pages 839-839
+J
+Jacking Off
+Pages 841-841
+James, William
+John Snarey, Ashley E. Coleman
+Pages 841-844
+James-Lange Theory of Emotion
+Ashley E. Coleman, John Snarey
+Pages 844-846
+Jaundice
+Ioana Boie
+Pages 846-847
+Jealousy Complex
+Pages 847-847
+Jigsaw Classroom (JC)
+Pages 847-847
+Joint Attention
+Lydia Aydlett
+Pages 847-848
+Joint Family
+Pages 848-848
+Joint Focus of Attention
+Loretta C. Rudd, Leah E. Johnson
+Pages 849-849
+Joint Legal Custody
+Douglas K. Symons
+Pages 849-850
+Journals
+Pages 850-850
+Juvenile Crime
+Pages 850-850
+Juvenile Delinquency
+Pages 851-851
+Juvenile Diabetes
+David A. Fedele
+Pages 851-852
+Juvenile Diabetes Mellitus
+Pages 852-852
+Juvenile Myelomonocytic Leukemia (JMML)
+Pages 852-852
+Juvenile Offending
+Pages 852-852
+
+K
+KABC-II
+Pages 853-853
+Kaufman Assessment Battery for Children, Second Edition
+John Joshua Hall, Chad A. Noggle
+Pages 853-854
+Ketamine (Ketaset)
+Pages 854-854
+Ketipinor
+Pages 854-854
+Kinesthesia or the Kinesthetic Sense
+Pages 854-854
+Kinetic Family Drawing
+Pages 854-854
+Kinship Care
+Pages 854-854
+Kinship Group
+Pages 854-854
+Klonopin (Clonazepam)
+Lauren Connell Pavelka
+Pages 855-855
+Klopoxid
+Pages 855-855
+Knowledge
+Pages 855-855
+Kohlberg, Lawrence
+John Snarey, Andrea Green
+Pages 855-859
+Kohlberg’s Theory of Moral Development
+Robert Walrath
+Pages 859-860
+Kohlberg’s Third Level
+Pages 860-860
+Kolb, Bryan
+Tracey McLellan
+Pages 860-860
+L
+Labor and Delivery
+Pages 861-861
+Lactating
+Pages 861-861
+Ladd-Franklin, Christine
+Kelli Vaughn-Blount
+Pages 861-863
+Language
+Pages 863-863
+Language Acquisition
+Amy Burger, Ivy Chong
+Pages 863-865
+
+L
+Language Development
+Loretta C. Rudd, Heather M. Kelley
+Pages 865-865
+Language Disorders
+Pages 866-866
+Language Impairments in Children
+Pages 866-866
+Language Learning
+Pages 866-866
+Language Variety
+Pages 866-866
+Language-Based Reasoning
+Pages 866-866
+Laplace-Gaussian Curve
+Pages 866-866
+Latent Learning
+Pages 866-866
+Latent Variables
+Pages 866-866
+Laterality
+Anna Mazur-Mosiewicz, Raymond S. Dean
+Pages 866-867
+Laughter
+Tawnie Caballero, Brett R. Nelson, Laura Parres
+Pages 868-868
+Law of Effect
+Elizabeth G. E. Kyonka
+Pages 868-870
+Law of Independent Assortment
+Pages 870-870
+Law of Segregation
+Pages 870-870
+LBW
+Pages 870-870
+Lead Poisoning
+Amber R. Whited, Andrew S. Davis
+Pages 870-871
+Learned Helplessness
+Leah E. Johnson, Matthew C. Lambert
+Pages 871-872
+Learning
+Daniel Patanella
+Pages 872-874
+Learning Difficulty
+Pages 874-874
+Learning Disabilities
+Tamara Bowlin, Sherry Mee Bell
+Pages 874-877
+
+L
+Learning Disabilities (as Chiefly Used in the United Kingdom)
+Pages 877-877
+Learning Disability in Math
+Pages 877-877
+Learning Disorder
+Pages 877-877
+Learning Goals
+Pages 877-877
+Learning Potential Assessment
+Pages 877-877
+Learning Readiness
+Molly Millians
+Pages 877-879
+Learning Skills
+Pages 879-879
+Learning Strategies
+Pages 879-879
+Learning Styles
+Pages 879-879
+Left Dominant
+Pages 880-880
+Left Handedness
+Raymond S. Dean, Matthew J. Holcomb
+Pages 880-881
+Left Inferior (Third) Frontal Convolution (Gyrus)
+Pages 881-881
+Left Inferior Frontal Lobe (Anatomically Different Areas, But Regarded as Broca’s Area by Different Sources)
+Pages 881-881
+Leiter International Performance Scale: Revised
+David Michalec
+Pages 882-882
+Lesbian
+Pages 882-882
+Lethargic
+Pages 882-882
+Leukemia
+Margaux Barnes, Avi Madan-Swain
+Pages 883-884
+Lexapro®
+Anisa Fornoff
+Pages 884-885
+Lexical Configuration
+Pages 885-885
+Library Therapeutics
+Pages 885-885
+
+L
+Librelease
+Pages 885-885
+Libritabs
+Pages 885-885
+Librium
+Pages 885-885
+Life Events
+Beatriz Olaya Guzmán, Cecilia A. Essau
+Pages 885-887
+Life Satisfaction
+David N. Miller
+Pages 887-889
+Life Style
+Pages 889-889
+Lifestyle Mores
+Pages 889-889
+Limbic System
+Chad A. Noggle, John Joshua Hall
+Pages 889-890
+Limbitrol
+Pages 890-890
+Limited Play
+Pages 890-890
+Linguistic Determinism
+Pages 890-890
+Linguistic Intelligence
+Pages 890-890
+Linguistic Relativity
+Pages 890-890
+Literacy
+Stacy A. S. Williams
+Pages 890-892
+Literacy Development
+Roberta Simnacher Pate, Stephanie A. Grote-Garcia
+Pages 892-893
+Literatherapy
+Pages 893-893
+Literature Based Instruction
+Pages 893-893
+Lithane
+Pages 893-893
+Lithane®
+Pages 893-893
+Lithium
+Anisa Fornoff
+Pages 893-894
+
+L
+Lithizine
+Pages 894-894
+Lithobid
+Pages 894-894
+Lithobid®
+Pages 894-894
+Lithonate
+Pages 894-894
+Lithonate®
+Pages 894-894
+Lithotabs
+Pages 894-894
+Lithotabs®
+Pages 894-894
+Little People
+Pages 894-894
+Locke, John
+Erin Hambrick
+Pages 894-896
+Locus Coeruleus
+Chad A. Noggle
+Pages 896-896
+Locus of Control (External and Internal)
+David Brandwein
+Pages 897-898
+Locus of Control Reinforcement
+Pages 898-898
+Logagraphia
+Pages 898-898
+Logical Reasoning
+Pages 898-898
+Logical-Mathematical Intelligence
+Pages 898-898
+Lone/Single Parent/Caregiver Families
+Pages 898-898
+Longitudinal Methods
+Xenia Anastassiou-Hadjicharalambous, Maria Stylianou
+Pages 898-900
+Longitudinal Research
+Audrey McKinlay
+Pages 900-901
+Long-Term Effects of Divorce
+Pages 901-901
+Long-Term Memory
+Pages 901-901
+
+L
+Long-Term Potentiation
+Pages 901-901
+Loss of Ego Boundaries
+Pages 901-901
+Loss of Privileges
+Pages 902-902
+Loss of Reinforcement
+Pages 902-902
+Lovaas, Ole Ivar
+Joy Jansen
+Pages 902-902
+Low Birth Weight
+Anna Mazur-Mosiewicz, Raymond S. Dean
+Pages 902-903
+Low Social Status Children
+Pages 903-903
+Low Socio-Economic Status
+Pages 903-903
+Low-Accepted Children
+Pages 903-903
+Ludes
+Pages 903-903
+Luria, Alexander Romanovich
+David Morrison, Mary Joann Lang
+Pages 903-907
+Lustprinzip (German)
+Pages 907-907
+Lying
+Pages 907-907
+M
+Magazines
+Pages 909-909
+Magnetic Resonance Imaging
+Lauren Connell Pavelka
+Pages 909-909
+Magnetic Resonance Imaging (MRI)
+Pages 909-910
+Magnetic Resonance Tomography (MRT)
+Pages 910-910
+Mainstreaming
+Grace Boyd, Andrea Morillas-Brown, Brett R. Nelson
+Pages 910-912
+Major Depression
+Pages 912-912
+Major Depressive Disorder or Clinical Depression
+Pages 912-912
+
+M
+Major Tranquilizer
+Pages 912-912
+Make-Believe Play
+Pages 912-912
+Malabsorption
+Pages 912-912
+Maladaptive Self-Reflection
+Pages 912-912
+Male Bonding
+Pages 912-912
+Male Gamete
+Pages 912-912
+Male Germ Cell
+Pages 912-912
+Malnourishment
+Pages 912-912
+Malnutrition
+Pages 912-913
+Manic-Depressive Illness
+Pages 913-913
+Marriage and Family Therapist
+Pages 913-913
+Martin-Bell Syndrome
+Pages 913-913
+Maslow’s Hierarchy of Needs
+Michael Block
+Pages 913-915
+Mass Media
+Pages 915-915
+Mastery Orientation
+Pei-Hsuan Hsieh
+Pages 915-916
+Masturbation
+Steuart T. Watson, Christine Griffes
+Pages 916-917
+Mate Selection
+Pages 917-917
+Mateine
+Pages 917-917
+Maternal
+Pages 917-917
+Maternal Alcohol Consumption
+Rania D. Hadjicosta, Xenia Anastassiou-Hadjicharalambous
+Pages 917-924
+
+M
+Maternal Smoking
+Louiza Michael Christodoulou, Xenia Anastassiou-Hadjicharalambous
+Pages 924-925
+Math Deficit
+Pages 925-925
+Math Difficulties
+Pages 925-925
+Math Disorder
+Pages 925-925
+Math Dyslexia
+Pages 926-926
+Mather, Nancy
+Sherry Mee Bell
+Pages 926-927
+Maturation
+Pamelyn M. MacDonald
+Pages 927-927
+Maturity
+Pages 927-927
+Maxi Task
+Pages 927-927
+May Institute
+Fatima Watt
+Pages 928-928
+McCarthy Scales of Children’s Abilities
+Elizabeth Levin
+Pages 928-929
+Mean
+Pages 930-930
+Measurement Theory
+Pages 930-930
+Media
+Ashlea Smith
+Pages 930-931
+Media Influence
+Pages 931-931
+Median
+Pages 931-931
+Mediated Learning
+Pages 931-931
+Mediators
+Pages 932-932
+Medical Terms: Anabolic-Androgenic Steroids (AAS)
+Pages 932-932
+Medium
+Pages 932-932
+
+M
+Medulla
+Chad A. Noggle
+Pages 932-933
+Medulla Oblongata
+Chad A. Noggle
+Pages 933-933
+Meehl, Paul Everett
+Michael C. Cassano, Douglas W. Nangle
+Pages 933-935
+Melancholy
+Pages 935-935
+Mellaril Concentrate®
+Pages 935-935
+Mellaril®
+Anisa Fornoff
+Pages 935-936
+Mellaril-S®
+Pages 936-936
+Memorization
+Stephanie A. Grote-Garcia, Douglas J. Loveless
+Pages 936-936
+Memory
+Pages 936-936
+Memory Strategies
+Russell N. Carney
+Pages 937-938
+Memory Techniques
+Pages 938-938
+Mendelian Genetics
+Daniel Patanella
+Pages 938-939
+Mendelian Inheritance
+Pages 939-939
+Menrium
+Pages 939-939
+Mental Ability
+Pages 939-939
+Mental Ability Testing
+Pages 939-939
+Mental Age
+Audrey McKinlay
+Pages 940-940
+Mental Computation
+Pages 940-940
+Mental Deficiency
+Pages 941-941
+Mental Disorders
+Pages 941-941
+
+M
+Mental Health
+Pages 941-941
+Mental Health Counselors
+Pages 941-941
+Mental Illness
+Pages 941-941
+Mental Illness/Disorder
+Pages 941-941
+Mental Mapping
+Pages 941-941
+Mental Models
+Pages 941-941
+Mental Retardation
+Sara E. Hoffenberg
+Pages 941-943
+Mental Retardation with Osteocartilaginous Abnormalities
+Pages 943-943
+Mentalizing
+Pages 943-943
+Meprobamate (Mil-Town)
+Pages 943-943
+Mercury
+Madeline Gross
+Pages 943-945
+Mercy-Killing
+Pages 945-945
+Messenger RNA
+Pages 945-945
+Meta-Analysis
+Pages 945-946
+Meta-Analytic Review
+Pages 946-946
+Metacognition
+Pages 946-946
+Metacognitive Awareness
+Pages 946-946
+Metacognitive Strategies
+Pages 946-946
+Metadate CD (Methylphenidate)
+Anna L. Lopez
+Pages 946-947
+Metadate CD®
+Pages 947-947
+
+M
+Metadate ER®
+Pages 947-947
+Metalloprotein
+Pages 947-947
+Methaqualone (Quaalude)
+Pages 947-947
+Methylphenidate
+Pages 947-947
+Methylphenidate (Generic)
+Pages 947-947
+Methyltheobromide
+Pages 947-947
+Methyprylon (Noludar)
+Pages 947-947
+Microcephaly
+Brady I. Phelps
+Pages 947-949
+Microevolution
+Pages 949-949
+Midbrain
+Chad A. Noggle
+Pages 949-950
+Midpoint
+Pages 950-950
+Milan Therapist
+Pages 950-950
+Mild Mental Retardation
+Sara E. Hoffenberg
+Pages 950-951
+Milgram, Stanley
+Daniel Patanella
+Pages 951-952
+Millon Adolescent Clinical Inventory
+Jessica R. Gurley
+Pages 952-953
+Millon Adolescent Personality Inventory
+Jessica R. Gurley
+Pages 954-955
+Mindblindness
+Lee A. Wilkinson
+Pages 955-956
+Mindreading
+Pages 956-956
+Minimal Brain Dysfunction
+Pages 956-956
+Minimal Cerebral Dysfunction
+Pages 956-956
+
+M
+Minnesota Multiphasic Personality Inventory
+Pages 956-956
+Minnesota Multiphasic Personality Inventory-Adolescent (MMPI-A)
+Chris Leeth
+Pages 956-957
+Mirror Neurons
+Robert Walrath
+Pages 957-957
+Mirtazapine
+Pages 957-957
+Miscarriage
+Pages 957-957
+Misfortune
+Pages 958-958
+Mixed Lineage Leukemia
+Pages 958-958
+Mixed Models
+Pages 958-958
+Mixed Specific Developmental Disorders
+Pages 958-958
+MMPI
+Chris Leeth
+Pages 958-958
+MMPI-2
+Pages 958-958
+Mnemonic
+Pages 958-958
+Mnemonic Device
+Russell N. Carney
+Pages 958-961
+Mnemonic Strategy
+Pages 961-961
+Mnemonic Technique
+Pages 961-961
+Mode
+Pages 961-961
+Modeling
+Elaine A. Thomas
+Pages 961-962
+Modeling Technique
+Pages 963-963
+Moderate Mental Retardation
+Ashley N. Pettoni
+Pages 963-963
+Moderators
+Pages 963-963
+
+M
+Modification
+Pages 963-963
+Molestation
+Pages 963-963
+Monomodel Visual Amnesia
+Pages 963-963
+Monosomy X
+Pages 963-963
+Monozygotic (MZ) Twins
+Mysti S. Frazier
+Pages 964-964
+Mood
+Christi Sikora
+Pages 964-965
+Mood Disorders
+Christi Sikora
+Pages 965-965
+Mood Disorders
+Pages 965-965
+Moral Behavior
+Victoria Talwar
+Pages 965-967
+Moral Constraint
+Pages 967-967
+Moral Decision-Making
+Pages 967-967
+Moral Development
+Stefanie Dorough
+Pages 967-970
+Moral Growth
+Pages 970-970
+Moral Judgments
+Rajesh K. Kana
+Pages 970-972
+Moral Maturation
+Pages 972-972
+Moral Realism
+Pages 972-972
+Moral Reasoning
+Pages 973-973
+Morals
+Pages 973-973
+Moro Reflex
+Jordana E. Mortimer, Denise E. Maricle
+Pages 973-974
+Morpheme
+Shelia M. Kennison
+Pages 974-975
+
+M
+Morphology
+Linda R. Sealey
+Pages 975-977
+Mother only Families
+Pages 977-977
+Motivating Operations
+James K. Luiselli, Derek D. Reed
+Pages 977-978
+Motivation
+Tonya R. Hammer
+Pages 978-979
+Motivational Events
+Pages 979-979
+Motivational System
+Pages 979-979
+Motor Aphasia
+Pages 979-979
+Motor Area of the Brain
+Chad A. Noggle, Andrea R. Moreau
+Pages 979-979
+Motor Learning Difficulties
+Pages 979-979
+Motor Skills
+Pages 980-980
+Mournful
+Pages 980-980
+Mourning
+Pages 980-980
+Movement
+Pages 980-980
+Movement, Response
+Pages 980-980
+Multibehavior Therapy
+Pages 980-980
+Multicultural Education
+Teresa Gonzalez
+Pages 980-982
+Multifinality
+Tasha R. Howe
+Pages 982-982
+Multigenerational Family
+Pages 982-982
+Multilevel Modeling
+Pages 982-982
+Multimodal Therapy
+Fatima Watt
+Pages 982-983
+
+M
+Multiple Intelligence
+Anne Fierro Vanderlaan
+Pages 983-984
+Multisensory Teaching
+Pages 984-984
+Multisystemic Influences
+Pages 985-985
+Muscle Dysmorphic Disorder
+Pages 985-985
+Muscle Relaxants
+Pages 985-985
+Muscular Dystrophy
+Pages 985-985
+Music
+Pages 985-985
+Music Therapy
+Pages 985-985
+Musical Intelligence
+Pages 985-985
+Mutism
+Ivy Chong, Paula Wolfteich
+Pages 985-986
+Mutual Friend
+Pages 986-986
+Myelin Sheath
+Chad A. Noggle
+Pages 986-987
+Myelination
+Chad A. Noggle
+Pages 987-987
+Myopia
+Pages 987-987
+Myslee
+Pages 987-987
+N
+N/A
+Pages 989-989
+Narcissism
+Mae E. Jesneck
+Pages 989-990
+Narcolepsy
+Pages 990-990
+Narrative Conversations
+Pages 990-990
+Narrative Therapy
+Pages 990-990
+
+N
+National Association of School Psychologists (NASP)
+Lynna Lan Tien Nguyen Do
+Pages 990-991
+Native Language Acquisition
+Pages 991-991
+Nativist Theory
+Kyle A. Litchfield, Matthew C. Lambert
+Pages 991-992
+Natural Distribution
+Pages 992-992
+Natural Environment Training
+Pages 992-992
+Natural Language
+Pages 992-992
+Natural Learning
+Pages 992-992
+Natural Observation
+Jessica Sparling, Ivy Chong
+Pages 992-993
+Naturalist Intelligence
+Pages 993-993
+Naturalistic Observation
+Pages 993-993
+Nature vs Nurture Debate
+Pages 993-993
+Nature vs. Nurture
+Leah E. Johnson, Kyle A. Litchfield
+Pages 993-994
+Nature-Nurture Controversy
+Pages 994-994
+Nature-Nurture Issue
+Pages 994-994
+Near-Infrared Imaging
+Pages 994-994
+Near-Infrared Spectroscopy (NIRS)
+Marie C. McGrath
+Pages 994-995
+Nearsightedness
+Pages 995-995
+Neck of Uterus
+Pages 995-995
+Need for Achievement
+Pages 995-995
+Nefazodone
+Pages 995-996
+
+N
+Negative Academic Self-Evaluation
+Timothy J. Cleary
+Pages 996-1000
+Negative Life Events
+Pages 1000-1000
+Negative Reinforcement
+Jennifer M. Alexander, Maria G. Valdovinos
+Pages 1000-1000
+Negative Reinforcer
+Pages 1001-1001
+Negative Self-Evaluation Standards
+Pages 1001-1001
+Neglect
+Lindsay Weymouth, Tasha R. Howe
+Pages 1001-1002
+Neglected Children
+Lindsay Weymouth, Tasha R. Howe
+Pages 1002-1002
+Neglected Children
+Pages 1003-1003
+Neglectful Parenting Style
+Pages 1003-1003
+Neglecting Parents
+Pages 1003-1003
+Neo-Behaviorism
+Pages 1003-1003
+Neo-Cortex
+Randall R. Lyle
+Pages 1003-1004
+Neonatal Behavioral Assessment Scale (NBAS)
+Lydia Aydlett
+Pages 1004-1005
+Neonate
+Pages 1005-1005
+Neostriatum or Striate Nucleus
+Pages 1005-1005
+Neoteny
+Pages 1005-1005
+NEPSY
+Marie C. McGrath
+Pages 1006-1006
+NEPSY: A Developmental Neuropsychological Assessment
+Pages 1006-1006
+NEPSY-II
+Matthew J. Holcomb, Andrew S. Davis
+Pages 1006-1008
+Nerve Cells
+Pages 1008-1008
+
+N
+Nerve Fibre
+Pages 1008-1008
+Nervous System
+Randall R. Lyle
+Pages 1008-1009
+Neural Tube Defects
+Edalmarys Santos, Chad A. Noggle
+Pages 1009-1010
+Neural Tube Disorders
+Pages 1010-1010
+Neuroanatomy
+Randall R. Lyle
+Pages 1011-1011
+Neurogenesis
+Randall R. Lyle
+Pages 1011-1012
+Neuroimaging
+Pages 1012-1012
+Neuroleptics
+Pages 1012-1012
+Neurological
+Pages 1012-1012
+Neurological Disorders
+Pages 1012-1012
+Neuromodulators
+Pages 1012-1012
+Neurons
+Randall R. Lyle
+Pages 1012-1013
+Neuropsychological Assessment
+Mei Y. Chang, Andrew S. Davis
+Pages 1013-1014
+Neuropsychological Evaluation
+Pages 1014-1014
+Neuropsychology
+Tracey McLellan
+Pages 1014-1015
+Neuroscience
+Randall R. Lyle
+Pages 1015-1016
+Neurotransmitters
+Lauren Connell Pavelka
+Pages 1016-1016
+Nevus
+Pages 1016-1016
+Newborn
+Pages 1016-1016
+News
+Pages 1016-1016
+
+N
+NICHQ Vanderbilt Assessment Scale-TEACHER Informant
+Pages 1016-1016
+Nidicolous
+Pages 1016-1016
+Night Terrors
+Robert Walrath
+Pages 1016-1017
+Nightmares
+Laura Parres
+Pages 1017-1017
+Nimadorm
+Pages 1017-1017
+Nitrest
+Pages 1017-1017
+Nitrous Oxide
+Pages 1017-1017
+NLD
+Pages 1018-1018
+No Language
+Pages 1018-1018
+Nocturnal Disorders
+Pages 1018-1018
+Non-Accidental Trauma
+Pages 1018-1018
+Nonbenzodiazepine Sedatives
+Pages 1018-1018
+Non-Communicating Hydrocephalus
+Pages 1018-1018
+Nonconformist Parenting
+Pages 1018-1018
+Nondirective Play Therapy
+Pages 1018-1018
+Non-Directive Play Therapy
+Pages 1018-1018
+Nonfluent Aphasia
+Pages 1018-1018
+Non-Fluent Aphasia, Receptive Aphasia
+Pages 1018-1018
+Non-Identical Twins
+Pages 1018-1018
+Non-Normative Life Events
+Theodora Koulenti, Xenia Anastassiou-Hadjicharalambous
+Pages 1018-1020
+
+N
+Non-Obstructive Hydrocephalus
+Pages 1020-1020
+Non-Promotion
+Pages 1020-1020
+Non-Suicidal Self-Injury (NSSI)
+Pages 1020-1020
+Nonverbal Communication
+Pages 1020-1020
+Non-verbal Intelligence
+Pages 1020-1020
+Nonverbal Learning Disability
+Robert Walrath
+Pages 1020-1020
+Nonverbal Learning Disability (NLD)
+Pages 1020-1020
+Noradrenaline
+Pages 1021-1021
+Norepinephrine
+Edalmarys Santos, Chad A. Noggle
+Pages 1021-1021
+Norm Rate
+Pages 1021-1021
+Normal
+Pages 1021-1021
+Normal Curve
+Russell N. Carney
+Pages 1021-1024
+Normal Curve Equivalent (NCE)
+Pages 1024-1024
+Normal Distribution
+Pages 1024-1024
+Normal Score
+Pages 1024-1024
+Normal Sleep
+Pages 1024-1024
+Norm-Referenced Intelligence Testing
+Pages 1024-1024
+Norm-Referenced IQ
+Pages 1024-1024
+Norm-Referenced Scores
+Marie C. McGrath
+Pages 1024-1025
+Norm-Referenced Testing
+Marie C. McGrath
+Pages 1025-1025
+
+N
+Norms
+Arthur E. Hernandez
+Pages 1026-1026
+Nourishment
+Pages 1026-1026
+Novelty
+Pages 1026-1026
+Novelty Seeking
+Pages 1026-1026
+Novo-Poxide
+Pages 1026-1026
+Nuclear Family
+Stacy A. S. Williams
+Pages 1026-1027
+Nuclear Magnetic Resonance Imaging (NMRI)
+Pages 1027-1027
+Nuclei of the Raphel
+Pages 1028-1028
+Nursing
+Pages 1028-1028
+Nutrition
+Eva D. Sloan
+Pages 1028-1028
+NVLD
+Pages 1028-1028
+O
+Obedience
+Pages 1029-1029
+Obesity
+Joy Jansen
+Pages 1029-1030
+Object Permanence
+Caroline McKnight
+Pages 1030-1030
+Object Relations Theory
+Deborah Posner
+Pages 1030-1031
+Observational Learning
+Amy Madewell
+Pages 1031-1032
+Observational Learning
+Pages 1032-1032
+Observations
+Pages 1032-1032
+Obsessive–Compulsive Disorder
+R. Trent Codd III, Michael P. Twohig
+Pages 1032-1036
+Obstructive Hydrocephalus
+Pages 1036-1036
+
+O
+Obstructive Sleep Apnea Syndrome
+Pages 1036-1036
+OC Spectrum Disorder
+Pages 1036-1036
+Occipital Lobe
+Chad A. Noggle
+Pages 1036-1036
+Occupational Health Psychology
+Pages 1036-1036
+OCD
+Pages 1037-1037
+ODD
+Pages 1037-1037
+Olanzapine
+Pages 1037-1037
+Older Worker Discrimination
+Pages 1037-1037
+OMIM 301500
+Pages 1037-1037
+Ontogenetic Development
+Matthew C. Lambert, Leah E. Johnson
+Pages 1037-1037
+Ontogenetic Selection
+Pages 1037-1037
+Oocyte
+Pages 1037-1037
+Open Head Injury
+Pages 1038-1038
+Open Head Trauma
+Pages 1038-1038
+Operant Conditioning
+Elizabeth G. E. Kyonka
+Pages 1038-1040
+Operant Learning
+Pages 1040-1040
+Operant Learning and Applied Behavior Analysis (ABA)
+Pages 1040-1040
+Operations
+Pages 1040-1040
+Opioids
+Pages 1040-1040
+Oppositional Defiant Disorder
+Megan M. Wolvin, Andy V. Pham, John S. Carlson
+Pages 1040-1041
+
+O
+Optical Imaging
+Pages 1041-1041
+Optical Tomography
+Pages 1041-1041
+Oral Consumption
+Pages 1041-1041
+Oral Craving
+Pages 1041-1041
+Oral Fixation
+Pages 1041-1042
+Oral Reading
+Becky Stefanko
+Pages 1042-1042
+Oral Skills
+Pages 1042-1042
+Oral Stage
+Jana Sander
+Pages 1042-1043
+Oral, Anal, Phallic, and Genital Stages
+Pages 1043-1043
+Order of Birth
+Pages 1043-1043
+Orientation Reflex
+Pages 1043-1043
+Orientation Response
+Pages 1043-1044
+Orienting Reaction
+Pages 1044-1044
+Orienting Reflex
+Pages 1044-1044
+Orienting Response
+Brady I. Phelps
+Pages 1044-1044
+Original Habit Reversal
+Pages 1044-1044
+Originality
+Pages 1044-1044
+Orthographic Awareness
+Pages 1045-1045
+Orthographic Reading Skills
+Stacy E. Levin
+Pages 1045-1046
+Orton-Gillingham Reading Method
+Jackie Laney
+Pages 1046-1047
+
+O
+Osgood, Charles Egerton
+Rebekah R. Pender
+Pages 1047-1048
+Outcome
+Pages 1048-1048
+Outcome Variables
+Pages 1048-1048
+Out-of-home Placements
+Pages 1048-1048
+Outsider Witnesses
+Pages 1048-1048
+Ova
+Pages 1048-1048
+Over-Anxious Disorder
+Pages 1048-1048
+Overcorrection
+Michelle Johnson, Ivy Chong
+Pages 1049-1049
+Overt Aggression
+Pages 1049-1049
+Overweight
+Pages 1049-1049
+Overwhelm
+Pages 1049-1049
+Ovulation
+Carol D. Daniels
+Pages 1049-1050
+Ovum
+Merry Sleigh
+Pages 1050-1051
+Oxazepam
+Pages 1051-1051
+Oxcarbazepine
+Pages 1051-1051
+Oximetry
+Pages 1051-1051
+Oxyhemoglobin
+Pages 1051-1051
+P
+Paddling
+Pages 1053-1053
+Pain Feelings
+Pages 1053-1053
+Pain Sensitivity
+Lauren Stutts
+Pages 1053-1054
+
+P
+Pain Threshold
+Pages 1054-1054
+Pair Bonding
+Pages 1054-1054
+Paleoanthropology
+Pages 1054-1054
+Palliative Care
+Brenda Moretta Guerrero
+Pages 1054-1057
+Pals
+Pages 1057-1057
+Pangeria
+Pages 1057-1057
+Parallel Play
+Michael O. Brigano
+Pages 1057-1059
+Paraplegia
+Pages 1059-1060
+Parasomnia
+Pages 1060-1060
+Parent Behavior
+Gregory E. Everett
+Pages 1060-1061
+Parent Intervention
+Pages 1061-1061
+Parent Management Training
+Angela N. Maupin, Andy V. Pham, John S. Carlson
+Pages 1061-1063
+Parent Report Measures
+Pages 1063-1063
+Parent Training
+Pages 1063-1063
+Parental Rights Termination
+Pages 1063-1063
+Parent-Child Relationships
+Pages 1063-1063
+Parenting Practices
+Pages 1063-1063
+Parenting Styles
+Elizabeth Levin
+Pages 1063-1064
+Parietal Lobe
+Chad A. Noggle
+Pages 1064-1065
+Parkinson’s Disease
+Audrey McKinlay
+Pages 1065-1068
+
+P
+Paroxetine (Generic)
+Pages 1068-1068
+Partial Dopamine Agonist
+Pages 1068-1068
+Partial Fetal Alcohol Syndrome (PFAS)
+Pages 1069-1069
+Partiality
+Pages 1069-1069
+Pass
+Pages 1069-1069
+Pass Theory
+Jack A. Naglieri
+Pages 1069-1069
+Path Analysis
+Pages 1069-1069
+Pathologic Emotionality
+Pages 1069-1069
+Patois
+Pages 1070-1070
+Patterns of Parental Behaviors
+Pages 1070-1070
+Pavlov, Ivan Petrovich
+Lisa Curb
+Pages 1070-1071
+Pavlovian or Respondent Conditioning
+Pages 1071-1071
+Pavor Nocturnis
+Pages 1071-1071
+Paxil (Paroxetine)
+Laura Barney
+Pages 1071-1071
+PC Games
+Pages 1071-1071
+Peabody Picture Vocabulary Test –Third Edition (PPVT-III)
+Audrey McKinlay
+Pages 1072-1072
+Pediatric Obstructive Sleep Apnea
+Pages 1073-1073
+Pediatric OCD
+Pages 1073-1073
+Peer Affiliation
+Pages 1073-1073
+Peer Group
+Sahran Hamit
+Pages 1073-1074
+
+P
+Peer Groups
+Pages 1074-1074
+Peer Influences
+Pages 1074-1074
+Peer Interactions
+Pages 1074-1074
+Peer Nomination Technique
+Tamara Del Vecchio
+Pages 1074-1074
+Peer Pressure
+Pages 1075-1075
+Peer Rankings
+Pages 1075-1075
+Peer Ratings
+Pages 1075-1075
+Peer Rejection
+Pages 1075-1075
+Peer Relations
+Pages 1075-1075
+Peer Relationships
+Janett M. Naylor
+Pages 1075-1076
+Peer Sociometric Nominations
+Pages 1076-1076
+Peer Tutoring
+Judah B. Axe
+Pages 1076-1077
+Peer Victimization
+Pages 1077-1077
+Peers
+Pages 1077-1077
+Peer-Tutoring
+Pages 1077-1077
+People Who “Swing Both Ways”
+Pages 1077-1077
+People with Special Health Care Needs
+Pages 1077-1077
+Percentile Ranks
+Pages 1077-1077
+Perceptual Motor Dysfunction
+Pages 1077-1077
+Perfectionism
+Pages 1077-1077
+
+P
+Perfectionist
+Pages 1077-1077
+Perfectionistic
+Meredith L. Slish
+Pages 1078-1079
+Performance Anxiety
+Pages 1079-1079
+Performance-Based Assessment
+Pages 1079-1079
+Peripheral Nervous System
+Chad A. Noggle, Andrea R. Moreau
+Pages 1079-1080
+Permissive Parenting Style
+Leah E. Johnson, Heather M. Kelley
+Pages 1080-1080
+Personal Constructs
+Pages 1080-1080
+Personal Fable
+Pages 1081-1081
+Personal Identity
+Pages 1081-1081
+Personal Narratives
+Bernadette Hassan Solórzano
+Pages 1081-1082
+Personal Recollection
+Pages 1082-1082
+Personality Assessment
+Pages 1082-1082
+Personality Testing
+Pages 1082-1082
+Person-Centered Therapy
+Pages 1082-1082
+Perspective Taking
+Pages 1082-1082
+Perspective-Taking
+Phyllis Curtis-Tweed
+Pages 1082-1084
+Pervasive Developmental Disorders
+Pages 1084-1084
+PET
+Pages 1084-1084
+Pharyngeal Response Mechanism
+Pages 1084-1084
+Pharyngeal Swallow Response
+Pages 1084-1084
+
+P
+Phenotype
+Jana Sander
+Pages 1084-1084
+Phonemes
+Loretta C. Rudd, Macy Satterwhite
+Pages 1084-1085
+Phonemic
+Macy Satterwhite, Heather M. Kelley
+Pages 1085-1086
+Phonemic Awareness
+Sunny Windingstad
+Pages 1086-1086
+Phonemic Development
+Heather M. Kelley, Kyle A. Litchfield
+Pages 1086-1088
+Phonemic Reading Skills
+Kyle A. Litchfield, Heather M. Kelley
+Pages 1088-1089
+Phonics
+Macy Satterwhite, Matthew C. Lambert
+Pages 1089-1090
+Phonological Awareness
+Christopher Pilat, Lisa Kilanowski-Press
+Pages 1090-1093
+Phonological Coding
+Pages 1093-1093
+Phonological Decoding
+Pages 1093-1093
+Phonological Development
+Heather M. Kelley, Matthew C. Lambert
+Pages 1094-1095
+Phonological Disorders
+Pages 1095-1095
+Phonological Learning
+Laurice M. Joseph
+Pages 1095-1097
+Phonological Loop
+Robert Walrath
+Pages 1097-1098
+Phonological Processing
+Pages 1098-1098
+Phonological Sensitivity
+Pages 1098-1098
+Phonological Short Term Memory
+Pages 1098-1098
+Phonology
+Macy Satterwhite, Loretta C. Rudd
+Pages 1098-1099
+Phototherapy
+Pages 1099-1099
+Phylogenetic Equivalents
+Pages 1099-1099
+
+P
+Physical Abuse
+Stephanie Dvorak, Tasha R. Howe
+Pages 1099-1100
+Physical Aggression
+Amy J. Kaye, Cynthia A. Erdley
+Pages 1100-1103
+Physical Bullying
+Pages 1103-1103
+Physical Discipline
+Pages 1103-1103
+Physical Punishment
+Pages 1103-1103
+Piaget, Jean
+Daniel Patanella
+Pages 1103-1104
+Piaget’s Cognitive Development Theory
+Joy Jansen
+Pages 1104-1106
+Piaget’s Preoperational Period
+Jennifer L. Stapel-Wax
+Pages 1106-1107
+Piaget’s Preoperational Stage
+Pages 1108-1108
+Piaget’s Sensorimotor Period
+Katherine Simpson Spencer
+Pages 1108-1109
+Piaget’s Sensorimotor Stage
+Pages 1109-1109
+Piaget’s Theory of Moral Development
+Daniel Patanella
+Pages 1109-1111
+Pimples
+Pages 1111-1111
+Placebo
+Brady I. Phelps
+Pages 1111-1113
+Placebo Effect
+Pages 1113-1113
+Placebo Response
+Pages 1113-1113
+Placenta
+Jill A. Anderson
+Pages 1113-1114
+Plantar Reflex (Non-Pathological)
+Pages 1114-1114
+Planum Temporal
+Pages 1114-1114
+Plasticity
+Pages 1114-1114
+
+P
+Plasticity of the Brain
+Tracey McLellan
+Pages 1114-1115
+Play Assessment
+Pages 1115-1115
+Play Therapy
+Kathy DeOrnellas, Crystal Short, David Brandwein
+Pages 1115-1117
+Play Therapy Group
+Pages 1117-1117
+Play-Based Assessment
+Tony Wu
+Pages 1117-1118
+Play-Group Therapy
+Ashlea Smith
+Pages 1118-1119
+Playmates
+Pages 1119-1119
+Pleasure Principle
+David Brandwein
+Pages 1119-1121
+Pleasure-Pain Principle
+Pages 1121-1121
+Pleasure-Unpleasure Principle
+Pages 1121-1121
+Pleasuring Oneself
+Pages 1121-1121
+Plumbism
+Pages 1121-1121
+Plumpness
+Pages 1121-1121
+PNS
+Pages 1121-1121
+Polysomy Y
+Pages 1121-1121
+Poppers
+Pages 1121-1121
+Positive Affect
+David N. Miller
+Pages 1121-1122
+Positive Affectivity
+Pages 1122-1122
+Positive Emotions
+Pages 1122-1122
+Positive Practice
+Michelle Johnson, Ivy Chong
+Pages 1122-1122
+
+P
+Positive Punishment
+Pages 1122-1122
+Positive Reinforcement
+Pei-Hsuan Hsieh
+Pages 1123-1123
+Positron Emission Tomography
+Nina Foster
+Pages 1123-1124
+Postcentral Gyrus
+Pages 1124-1124
+Postconventional Moral Reasoning
+Pages 1124-1124
+Postconventional Morality
+Andrea Green, John Snarey
+Pages 1124-1127
+Post-Infancy
+Pages 1127-1127
+Postmodernism
+Pages 1127-1127
+Post-Natal Depression
+Rania D. Hadjicosta, Xenia Anastassiou-Hadjicharalambous
+Pages 1127-1134
+Postpartum Depression (PPD)
+Pages 1134-1134
+Post-Traumatic Myelopathy
+Pages 1134-1134
+Posttraumatic Stress Disorder
+Magdalen Toole
+Pages 1134-1136
+Poxidium
+Pages 1136-1136
+Practical Intelligence
+Pages 1136-1137
+Prader-Willi Syndrome
+Brady I. Phelps
+Pages 1137-1138
+Pragmatics
+Lee A. Wilkinson
+Pages 1138-1139
+Pre-Academic Skills
+Pages 1139-1139
+Precision Learning
+Pages 1139-1139
+Precision Teaching
+Judah B. Axe
+Pages 1139-1140
+Precocious Reading Language Disorder
+Pages 1140-1140
+
+P
+Preconception
+Pages 1140-1140
+Preconventional Level
+Pages 1140-1140
+Preconventional Moral Reasoning
+Amie Senland
+Pages 1140-1141
+Predictor Variables
+Pages 1141-1141
+Predisposition
+Pages 1141-1141
+Preemy
+Pages 1141-1141
+Preference Assessments
+Derek D. Reed, James K. Luiselli
+Pages 1141-1142
+Prefix
+Pages 1142-1142
+Prefrontal Cortex
+Gretchen Schoenfield
+Pages 1142-1144
+Prefrontal Region
+Pages 1144-1144
+Pregnancy Assessment
+Pages 1144-1144
+Prejudgment
+Pages 1144-1144
+Prejudice
+Lynnika Rouse, Kimberly Booker, Steven Paul Stermer
+Pages 1144-1145
+Prelinguistic Communication
+Patricia E. Spencer
+Pages 1145-1146
+Premack Principle
+Elizabeth G. E. Kyonka
+Pages 1147-1148
+Premature
+Pages 1148-1148
+Premature Baby
+Pages 1148-1148
+Premature Birth
+Pages 1148-1148
+Premature Infant Survival
+Pages 1148-1148
+Premature Infants
+Teresa L. Davenport
+Pages 1148-1149
+
+P
+Prematurity
+Jacqueline P. Parsons
+Pages 1150-1151
+Premie
+Pages 1151-1151
+Prenatal Alcohol Exposure
+Pages 1151-1151
+Prenatal Development
+Raymond S. Dean, Renee Grizzle
+Pages 1151-1152
+Prenatal Diagnostic Methods
+Pages 1152-1152
+Prenatal Growth
+Pages 1152-1152
+Prenatal Period, Stages of
+Anna Mazur-Mosiewicz, Raymond S. Dean
+Pages 1152-1154
+Prenatal Screening
+Renee Grizzle
+Pages 1154-1155
+Prenatal Testing
+Pages 1155-1155
+Preoccupied Attachment
+Pages 1155-1155
+Preoperational Stage (Piaget)
+Kathleen B. Aspiranti
+Pages 1155-1156
+Preschool Embedded Figures Test
+Pages 1156-1156
+Pre-School Programs
+Pages 1156-1156
+Press
+Pages 1156-1156
+Pressure
+Pages 1156-1156
+Pretend Play
+Tonya R. Hammer
+Pages 1157-1157
+Pretending Actions
+Pages 1157-1157
+Pretension Play
+Pages 1157-1157
+Preterm Baby
+Pages 1158-1158
+Preterm Birth
+Teresa L. Davenport
+Pages 1158-1158
+
+P
+Prevention
+Pages 1158-1158
+Prevention of Mental Retardation
+Pages 1158-1158
+Preventive Intervention
+Pages 1159-1159
+Primary Auditory Cortex
+Pages 1159-1159
+Primary Encopresis
+Pages 1159-1159
+Primary Motor Cortex
+Pages 1159-1159
+Primary Motor Dysphasia
+Pages 1159-1159
+Primary Somatosensory Cortex
+Pages 1159-1159
+Primary Visual Cortex
+Pages 1159-1159
+Principle of Reinforcement
+Pages 1159-1159
+Principled Moral Reasoning
+Pages 1159-1159
+Print
+Pages 1159-1159
+Private Speech
+Pages 1159-1159
+Proactive Aggression
+Pages 1159-1159
+Proactive Aggressors
+Tamara Del Vecchio
+Pages 1159-1160
+Probability Density Function
+Pages 1160-1160
+Problem-Based Learning
+Pages 1160-1160
+Problem-Solving
+Pages 1160-1160
+Problem-Solving Consultation
+Pages 1160-1160
+Professional Counselors
+Pages 1160-1160
+
+P
+Profound Mental Retardation
+Lindsay J. Cummings
+Pages 1160-1161
+Progeria Adultorum
+Pages 1161-1161
+Progeria of the Adult
+Pages 1161-1161
+Progeria or Hutchinson-Gilford Syndrome
+Pages 1161-1161
+Progeria Syndrome
+Brady I. Phelps
+Pages 1161-1162
+Project Head Start
+Pages 1162-1162
+Projection
+Edward B. Jenny
+Pages 1162-1163
+Projective Assessment Techniques
+Steven R. Smith
+Pages 1163-1164
+Projective Identification
+Pages 1164-1164
+Projectives
+Pages 1164-1164
+Proprioception
+Brady I. Phelps
+Pages 1164-1165
+Prosocial Behavior
+Mark A. Barnett
+Pages 1165-1166
+Prosopagnosia
+Brady I. Phelps
+Pages 1166-1167
+Protective Factors
+Charles Bell, Andy V. Pham, John S. Carlson
+Pages 1168-1169
+Protein-Energy Malnutrition
+Pages 1169-1169
+Prozac
+Pages 1169-1169
+Pseudobulbar Affect (PBA)
+Pages 1169-1169
+Psychedelics
+Pages 1169-1169
+Psychiatric Disorders
+Pages 1169-1169
+Psychiatric Illness
+Pages 1169-1169
+
+P
+Psychoactive Drugs
+Pages 1169-1169
+Psychoactive Medication
+Pages 1169-1169
+Psychoaesthetics
+Pages 1169-1169
+Psychoanalysis
+Deborah Posner
+Pages 1169-1170
+Psychoanalytic Theories of Development
+Pages 1171-1171
+Psychoanalytic Theory
+Deborah Posner
+Pages 1171-1174
+Psychoanalytic Treatment
+Pages 1174-1174
+Psychobiological
+Pages 1174-1174
+Psychodrama
+Pages 1174-1174
+Psychodynamic Approaches
+David Brandwein
+Pages 1174-1176
+Psychodynamic Medication
+Pages 1176-1176
+Psychodynamic Theory
+Pages 1176-1176
+Psychodynamic Therapy
+Pages 1177-1177
+Psychodynamic Treatment
+Pages 1177-1177
+Psychoeducational Assessment
+Elizabeth Levin, Dorothy Olfert
+Pages 1177-1178
+Psychoeducational Evaluation
+Pages 1178-1178
+Psychoeducational Testing
+Pages 1178-1178
+Psychogenic
+Pages 1178-1178
+Psycholinguistics
+Shelia M. Kennison
+Pages 1178-1179
+Psychological Abuse
+Lindsay Weymouth, Tasha R. Howe
+Pages 1179-1179
+
+P
+Psychological Age
+Douglas K. Symons
+Pages 1180-1180
+Psychological Assessment
+David Michalec
+Pages 1180-1181
+Psychological Correlates
+Pages 1181-1181
+Psychological Disorders
+Ashlea Smith
+Pages 1181-1189
+Psychological Evaluation
+Pages 1189-1189
+Psychological Freedom
+Pages 1189-1189
+Psychological Maltreatment
+Lindsay Weymouth, Tasha R. Howe
+Pages 1189-1189
+Psychological Testing
+Pages 1189-1189
+Psychology
+Pages 1190-1190
+Psychology of Language
+Pages 1190-1190
+Psychometric Study of Creativity
+Pages 1190-1190
+Psychometrics
+Marie C. McGrath
+Pages 1190-1191
+Psychometry
+Pages 1191-1191
+Psychomotor Seizures
+Matthew J. Holcomb, Raymond S. Dean
+Pages 1191-1192
+Psychopathology
+Chris Leeth
+Pages 1192-1192
+Psychopathy
+Pages 1192-1192
+Psychopharmaceutical Medication
+Pages 1193-1193
+Psychophysiological
+Pages 1193-1193
+Psychosexual Stages, of Freud
+Jed Yalof
+Pages 1193-1196
+Psychosexuality
+Pages 1196-1196
+
+P
+Psychosis
+Pages 1196-1197
+Psychosocial Therapy
+Pages 1197-1197
+Psychosocial Treatments
+Pages 1197-1197
+Psychosomatic
+Maria-Eva Tsola, Xenia Anastassiou-Hadjicharalambous
+Pages 1197-1199
+Psychostimulants
+Pages 1199-1199
+Psychotherapist
+R. Trent Codd III
+Pages 1199-1200
+Psychotherapy
+Pages 1200-1200
+Psychotropic Medication
+Pages 1200-1201
+PTSD
+Pages 1201-1201
+PubChem # 2712
+Pages 1201-1201
+Pubertal Development
+Pages 1201-1201
+Puberty
+Jill A. Anderson
+Pages 1201-1201
+Public Duty
+Pages 1201-1201
+Public Health Psychology
+Pages 1201-1201
+Publishing
+Pages 1202-1202
+Puke
+Pages 1202-1202
+Punisher
+Pages 1202-1202
+Punishment
+Jennifer M. Alexander, Maria G. Valdovinos
+Pages 1202-1202
+Purdue Pegboard Dexterity Test
+Tracey McLellan
+Pages 1202-1203
+Purging
+Ashlea Smith
+Pages 1204-1205
+
+P
+Purification
+Pages 1205-1205
+Purpose
+Pages 1205-1205
+Purposeful
+Pages 1205-1205
+Pustules
+Pages 1205-1205
+Putamen
+Chad A. Noggle
+Pages 1205-1206
+Pygmalion Effect
+KC Collins
+Pages 1206-1206
+Q
+Q-Sort Method Attachment
+Shanna M. Williams, Victoria Talwar
+Pages 1207-1208
+Quality of Life
+Pages 1208-1208
+Queer
+Pages 1208-1208
+Quetiapine
+Pages 1208-1208
+Quetiapine Fumarate
+Pages 1208-1208
+Quicksilver
+Pages 1208-1208
+R
+Race
+Michelle Cox, Kenneth Foster
+Pages 1209-1210
+Racial Identity
+Pages 1210-1210
+Racism
+Pages 1210-1210
+RAD
+Pages 1210-1210
+Radical Behaviorism
+Josh Pritchard, Ivy Chong
+Pages 1210-1211
+Radio
+Pages 1211-1211
+RADS
+Pages 1211-1211
+RADS-2
+Pages 1211-1211
+
+R
+RAN
+Pages 1211-1211
+Random Coefficient Models
+Pages 1211-1211
+Raphe Nuclei
+Chad A. Noggle
+Pages 1211-1212
+Rapid Automized Naming
+Anna Mazur-Mosiewicz, Andrew S. Davis
+Pages 1212-1213
+Rapid Eye Movement Sleep
+Kim Guion
+Pages 1213-1214
+Rapid Naming
+Pages 1214-1214
+Rating Scales
+Matthew J. Holcomb, Raymond S. Dean
+Pages 1215-1215
+Ratio IQ
+Pages 1215-1215
+Rationalizing
+Pages 1215-1215
+Raymond Dean
+Matthew J. Holcomb, Raymond S. Dean
+Pages 1215-1216
+Razadyne ER®
+Pages 1216-1216
+Razadyne®
+Anisa Fornoff
+Pages 1216-1217
+RCDS
+Pages 1217-1217
+Reaction Formation
+Kevin Regueira
+Pages 1217-1217
+Reactive Aggression
+Pages 1217-1217
+Reactive Attachment Disorder
+Elizabeth L. Roberds, Andrew S. Davis
+Pages 1217-1219
+Reactive Attachment Disorder of Infancy or Early Childhood
+Pages 1219-1219
+Reading
+Elizabeth Levin, Leslie Villeneuve
+Pages 1219-1221
+Reading Aloud
+Pages 1221-1221
+Reading Development
+Pages 1221-1221
+
+R
+Reading Disability
+Pages 1221-1221
+Reading Disorders
+Becky Stefanko
+Pages 1221-1224
+Reading Impairment
+Pages 1224-1224
+Reading Skills
+Elizabeth Levin, Leslie Villeneuve
+Pages 1224-1226
+Reading Skills Acquisition
+Pages 1226-1226
+Reading/Writing Proficiency
+Pages 1226-1226
+Reality Principle
+Janet L. Etzi
+Pages 1226-1227
+Reality Testing
+Pages 1227-1227
+Reality Therapy
+Cassandra Means
+Pages 1227-1228
+Reason
+Pages 1228-1228
+Reasoning
+Pages 1228-1228
+Reasoning-Oriented Parenting
+Pages 1228-1228
+Receptive Language
+Mysti S. Frazier
+Pages 1228-1229
+Receptive Language Disorders
+Cassandra Means
+Pages 1229-1231
+Receptive Lexicon
+Pages 1231-1231
+Receptive Vocabulary
+Amy Burger, Ivy Chong
+Pages 1231-1231
+Recessive Gene
+Pages 1232-1232
+Recessive Trait
+Rebekah R. Pender
+Pages 1232-1232
+Reciprocal Peer Tutoring
+Pages 1232-1232
+Recognition
+Pages 1232-1232
+
+R
+Recognition Memory
+Matthew J. Holcomb, Raymond S. Dean
+Pages 1232-1233
+Record Judgment of Qualitative Variables
+Pages 1233-1233
+Redl, Fritz
+Jerry Gold
+Pages 1233-1234
+Reference Group Orientation
+Pages 1234-1234
+Reflective Technique of Mirroring What Is Spoken
+Pages 1234-1234
+Refugee
+Pages 1234-1234
+Regional Cerebral Blood Flow (CBF, RCBF)
+Pages 1234-1234
+Regression
+Pages 1234-1234
+Regression Analysis
+Kristen M. Grabill
+Pages 1235-1236
+Regressive Autism
+Pages 1236-1236
+Regulation of Emotion
+Anthony R. Artino Jr.
+Pages 1236-1238
+Regurgitate
+Pages 1238-1238
+Rehabilitation Act of 1973
+Eva D. Sloan
+Pages 1239-1239
+Reinforcement
+Jennifer M. Alexander, Maria G. Valdovinos
+Pages 1239-1239
+Reinforcement-Maintained Behavior
+Pages 1239-1239
+Reinforcers
+Jennifer M. Alexander, Maria G. Valdovinos
+Pages 1239-1240
+Reitan, Ralph M.
+Matthew J. Holcomb, Raymond S. Dean
+Pages 1240-1241
+Rejected Children
+Erika Carpenter Rich
+Pages 1241-1243
+Rejecting Parenting Style
+Pages 1243-1243
+Rejecting Parents
+Pages 1243-1243
+
+R
+Rejecting/Neglecting Parents
+Tamara Del Vecchio
+Pages 1243-1244
+Rejecting-Neglecting Parenting Style
+Pages 1244-1244
+Relational Aggression
+Kristin D. Sawka-Miller
+Pages 1244-1244
+Relational Bullying
+Pages 1244-1244
+Relational Frame Theory
+Ian Stewart
+Pages 1245-1247
+Relationships
+Douglas K. Symons
+Pages 1247-1248
+Relative Performance Indexes
+Pages 1248-1248
+Relativistic Philosophy
+Pages 1248-1248
+Reliability
+Jeremy R. Sullivan
+Pages 1248-1251
+Religion
+Bady Quintar
+Pages 1251-1253
+Reluctant Speech
+Pages 1253-1253
+REM
+Pages 1253-1253
+REM Sleep
+Pages 1253-1253
+Remarried Families
+Pages 1253-1253
+Remembrance
+Pages 1253-1253
+Remeron SolTab®
+Pages 1253-1253
+Remeron®
+Pages 1253-1253
+Reminiscence
+Pages 1253-1253
+Repeatability
+Pages 1254-1254
+Repression
+Pages 1254-1254
+
+R
+Research Ethics Review Boards
+Pages 1254-1254
+Residential Care
+Pages 1254-1254
+Residential Group Care
+Pages 1254-1254
+Resilience
+Mysti S. Frazier
+Pages 1254-1255
+Resiliency
+Pages 1255-1255
+Resistant Attachment
+Pages 1255-1255
+Respondent Conditioning
+Pages 1255-1255
+Response Cost
+Judah B. Axe
+Pages 1255-1255
+Response Generalization
+Brady I. Phelps
+Pages 1255-1256
+Response Induction
+Pages 1256-1256
+Response Variability
+Pages 1256-1256
+Response-to-Intervention
+Pages 1256-1256
+Restitution
+Pages 1257-1257
+Restlessness
+Pages 1257-1257
+Restoril®
+Pages 1257-1257
+Restricted Environmental Stimulation
+Pages 1257-1257
+Restrictive Play
+Tabitha Bond
+Pages 1257-1258
+Retardation, Degrees of
+Lauren Alexander, Angela Waguespack
+Pages 1258-1259
+Retention
+Jill Driest
+Pages 1259-1260
+Reticence
+Pages 1260-1260
+
+R
+Reticular Activating System
+Edalmarys Santos, Chad A. Noggle
+Pages 1260-1260
+Reticular Activating System (RAS)
+Pages 1261-1261
+Reticular Formation
+Pages 1261-1261
+Rett Syndrome
+Rania D. Hadjicosta, Xenia Anastassiou-Hadjicharalambous
+Pages 1261-1263
+Revised Children’s Manifest Anxiety Scale: Second Edition
+Jessica R. Gurley
+Pages 1263-1264
+Reward Discounting
+Pages 1264-1264
+Rey Complex Figure Test
+Audrey McKinlay
+Pages 1264-1265
+Rey Figure
+Pages 1265-1265
+Reynolds Adolescent Depression Scale 2
+Jenna J. Barry
+Pages 1265-1267
+Reynolds Child Depression Scale
+Jenna J. Barry
+Pages 1267-1268
+Rey-Osterrieth
+Pages 1268-1268
+RFT
+Pages 1268-1268
+Right Hemisphere Learning Disability
+Pages 1268-1268
+Right Hemisphere Syndromes
+David Morrison, Mary Joann Lang
+Pages 1268-1273
+Risk
+Lisa M. DeBellis
+Pages 1273-1273
+Risk Factors
+Aaron R. Schantz, Andy V. Pham, John S. Carlson
+Pages 1273-1274
+Risley, Todd R.
+Derek D. Reed, James K. Luiselli
+Pages 1274-1275
+Risolid
+Pages 1275-1275
+Risperdal – M-Tab®
+Pages 1275-1275
+Risperdal®
+Anna L. Lopez
+Pages 1275-1276
+
+R
+Risperidone
+Pages 1276-1276
+Ritalin
+Pages 1276-1276
+Ritalin®
+Anna L. Lopez
+Pages 1276-1277
+Ritalin-SR®, Ritalin-LA®
+Pages 1277-1277
+Ro-0690
+Pages 1277-1277
+Roche-0690
+Pages 1277-1277
+Rogerian Psychotherapy
+Pages 1277-1277
+Rogers, Carl
+Jennifer Becker
+Pages 1277-1278
+Role-Playing
+David Hackett
+Pages 1278-1279
+Role-Taking
+Pages 1279-1279
+Rorschach Inkblot Method
+Edward B. Jenny
+Pages 1280-1281
+Rorschach Inkblot Test
+Pages 1281-1281
+Rorschach Test
+Steven R. Smith
+Pages 1281-1282
+Rorschach, Hermann
+Edward B. Jenny
+Pages 1282-1283
+Rosenthal Effect
+Pages 1283-1283
+S
+Saccades
+Pages 1285-1285
+Sadness
+Pages 1285-1285
+Sally-Ann Task
+Pages 1285-1285
+Sand Tray Therapy
+Pages 1285-1285
+Sanval
+Pages 1285-1285
+
+S
+Sapir-Whorf Hypothesis
+Pages 1285-1285
+Sarafem
+Pages 1285-1285
+SAT Reasoning Test
+Pages 1285-1285
+SAT-I
+Pages 1285-1285
+Saturnism
+Pages 1285-1285
+Satz, Paul
+Tracey McLellan
+Pages 1285-1286
+Savant Syndrome
+Pages 1286-1286
+Savantism
+Pages 1286-1286
+SB5
+Pages 1286-1286
+Scaffolding
+Bryan Rotella
+Pages 1286-1287
+Scale Scores
+Pages 1287-1287
+Scalloped Response Pattern
+Pages 1287-1287
+SCC
+Pages 1287-1287
+Schema (Singular)
+Pages 1287-1287
+Schemas
+Stephanie A. Grote-Garcia
+Pages 1287-1288
+Schemata
+Pages 1288-1288
+Schizophrenia
+Steven L. Proctor
+Pages 1288-1289
+Schizophrenia Spectrum disorders
+Pages 1289-1289
+Scholastic
+Pages 1289-1289
+Scholastic Achievement Test
+Pages 1289-1289
+
+S
+SAT
+Daniel Patanella
+Pages 1290-1291
+Scholastic Assessment Test
+Pages 1291-1291
+Scholarship
+Pages 1291-1291
+School Adjustment
+Pages 1291-1291
+School Climate
+Michael Block
+Pages 1291-1293
+School Culture
+Pages 1293-1293
+School Dropout
+Latoya S. Stewart, Andy V. Pham, John S. Carlson
+Pages 1293-1294
+School Leaving
+Pages 1294-1294
+School Performance/Achievement
+Pages 1295-1295
+School Psychologist
+Jackie Kibler
+Pages 1295-1295
+School Psychology
+Katherine R. Krohn
+Pages 1295-1297
+School Readiness
+Stacy L. Bender, Andy V. Pham, John S. Carlson
+Pages 1297-1298
+School Situations Questionnaire
+Pages 1298-1298
+School Transition
+Pages 1298-1298
+School-Entry Skills
+Pages 1298-1298
+Scop-Dex (Mixture with Scopolamine)
+Pages 1298-1298
+Second Generation Antipsychotics
+Pages 1298-1298
+Secondary Encopresis
+Pages 1299-1299
+Secondary Process
+Pages 1299-1299
+Secondary Reinforcement
+Pages 1299-1299
+
+S
+Second-Culture Acquisition
+Pages 1299-1299
+Secular Trends
+Robert Sean Bannon
+Pages 1299-1299
+Selective Attention
+Mei Y. Chang, Raymond S. Dean
+Pages 1300-1301
+Selective Mutism
+Angela D. Mitchell, Heidi King, Emily L. Sportsman, Andy V. Pham, John S. Carlson
+Pages 1301-1302
+Selective Serotoninreuptake Inhibitor (SSRI)
+Pages 1303-1303
+Self
+Pages 1303-1303
+Self Identity: Sexual Abuse of Adolescents
+Maria-Eva Tsola, Xenia Anastassiou-Hadjicharalambous
+Pages 1303-1304
+Self Management
+LaShawn Jackson, Sally Meyer, Teri Berchtold, Brett R. Nelson
+Pages 1304-1306
+Self-Actualization
+Laura Barney
+Pages 1306-1307
+Self-Annihilation
+Pages 1307-1307
+Self-Care
+Bernadette Hassan Solórzano, Brenda L. Verastigi
+Pages 1307-1307
+Self-Care Behaviors
+Pages 1307-1307
+Self-Care Development
+Norma S. Guerra, Allegra Montemayor
+Pages 1307-1308
+Self-Choice
+Pages 1308-1308
+Self-Concept
+Darshon Anderson
+Pages 1308-1309
+Self-Consequating
+Pages 1309-1309
+Self-Control
+Pages 1309-1309
+Self-Destruction
+Pages 1309-1309
+Self-Determination
+Maarten Vansteenkiste, Bart Soenens, Willy Lens
+Pages 1310-1311
+Self-Directed Learning
+Pages 1311-1311
+
+S
+Self-Discipline
+Pages 1311-1311
+Self-Efficacy
+Pages 1311-1312
+Self-Esteem
+Kristopher I. Bradley
+Pages 1312-1312
+Self-Evaluation in Academic Settings
+Timothy J. Cleary
+Pages 1313-1316
+Self-Fulfilling Prophecy
+Anne Fierro Vanderlaan
+Pages 1316-1317
+Self-Fulfillment
+Pages 1317-1317
+Self-Harm
+Pages 1317-1317
+Self-Help Skills
+Pages 1317-1317
+Self-Image
+Pages 1317-1317
+Self-Inflicted Violence
+Pages 1317-1317
+Self-Injurious Behavior
+Heather C. Trepal
+Pages 1317-1318
+Self-Judgment
+Patricia Phaedonos, Xenia Anastassiou-Hadjicharalambous
+Pages 1318-1319
+Self-Knowledge
+Pages 1319-1319
+Self-Management
+Pages 1319-1319
+Self-Monitoring
+Pages 1319-1320
+Self-Motivation
+Pages 1320-1320
+Self-Mutilation
+Pages 1320-1320
+Self-Observation
+Pages 1320-1320
+Self-Percept
+Pages 1320-1320
+Self-Reflection
+Pages 1320-1320
+
+S
+Self-Regulated Learning
+Pages 1320-1321
+Self-Regulation
+Héfer Bembenutty
+Pages 1321-1322
+Self-Regulation of Emotion
+Pages 1322-1322
+Self-Reinforcement
+Anthony R. Artino Jr.
+Pages 1322-1324
+Self-Reliance
+Pages 1324-1324
+Self-Report Measures
+Pages 1324-1324
+Self-Representation
+Pages 1324-1324
+Self-Restraint
+Pages 1324-1324
+Self-Reward
+Pages 1324-1324
+Self-Talk
+Changiz Mohiyeddini, Cecilia A. Essau
+Pages 1324-1326
+Self-Treatment
+Pages 1326-1326
+Self-Understanding
+Phyllis Curtis-Tweed
+Pages 1326-1327
+Self-Worth
+Pages 1327-1327
+Selman's Stages of Friendship Development
+Phyllis Curtis-Tweed
+Pages 1327-1328
+Semantics
+Pages 1328-1328
+Semi-Objective Scales
+Pages 1329-1329
+Sense of Oneself
+Pages 1329-1329
+Sense of Self
+Janet L. Etzi
+Pages 1329-1329
+Sensorimotor Dysfunction
+Pages 1329-1329
+Sensory Aphasia
+Pages 1330-1330
+
+S
+Sensory Curiosity
+Pages 1330-1330
+Sensory Deprivation
+Penny Stribling, Cecilia Essau
+Pages 1330-1335
+Sensory Integrative Dysfunction
+Pages 1335-1335
+Sensory Motor Stage
+Pages 1335-1335
+Sensory Register
+Pages 1335-1335
+Sentence Structure
+Pages 1335-1335
+Separation
+Pages 1335-1335
+Separation Anxiety
+Robert Walrath
+Pages 1335-1336
+Separation, Attachment and
+Douglas K. Symons
+Pages 1336-1337
+Serax®
+Anisa Fornoff
+Pages 1337-1337
+Serious Emotional Disturbance (SED)
+Pages 1337-1337
+Seroquel
+Pages 1337-1337
+Seroquel XR
+Pages 1337-1337
+Serotonin
+Collin Davidson
+Pages 1338-1338
+Sertraline
+Pages 1338-1338
+Servicing Oneself
+Pages 1338-1338
+Serzone®
+Pages 1338-1338
+Sesame Street
+Caroline McKnight
+Pages 1338-1339
+Setting (Great Britain)
+Pages 1339-1339
+Severe Emotional and Behavioral Problem
+Pages 1339-1339
+
+S
+Severe Mental Retardation
+Lindsay J. Cummings
+Pages 1339-1340
+Severity of Mental Retardation
+Pages 1340-1340
+Sex-Education Programs
+Gina Coffee
+Pages 1340-1342
+Sexual Abuse
+Natasha Elkovitch, David J. Hansen
+Pages 1342-1343
+Sexual Assault
+Pages 1344-1344
+Sexual Exploitation
+Pages 1344-1344
+Sexual Identity
+Kevin L. Nadal
+Pages 1344-1345
+Sexual Intimacy
+Pages 1345-1345
+Sexual Labels
+Pages 1345-1345
+Sexual Maltreatment
+Pages 1345-1345
+Sexual Molestation
+Pages 1345-1345
+Sexual Orientation
+Lisa Kilanowski-Press
+Pages 1346-1347
+Sexual Prejudice
+David P. Rivera
+Pages 1347-1349
+Sexual Relationships
+Douglas K. Symons, Alicia L. Szielasko
+Pages 1349-1350
+Sexual Stigma
+Pages 1350-1350
+Sexual Victimization
+Pages 1350-1350
+Sexuality Education
+Pages 1350-1350
+Shaken Baby Syndrome
+Adeline Low
+Pages 1350-1352
+Shakow, David
+Katherine E. Kiker
+Pages 1352-1352
+Shame
+Temi Bidjerano
+Pages 1352-1354
+
+S
+Shaping
+Jennifer M. Alexander, Maria G. Valdovinos
+Pages 1354-1354
+Shared Attention
+Pages 1354-1354
+Shared Focus
+Pages 1354-1354
+Shifting Attention
+Pages 1354-1354
+Short-Term Memory
+Mei Y. Chang, Raymond S. Dean, Denise E. Maricle
+Pages 1354-1356
+Shy Children
+Pamela A. Sarigiani
+Pages 1356-1360
+Sibling Competition
+Pages 1360-1360
+Sibling Jealousy
+Pages 1360-1360
+Sibling Order
+Pages 1360-1360
+Sibling Relationships
+Pages 1360-1360
+Sibling Rivalry
+Shital Pramod Gaitonde
+Pages 1360-1362
+Sickle Beta-Plus Thalassemia
+Pages 1362-1362
+Sickle Beta-Zero Thalassemia
+Pages 1362-1362
+Sickle Cell Anemia (SS)
+Pages 1362-1362
+Sickle Cell Disease
+Anne Fierro Vanderlaan
+Pages 1362-1362
+Sickle Cell Trait
+Pages 1362-1362
+Sickle Trait
+Anne Fierro Vanderlaan
+Pages 1363-1363
+Sickle-Hemoglobin C Disease (SC)
+Pages 1363-1363
+Sigma Score
+Pages 1363-1363
+Signal
+Pages 1363-1363
+
+S
+Simian Crease
+Pages 1363-1363
+Simian Line
+Pages 1364-1364
+Similar Scales Include: Hamilton Rating Scale for Depression (HRSD)
+Pages 1364-1364
+Simplified Habit Reversal
+Pages 1364-1364
+Simultaneous Bilingualism
+Corey E. Ray-Subramanian
+Pages 1364-1364
+Single Palmer Crease
+Pages 1364-1364
+Single Parent Families
+Jennifer J. Lindwall, Brooke A. Bailer, Brian P. Daly
+Pages 1364-1367
+Single Subject Research Design
+Gina Coffee
+Pages 1367-1368
+Single Transverse Palmer Crease
+Pages 1368-1368
+Single Word Utterance
+Pages 1368-1368
+Single-Case Research Design
+Pages 1368-1368
+Single-Participant Experimental Design
+Pages 1368-1368
+Sinistral
+Pages 1368-1368
+Skin Inflammation
+Pages 1368-1368
+Skinner, Burrhus Frederick
+Steuart T. Watson, Tonya S. Watson
+Pages 1368-1369
+Skinner’s Behaviorism
+Pages 1370-1370
+Sleep
+Kristin T. Avis
+Pages 1370-1370
+Sleep Apnea
+David J. Lozano
+Pages 1371-1372
+Sleep Architecture
+Kim Guion, Kristin T. Avis
+Pages 1372-1374
+Sleep Disordered Breathing
+Pages 1374-1374
+
+S
+Sleep Disorders
+Kristin T. Avis, Aaron Davis
+Pages 1374-1378
+Sleep Disturbances
+Pages 1378-1378
+Sleep Problems
+Pages 1378-1378
+Sleep Stages
+Pages 1378-1378
+Sleep Structure
+Pages 1378-1378
+Sleep Terror Disorder
+Pages 1378-1378
+Sleeper Effect of Divorce
+Pamela A. Sarigiani, Tiffany Spierling
+Pages 1378-1385
+Sleeper Influence
+Pages 1385-1385
+Sleeping Pills
+Pages 1385-1385
+Sleeping Pills (e.g., Ambien, Lunesta, Sonata)
+Pages 1385-1385
+Smacking
+Pages 1385-1385
+Smoking
+Stephen N. Campbell, Gyasi Bramos Hantman
+Pages 1385-1386
+Snicker
+Pages 1386-1386
+Social Adjustment
+Pages 1386-1386
+Social Aggression
+Pages 1386-1386
+Social Anxiety
+Maria V. Perez, Rachel L. Grover
+Pages 1386-1388
+Social Anxiety Disorder
+Pages 1388-1388
+Social Cognition
+Cynthia A. Erdley, Amy J. Kaye, Lauren J. Holleb
+Pages 1388-1392
+Social Cognitive Learning Theory
+Amanda Bozack
+Pages 1392-1394
+Social Communication
+Pages 1394-1394
+
+S
+Social Competence
+Pages 1394-1394
+Social Construction of Memory
+Alandra Weller-Clarke
+Pages 1394-1395
+Social Constructionist
+Pages 1395-1395
+Social Constructivism
+Pages 1395-1395
+Social Decision Making
+Pages 1396-1396
+Social Discourse
+Pages 1396-1396
+Social Environment
+Pages 1396-1396
+Social Group
+Pages 1396-1396
+Social Identity
+Pages 1396-1396
+Social Influence
+Pages 1396-1396
+Social Information Processing
+Pages 1396-1396
+Social Intelligence
+Pages 1396-1396
+Social Language
+Pages 1396-1396
+Social Learning
+Pages 1396-1396
+Social Learning Theory
+Tonya R. Hammer
+Pages 1396-1397
+Social Perspective Coordination
+Pages 1397-1397
+Social Phobia
+Fauzia Mahr, Safia Mahr, R. D. Friedberg
+Pages 1397-1399
+Social Practices
+Pages 1399-1399
+Social Problem Solving
+Molly Adrian, Aaron Lyon, Rosalind Oti, Jennifer Tininenko
+Pages 1399-1403
+Social Referencing
+Matthew J. Hertenstein
+Pages 1403-1404
+
+S
+Social Responsibility
+Kristy M. Kelso
+Pages 1404-1404
+Social Skills
+Robert Walrath
+Pages 1404-1405
+Social Skills Training
+Tabitha Bond
+Pages 1405-1405
+Social System
+Pages 1405-1405
+Social Thinking
+Pages 1406-1406
+Social Validity
+James K. Luiselli, Derek D. Reed
+Pages 1406-1406
+Social Withdrawal
+Pages 1406-1406
+Socialization
+Pages 1406-1406
+Societal Obligation
+Pages 1406-1406
+Society for Research in Child Development
+Agnieszka K. Serwik
+Pages 1407-1408
+Socio-Dramatic Play
+Pages 1408-1408
+Sociometric Techniques
+Alana M. Burns, Cynthia A. Erdley
+Pages 1408-1410
+Sociomoral Perspective-Taking
+Pages 1410-1410
+Sociopathy
+Rania D. Hadjicosta, Xenia Anastassiou-Hadjicharalambous
+Pages 1410-1414
+Soft Cry
+Pages 1414-1414
+Soiling
+Pages 1414-1414
+Solitary Constructive Play
+Pages 1415-1415
+Solution-Oriented Consultation
+Pages 1415-1415
+Somatic Sensory Cortex
+Chad A. Noggle
+Pages 1415-1415
+Somatization
+Pages 1415-1415
+
+S
+Somatoform
+Pages 1415-1415
+Somatopsychic
+Pages 1416-1416
+Somatosensory Area
+Chad A. Noggle, Andrea R. Moreau
+Pages 1416-1416
+Somatosensory System
+Pages 1416-1416
+Soporifics
+Pages 1417-1417
+Sorrow
+Pages 1417-1417
+Sorrowful
+Pages 1417-1417
+Sotos Syndrome
+Eric E. Pierson
+Pages 1417-1418
+Spanking
+Tonya S. Watson, Steuart T. Watson
+Pages 1418-1418
+Spasm
+Pages 1418-1418
+Spatial Ability
+Pages 1418-1418
+Spatial Intelligence
+Jason Levi
+Pages 1419-1419
+Spatial Reasoning
+Pages 1419-1419
+Speaking
+Pages 1419-1419
+Special Education
+Christopher M. Oliva
+Pages 1420-1422
+Special Education Needs
+Pages 1422-1422
+Special Needs
+Jacqueline P. Parsons
+Pages 1422-1423
+Special Services
+Pages 1423-1423
+Specific Developmental Disorder of Motor Dysfunction
+Pages 1423-1423
+Specific Exploration
+Pages 1423-1423
+
+S
+Specific Folkways
+Pages 1423-1423
+Speech
+Pages 1423-1423
+Speech and Language Disorders
+Pages 1423-1423
+Speech Sound Disorders
+Pages 1424-1424
+Speech Therapy
+Linda R. Sealey
+Pages 1424-1425
+Speech–Language Therapy
+Pages 1425-1425
+Speed
+Pages 1425-1425
+Speed Naming
+Pages 1425-1425
+Spelling Disabilities
+Alpana Bhattacharya
+Pages 1425-1427
+Sperm
+Merry Sleigh
+Pages 1427-1428
+Sperm Cells
+Pages 1428-1428
+Spermatozoa
+Pages 1428-1428
+Spew
+Pages 1428-1428
+Spinal Cord
+Edalmarys Santos, Chad A. Noggle
+Pages 1428-1429
+Spinal Cord Contusion
+Pages 1429-1429
+Spinal Cord Injury
+Brian P. Daly, Heather F. Russell
+Pages 1429-1430
+Spinal Cord Laceration
+Pages 1431-1431
+Spinal Cord Transection
+Pages 1431-1431
+Spinal Cord Trauma
+Pages 1431-1431
+Spinal Injuries
+Pages 1431-1431
+
+S
+Split Brain
+Matthew J. Holcomb, Raymond S. Dean
+Pages 1431-1431
+Spoken Language
+Pages 1431-1431
+SSQ
+Pages 1431-1431
+Stability
+Pages 1432-1432
+Stage 5 Sleep
+Pages 1432-1432
+Stage Sequence of Ego Epigenesis
+Pages 1432-1432
+Stages 5 and 6 of Moral Judgment Development
+Pages 1432-1432
+Stages of Identity Development
+Pages 1432-1432
+Stages of Psychosocial Development
+Pages 1432-1432
+Stammer
+Pages 1432-1432
+Standard
+Pages 1432-1432
+Standard Celeration Charting
+Abigail B. Calkin
+Pages 1432-1435
+Standard Scores
+Robert Walrath
+Pages 1435-1436
+Standardized Testing
+Pages 1436-1436
+Stanford Binet
+Pages 1436-1436
+Stanford-Binet Intelligence Scales
+Stephen M. Wilson
+Pages 1436-1439
+Stanford-Binet Intelligence Scales, Fifth Edition
+Pages 1439-1439
+Stanines
+Pages 1439-1439
+Startle Reflex
+Pages 1439-1439
+Startle Response
+Pages 1439-1439
+
+S
+Starving
+Pages 1439-1439
+Status Scores
+Pages 1439-1439
+Sten Score
+Pages 1439-1439
+Stepfamilies
+Michelle Cox
+Pages 1439-1440
+Stepparent Households
+Pages 1440-1440
+Stereotype Threat
+Janet Ward Schofield, Kira Alexander
+Pages 1440-1441
+Stereotypic Behavior
+Pages 1441-1441
+Stereotypic Play
+Pages 1441-1441
+Stereotypy
+Pages 1441-1441
+Stillbirths
+Amy E. Zimmerman, Raymond S. Dean
+Pages 1442-1442
+Stilnoct
+Pages 1442-1442
+Stilnox
+Pages 1443-1443
+Stimulant Medications
+Ramzi M. Hasson, Andy V. Pham, John S. Carlson
+Pages 1443-1445
+Stimulants
+Pages 1445-1445
+Stimulus
+Pages 1445-1445
+Stimulus Control
+Pages 1445-1445
+Stimulus Discrimination
+Pages 1445-1445
+Stimulus Preference Assessment
+Pages 1445-1445
+Stockings of Cambridge
+Pages 1445-1445
+Stories
+Pages 1446-1446
+
+S
+Storm and Stress Theory
+Jackie Kibler
+Pages 1446-1446
+Stoutness
+Pages 1446-1446
+Strange Situation
+Cynthia Field
+Pages 1446-1448
+Stranger Anxiety
+Maria-Eva Tsola, Xenia Anastassiou-Hadjicharalambous
+Pages 1448-1448
+Stranger Fear
+Pages 1448-1448
+Stranger Wariness
+Pages 1448-1448
+Strangulation
+Pages 1448-1448
+Strategic Thinking
+Pages 1448-1448
+Strategist
+Pages 1449-1449
+Strattera (Atomoxetine)
+Amber R. Whited, Andrew S. Davis
+Pages 1449-1449
+Streaming (Great Britain)
+Pages 1449-1449
+Street Smarts
+Pages 1449-1449
+Street Terms: Gas, Gear, Juice, Roids
+Pages 1449-1449
+Stress
+Kristy M. Kelso
+Pages 1450-1450
+Stress Management
+Pages 1450-1450
+Stress Reduction
+Pages 1451-1451
+Stress-Diathesis Model
+Pages 1451-1451
+Stressful Life Events
+Pages 1451-1451
+Stress-Vulnerability Model
+Pages 1451-1451
+Striatum
+Ioana Boie
+Pages 1451-1451
+
+S
+Stroke
+Pages 1451-1451
+Stroop Tasks
+Audrey McKinlay
+Pages 1451-1452
+Structural Equation Modeling
+Kristen M. Grabill
+Pages 1452-1454
+Structural Imaging
+Pages 1454-1454
+Structuralist
+Pages 1454-1454
+Structured English Immersion
+Corey E. Ray-Subramanian
+Pages 1454-1454
+Struggle with Self Identity
+Pages 1454-1454
+Student Teams Achievement Divisions (STAD)
+Pages 1454-1454
+Student-Centered Instruction Holistic Learning
+Pages 1454-1454
+Study Skills
+Carrie R. Ball
+Pages 1454-1456
+Study Strategies
+Pages 1456-1456
+Study Tactics
+Pages 1456-1456
+Stuttering
+Chandrabanu Shrivats, Kimberly Booker
+Pages 1456-1457
+Subcortical Aphasia
+Pages 1457-1457
+Subjective Assessment
+Pages 1457-1457
+Substance Abuse
+Pages 1457-1457
+Substance Dependence
+Pages 1457-1457
+Substantia Nigra
+Ioana Boie
+Pages 1457-1457
+Suckling
+Pages 1457-1457
+Sudden Antenatal Death Syndrome (SADS)
+Pages 1457-1457
+
+S
+Suffix
+Pages 1457-1457
+Suffocation
+Pages 1457-1457
+Suicidal Cognitions
+Pages 1458-1458
+Suicidal Thoughts
+Pages 1458-1458
+Suicide
+David N. Miller
+Pages 1458-1459
+Suicide Contagion
+Pages 1459-1459
+Suicide Epidemic
+Pages 1459-1459
+Suicide Ideation
+David N. Miller
+Pages 1459-1459
+Sumner, Francis Cecil
+Scott Graves
+Pages 1459-1460
+Superego
+David Brandwein
+Pages 1460-1461
+Supportive Care
+Pages 1461-1461
+Suppression
+Pages 1462-1462
+Survival of the Fittest
+Pages 1462-1462
+Susceptibility to Interference
+Pages 1462-1462
+Sustained Attention
+Pages 1462-1462
+Swallowing Reflex
+Cheryl L. Giddens
+Pages 1462-1463
+Swallowing Response
+Pages 1463-1463
+Switch-Hitter
+Pages 1463-1463
+Swyer Syndrome
+Pages 1463-1463
+Syllable Structure
+Pages 1464-1464
+
+S
+Syllogism
+Pages 1464-1464
+Symbolic Play
+Pages 1464-1464
+Symbolic Thought
+Anne Fierro Vanderlaan
+Pages 1464-1464
+Sympathetic Activation
+Pages 1464-1464
+Sympathy
+Pages 1464-1464
+Symptoms Checklists
+Pages 1464-1464
+Synaptic Pruning
+Edalmarys Santos, Chad A. Noggle
+Pages 1464-1465
+Syntax
+Tony Wu
+Pages 1465-1466
+Systematic Eclecticism
+Pages 1466-1466
+Systemic Bias that Is Associated with a Partiality to a Sub-group or Particular Group Values
+Pages 1466-1466
+Systemic Therapy
+Pages 1466-1466
+Systems Theory
+Lee A. Wilkinson
+Pages 1466-1468
+Systems Therapist
+Pages 1468-1468
+Systems Thinking
+Pages 1468-1468
+T
+24-hour care
+Pages 1469-1469
+T Scores
+Pages 1469-1469
+Tabula Rasa
+Robert Walrath
+Pages 1469-1469
+Tactile Stimulation
+Matthew J. Hertenstein
+Pages 1469-1471
+Tales
+Pages 1471-1471
+Task Goals
+Pages 1471-1471
+
+T
+Task Involvement
+Pages 1471-1471
+Task Orientation
+Pages 1471-1471
+TAT
+Pages 1471-1471
+TBI
+Pages 1471-1471
+Teacher Report Measures
+Pages 1471-1471
+Teacher Student Relationship
+Pages 1471-1471
+Teacher-Child Relationships
+Pages 1471-1471
+Teacher-Expectancy Effect
+Pages 1471-1471
+Team Assisted Individualization (TAI)
+Pages 1471-1471
+Teams-Games-Tournaments (TCT)
+Pages 1471-1471
+Teen Mothers
+Pages 1471-1471
+Teenage Mothers
+Pages 1472-1472
+Teenagers
+Pages 1472-1472
+Teens
+Pages 1472-1472
+Television
+Pages 1472-1472
+Temper
+Pages 1472-1472
+Temper Tantrums
+Theodora Koulenti, Xenia Anastassiou-Hadjicharalambous
+Pages 1472-1473
+Temperament
+Pages 1473-1473
+Temporal Discounting
+Derek D. Reed, James K. Luiselli
+Pages 1474-1474
+Temporal Lobe Seizure
+Pages 1474-1474
+
+T
+Temporal Lobes
+Chad A. Noggle
+Pages 1474-1475
+Tension
+Pages 1475-1475
+Terminal Illness
+Brenda Moretta Guerrero
+Pages 1475-1478
+Termination
+Pages 1478-1478
+Test Anxiety
+Kristin D. Sawka-Miller
+Pages 1478-1479
+Test Observations
+Pages 1479-1479
+Test of Memory and Learning
+David Ritchie, Barry Nierenberg
+Pages 1479-1480
+Test Theory
+Pages 1480-1480
+Testes
+Pages 1480-1480
+Testicles
+Pages 1480-1480
+Testimonials
+Pages 1480-1480
+Testing
+Pages 1480-1480
+Testing the Limits
+Pages 1480-1480
+Thalamus
+Chad A. Noggle
+Pages 1481-1481
+Theine
+Pages 1481-1481
+Thematic Apperception Test
+Robert Walrath
+Pages 1481-1482
+Theory of Mind
+Pages 1482-1482
+Theory of Mind Task
+Pages 1482-1482
+Therapists
+Pages 1482-1482
+Therapy
+Pages 1482-1482
+
+T
+Thinking
+Pages 1482-1482
+Thinking Outside of the Box
+Pages 1482-1482
+Thinking Styles
+Pages 1482-1482
+Thinking Symbolically
+Pages 1482-1482
+Thioridazine
+Pages 1482-1482
+Thomas and Chess Classification of Infant
+Temi Bidjerano
+Pages 1483-1484
+Thorazine®
+Anna L. Lopez
+Pages 1484-1485
+Thorndike, Edward Lee
+Angela Mounger
+Pages 1485-1486
+Thought Disorder
+Pages 1486-1486
+Thoughtful Attendance to Oneself
+Pages 1486-1486
+Thoughts
+Pages 1486-1486
+Threat
+Pages 1486-1486
+Threat Response
+Pages 1486-1486
+Thrombophilia
+Pages 1486-1486
+Thrombophilic Disorders
+Madeline Gross
+Pages 1486-1487
+Throw Up
+Pages 1487-1487
+Tics
+Kristen M. Grabill
+Pages 1487-1488
+Time-Delay Discounting
+Pages 1488-1488
+Timeouts
+Gregory E. Everett, Brooke Ferrero-Baker
+Pages 1488-1491
+Time-Series Design
+Pages 1491-1491
+
+T
+Timidity
+Pages 1491-1491
+Timings
+Pages 1491-1491
+Titchener, Edward Bradford
+Daniel Patanella
+Pages 1491-1492
+To Participate in Regular Activity Associated with Independent Living
+Pages 1492-1492
+Toe or Big-Toe Phenomenon or Sign
+Pages 1492-1492
+Token Economies
+James K. Luiselli
+Pages 1493-1493
+TOMAL-2
+Pages 1493-1493
+Tormenters
+Pages 1494-1494
+Torrance Tests
+Pages 1494-1494
+Tot
+Pages 1494-1494
+Touch
+Pages 1494-1494
+Tourette Syndrome
+Jeremy R. Sullivan
+Pages 1494-1496
+Tourette’s Disorder
+Pages 1496-1496
+Tower
+Pages 1496-1496
+Tower of Colorado
+Pages 1496-1496
+Tower of Hanoi
+Pages 1496-1496
+Tower of London
+Pages 1496-1496
+Tower of London-Drexel
+Pages 1496-1496
+Tower Tasks
+Audrey McKinlay
+Pages 1496-1499
+Tracking
+Pages 1499-1499
+
+T
+Traditions
+Pages 1499-1499
+Trail Making Test
+Audrey McKinlay
+Pages 1499-1500
+Trails
+Pages 1500-1500
+Tranquilizers
+Pages 1500-1500
+Transcortical Motor Aphasia
+Pages 1500-1500
+Transcortical Sensory Aphasia
+Pages 1500-1500
+Transgender
+Pages 1500-1500
+Transgenderism
+Pages 1500-1500
+Transient Situational Disturbance
+Pages 1501-1501
+Transitional Bilingual Education
+Corey E. Ray-Subramanian
+Pages 1501-1501
+Transmitter Substances
+Pages 1501-1501
+Transsexual
+Pages 1501-1501
+Transsexualism
+Pages 1501-1501
+Traumatic Brain Injury
+MaryBeth Bailar-Heath
+Pages 1501-1505
+Triadic
+Pages 1505-1505
+Triangular
+Pages 1505-1505
+Triazolam
+Pages 1505-1505
+Tribulation
+Pages 1505-1505
+Trichotillomania
+Michael P. Twohig, Katherine A. Crowell
+Pages 1505-1508
+Trileptal®
+Anisa Fornoff
+Pages 1508-1508
+
+T
+True Twins
+Pages 1508-1508
+Trust Versus Mistrust
+Jennifer L. Stapel-Wax
+Pages 1508-1509
+Trust Versus Mistrust (Erikson’s Infant Stages)
+Lacy Allen
+Pages 1509-1510
+Turner Syndrome
+Cheryl Twaragowski
+Pages 1510-1512
+Twaddling
+Pages 1512-1512
+Twitch
+Pages 1512-1512
+Type 1 Diabetes
+Pages 1512-1512
+Type 2 Diabetes
+Pages 1512-1512
+U
+U.S. Army Alpha Intelligence Test
+Pages 1513-1513
+U.S. Army Beta Intelligence Test
+Pages 1513-1513
+Uber-Ich (German)
+Pages 1513-1513
+Ullrich–Turner Syndrome
+Pages 1513-1513
+Umbilical Cord
+Jill A. Anderson
+Pages 1513-1513
+Unconditional Positive Regards for the Client
+Pages 1513-1513
+Under the Influence
+Pages 1514-1514
+Underachievement
+Alandra Weller-Clarke
+Pages 1514-1515
+Underactive
+Pages 1515-1515
+Undernutrition
+Pages 1515-1515
+Understanding
+Pages 1515-1515
+Undesirable Life Events
+Pages 1515-1515
+
+U
+Unfairness
+Pages 1515-1515
+Unhappiness
+Pages 1515-1515
+UNICEF
+Purvita A. Patel
+Pages 1515-1516
+Unintended Transfer Task
+Pages 1516-1516
+Uninvolved Parenting Style
+Pages 1516-1516
+Uninvolved Parents
+Theodora Koulenti, Xenia Anastassiou-Hadjicharalambous
+Pages 1516-1518
+Unipolar Depression
+Maria Stylianou, Xenia Anastassiou-Hadjicharalambous
+Pages 1518-1523
+United Nations Children’s Fund (UNICEF)
+Pages 1523-1523
+Universal Nonverbal Intelligence Test
+Brett R. Nelson, Andrea Morillas-Brown, Grace Boyd
+Pages 1523-1524
+Unpleasant Event
+Pages 1524-1524
+Unpleasure Principle
+Pages 1524-1524
+Untruthful
+Pages 1524-1524
+Upchuck
+Pages 1524-1524
+Upper Spinal Cord
+Pages 1524-1524
+Uppers
+Pages 1524-1524
+Urban Poverty
+Pages 1524-1524
+Urinary Incontinence
+Pages 1525-1525
+U-Shape Curve
+Pages 1525-1525
+U-Shape Development
+Pages 1525-1525
+U-Shape Framework
+Pages 1525-1525
+
+U
+U-Shape Learning
+Molly Millians
+Pages 1525-1527
+U-Shaped Behavioral Growth
+Pages 1527-1527
+Uterus
+Pamelyn M. MacDonald
+Pages 1527-1528
+V
+VADPRS
+Pages 1529-1529
+Validity
+Jeremy R. Sullivan
+Pages 1529-1531
+Valium
+Tony Wu
+Pages 1531-1532
+Valrelease
+Pages 1532-1532
+Values
+William E. Herman
+Pages 1532-1534
+Vanderbilt ADHD Diagnostic Parent Rating Scale
+Pages 1534-1534
+Vanderbilt Attention-Deficit/ Hyperactivity Disorder Diagnostic Teacher Rating Scale (VADTRS)
+Pages 1534-1534
+Vanderbilt Parent Assessment Scales
+Katherine E. Kiker
+Pages 1534-1535
+Vanderbilt Parent Rating Scales
+Pages 1535-1535
+Vanderbilt Teacher Assessment Scale
+Julia A. Ogg, Sarah A. Fefer
+Pages 1535-1536
+Vanderbilt Teacher Behavior Evaluation Scale
+Pages 1537-1537
+Vanderbilt Teacher Rating Scale
+Pages 1537-1537
+Variables, in Experimental Developmental Research
+Daniel Patanella
+Pages 1537-1538
+Venlafaxine
+Pages 1538-1538
+Verbal Ability
+Pages 1538-1538
+Verbal Abuse
+Pages 1538-1538
+Verbal Aptitude
+Pages 1538-1538
+
+V
+Verbal Communication
+Pages 1538-1538
+Verbal Comprehension
+Pages 1538-1538
+Verbal Intelligence
+Kristine Augustyniak
+Pages 1538-1541
+Verbal IQ
+Pages 1541-1541
+Verbal Memory
+Pages 1541-1541
+Verbal Rehearsal and Self-Statements
+Pages 1541-1541
+Verbal Skills
+Pages 1541-1541
+Vernacular
+Pages 1541-1541
+Very Low Birth Weight
+Anna Mazur-Mosiewicz, Raymond S. Dean
+Pages 1542-1542
+Vicarious Learning
+Pages 1542-1542
+Video Games
+Steuart T. Watson, Darrell Davis
+Pages 1543-1544
+Vigilance
+Pages 1544-1544
+Vineland Adaptive Behavior Scale
+Audrey McKinlay
+Pages 1544-1545
+Violence
+Pages 1545-1545
+Visual Amnesia
+Pages 1545-1545
+Visual Area
+Chad A. Noggle
+Pages 1545-1546
+Visual Attention
+Pages 1546-1546
+Visual Persistence
+Pages 1546-1546
+Visual Scanning
+Benjamin K. Barton, Paul Jorritsma
+Pages 1546-1548
+Visual Search
+Pages 1548-1548
+
+V
+Visually Impaired
+Pages 1548-1548
+Visual-Spatial Intelligence
+Amy E. Zimmerman, Raymond S. Dean
+Pages 1548-1549
+Visual-Spatial Reasoning
+Pages 1549-1549
+Visuo-Spatial Intelligence
+Pages 1549-1549
+VLBW
+Pages 1549-1549
+Volition
+Pages 1549-1549
+Voluntary Mutism
+Pages 1549-1549
+Vomit
+Pages 1549-1549
+Vulnerability
+Pages 1549-1549
+Vygotsky’s Cognitive Development Theory
+Melisa Moore
+Pages 1549-1550
+Vygotsky’s Social Development Theory
+Pages 1550-1550
+Vygotsky’s Socio-Cultural Theory
+Pages 1550-1550
+Vyvanse (Prodrug of Dextroamphetamine)
+Pages 1550-1550
+W
+War on Poverty
+Pages 1551-1551
+Washburn, Margaret Floy
+Kelli Vaughn-Blount
+Pages 1551-1552
+Watson, John Broadus
+Steuart T. Watson, Amber L. Kokol
+Pages 1552-1553
+WCST
+Pages 1553-1553
+Wechsler Intelligence Scale for Children, Fourth Edition
+Renee Grizzle
+Pages 1553-1555
+Wechsler Nonverbal Scale of Ability
+Pages 1555-1555
+Wechsler, David
+Russell N. Carney
+Pages 1555-1557
+
+W
+Weight
+Shannon S. Rich, Sonia LeClere
+Pages 1557-1559
+Weight Faltering
+Pages 1559-1559
+Well-Being
+Pages 1559-1559
+Wellbutrin
+Pages 1559-1559
+Werner Syndrome
+Maria Stylianou, Xenia Anastassiou-Hadjicharalambous
+Pages 1559-1561
+Werner’s Syndrome
+Pages 1561-1561
+Werners Syndrome
+Pages 1561-1561
+Wernicke, Carl
+Mary Joann Lang, David Morrison
+Pages 1561-1562
+Wernicke’s Aphasia
+Pages 1562-1562
+Wernicke’s Area
+Robert Walrath
+Pages 1562-1562
+Wertham, Frederic
+Daniel Patanella, Chandra Ebanks
+Pages 1562-1563
+Whacking Off
+Pages 1563-1563
+Wheeled Sports Accidents
+Pages 1563-1563
+Whiplash Shaken Infant Syndrome
+Pages 1563-1563
+Whippets
+Pages 1563-1563
+Whipping
+Pages 1565-1565
+White Matter
+Anne Fierro Vanderlaan
+Pages 1565-1565
+Whiteheads
+Pages 1565-1565
+Whole Language Approach
+Jackie Laney
+Pages 1565-1566
+Whorfian Hypothesis
+Seongwon Yun, Shelia M. Kennison
+Pages 1566-1567
+
+W
+Wide Range Assessment of Memory and Learning
+David Ritchie, Barry Nierenberg
+Pages 1567-1569
+Williams Syndrome
+Caroline McKnight, Rachel Kitson, Beth Anne Newman
+Pages 1569-1571
+Williams-Beuren Syndrome
+Pages 1571-1571
+WISC-IV
+Pages 1571-1571
+Wisconsin Card Sort Test
+Pages 1571-1571
+Wisconsin Card Sorting Test
+Marie C. McGrath
+Pages 1571-1572
+Wisdom
+Anne Fierro Vanderlaan
+Pages 1572-1572
+Without Appetite
+Pages 1572-1572
+Witmer, Lightner
+Heather N. Arduengo, Angela D. Mitchell
+Pages 1572-1573
+WJ-III
+Pages 1573-1573
+WJ-III-ACH
+Pages 1573-1573
+WJ-III-COG
+Pages 1573-1573
+Womanhood
+Pages 1573-1573
+Womanly
+Pages 1573-1573
+Womb
+Pages 1573-1573
+Woodcock, Richard W.
+Anna Mazur-Mosiewicz, Raymond S. Dean
+Pages 1573-1575
+Woodcock-Johnson III Tests of Achievement
+Raymond S. Dean
+Pages 1575-1576
+Woodcock-Johnson III Tests of Cognitive Abilities
+Jennifer R. Vought, Raymond S. Dean
+Pages 1577-1578
+Word
+Pages 1578-1578
+Word Attack Skills
+Pages 1578-1578
+
+W
+Word Blindness
+Pages 1579-1579
+Word Deafness
+Pages 1579-1579
+Word Finding
+Pages 1579-1579
+Word Recognition
+Pages 1579-1579
+Word Recognition in Context
+Pages 1579-1579
+Word Retrieval
+Pages 1579-1579
+Word Structure
+Pages 1579-1579
+Working Memory
+Marci S. DeCaro, Denise E. Maricle
+Pages 1579-1581
+WRAML2
+Pages 1581-1581
+Writing Development
+Pages 1581-1581
+Writing Learning Disability or Specific Learning Disability (LD)-Written Expression
+Pages 1581-1582
+Writing Skills
+Pages 1582-1582
+Written Communication Skills
+Pages 1582-1582
+Written Expression Skills
+Pages 1582-1582
+Written Language Skills
+Pages 1582-1582
+X
+45 X 0
+Pages 1583-1583
+47, XYY Karyotype
+Pages 1583-1583
+47, XYY Syndrome
+Pages 1583-1583
+48 XXXY Syndrome
+Pages 1583-1583
+XO Syndrome
+Carol Patrick
+Pages 1583-1584
+
+X
+XXXY Syndrome
+Adeline Low
+Pages 1584-1585
+XY Gonadal Dysgenesis
+Pages 1585-1585
+XYY Chromosome Pattern
+Pages 1585-1585
+XYY Syndrome
+Annmarie Roberston
+Pages 1585-1586
+Y
+Young Caregivers
+Christina Marbach
+Pages 1587-1588
+Young Carers
+Pages 1588-1588
+Youth
+Pages 1588-1588
+YY Syndrome
+Pages 1588-1588
+Z
+Z Drug
+Pages 1589-1589
+Z Score
+Pages 1589-1589
+Zetran
+Pages 1589-1589
+Ziprasidone
+Pages 1589-1589
+Zits
+Pages 1589-1589
+Zoldem
+Pages 1589-1589
+Zolfresh
+Pages 1589-1589
+Zoloft®
+Anisa Fornoff
+Pages 1589-1590
+Zolpidem
+Pages 1590-1590
+Zolt
+Pages 1590-1590
+Zone of Proximal Development
+Sarah Kozel Silverman
+Pages 1590-1590
+Zo-Ped
+Pages 1591-1591
+
+Z
+ZPD
+Pages 1591-1591
+Z-Scores
+Pages 1591-1591
+Zyban
+Pages 1591-1591
+Zydis®
+Pages 1591-1591
+Zyprexa®
+Anisa Fornoff
+Pages 1591-1591
+
+
