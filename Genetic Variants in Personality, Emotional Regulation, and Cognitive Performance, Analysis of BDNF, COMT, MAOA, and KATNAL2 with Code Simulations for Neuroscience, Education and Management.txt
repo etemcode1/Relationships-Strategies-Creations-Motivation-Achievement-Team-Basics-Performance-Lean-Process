@@ -1,0 +1,2370 @@
+Identifying genes specifically linked to positive personality traits such as accuracy, intelligence, and resilience is complex, as these traits are influenced by both genetic and environmental factors. However, certain genes have been associated with temperamental and cognitive traits that may contribute to positive personality characteristics:
+
+1. **DRD4 and DRD2**: These dopamine receptor genes are linked to novelty-seeking behavior and motivation, potentially fostering creativity and adaptability【8】.
+   
+2. **SLC6A4 (Serotonin Transporter Gene)**: Variants in this gene can influence emotional regulation and resilience, contributing to a positive outlook【8】.
+   
+3. **MAOA**: Some variants of this gene are associated with emotional regulation and social behavior, potentially fostering empathy and patience【8】.
+   
+4. **KATNAL2**: Linked to conscientiousness and self-discipline, which are crucial for achieving goals and maintaining accuracy【8】.
+   
+5. **BDNF (Brain-Derived Neurotrophic Factor)**: This gene plays a role in neuroplasticity, learning, and memory, contributing to cognitive flexibility and intelligence【7】【8】.
+
+6. **COMT (Catechol-O-Methyltransferase)**: This gene affects dopamine levels in the prefrontal cortex, influencing decision-making and cognitive performance【7】.
+
+These genes contribute to broader personality frameworks rather than directly encoding specific traits. Environmental factors, life experiences, and epigenetics also significantly shape personality. For a more comprehensive understanding, reviewing studies on gene-environment interactions can provide deeper insights【7】【8】.
+
+Here’s a comprehensive overview of **epigenetics**, broken into **55 core insights** across key domains:
+
+### 1. **Foundational Concepts**
+1. **Definition**: Epigenetics refers to heritable changes in gene expression that do not involve alterations to the underlying DNA sequence.
+2. **Epigenome**: The collection of chemical modifications across the genome that regulate gene activity.
+3. **Epigenetic Mechanisms**: DNA methylation, histone modification, and non-coding RNAs.
+4. **Reversibility**: Unlike genetic mutations, epigenetic changes are potentially reversible.
+5. **Role in Development**: Epigenetics governs cellular differentiation and tissue specificity.
+
+### 2. **DNA Methylation**
+6. **Process**: Addition of a methyl group to cytosine bases in DNA.
+7. **CpG Islands**: Regions rich in CG sequences where methylation commonly occurs.
+8. **Gene Silencing**: Methylation often leads to transcriptional repression.
+9. **Imprinting**: Parent-specific gene expression determined by methylation patterns.
+
+### 3. **Histone Modifications**
+10. **Histone Acetylation**: Increases gene expression by loosening DNA-histone interactions.
+11. **Histone Methylation**: Can either activate or repress gene expression depending on the site.
+12. **Histone Code Hypothesis**: Combinations of modifications dictate specific gene regulatory outcomes.
+
+### 4. **Non-Coding RNAs**
+13. **MicroRNAs (miRNAs)**: Regulate gene expression post-transcriptionally.
+14. **Long Non-Coding RNAs (lncRNAs)**: Modulate chromatin structure and gene transcription.
+
+### 5. **Environmental Influences**
+15. **Diet**: Nutritional intake influences epigenetic marks.
+16. **Exercise**: Physical activity induces beneficial epigenetic changes.
+17. **Toxins**: Exposure to pollutants can alter the epigenome.
+18. **Stress**: Chronic stress modifies gene expression via epigenetic pathways.
+
+### 6. **Epigenetics and Disease**
+19. **Cancer**: Aberrant methylation and histone modifications are hallmarks of cancer.
+20. **Neurodegenerative Diseases**: Epigenetic changes contribute to disorders like Alzheimer's.
+21. **Cardiovascular Disease**: Epigenetic mechanisms influence heart health.
+22. **Autoimmune Disorders**: Epigenetic dysregulation plays a role in diseases like lupus.
+
+### 7. **Inheritance and Evolution**
+23. **Transgenerational Epigenetics**: Epigenetic changes can be passed down through generations.
+24. **Evolutionary Role**: Epigenetics may contribute to rapid adaptations.
+
+### 8. **Technological Advances**
+25. **Epigenome Mapping**: Techniques like bisulfite sequencing map DNA methylation.
+26. **CRISPR-based Epigenome Editing**: Allows precise modifications of epigenetic marks.
+
+### 9. **Therapeutic Applications**
+27. **Epigenetic Drugs**: Include DNA methyltransferase inhibitors and histone deacetylase inhibitors.
+28. **Cancer Therapies**: Target epigenetic dysregulation in tumors.
+29. **Gene Therapy**: Epigenetics informs strategies to reactivate silenced genes.
+
+### 10. **Research Insights**
+30. **Epigenome-Wide Association Studies (EWAS)**: Analyze epigenetic variation across populations.
+31. **Epigenetic Clocks**: Biological age estimation based on DNA methylation.
+
+### 11. **Ethical and Social Implications**
+32. **Privacy**: Epigenetic data raises concerns about genetic privacy.
+33. **Epigenetic Determinism**: Challenges the notion of genetic predestination.
+
+### 12. **Development and Aging**
+34. **Early Development**: Epigenetics guides embryonic development.
+35. **Aging**: Epigenetic drift contributes to aging and age-related diseases.
+
+### 13. **Behavior and Cognition**
+36. **Memory Formation**: Epigenetic regulation affects synaptic plasticity.
+37. **Learning**: Epigenetic changes support adaptive learning processes.
+38. **Mental Health**: Epigenetic alterations influence psychiatric disorders.
+
+### 14. **Epigenomics and Microbiome**
+39. **Gut-Brain Axis**: Microbiota influence host epigenetics.
+40. **Immune System**: Epigenetic regulation of immune cell function.
+
+### 15. **Technological Challenges and Limitations**
+41. **Data Interpretation**: Complexities in linking epigenetic marks to function.
+42. **Reproducibility**: Variability in epigenetic data across studies.
+
+### 16. **Emerging Trends**
+43. **Epitranscriptomics**: Study of RNA modifications influencing gene expression.
+44. **Single-Cell Epigenomics**: Captures heterogeneity in cell populations.
+
+### 17. **Future Directions**
+45. **Precision Medicine**: Epigenetics informs personalized therapeutic strategies.
+46. **Epigenetic Biomarkers**: Diagnostic and prognostic potential in various diseases.
+
+### 18. **Epigenetics in Stem Cells**
+47. **Pluripotency**: Epigenetic state governs stem cell differentiation.
+48. **Reprogramming**: Induced pluripotent stem cells rely on epigenetic remodeling.
+
+### 19. **Epigenetic Landscapes in Cancer**
+49. **Tumor Heterogeneity**: Epigenetic diversity within tumors.
+50. **Resistance Mechanisms**: Epigenetic adaptations in cancer therapy resistance.
+
+### 20. **Holistic Health Approaches**
+51. **Mindfulness**: Meditation and mindfulness may induce beneficial epigenetic changes.
+52. **Epigenetic Diets**: Dietary components that influence the epigenome.
+
+### 21. **Technological Integration**
+53. **AI and Epigenetics**: Machine learning for epigenetic data analysis.
+54. **Big Data**: Integration of multi-omics datasets.
+
+### 22. **Clinical Implications**
+55. **Clinical Trials**: Testing epigenetic therapies in various conditions.
+
+This synthesis underscores the profound impact of epigenetics on health, development, and disease. For further reading, review resources such as the NIH’s [MedlinePlus Genetics](https://medlineplus.gov/genetics)【8】and comprehensive studies in scientific journals.
+
+Here are 33 key examples of **multi-omics datasets**, which integrate various omics data types (e.g., genomics, transcriptomics, proteomics, metabolomics) to provide comprehensive biological insights:
+
+---
+
+### 1. **TCGA (The Cancer Genome Atlas)**  
+   - Combines genomics, transcriptomics, proteomics, and epigenomics for various cancer types.
+
+2. **GTEx (Genotype-Tissue Expression Project)**  
+   - Integrates genomics, transcriptomics, and epigenomics across human tissues to explore gene regulation.
+
+3. **Metabolomics Workbench**  
+   - Provides metabolomics and transcriptomics data for disease-related metabolic pathways.
+
+4. **HMP (Human Microbiome Project)**  
+   - Includes metagenomics, metabolomics, and proteomics to understand the human microbiome.
+
+5. **1000 Genomes Project**  
+   - Offers genetic and transcriptomic data for human population genetics studies.
+
+---
+
+### 6. **PRISM**  
+   - Multi-omics datasets for cancer drug response, integrating proteomics, transcriptomics, and mutation data.
+
+7. **iHMP (Integrated Human Microbiome Project)**  
+   - Focuses on multi-omics analysis of microbiome-host interactions in health and disease.
+
+8. **ENCODE (Encyclopedia of DNA Elements)**  
+   - Includes epigenomics, transcriptomics, and genomics to identify functional elements in the human genome.
+
+9. **CPTAC (Clinical Proteomic Tumor Analysis Consortium)**  
+   - Merges proteomics, genomics, and transcriptomics for cancer studies.
+
+10. **ImmPort**  
+    - Integrates transcriptomics, proteomics, and immunomics for immune response studies.
+
+---
+
+### 11. **PANCAN-12**  
+   - A pan-cancer study combining genomics, epigenomics, and transcriptomics across 12 tumor types.
+
+12. **SWATH-MS Atlas**  
+   - Comprehensive proteomic datasets integrating proteomics and transcriptomics.
+
+13. **Human Protein Atlas**  
+   - Combines proteomics and transcriptomics for mapping human proteins across tissues.
+
+14. **BBMRI (Biobanking and Biomolecular Resources Research Infrastructure)**  
+   - Offers multi-omics data from large-scale population studies.
+
+15. **Mouse Phenome Database (MPD)**  
+    - Integrates genomics, proteomics, and metabolomics for mouse models.
+
+---
+
+### 16. **FANTOM5**  
+   - Focuses on transcriptomics and epigenomics to study regulatory elements in mammalian genomes.
+
+17. **EGA (European Genome-phenome Archive)**  
+   - Hosts multi-omics datasets, including genomics and transcriptomics, for disease studies.
+
+18. **HuBMAP (Human BioMolecular Atlas Program)**  
+   - Integrates multiple omics to map human tissues at the cellular level.
+
+19. **NCI Genomic Data Commons (GDC)**  
+   - Provides access to cancer genomics, transcriptomics, and epigenomics.
+
+20. **LifeLines Cohort Study**  
+   - Longitudinal multi-omics data (genomics, metabolomics) to study chronic diseases.
+
+---
+
+### 21. **Framingham Heart Study (Omics Data)**  
+   - Integrates metabolomics, proteomics, and genomics for cardiovascular disease research.
+
+22. **ALLIANCE**  
+   - Multi-omics datasets in leukemia, combining proteomics and transcriptomics.
+
+23. **PMI (Precision Medicine Initiative)**  
+   - Uses multi-omics data for personalized medicine research.
+
+24. **BLUEPRINT Epigenome Project**  
+   - Focuses on the epigenomics of immune cells, integrating transcriptomics.
+
+25. **TOPMed (Trans-Omics for Precision Medicine)**  
+   - Combines genomics, metabolomics, and proteomics for precision medicine.
+
+---
+
+### 26. **GEO (Gene Expression Omnibus)**  
+   - Repository for transcriptomics and epigenomics datasets.
+
+27. **MetaboLights**  
+   - Multi-omics platform for metabolomics and genomics studies.
+
+28. **Rosetta Commons**  
+   - Integrates structural proteomics and genomics.
+
+29. **DEEP (Deutsches Epigenom Programm)**  
+   - Focuses on epigenomics and transcriptomics in the context of human diseases.
+
+30. **Human Metabolome Database (HMDB)**  
+   - Combines metabolomics and proteomics for biochemical pathway studies.
+
+---
+
+### 31. **EXPOsOMICS**  
+   - Focuses on exposome-omics, combining metabolomics, genomics, and transcriptomics.
+
+32. **PLCO Atlas**  
+   - Integrates multi-omics data (genomics, proteomics) for cancer prevention studies.
+
+33. **Nutritional Genomics Databases**  
+   - Multi-omics approaches to study diet-genome interactions.
+
+---
+
+These datasets empower systems biology and precision medicine by providing holistic biological insights. Most are accessible via data portals like [NCBI GEO](https://www.ncbi.nlm.nih.gov/geo/) or [EBI](https://www.ebi.ac.uk/metabolights/).
+
+Here are **8 advanced C code examples** that integrate metabolomics, genomics, and transcriptomics (exposome-omics) for data analysis and modeling, focusing on breakthroughs with relevant logic and practical applications. The examples showcase computational strategies that apply to systems biology and precision medicine.
+
+---
+
+### 1. **Data Parsing and Normalization**  
+   **Purpose**: Parse and normalize exposome-omics datasets for multi-omics integration.  
+   **Key Logic**: Efficiently handle large files, clean data, and normalize across omics layers.  
+   ```c
+   void normalize_data(float *data, int size) {
+       float sum = 0;
+       for (int i = 0; i < size; i++) sum += data[i];
+       for (int i = 0; i < size; i++) data[i] /= sum;
+   }
+   ```
+   **Practical Application**: Ensures comparability between metabolomic and genomic data.  
+   **File Name**: `exposome_data_normalizer.c`
+
+---
+
+### 2. **Feature Selection using Mutual Information**  
+   **Purpose**: Select features across omics layers based on mutual information.  
+   **Key Logic**: Rank features that best explain target phenotypes.  
+   ```c
+   float compute_mutual_information(float *x, float *y, int n);
+   ```
+   **Practical Application**: Identifies key genes, metabolites, and transcripts driving diseases.  
+   **File Name**: `feature_selection_omics.c`
+
+---
+
+### 3. **Multi-Omics Correlation Network Construction**  
+   **Purpose**: Build a network linking omics layers based on Pearson correlation.  
+   **Key Logic**: Connect nodes if correlation exceeds a threshold.  
+   ```c
+   void build_correlation_network(float **data, int rows, int cols, float threshold);
+   ```
+   **Practical Application**: Visualizes interconnections between metabolites, genes, and transcripts.  
+   **File Name**: `correlation_network_builder.c`
+
+---
+
+### 4. **Epigenetic Clock Calculation**  
+   **Purpose**: Estimate biological age using methylation data.  
+   **Key Logic**: Weighted regression model using epigenomic features.  
+   ```c
+   float estimate_age(float *methylation_data, float *weights, int size);
+   ```
+   **Practical Application**: Provides insights into aging-related health risks.  
+   **File Name**: `epigenetic_clock_calculator.c`
+
+---
+
+### 5. **Pathway Enrichment Analysis**  
+   **Purpose**: Identify pathways enriched in multi-omics data.  
+   **Key Logic**: Calculate enrichment scores using hypergeometric tests.  
+   ```c
+   int calculate_enrichment(int total_genes, int pathway_genes, int selected_genes, int overlap);
+   ```
+   **Practical Application**: Highlights key biological processes affected by exposures.  
+   **File Name**: `pathway_enrichment_analyzer.c`
+
+---
+
+### 6. **Metabolic Flux Simulation**  
+   **Purpose**: Simulate metabolic fluxes using FBA (Flux Balance Analysis).  
+   **Key Logic**: Solve linear programming models to optimize metabolic networks.  
+   ```c
+   float optimize_flux_balance(float *reaction_rates, float *constraints, int num_reactions);
+   ```
+   **Practical Application**: Predicts metabolic responses to environmental factors.  
+   **File Name**: `flux_balance_simulator.c`
+
+---
+
+### 7. **Omics Data Integration with Canonical Correlation Analysis (CCA)**  
+   **Purpose**: Integrate different omics layers using CCA.  
+   **Key Logic**: Maximize the correlation between two datasets.  
+   ```c
+   void perform_cca(float **data1, float **data2, int samples, int features1, int features2);
+   ```
+   **Practical Application**: Links gene expression with metabolite profiles.  
+   **File Name**: `omics_integration_cca.c`
+
+---
+
+### 8. **Risk Prediction Model using Random Forests**  
+   **Purpose**: Predict disease risk based on multi-omics profiles.  
+   **Key Logic**: Train a random forest model using cross-validation.  
+   ```c
+   void train_random_forest(float **data, int *labels, int samples, int features, int trees);
+   ```
+   **Practical Application**: Provides actionable insights for precision medicine.  
+   **File Name**: `risk_prediction_random_forest.c`
+
+---
+
+These examples apply practical, logical approaches to integrate and analyze multi-omics data for exposome-omics research. They can facilitate breakthroughs in understanding gene-environment interactions and disease mechanisms.
+
+Here are **8 additional advanced C code examples** for exposome-omics analysis, each emphasizing robust reasoning and practical application to deliver clear value in multi-omics integration and analysis:
+
+---
+
+### 1. **Sparse Matrix Representation for Omics Data**  
+   **Purpose**: Efficiently store and process large, sparse multi-omics datasets.  
+   **Key Logic**: Use compressed sparse row (CSR) format to reduce memory usage.  
+   ```c
+   typedef struct {
+       int *row_ptr;
+       int *col_idx;
+       float *values;
+   } SparseMatrix;
+   ```
+   **Practical Application**: Improves computational efficiency in handling high-dimensional omics data.  
+   **File Name**: `sparse_matrix_handler.c`
+
+---
+
+### 2. **Batch Effect Correction**  
+   **Purpose**: Remove batch effects from multi-omics datasets using linear regression.  
+   **Key Logic**: Fit and subtract batch-related variance.  
+   ```c
+   void correct_batch_effects(float **data, int samples, int features, int *batch_labels);
+   ```
+   **Practical Application**: Ensures consistency across experiments, enhancing data reliability.  
+   **File Name**: `batch_effect_correction.c`
+
+---
+
+### 3. **Time-Series Analysis of Multi-Omics Data**  
+   **Purpose**: Analyze time-dependent changes in multi-omics profiles.  
+   **Key Logic**: Apply dynamic time warping (DTW) to align temporal omics data.  
+   ```c
+   float dynamic_time_warping(float *series1, float *series2, int len1, int len2);
+   ```
+   **Practical Application**: Captures dynamic molecular changes under environmental exposures.  
+   **File Name**: `time_series_analysis_omics.c`
+
+---
+
+### 4. **Graph-Based Clustering of Omics Data**  
+   **Purpose**: Cluster multi-omics data using graph-based approaches (e.g., spectral clustering).  
+   **Key Logic**: Create similarity graphs and perform Laplacian eigenvalue decomposition.  
+   ```c
+   void spectral_clustering(float **data, int samples, int clusters);
+   ```
+   **Practical Application**: Identifies multi-omics subtypes in diseases like cancer.  
+   **File Name**: `graph_clustering_omics.c`
+
+---
+
+### 5. **Multi-Omics Data Imputation**  
+   **Purpose**: Impute missing values in multi-omics datasets using k-nearest neighbors (k-NN).  
+   **Key Logic**: Predict missing entries based on nearest neighbors in feature space.  
+   ```c
+   void knn_imputation(float **data, int samples, int features, int k);
+   ```
+   **Practical Application**: Improves data quality and downstream analysis accuracy.  
+   **File Name**: `knn_imputation_omics.c`
+
+---
+
+### 6. **Predictive Modeling with Lasso Regression**  
+   **Purpose**: Build predictive models for disease outcomes using Lasso regression.  
+   **Key Logic**: Perform feature selection and regularization to prevent overfitting.  
+   ```c
+   float lasso_regression(float **data, float *target, int samples, int features, float lambda);
+   ```
+   **Practical Application**: Identifies key biomarkers across omics layers.  
+   **File Name**: `lasso_predictive_modeling.c`
+
+---
+
+### 7. **Network Propagation for Omics Integration**  
+   **Purpose**: Propagate signals across an omics interaction network to infer functional modules.  
+   **Key Logic**: Apply random walk algorithms on a multi-layer network.  
+   ```c
+   void network_propagation(float **adj_matrix, float *initial_scores, int nodes, float alpha);
+   ```
+   **Practical Application**: Uncovers functional modules and pathways in systems biology.  
+   **File Name**: `network_propagation_omics.c`
+
+---
+
+### 8. **Multi-Omics Data Fusion using Tensor Decomposition**  
+   **Purpose**: Decompose multi-omics tensors to uncover latent factors.  
+   **Key Logic**: Apply canonical polyadic decomposition (CPD).  
+   ```c
+   void tensor_decomposition(float ***tensor, int dim1, int dim2, int dim3);
+   ```
+   **Practical Application**: Integrates complex omics data for holistic biological insights.  
+   **File Name**: `tensor_decomposition_omics.c`
+
+---
+
+These examples offer practical solutions to common challenges in multi-omics data analysis, such as data integration, imputation, and predictive modeling. Each method enhances the interpretability and utility of exposome-omics studies.
+
+AAAS: aladin WD repeat nucleoporin
+AASS: aminoadipate-semialdehyde synthase
+ABAT: 4-aminobutyrate aminotransferase
+ABCA1: ATP binding cassette subfamily A member 1
+ABCA3: ATP binding cassette subfamily A member 3
+ABCA4: ATP binding cassette subfamily A member 4
+ABCA12: ATP binding cassette subfamily A member 12
+ABCB4: ATP binding cassette subfamily B member 4
+ABCB7: ATP binding cassette subfamily B member 7
+ABCB11: ATP binding cassette subfamily B member 11
+ABCC2: ATP binding cassette subfamily C member 2
+ABCC6: ATP binding cassette subfamily C member 6
+ABCC8: ATP binding cassette subfamily C member 8
+ABCC9: ATP binding cassette subfamily C member 9
+ABCD1: ATP binding cassette subfamily D member 1
+ABCD4: ATP binding cassette subfamily D member 4
+ABCG2: ATP binding cassette subfamily G member 2 (JR blood group)
+ABCG5: ATP binding cassette subfamily G member 5
+ABCG8: ATP binding cassette subfamily G member 8
+ABHD5: abhydrolase domain containing 5, lysophosphatidic acid acyltransferase
+ABL1: ABL proto-oncogene 1, non-receptor tyrosine kinase
+ACAD8: acyl-CoA dehydrogenase family member 8
+ACAD9: acyl-CoA dehydrogenase family member 9
+ACADM: acyl-CoA dehydrogenase medium chain
+ACADS: acyl-CoA dehydrogenase short chain
+ACADSB: acyl-CoA dehydrogenase short/branched chain
+ACADVL: acyl-CoA dehydrogenase very long chain
+ACAN: aggrecan
+ACAT1: acetyl-CoA acetyltransferase 1
+ACE: angiotensin I converting enzyme
+ACOX1: acyl-CoA oxidase 1
+ACP5: acid phosphatase 5, tartrate resistant
+ACSF3: acyl-CoA synthetase family member 3
+ACTA1: actin alpha 1, skeletal muscle
+ACTA2: actin alpha 2, smooth muscle
+ACTB: actin beta
+ACTG1: actin gamma 1
+ACTG2: actin gamma 2, smooth muscle
+ACVR1: activin A receptor type 1
+ACVRL1: activin A receptor like type 1
+ACY1: aminoacylase 1
+ADA2: adenosine deaminase 2
+ADA: adenosine deaminase
+ADAMTS2: ADAM metallopeptidase with thrombospondin type 1 motif 2
+ADAMTS10: ADAM metallopeptidase with thrombospondin type 1 motif 10
+ADAMTS13: ADAM metallopeptidase with thrombospondin type 1 motif 13
+ADAMTSL2: ADAMTS like 2
+ADAMTSL4: ADAMTS like 4
+ADAR: adenosine deaminase RNA specific
+ADCY5: adenylate cyclase 5
+ADGRE2: adhesion G protein-coupled receptor E2
+ADGRG1: adhesion G protein-coupled receptor G1
+ADNP: activity dependent neuroprotector homeobox
+ADSL: adenylosuccinate lyase
+AFF2: ALF transcription elongation factor 2
+AFF4: ALF transcription elongation factor 4
+AGA: aspartylglucosaminidase
+AGL: amylo-alpha-1,6-glucosidase and 4-alpha-glucanotransferase
+AGPAT2: 1-acylglycerol-3-phosphate O-acyltransferase 2
+AGPS: alkylglycerone phosphate synthase
+AGT: angiotensinogen
+AGTR1: angiotensin II receptor type 1
+AGXT: alanine--glyoxylate aminotransferase
+AHCY: adenosylhomocysteinase
+AHDC1: AT-hook DNA binding motif containing 1
+AIP: aryl hydrocarbon receptor interacting protein
+AIRE: autoimmune regulator
+AKR1D1: aldo-keto reductase family 1 member D1
+AKT1: AKT serine/threonine kinase 1
+AKT3: AKT serine/threonine kinase 3
+ALAD: aminolevulinate dehydratase
+ALAS2: 5'-aminolevulinate synthase 2
+ALDH3A2: aldehyde dehydrogenase 3 family member A2
+ALDH4A1: aldehyde dehydrogenase 4 family member A1
+ALDH5A1: aldehyde dehydrogenase 5 family member A1
+ALDH7A1: aldehyde dehydrogenase 7 family member A1
+ALDH18A1: aldehyde dehydrogenase 18 family member A1
+ALDOB: aldolase, fructose-bisphosphate B
+ALG1: ALG1 chitobiosyldiphosphodolichol beta-mannosyltransferase
+ALG6: ALG6 alpha-1,3-glucosyltransferase
+ALG12: ALG12 alpha-1,6-mannosyltransferase
+ALK: ALK receptor tyrosine kinase
+ALMS1: ALMS1 centrosome and basal body associated protein
+ALOX12B: arachidonate 12-lipoxygenase, 12R type
+ALOXE3: arachidonate epidermal lipoxygenase 3
+ALPL: alkaline phosphatase, biomineralization associated
+ALS2: alsin Rho guanine nucleotide exchange factor ALS2
+ALX1: ALX homeobox 1
+ALX3: ALX homeobox 3
+ALX4: ALX homeobox 4
+AMACR: alpha-methylacyl-CoA racemase
+AMELX: amelogenin X-linked
+AMER1: APC membrane recruitment protein 1
+AMH: anti-Mullerian hormone
+AMHR2: anti-Mullerian hormone receptor type 2
+AMN: amnion associated transmembrane protein
+AMPD1: adenosine monophosphate deaminase 1
+AMT: aminomethyltransferase
+ANK1: ankyrin 1
+ANK2: ankyrin 2
+ANKH: ANKH inorganic pyrophosphate transport regulator
+ANKRD11: ankyrin repeat domain containing 11
+ANO5: anoctamin 5
+ANOS1: anosmin 1
+ANTXR2: ANTXR cell adhesion molecule 2
+APC: APC regulator of WNT signaling pathway
+APOA1: apolipoprotein A1
+APOB: apolipoprotein B
+APOE: apolipoprotein E
+APP: amyloid beta precursor protein
+APRT: adenine phosphoribosyltransferase
+APTX: aprataxin
+AQP2: aquaporin 2
+AR: androgen receptor
+ARFGEF2: ARF guanine nucleotide exchange factor 2
+ARG1: arginase 1
+ARHGAP31: Rho GTPase activating protein 31
+ARID1A: AT-rich interaction domain 1A
+ARID1B: AT-rich interaction domain 1B
+ARMC5: armadillo repeat containing 5
+ARMS2: age-related maculopathy susceptibility 2
+ARSA: arylsulfatase A
+ARSB: arylsulfatase B
+ARSL: arylsulfatase L
+ARX: aristaless related homeobox
+ASAH1: N-acylsphingosine amidohydrolase 1
+ASH1L: ASH1 like histone lysine methyltransferase
+ASL: argininosuccinate lyase
+ASNS: asparagine synthetase (glutamine-hydrolyzing)
+ASPA: aspartoacylase
+ASPM: assembly factor for spindle microtubules
+ASS1: argininosuccinate synthase 1
+ASXL1: ASXL transcriptional regulator 1
+ATG16L1: autophagy related 16 like 1
+ATL1: atlastin GTPase 1
+ATM: ATM serine/threonine kinase
+ATN1: atrophin 1
+ATP1A1: ATPase Na+/K+ transporting subunit alpha 1
+ATP1A3: ATPase Na+/K+ transporting subunit alpha 3
+ATP1A2: ATPase Na+/K+ transporting subunit alpha 2
+ATP2A2: ATPase sarcoplasmic/endoplasmic reticulum Ca2+ transporting 2
+ATP2C1: ATPase secretory pathway Ca2+ transporting 1
+ATP2A1: ATPase sarcoplasmic/endoplasmic reticulum Ca2+ transporting 1
+ATP6V1B1: ATPase H+ transporting V1 subunit B1
+ATP6V0A2: ATPase H+ transporting V0 subunit a2
+ATP6V0A4: ATPase H+ transporting V0 subunit a4
+ATP7A: ATPase copper transporting alpha
+ATP7B: ATPase copper transporting beta
+ATP8B1: ATPase phospholipid transporting 8B1
+ATRX: ATRX chromatin remodeler
+ATXN1: ataxin 1
+ATXN2: ataxin 2
+ATXN3: ataxin 3
+AUH: AU RNA binding methylglutaconyl-CoA hydratase
+AURKC: aurora kinase C
+AVP: arginine vasopressin
+AVPR2: arginine vasopressin receptor 2
+
+B3GLCT: beta 3-glucosyltransferase
+BAP1: BRCA1 associated deubiquitinase 1
+BBS1: Bardet-Biedl syndrome 1
+BBS10: Bardet-Biedl syndrome 10
+BCHE: butyrylcholinesterase
+BCKDHA: branched chain keto acid dehydrogenase E1 subunit alpha
+BCKDHB: branched chain keto acid dehydrogenase E1 subunit beta
+BCOR: BCL6 corepressor
+BCR: BCR activator of RhoGEF and GTPase
+BCS1L: BCS1 homolog, ubiquinol-cytochrome c reductase complex chaperone
+BDNF: brain derived neurotrophic factor
+BEST1: bestrophin 1
+BICD2: BICD cargo adaptor 2
+BIN1: bridging integrator 1
+BLM: BLM RecQ like helicase
+BMPR1A: bone morphogenetic protein receptor type 1A
+BMPR2: bone morphogenetic protein receptor type 2
+BOLA3: bolA family member 3
+BRAF: B-Raf proto-oncogene, serine/threonine kinase
+BRCA1: BRCA1 DNA repair associated
+BRCA2: BRCA2 DNA repair associated
+BSCL2: BSCL2 lipid droplet biogenesis associated, seipin
+BSND: barttin CLCNK type accessory subunit beta
+BTD: biotinidase
+BTK: Bruton tyrosine kinase
+BUB1B: BUB1 mitotic checkpoint serine/threonine kinase B
+
+C2: complement C2
+C3: complement C3
+C8A: complement C8 alpha chain
+C8B: complement C8 beta chain
+C9orf72: C9orf72-SMCR8 complex subunit
+C19orf12: chromosome 19 open reading frame 12
+CA5A: carbonic anhydrase 5A
+CA12: carbonic anhydrase 12
+CACNA1A: calcium voltage-gated channel subunit alpha1 A
+CACNA1S: calcium voltage-gated channel subunit alpha1 S
+CACNA1C: calcium voltage-gated channel subunit alpha1 C
+CACNA1F: calcium voltage-gated channel subunit alpha1 F
+CACNA1D: calcium voltage-gated channel subunit alpha1 D
+CALR: calreticulin
+CAPN3: calpain 3
+CARD9: caspase recruitment domain family member 9
+CARD11: caspase recruitment domain family member 11
+CARD14: caspase recruitment domain family member 14
+CASK: calcium/calmodulin dependent serine protein kinase
+CASQ2: calsequestrin 2
+CASR: calcium sensing receptor
+CAT: catalase
+CATSPER1: cation channel sperm associated 1
+CATSPER2: cation channel sperm associated 2
+CAV1: caveolin 1
+CAV3: caveolin 3
+CAVIN1: caveolae associated protein 1
+CBFB: core-binding factor subunit beta
+CBS: cystathionine beta-synthase
+CCBE1: collagen and calcium binding EGF domains 1
+CCM2: CCM2 scaffold protein
+CCN6: cellular communication network factor 6
+CCND2: cyclin D2
+CD40LG: CD40 ligand
+CDAN1: codanin 1
+CDC6: cell division cycle 6
+CDC73: cell division cycle 73
+CDH1: cadherin 1
+CDH23: cadherin related 23
+CDKL5: cyclin dependent kinase like 5
+CDKN1C: cyclin dependent kinase inhibitor 1C
+CDKN1B: cyclin dependent kinase inhibitor 1B
+CDKN2A: cyclin dependent kinase inhibitor 2A
+CDT1: chromatin licensing and DNA replication factor 1
+CEBPA: CCAAT enhancer binding protein alpha
+CEP57: centrosomal protein 57
+CEP290: centrosomal protein 290
+CFH: complement factor H
+CFHR5: complement factor H related 5
+CFI: complement factor I
+CFTR: CF transmembrane conductance regulator
+CHAT: choline O-acetyltransferase
+CHD2: chromodomain helicase DNA binding protein 2
+CHD3: chromodomain helicase DNA binding protein 3
+CHD7: chromodomain helicase DNA binding protein 7
+CHD8: chromodomain helicase DNA binding protein 8
+CHM: CHM Rab escort protein
+CHMP2B: charged multivesicular body protein 2B
+CHN1: chimerin 1
+CHRNA2: cholinergic receptor nicotinic alpha 2 subunit
+CHRNA4: cholinergic receptor nicotinic alpha 4 subunit
+CHRNB2: cholinergic receptor nicotinic beta 2 subunit
+CHRNE: cholinergic receptor nicotinic epsilon subunit
+CHRNG: cholinergic receptor nicotinic gamma subunit
+CHST3: carbohydrate sulfotransferase 3
+CIITA: class II major histocompatibility complex transactivator
+CISD2: CDGSH iron sulfur domain 2
+CLCF1: cardiotrophin like cytokine factor 1
+CLCN1: chloride voltage-gated channel 1
+CLCN2: chloride voltage-gated channel 2
+CLCN5: chloride voltage-gated channel 5
+CLCN7: chloride voltage-gated channel 7
+CLCNKA: chloride voltage-gated channel Ka
+CLCNKB: chloride voltage-gated channel Kb
+CLIP2: CAP-Gly domain containing linker protein 2
+CLN3: CLN3 lysosomal/endosomal transmembrane protein, battenin
+CLN5: CLN5 intracellular trafficking protein
+CLN6: CLN6 transmembrane ER protein
+CLN8: CLN8 transmembrane ER and ERGIC protein
+CLPB: ClpB family mitochondrial disaggregase
+CLPP: caseinolytic mitochondrial matrix peptidase proteolytic subunit
+CLRN1: clarin 1
+CNBP: CCHC-type zinc finger nucleic acid binding protein
+CNGA3: cyclic nucleotide gated channel subunit alpha 3
+CNGB3: cyclic nucleotide gated channel subunit beta 3
+COG4: component of oligomeric golgi complex 4
+COG5: component of oligomeric golgi complex 5
+COL1A2: collagen type I alpha 2 chain
+COL1A1: collagen type I alpha 1 chain
+COL2A1: collagen type II alpha 1 chain
+COL3A1: collagen type III alpha 1 chain
+COL4A5: collagen type IV alpha 5 chain
+COL4A3: collagen type IV alpha 3 chain
+COL4A1: collagen type IV alpha 1 chain
+COL4A4: collagen type IV alpha 4 chain
+COL5A1: collagen type V alpha 1 chain
+COL5A2: collagen type V alpha 2 chain
+COL6A1: collagen type VI alpha 1 chain
+COL6A3: collagen type VI alpha 3 chain
+COL6A2: collagen type VI alpha 2 chain
+COL7A1: collagen type VII alpha 1 chain
+COL8A2: collagen type VIII alpha 2 chain
+COL9A1: collagen type IX alpha 1 chain
+COL9A3: collagen type IX alpha 3 chain
+COL9A2: collagen type IX alpha 2 chain
+COL11A2: collagen type XI alpha 2 chain
+COL11A1: collagen type XI alpha 1 chain
+COL17A1: collagen type XVII alpha 1 chain
+COL18A1: collagen type XVIII alpha 1 chain
+COLEC10: collectin subfamily member 10
+COLEC11: collectin subfamily member 11
+COLQ: collagen like tail subunit of asymmetric acetylcholinesterase
+COMP: cartilage oligomeric matrix protein
+COMT: catechol-O-methyltransferase
+COQ2: coenzyme Q2, polyprenyltransferase
+COQ4: coenzyme Q4
+COQ6: coenzyme Q6, monooxygenase
+COQ8A: coenzyme Q8A
+COQ8B: coenzyme Q8B
+CP: ceruloplasmin
+CPOX: coproporphyrinogen oxidase
+CPS1: carbamoyl-phosphate synthase 1
+CPT1A: carnitine palmitoyltransferase 1A
+CPT2: carnitine palmitoyltransferase 2
+CRB1: crumbs cell polarity complex component 1
+CREBBP: CREB binding protein
+CRLF1: cytokine receptor like factor 1
+CRPPA: CDP-L-ribitol pyrophosphorylase A
+CRX: cone-rod homeobox
+CSF1R: colony stimulating factor 1 receptor
+CST3: cystatin C
+CSTB: cystatin B
+CTC1: CST telomere replication complex component 1
+CTDP1: CTD phosphatase subunit 1
+CTNNB1: catenin beta 1
+CTNND1: catenin delta 1
+CTNND2: catenin delta 2
+CTNS: cystinosin, lysosomal cystine transporter
+CTSA: cathepsin A
+CTSD: cathepsin D
+CUBN: cubilin
+CUL3: cullin 3
+CUL7: cullin 7
+CXCR4: C-X-C motif chemokine receptor 4
+CYB5R3: cytochrome b5 reductase 3
+CYBA: cytochrome b-245 alpha chain
+CYBB: cytochrome b-245 beta chain
+CYLD: CYLD lysine 63 deubiquitinase
+CYP1B1: cytochrome P450 family 1 subfamily B member 1
+CYP2C19: cytochrome P450 family 2 subfamily C member 19
+CYP2C9: cytochrome P450 family 2 subfamily C member 9
+CYP2R1: cytochrome P450 family 2 subfamily R member 1
+CYP4V2: cytochrome P450 family 4 subfamily V member 2
+CYP7B1: cytochrome P450 family 7 subfamily B member 1
+CYP11B1: cytochrome P450 family 11 subfamily B member 1
+CYP11B2: cytochrome P450 family 11 subfamily B member 2
+CYP17A1: cytochrome P450 family 17 subfamily A member 1
+CYP19A1: cytochrome P450 family 19 subfamily A member 1
+CYP21A2: cytochrome P450 family 21 subfamily A member 2
+CYP24A1: cytochrome P450 family 24 subfamily A member 1
+CYP27A1: cytochrome P450 family 27 subfamily A member 1
+CYP27B1: cytochrome P450 family 27 subfamily B member 1
+
+D2HGDH: D-2-hydroxyglutarate dehydrogenase
+DARS1: aspartyl-tRNA synthetase 1
+DARS2: aspartyl-tRNA synthetase 2, mitochondrial
+DBH: dopamine beta-hydroxylase
+DBT: dihydrolipoamide branched chain transacylase E2
+DCAF17: DDB1 and CUL4 associated factor 17
+DCC: DCC netrin 1 receptor
+DCN: decorin
+DCTN1: dynactin subunit 1
+DCX: doublecortin
+DCXR: dicarbonyl and L-xylulose reductase
+DDC: dopa decarboxylase
+DDX11: DEAD/H-box helicase 11
+DEPDC5: DEP domain containing 5, GATOR1 subcomplex subunit
+DES: desmin
+DGUOK: deoxyguanosine kinase
+DHCR7: 7-dehydrocholesterol reductase
+DHCR24: 24-dehydrocholesterol reductase
+DHH: desert hedgehog signaling molecule
+DHODH: dihydroorotate dehydrogenase (quinone)
+DICER1: dicer 1, ribonuclease III
+DKC1: dyskerin pseudouridine synthase 1
+DLAT: dihydrolipoamide S-acetyltransferase
+DLD: dihydrolipoamide dehydrogenase
+DLG4: discs large MAGUK scaffold protein 4
+DLL3: delta like canonical Notch ligand 3
+DLL4: delta like canonical Notch ligand 4
+DMD: dystrophin
+DMPK: DM1 protein kinase
+DNAH5: dynein axonemal heavy chain 5
+DNAI1: dynein axonemal intermediate chain 1
+DNAJC5: DnaJ heat shock protein family (Hsp40) member C5
+DNAJC19: DnaJ heat shock protein family (Hsp40) member C19
+DNM2: dynamin 2
+DNMT1: DNA methyltransferase 1
+DNMT3A: DNA methyltransferase 3 alpha
+DOCK6: dedicator of cytokinesis 6
+DOCK8: dedicator of cytokinesis 8
+DOK7: docking protein 7
+DOLK: dolichol kinase
+DPY19L2: dpy-19 like 2
+DPYD: dihydropyrimidine dehydrogenase
+DPYS: dihydropyrimidinase
+DRD5: dopamine receptor D5
+DSC2: desmocollin 2
+DSG4: desmoglein 4
+DSP: desmoplakin
+DSPP: dentin sialophosphoprotein
+DUOX2: dual oxidase 2
+DUX4: double homeobox 4
+DVL1: dishevelled segment polarity protein 1
+DVL3: dishevelled segment polarity protein 3
+DYNC1H1: dynein cytoplasmic 1 heavy chain 1
+DYNC2H1: dynein cytoplasmic 2 heavy chain 1
+DYRK1A: dual specificity tyrosine phosphorylation regulated kinase 1A
+DYSF: dysferlin
+
+EARS2: glutamyl-tRNA synthetase 2, mitochondrial
+EBP: EBP cholestenol delta-isomerase
+ECM1: extracellular matrix protein 1
+EDA: ectodysplasin A
+EDAR: ectodysplasin A receptor
+EDARADD: EDAR associated via death domain
+EDN3: endothelin 3
+EDNRB: endothelin receptor type B
+EFEMP2: EGF containing fibulin extracellular matrix protein 2
+EFHC1: EF-hand domain containing 1
+EFNB1: ephrin B1
+EFTUD2: elongation factor Tu GTP binding domain containing 2
+EGFR: epidermal growth factor receptor
+EGLN1: egl-9 family hypoxia inducible factor 1
+EHMT1: euchromatic histone lysine methyltransferase 1
+EIF2AK4: eukaryotic translation initiation factor 2 alpha kinase 4
+EIF2B5: eukaryotic translation initiation factor 2B subunit epsilon
+EIF2B3: eukaryotic translation initiation factor 2B subunit gamma
+EIF2B1: eukaryotic translation initiation factor 2B subunit alpha
+EIF2B4: eukaryotic translation initiation factor 2B subunit delta
+EIF2B2: eukaryotic translation initiation factor 2B subunit beta
+ELANE: elastase, neutrophil expressed
+ELN: elastin
+ELOVL4: ELOVL fatty acid elongase 4
+ELP1: elongator acetyltransferase complex subunit 1
+EMD: emerin
+EMG1: EMG1 N1-specific pseudouridine methyltransferase
+ENAM: enamelin
+ENG: endoglin
+ENPP1: ectonucleotide pyrophosphatase/phosphodiesterase 1
+EOGT: EGF domain specific O-linked N-acetylglucosamine transferase
+EP300: E1A binding protein p300
+EPAS1: endothelial PAS domain protein 1
+EPCAM: epithelial cell adhesion molecule
+EPG5: ectopic P-granules 5 autophagy tethering factor
+EPM2A: EPM2A glucan phosphatase, laforin
+EPOR: erythropoietin receptor
+EPX: eosinophil peroxidase
+ERAP1: endoplasmic reticulum aminopeptidase 1
+ERCC2: ERCC excision repair 2, TFIIH core complex helicase subunit
+ERCC3: ERCC excision repair 3, TFIIH core complex helicase subunit
+ERCC6: ERCC excision repair 6, chromatin remodeling factor
+ERCC8: ERCC excision repair 8, CSA ubiquitin ligase complex subunit
+ESCO2: establishment of sister chromatid cohesion N-acetyltransferase 2
+ETFA: electron transfer flavoprotein subunit alpha
+ETFB: electron transfer flavoprotein subunit beta
+ETFDH: electron transfer flavoprotein dehydrogenase
+ETHE1: ETHE1 persulfide dioxygenase
+ETV6: ETS variant transcription factor 6
+EVC2: EvC ciliary complex subunit 2
+EVC: EvC ciliary complex subunit 1
+EWSR1: EWS RNA binding protein 1
+EXOSC3: exosome component 3
+EXT1: exostosin glycosyltransferase 1
+EXT2: exostosin glycosyltransferase 2
+EYA1: EYA transcriptional coactivator and phosphatase 1
+EZH2: enhancer of zeste 2 polycomb repressive complex 2 subunit
+
+F2: coagulation factor II, thrombin
+F5: coagulation factor V
+F7: coagulation factor VII
+F8: coagulation factor VIII
+F9: coagulation factor IX
+F10: coagulation factor X
+F11: coagulation factor XI
+F12: coagulation factor XII
+F13A1: coagulation factor XIII A chain
+F13B: coagulation factor XIII B chain
+FA2H: fatty acid 2-hydroxylase
+FAH: fumarylacetoacetate hydrolase
+FAM83H: family with sequence similarity 83 member H
+FAM111B: FAM111 trypsin like peptidase B
+FANCA: FA complementation group A
+FANCC: FA complementation group C
+FANCG: FA complementation group G
+FAS: Fas cell surface death receptor
+FAT4: FAT atypical cadherin 4
+FBLN5: fibulin 5
+FBN1: fibrillin 1
+FBN2: fibrillin 2
+FBXL4: F-box and leucine rich repeat protein 4
+FECH: ferrochelatase
+FERMT1: FERM domain containing kindlin 1
+FGA: fibrinogen alpha chain
+FGB: fibrinogen beta chain
+FGD1: FYVE, RhoGEF and PH domain containing 1
+FGF3: fibroblast growth factor 3
+FGF8: fibroblast growth factor 8
+FGF10: fibroblast growth factor 10
+FGF23: fibroblast growth factor 23
+FGFR1: fibroblast growth factor receptor 1
+FGFR2: fibroblast growth factor receptor 2
+FGFR3: fibroblast growth factor receptor 3
+FGFR4: fibroblast growth factor receptor 4
+FGG: fibrinogen gamma chain
+FH: fumarate hydratase
+FHL1: four and a half LIM domains 1
+FIP1L1: factor interacting with PAPOLA and CPSF1
+FKBP10: FKBP prolyl isomerase 10
+FKBP14: FKBP prolyl isomerase 14
+FKRP: fukutin related protein
+FKTN: fukutin
+FLCN: folliculin
+FLG: filaggrin
+FLI1: Fli-1 proto-oncogene, ETS transcription factor
+FLNA: filamin A
+FLNB: filamin B
+FLT3: fms related receptor tyrosine kinase 3
+FLT4: fms related receptor tyrosine kinase 4
+FMO3: flavin containing dimethylaniline monoxygenase 3
+FMR1: fragile X messenger ribonucleoprotein 1
+FN1: fibronectin 1
+FOLR1: folate receptor alpha
+FOXC1: forkhead box C1
+FOXC2: forkhead box C2
+FOXF1: forkhead box F1
+FOXG1: forkhead box G1
+FOXL2: forkhead box L2
+FOXN1: forkhead box N1
+FOXP2: forkhead box P2
+FOXP3: forkhead box P3
+FRAS1: Fraser extracellular matrix complex subunit 1
+FREM1: FRAS1 related extracellular matrix 1
+FREM2: FRAS1 related extracellular matrix 2
+FRMD7: FERM domain containing 7
+FTCD: formimidoyltransferase cyclodeaminase
+FTL: ferritin light chain
+FUCA1: alpha-L-fucosidase 1
+FUS: FUS RNA binding protein
+FXN: frataxin
+FZD2: frizzled class receptor 2
+FZD4: frizzled class receptor 4
+FZD6: frizzled class receptor 6
+
+G6PD: glucose-6-phosphate dehydrogenase
+G6PC1: glucose-6-phosphatase catalytic subunit 1
+GAA: alpha glucosidase
+GABRA1: gamma-aminobutyric acid type A receptor subunit alpha1
+GALC: galactosylceramidase
+GALE: UDP-galactose-4-epimerase
+GALK1: galactokinase 1
+GALNS: galactosamine (N-acetyl)-6-sulfatase
+GALNT3: polypeptide N-acetylgalactosaminyltransferase 3
+GALT: galactose-1-phosphate uridylyltransferase
+GAMT: guanidinoacetate N-methyltransferase
+GAN: gigaxonin
+GARS1: glycyl-tRNA synthetase 1
+GATA1: GATA binding protein 1
+GATM: glycine amidinotransferase
+GBA1: glucosylceramidase beta 1
+GBE1: 1,4-alpha-glucan branching enzyme 1
+GCDH: glutaryl-CoA dehydrogenase
+GCH1: GTP cyclohydrolase 1
+GCK: glucokinase
+GDF3: growth differentiation factor 3
+GDF6: growth differentiation factor 6
+GFAP: glial fibrillary acidic protein
+GFM1: G elongation factor mitochondrial 1
+GH1: growth hormone 1
+GHR: growth hormone receptor
+GHRHR: growth hormone releasing hormone receptor
+GJA1: gap junction protein alpha 1
+GJB1: gap junction protein beta 1
+GJB2: gap junction protein beta 2
+GJB3: gap junction protein beta 3
+GJB4: gap junction protein beta 4
+GJB6: gap junction protein beta 6
+GJC2: gap junction protein gamma 2
+GLA: galactosidase alpha
+GLB1: galactosidase beta 1
+GLDC: glycine decarboxylase
+GLI3: GLI family zinc finger 3
+GLRA1: glycine receptor alpha 1
+GM2A: ganglioside GM2 activator
+GNA11: G protein subunit alpha 11
+GNAI3: G protein subunit alpha i3
+GNAQ: G protein subunit alpha q
+GNAS: GNAS complex locus
+GNAT1: G protein subunit alpha transducin 1
+GNAT2: G protein subunit alpha transducin 2
+GNE: glucosamine (UDP-N-acetyl)-2-epimerase/N-acetylmannosamine kinase
+GNMT: glycine N-methyltransferase
+GNPAT: glyceronephosphate O-acyltransferase
+GNPTAB: N-acetylglucosamine-1-phosphate transferase subunits alpha and beta
+GNPTG: N-acetylglucosamine-1-phosphate transferase subunit gamma
+GNS: glucosamine (N-acetyl)-6-sulfatase
+GP1BB: glycoprotein Ib platelet subunit beta
+GP1BA: glycoprotein Ib platelet subunit alpha
+GP6: glycoprotein VI platelet
+GP9: glycoprotein IX platelet
+GPC3: glypican 3
+GPHN: gephyrin
+GPI: glucose-6-phosphate isomerase
+GPR101: G protein-coupled receptor 101
+GPR143: G protein-coupled receptor 143
+GRHPR: glyoxylate and hydroxypyruvate reductase
+GRIN2B: glutamate ionotropic receptor NMDA type subunit 2B
+GRIN2A: glutamate ionotropic receptor NMDA type subunit 2A
+GRIP1: glutamate receptor interacting protein 1
+GRM6: glutamate metabotropic receptor 6
+GRN: granulin precursor
+GSN: gelsolin
+GSS: glutathione synthetase
+GTF2I: general transcription factor IIi
+GTF2IRD1: GTF2I repeat domain containing 1
+GTF2H5: general transcription factor IIH subunit 5
+GUCY2D: guanylate cyclase 2D, retinal
+GUSB: glucuronidase beta
+GYS1: glycogen synthase 1
+GYS2: glycogen synthase 2
+
+H19: H19 imprinted maternally expressed transcript
+HADH: hydroxyacyl-CoA dehydrogenase
+HADHA: hydroxyacyl-CoA dehydrogenase trifunctional multienzyme complex subunit alpha
+HADHB: hydroxyacyl-CoA dehydrogenase trifunctional multienzyme complex subunit beta
+HAL: histidine ammonia-lyase
+HAMP: hepcidin antimicrobial peptide
+HARS2: histidyl-tRNA synthetase 2, mitochondrial
+HAX1: HCLS1 associated protein X-1
+HBA1: hemoglobin subunit alpha 1
+HBA2: hemoglobin subunit alpha 2
+HBB: hemoglobin subunit beta
+HCCS: holocytochrome c synthase
+HCFC1: host cell factor C1
+HCN4: hyperpolarization activated cyclic nucleotide gated potassium channel 4
+HDAC4: histone deacetylase 4
+HDAC8: histone deacetylase 8
+HEPACAM: hepatic and glial cell adhesion molecule
+HESX1: HESX homeobox 1
+HEXA: hexosaminidase subunit alpha
+HEXB: hexosaminidase subunit beta
+HFE: homeostatic iron regulator
+HGD: homogentisate 1,2-dioxygenase
+HGSNAT: heparan-alpha-glucosaminide N-acetyltransferase
+HINT1: histidine triad nucleotide binding protein 1
+HIVEP2: HIVEP zinc finger 2
+HJV: hemojuvelin BMP co-receptor
+HLA-B: major histocompatibility complex, class I, B
+HLA-DPB1: major histocompatibility complex, class II, DP beta 1
+HLA-DQA1: major histocompatibility complex, class II, DQ alpha 1
+HLA-DQB1: major histocompatibility complex, class II, DQ beta 1
+HLA-DRB1: major histocompatibility complex, class II, DR beta 1
+HLCS: holocarboxylase synthetase
+HMBS: hydroxymethylbilane synthase
+HMGCL: 3-hydroxy-3-methylglutaryl-CoA lyase
+HNF1B: HNF1 homeobox B
+HNF1A: HNF1 homeobox A
+HNF4A: hepatocyte nuclear factor 4 alpha
+HNRNPK: heterogeneous nuclear ribonucleoprotein K
+HOGA1: 4-hydroxy-2-oxoglutarate aldolase 1
+HOXA13: homeobox A13
+HOXB13: homeobox B13
+HPD: 4-hydroxyphenylpyruvate dioxygenase
+HPRT1: hypoxanthine phosphoribosyltransferase 1
+HPS1: HPS1 biogenesis of lysosomal organelles complex 3 subunit 1
+HPS3: HPS3 biogenesis of lysosomal organelles complex 2 subunit 1
+HPSE2: heparanase 2 (inactive)
+HRAS: HRas proto-oncogene, GTPase
+HSD3B2: hydroxy-delta-5-steroid dehydrogenase, 3 beta- and steroid delta-isomerase 2
+HSD3B7: hydroxy-delta-5-steroid dehydrogenase, 3 beta- and steroid delta-isomerase 7
+HSD17B3: hydroxysteroid 17-beta dehydrogenase 3
+HSD17B10: hydroxysteroid 17-beta dehydrogenase 10
+HSD17B4: hydroxysteroid 17-beta dehydrogenase 4
+HSPB1: heat shock protein family B (small) member 1
+HSPB8: heat shock protein family B (small) member 8
+HSPG2: heparan sulfate proteoglycan 2
+HTRA1: HtrA serine peptidase 1
+HTT: huntingtin
+HYCC1: hyccin PI4KA lipid kinase complex subunit 1
+
+IDH1: isocitrate dehydrogenase (NADP(+)) 1
+IDH2: isocitrate dehydrogenase (NADP(+)) 2
+IDS: iduronate 2-sulfatase
+IDUA: alpha-L-iduronidase
+IFIH1: interferon induced with helicase C domain 1
+IFT43: intraflagellar transport 43
+IFT80: intraflagellar transport 80
+IFT122: intraflagellar transport 122
+IFT140: intraflagellar transport 140
+IGF2: insulin like growth factor 2
+IGFBP7: insulin like growth factor binding protein 7
+IGHMBP2: immunoglobulin mu DNA binding protein 2
+IKBKG: inhibitor of nuclear factor kappa B kinase regulatory subunit gamma
+IL1A: interleukin 1 alpha
+IL2RG: interleukin 2 receptor subunit gamma
+IL7R: interleukin 7 receptor
+IL17RC: interleukin 17 receptor C
+IL23R: interleukin 23 receptor
+IL31RA: interleukin 31 receptor A
+IL36RN: interleukin 36 receptor antagonist
+INS: insulin
+INSR: insulin receptor
+IRAK4: interleukin 1 receptor associated kinase 4
+IRF5: interferon regulatory factor 5
+IRF6: interferon regulatory factor 6
+IRGM: immunity related GTPase M
+ISCU: iron-sulfur cluster assembly enzyme
+ITGA2B: integrin subunit alpha 2b
+ITGA6: integrin subunit alpha 6
+ITGB2: integrin subunit beta 2
+ITGB3: integrin subunit beta 3
+ITGB4: integrin subunit beta 4
+ITM2B: integral membrane protein 2B
+ITPKC: inositol-trisphosphate 3-kinase C
+ITPR1: inositol 1,4,5-trisphosphate receptor type 1
+IVD: isovaleryl-CoA dehydrogenase
+
+JAG1: jagged canonical Notch ligand 1
+JAK2: Janus kinase 2
+JAK3: Janus kinase 3
+JPH3: junctophilin 3
+JUP: junction plakoglobin
+
+KANK2: KN motif and ankyrin repeat domains 2
+KANSL1: KAT8 regulatory NSL complex subunit 1
+KAT6B: lysine acetyltransferase 6B
+KCNA1: potassium voltage-gated channel subfamily A member 1
+KCNB1: potassium voltage-gated channel subfamily B member 1
+KCNE1: potassium voltage-gated channel subfamily E regulatory subunit 1
+KCNH2: potassium voltage-gated channel subfamily H member 2
+KCNJ1: potassium inwardly rectifying channel subfamily J member 1
+KCNJ2: potassium inwardly rectifying channel subfamily J member 2
+KCNJ5: potassium inwardly rectifying channel subfamily J member 5
+KCNJ11: potassium inwardly rectifying channel subfamily J member 11
+KCNK9: potassium two pore domain channel subfamily K member 9
+KCNQ1: potassium voltage-gated channel subfamily Q member 1
+KCNQ1OT1: KCNQ1 opposite strand/antisense transcript 1
+KCNQ2: potassium voltage-gated channel subfamily Q member 2
+KCNQ3: potassium voltage-gated channel subfamily Q member 3
+KCNQ4: potassium voltage-gated channel subfamily Q member 4
+KCNT1: potassium sodium-activated channel subfamily T member 1
+KCTD1: potassium channel tetramerization domain containing 1
+KDM6A: lysine demethylase 6A
+KHDC3L: KH domain containing 3 like, subcortical maternal complex member
+KIF1B: kinesin family member 1B
+KIF7: kinesin family member 7
+KIF21A: kinesin family member 21A
+KIT: KIT proto-oncogene, receptor tyrosine kinase
+KL: klotho
+KLHL3: kelch like family member 3
+KLKB1: kallikrein B1
+KLLN: killin, p53 regulated DNA replication inhibitor
+KMT2D: lysine methyltransferase 2D
+KRAS: KRAS proto-oncogene, GTPase
+KRIT1: KRIT1 ankyrin repeat containing
+KRT1: keratin 1
+KRT3: keratin 3
+KRT4: keratin 4
+KRT5: keratin 5
+KRT6C: keratin 6C
+KRT6B: keratin 6B
+KRT6A: keratin 6A
+KRT10: keratin 10
+KRT12: keratin 12
+KRT13: keratin 13
+KRT14: keratin 14
+KRT16: keratin 16
+KRT17: keratin 17
+KRT81: keratin 81
+KRT83: keratin 83
+KRT86: keratin 86
+
+L1CAM: L1 cell adhesion molecule
+L2HGDH: L-2-hydroxyglutarate dehydrogenase
+LAMA2: laminin subunit alpha 2
+LAMA3: laminin subunit alpha 3
+LAMB3: laminin subunit beta 3
+LAMC2: laminin subunit gamma 2
+LAMP2: lysosomal associated membrane protein 2
+LARGE1: LARGE xylosyl- and glucuronyltransferase 1
+LARS2: leucyl-tRNA synthetase 2, mitochondrial
+LBR: lamin B receptor
+LCAT: lecithin-cholesterol acyltransferase
+LCT: lactase
+LDB3: LIM domain binding 3
+LDHA: lactate dehydrogenase A
+LDHB: lactate dehydrogenase B
+LDLR: low density lipoprotein receptor
+LDLRAP1: low density lipoprotein receptor adaptor protein 1
+LEMD3: LEM domain containing 3
+LEP: leptin
+LEPR: leptin receptor
+LETM1: leucine zipper and EF-hand containing transmembrane protein 1
+LGI1: leucine rich glioma inactivated 1
+LHCGR: luteinizing hormone/choriogonadotropin receptor
+LHX1: LIM homeobox 1
+LIFR: LIF receptor subunit alpha
+LIMK1: LIM domain kinase 1
+LIPA: lipase A, lysosomal acid type
+LIPC: lipase C, hepatic type
+LIPH: lipase H
+LMBRD1: LMBR1 domain containing 1
+LMNA: lamin A/C
+LMNB1: lamin B1
+LMX1B: LIM homeobox transcription factor 1 beta
+LORICRIN: loricrin cornified envelope precursor protein
+LPAR6: lysophosphatidic acid receptor 6
+LPIN2: lipin 2
+LPL: lipoprotein lipase
+LRP2: LDL receptor related protein 2
+LRP5: LDL receptor related protein 5
+LRRK2: leucine rich repeat kinase 2
+LSM11: LSM11, U7 small nuclear RNA associated
+LTBP4: latent transforming growth factor beta binding protein 4
+LYST: lysosomal trafficking regulator
+LZTR1: leucine zipper like post translational regulator 1
+
+MAGT1: magnesium transporter 1
+MAN2B1: mannosidase alpha class 2B member 1
+MANBA: mannosidase beta
+MAOA: monoamine oxidase A
+MAP2K1: mitogen-activated protein kinase kinase 1
+MAP2K2: mitogen-activated protein kinase kinase 2
+MAP3K1: mitogen-activated protein kinase kinase kinase 1
+MAPT: microtubule associated protein tau
+MASP1: MBL associated serine protease 1
+MAT1A: methionine adenosyltransferase 1A
+MATN3: matrilin 3
+MATR3: matrin 3
+MBD5: methyl-CpG binding domain protein 5
+MBL2: mannose binding lectin 2
+MC1R: melanocortin 1 receptor
+MC2R: melanocortin 2 receptor
+MCCC1: methylcrotonyl-CoA carboxylase subunit 1
+MCCC2: methylcrotonyl-CoA carboxylase subunit 2
+MCEE: methylmalonyl-CoA epimerase
+MCM6: minichromosome maintenance complex component 6
+MCOLN1: mucolipin TRP cation channel 1
+MECP2: methyl-CpG binding protein 2
+MED12: mediator complex subunit 12
+MED13L: mediator complex subunit 13L
+MEFV: MEFV innate immunity regulator, pyrin
+MEGF8: multiple EGF like domains 8
+MEN1: menin 1
+MEOX1: mesenchyme homeobox 1
+MESP2: mesoderm posterior bHLH transcription factor 2
+MFN2: mitofusin 2
+MFSD8: major facilitator superfamily domain containing 8
+MID1: midline 1
+MIR17HG: miR-17-92a-1 cluster host gene
+MIR145: microRNA 145
+MIR146A: microRNA 146a
+MITF: melanocyte inducing transcription factor
+MKKS: MKKS centrosomal shuttling protein
+MKRN3: makorin ring finger protein 3
+MLC1: modulator of VRAC current 1
+MLH1: mutL homolog 1
+MLPH: melanophilin
+MLYCD: malonyl-CoA decarboxylase
+MMAA: metabolism of cobalamin associated A
+MMAB: metabolism of cobalamin associated B
+MMACHC: metabolism of cobalamin associated C
+MMADHC: metabolism of cobalamin associated D
+MMP2: matrix metallopeptidase 2
+MMP14: matrix metallopeptidase 14
+MMP20: matrix metallopeptidase 20
+MMUT: methylmalonyl-CoA mutase
+MN1: MN1 proto-oncogene, transcriptional regulator
+MOCOS: molybdenum cofactor sulfurase
+MOCS1: molybdenum cofactor synthesis 1
+MOCS2: molybdenum cofactor synthesis 2
+MPL: MPL proto-oncogene, thrombopoietin receptor
+MPLKIP: M-phase specific PLK1 interacting protein
+MPV17: mitochondrial inner membrane protein MPV17
+MPZ: myelin protein zero
+MRAP: melanocortin 2 receptor accessory protein
+MSH2: mutS homolog 2
+MSH6: mutS homolog 6
+MSTN: myostatin
+MSX1: msh homeobox 1
+MSX2: msh homeobox 2
+MT-ATP6: mitochondrially encoded ATP synthase 6
+MT-CYB: mitochondrially encoded cytochrome b
+MT-ND1: mitochondrially encoded NADH dehydrogenase 1
+MT-ND4L: mitochondrially encoded NADH 4L dehydrogenase
+MT-ND4: mitochondrially encoded NADH dehydrogenase 4
+MT-ND5: mitochondrially encoded NADH dehydrogenase 5
+MT-ND6: mitochondrially encoded NADH dehydrogenase 6
+MT-TE: mitochondrially encoded tRNA glutamic acid
+MT-TH: mitochondrially encoded tRNA histidine
+MT-TK: mitochondrially encoded tRNA lysine
+MT-TL1: mitochondrially encoded tRNA leucine 1 (UUA/G)
+MT-TS1: mitochondrially encoded tRNA serine 1 (UCN)
+MT-TV: mitochondrially encoded tRNA valine
+MTHFR: methylenetetrahydrofolate reductase
+MTM1: myotubularin 1
+MTOR: mechanistic target of rapamycin kinase
+MTR: 5-methyltetrahydrofolate-homocysteine methyltransferase
+MTRR: 5-methyltetrahydrofolate-homocysteine methyltransferase reductase
+MTTP: microsomal triglyceride transfer protein
+MUC1: mucin 1, cell surface associated
+MUTYH: mutY DNA glycosylase
+MVK: mevalonate kinase
+MYBPC1: myosin binding protein C1
+MYBPC3: myosin binding protein C3
+MYCN: MYCN proto-oncogene, bHLH transcription factor
+MYD88: MYD88 innate immune signal transduction adaptor
+MYH3: myosin heavy chain 3
+MYH6: myosin heavy chain 6
+MYH7: myosin heavy chain 7
+MYH9: myosin heavy chain 9
+MYH11: myosin heavy chain 11
+MYO5A: myosin VA
+MYO5B: myosin VB
+MYO7A: myosin VIIA
+MYOC: myocilin
+MYOT: myotilin
+
+NAGA: alpha-N-acetylgalactosaminidase
+NAGLU: N-acetyl-alpha-glucosaminidase
+NAGS: N-acetylglutamate synthase
+NBEAL2: neurobeachin like 2
+NBN: nibrin
+NCF1: neutrophil cytosolic factor 1
+NCF2: neutrophil cytosolic factor 2
+NCF4: neutrophil cytosolic factor 4
+NCSTN: nicastrin
+NDP: norrin cystine knot growth factor NDP
+NEB: nebulin
+NEU1: neuraminidase 1
+NF1: neurofibromin 1
+NF2: NF2, moesin-ezrin-radixin like (MERLIN) tumor suppressor
+NFKBIA: NFKB inhibitor alpha
+NFU1: NFU1 iron-sulfur cluster scaffold
+NGF: nerve growth factor
+NGLY1: N-glycanase 1
+NHLRC1: NHL repeat containing E3 ubiquitin protein ligase 1
+NIPBL: NIPBL cohesin loading factor
+NKX2-1: NK2 homeobox 1
+NLRP1: NLR family pyrin domain containing 1
+NLRP3: NLR family pyrin domain containing 3
+NLRP7: NLR family pyrin domain containing 7
+NLRP12: NLR family pyrin domain containing 12
+NNT: nicotinamide nucleotide transhydrogenase
+NOD2: nucleotide binding oligomerization domain containing 2
+NOG: noggin
+NOP56: NOP56 ribonucleoprotein
+NOTCH1: notch receptor 1
+NOTCH2: notch receptor 2
+NOTCH3: notch receptor 3
+NPC1: NPC intracellular cholesterol transporter 1
+NPC2: NPC intracellular cholesterol transporter 2
+NPHP1: nephrocystin 1
+NPHS1: NPHS1 adhesion molecule, nephrin
+NPHS2: NPHS2 stomatin family member, podocin
+NPM1: nucleophosmin 1
+NPRL2: NPR2 like, GATOR1 complex subunit
+NPRL3: NPR3 like, GATOR1 complex subunit
+NR0B1: nuclear receptor subfamily 0 group B member 1
+NR3C2: nuclear receptor subfamily 3 group C member 2
+NR5A1: nuclear receptor subfamily 5 group A member 1
+NRAS: NRAS proto-oncogene, GTPase
+NSD1: nuclear receptor binding SET domain protein 1
+NSD2: nuclear receptor binding SET domain protein 2
+NSDHL: NAD(P) dependent steroid dehydrogenase-like
+NTRK1: neurotrophic receptor tyrosine kinase 1
+NYX: nyctalopin
+
+OAT: ornithine aminotransferase
+OBSL1: obscurin like cytoskeletal adaptor 1
+OCA2: OCA2 melanosomal transmembrane protein
+OCRL: OCRL inositol polyphosphate-5-phosphatase
+OFD1: OFD1 centriole and centriolar satellite protein
+OPA1: OPA1 mitochondrial dynamin like GTPase
+OPA3: outer mitochondrial membrane lipid metabolism regulator OPA3
+OPN1LW: opsin 1, long wave sensitive
+OPN1MW: opsin 1, medium wave sensitive
+OPN1SW: opsin 1, short wave sensitive
+OPRM1: opioid receptor mu 1
+ORC1: origin recognition complex subunit 1
+ORC4: origin recognition complex subunit 4
+ORC6: origin recognition complex subunit 6
+OSMR: oncostatin M receptor
+OTC: ornithine transcarbamylase
+OTULIN: OTU deubiquitinase with linear linkage specificity
+OTX2: orthodenticle homeobox 2
+OXCT1: 3-oxoacid CoA-transferase 1
+
+PABPN1: poly(A) binding protein nuclear 1
+PACS1: phosphofurin acidic cluster sorting protein 1
+PADI3: peptidyl arginine deiminase 3
+PAFAH1B1: platelet activating factor acetylhydrolase 1b regulatory subunit 1
+PAH: phenylalanine hydroxylase
+PANK2: pantothenate kinase 2
+PARK7: Parkinsonism associated deglycase
+PAX2: paired box 2
+PAX3: paired box 3
+PAX6: paired box 6
+PAX8: paired box 8
+PC: pyruvate carboxylase
+PCBD1: pterin-4 alpha-carbinolamine dehydratase 1
+PCCA: propionyl-CoA carboxylase subunit alpha
+PCCB: propionyl-CoA carboxylase subunit beta
+PCNT: pericentrin
+PCSK9: proprotein convertase subtilisin/kexin type 9
+PDCD10: programmed cell death 10
+PDE6C: phosphodiesterase 6C
+PDE6H: phosphodiesterase 6H
+PDE6B: phosphodiesterase 6B
+PDGFB: platelet derived growth factor subunit B
+PDGFRA: platelet derived growth factor receptor alpha
+PDGFRB: platelet derived growth factor receptor beta
+PDHA1: pyruvate dehydrogenase E1 subunit alpha 1
+PDHB: pyruvate dehydrogenase E1 subunit beta
+PDHX: pyruvate dehydrogenase complex component X
+PDP1: pyruvate dehydrogenase phosphatase catalytic subunit 1
+PEPD: peptidase D
+PEX1: peroxisomal biogenesis factor 1
+PEX7: peroxisomal biogenesis factor 7
+PFKM: phosphofructokinase, muscle
+PGAM2: phosphoglycerate mutase 2
+PGAP2: post-GPI attachment to proteins 2
+PGK1: phosphoglycerate kinase 1
+PGM3: phosphoglucomutase 3
+PHEX: phosphate regulating endopeptidase X-linked
+PHF8: PHD finger protein 8
+PHF21A: PHD finger protein 21A
+PHGDH: phosphoglycerate dehydrogenase
+PHKA1: phosphorylase kinase regulatory subunit alpha 1
+PHKA2: phosphorylase kinase regulatory subunit alpha 2
+PHKB: phosphorylase kinase regulatory subunit beta
+PHKG2: phosphorylase kinase catalytic subunit gamma 2
+PHOX2B: paired like homeobox 2B
+PHOX2A: paired like homeobox 2A
+PHYH: phytanoyl-CoA 2-hydroxylase
+PIGA: phosphatidylinositol glycan anchor biosynthesis class A
+PIGO: phosphatidylinositol glycan anchor biosynthesis class O
+PIGT: phosphatidylinositol glycan anchor biosynthesis class T
+PIGV: phosphatidylinositol glycan anchor biosynthesis class V
+PIK3R2: phosphoinositide-3-kinase regulatory subunit 2
+PIK3CA: phosphatidylinositol-4,5-bisphosphate 3-kinase catalytic subunit alpha
+PIK3CD: phosphatidylinositol-4,5-bisphosphate 3-kinase catalytic subunit delta
+PIK3R1: phosphoinositide-3-kinase regulatory subunit 1
+PINK1: PTEN induced kinase 1
+PITX1: paired like homeodomain 1
+PITX2: paired like homeodomain 2
+PKD1: polycystin 1, transient receptor potential channel interacting
+PKD2: polycystin 2, transient receptor potential cation channel
+PKHD1: PKHD1 ciliary IPT domain containing fibrocystin/polyductin
+PKLR: pyruvate kinase L/R
+PKP2: plakophilin 2
+PLA2G6: phospholipase A2 group VI
+PLAGL1: PLAG1 like zinc finger 1
+PLCB4: phospholipase C beta 4
+PLCG2: phospholipase C gamma 2
+PLEC: plectin
+PLG: plasminogen
+PLOD1: procollagen-lysine,2-oxoglutarate 5-dioxygenase 1
+PLP1: proteolipid protein 1
+PML: PML nuclear body scaffold
+PMM2: phosphomannomutase 2
+PMP22: peripheral myelin protein 22
+PMS2: PMS1 homolog 2, mismatch repair system component
+PNKD: PNKD metallo-beta-lactamase domain containing
+PNKP: polynucleotide kinase 3'-phosphatase
+PNP: purine nucleoside phosphorylase
+PNPLA2: patatin like phospholipase domain containing 2
+PNPLA3: patatin like phospholipase domain containing 3
+PNPLA6: patatin like phospholipase domain containing 6
+PNPO: pyridoxamine 5'-phosphate oxidase
+POFUT1: protein O-fucosyltransferase 1
+POGLUT1: protein O-glucosyltransferase 1
+POGZ: pogo transposable element derived with ZNF domain
+POLG: DNA polymerase gamma, catalytic subunit
+POLH: DNA polymerase eta
+POLR1C: RNA polymerase I and III subunit C
+POLR1D: RNA polymerase I and III subunit D
+POLR3B: RNA polymerase III subunit B
+POLR3A: RNA polymerase III subunit A
+POMC: proopiomelanocortin
+POMT1: protein O-mannosyltransferase 1
+POMT2: protein O-mannosyltransferase 2
+POR: cytochrome p450 oxidoreductase
+PORCN: porcupine O-acyltransferase
+POU3F4: POU class 3 homeobox 4
+PPOX: protoporphyrinogen oxidase
+PPP2R5D: protein phosphatase 2 regulatory subunit B'delta
+PPT1: palmitoyl-protein thioesterase 1
+PQBP1: polyglutamine binding protein 1
+PRDX1: peroxiredoxin 1
+PRF1: perforin 1
+PRICKLE1: prickle planar cell polarity protein 1
+PRKAG2: protein kinase AMP-activated non-catalytic subunit gamma 2
+PRKAR1A: protein kinase cAMP-dependent type I regulatory subunit alpha
+PRKN: parkin RBR E3 ubiquitin protein ligase
+PRKRA: protein activator of interferon induced protein kinase EIF2AK2
+PRNP: prion protein (Kanno blood group)
+PROC: protein C, inactivator of coagulation factors Va and VIIIa
+PRODH: proline dehydrogenase 1
+PROK2: prokineticin 2
+PROKR2: prokineticin receptor 2
+PROP1: PROP paired-like homeobox 1
+PROS1: protein S
+PRPH2: peripherin 2
+PRPS1: phosphoribosyl pyrophosphate synthetase 1
+PRRT2: proline rich transmembrane protein 2
+PRSS1: serine protease 1
+PSAP: prosaposin
+PSEN1: presenilin 1
+PSEN2: presenilin 2
+PSENEN: presenilin enhancer, gamma-secretase subunit
+PSMB8: proteasome 20S subunit beta 8
+PTCH1: patched 1
+PTEN: phosphatase and tensin homolog
+PTPN11: protein tyrosine phosphatase non-receptor type 11
+PTPN22: protein tyrosine phosphatase non-receptor type 22
+PTS: 6-pyruvoyltetrahydropterin synthase
+PURA: purine rich element binding protein A
+PYCR1: pyrroline-5-carboxylate reductase 1
+PYGL: glycogen phosphorylase L
+PYGM: glycogen phosphorylase, muscle associated
+
+QDPR: quinoid dihydropteridine reductase
+
+RAB3GAP1: RAB3 GTPase activating protein catalytic subunit 1
+RAB3GAP2: RAB3 GTPase activating non-catalytic protein subunit 2
+RAB18: RAB18, member RAS oncogene family
+RAB23: RAB23, member RAS oncogene family
+RAB27A: RAB27A, member RAS oncogene family
+RAD21: RAD21 cohesin complex component
+RAD51: RAD51 recombinase
+RAF1: Raf-1 proto-oncogene, serine/threonine kinase
+RAG1: recombination activating 1
+RAG2: recombination activating 2
+RAI1: retinoic acid induced 1
+RANBP2: RAN binding protein 2
+RAPSN: receptor associated protein of the synapse
+RARA: retinoic acid receptor alpha
+RARS2: arginyl-tRNA synthetase 2, mitochondrial
+RASA1: RAS p21 protein activator 1
+RB1: RB transcriptional corepressor 1
+RBM8A: RNA binding motif protein 8A
+RBPJ: recombination signal binding protein for immunoglobulin kappa J region
+RDH5: retinol dehydrogenase 5
+RECQL4: RecQ like helicase 4
+REEP1: receptor accessory protein 1
+RELN: reelin
+REN: renin
+RERE: arginine-glutamic acid dipeptide repeats
+RET: ret proto-oncogene
+RETREG1: reticulophagy regulator 1
+RFX5: regulatory factor X5
+RFXANK: regulatory factor X associated ankyrin containing protein
+RFXAP: regulatory factor X associated protein
+RGS9BP: regulator of G protein signaling 9 binding protein
+RGS9: regulator of G protein signaling 9
+RHO: rhodopsin
+RIT1: Ras like without CAAX 1
+RMRP: RNA component of mitochondrial RNA processing endoribonuclease
+RNASEH2A: ribonuclease H2 subunit A
+RNASEH2C: ribonuclease H2 subunit C
+RNASEH2B: ribonuclease H2 subunit B
+RNASET2: ribonuclease T2
+RNF213: ring finger protein 213
+RNF216: ring finger protein 216
+RNU7-1: RNA, U7 small nuclear 1
+ROBO3: roundabout guidance receptor 3
+ROR2: receptor tyrosine kinase like orphan receptor 2
+RP2: RP2 activator of ARL3 GTPase
+RPE65: retinoid isomerohydrolase RPE65
+RPGR: retinitis pigmentosa GTPase regulator
+RPL5: ribosomal protein L5
+RPL11: ribosomal protein L11
+RPL35A: ribosomal protein L35a
+RPS6KA3: ribosomal protein S6 kinase A3
+RPS10: ribosomal protein S10
+RPS14: ribosomal protein S14
+RPS17: ribosomal protein S17
+RPS19: ribosomal protein S19
+RPS24: ribosomal protein S24
+RPS26: ribosomal protein S26
+RPSA: ribosomal protein SA
+RRM2B: ribonucleotide reductase regulatory TP53 inducible subunit M2B
+RS1: retinoschisin 1
+RSPO2: R-spondin 2
+RSPO4: R-spondin 4
+RUNX1: RUNX family transcription factor 1
+RUNX1T1: RUNX1 partner transcriptional co-repressor 1
+RUNX2: RUNX family transcription factor 2
+RYR1: ryanodine receptor 1
+RYR2: ryanodine receptor 2
+
+SAA1: serum amyloid A1
+SACS: sacsin molecular chaperone
+SALL1: spalt like transcription factor 1
+SALL4: spalt like transcription factor 4
+SAMD9L: sterile alpha motif domain containing 9 like
+SAMHD1: SAM and HD domain containing deoxynucleoside triphosphate triphosphohydrolase 1
+SAR1B: secretion associated Ras related GTPase 1B
+SATB2: SATB homeobox 2
+SBDS: SBDS ribosome maturation factor
+SCARB2: scavenger receptor class B member 2
+SCN1A: sodium voltage-gated channel alpha subunit 1
+SCN4A: sodium voltage-gated channel alpha subunit 4
+SCN5A: sodium voltage-gated channel alpha subunit 5
+SCN8A: sodium voltage-gated channel alpha subunit 8
+SCN9A: sodium voltage-gated channel alpha subunit 9
+SCN10A: sodium voltage-gated channel alpha subunit 10
+SCNN1B: sodium channel epithelial 1 subunit beta
+SCNN1G: sodium channel epithelial 1 subunit gamma
+SCNN1A: sodium channel epithelial 1 subunit alpha
+SDHA: succinate dehydrogenase complex flavoprotein subunit A
+SDHAF2: succinate dehydrogenase complex assembly factor 2
+SDHB: succinate dehydrogenase complex iron sulfur subunit B
+SDHC: succinate dehydrogenase complex subunit C
+SDHD: succinate dehydrogenase complex subunit D
+SEC23B: SEC23 homolog B, COPII coat complex component
+SELENON: selenoprotein N
+SEPSECS: Sep (O-phosphoserine) tRNA:Sec (selenocysteine) tRNA synthase
+SEPTIN9: septin 9
+SERAC1: serine active site containing 1
+SERPINA1: serpin family A member 1
+SERPINA6: serpin family A member 6
+SERPINA7: serpin family A member 7
+SERPINC1: serpin family C member 1
+SERPINE1: serpin family E member 1
+SERPING1: serpin family G member 1
+SERPINI1: serpin family I member 1
+SETBP1: SET binding protein 1
+SETX: senataxin
+SF3B4: splicing factor 3b subunit 4
+SFRP4: secreted frizzled related protein 4
+SFTPB: surfactant protein B
+SFTPC: surfactant protein C
+SGCA: sarcoglycan alpha
+SGCB: sarcoglycan beta
+SGCD: sarcoglycan delta
+SGCE: sarcoglycan epsilon
+SGCG: sarcoglycan gamma
+SGO1: shugoshin 1
+SGSH: N-sulfoglucosamine sulfohydrolase
+SH2D1A: SH2 domain containing 1A
+SH3BP2: SH3 domain binding protein 2
+SHANK3: SH3 and multiple ankyrin repeat domains 3
+SHH: sonic hedgehog signaling molecule
+SHOX: SHOX homeobox
+SI: sucrase-isomaltase
+SIL1: SIL1 nucleotide exchange factor
+SIX1: SIX homeobox 1
+SIX3: SIX homeobox 3
+SIX5: SIX homeobox 5
+SKI: SKI proto-oncogene
+SKIC2: SKI2 subunit of superkiller complex
+SKIC3: SKI3 subunit of superkiller complex
+SLC1A3: solute carrier family 1 member 3
+SLC2A10: solute carrier family 2 member 10
+SLC2A1: solute carrier family 2 member 1
+SLC2A9: solute carrier family 2 member 9
+SLC3A1: solute carrier family 3 member 1
+SLC4A1: solute carrier family 4 member 1 (Diego blood group)
+SLC5A5: solute carrier family 5 member 5
+SLC5A1: solute carrier family 5 member 1
+SLC6A8: solute carrier family 6 member 8
+SLC6A19: solute carrier family 6 member 19
+SLC6A3: solute carrier family 6 member 3
+SLC7A9: solute carrier family 7 member 9
+SLC7A7: solute carrier family 7 member 7
+SLC9A6: solute carrier family 9 member A6
+SLC11A2: solute carrier family 11 member 2
+SLC12A6: solute carrier family 12 member 6
+SLC12A3: solute carrier family 12 member 3
+SLC12A1: solute carrier family 12 member 1
+SLC16A2: solute carrier family 16 member 2
+SLC17A5: solute carrier family 17 member 5
+SLC19A3: solute carrier family 19 member 3
+SLC19A2: solute carrier family 19 member 2
+SLC20A2: solute carrier family 20 member 2
+SLC22A5: solute carrier family 22 member 5
+SLC22A12: solute carrier family 22 member 12
+SLC25A13: solute carrier family 25 member 13
+SLC25A15: solute carrier family 25 member 15
+SLC25A20: solute carrier family 25 member 20
+SLC25A19: solute carrier family 25 member 19
+SLC25A1: solute carrier family 25 member 1
+SLC25A24: solute carrier family 25 member 24
+SLC25A4: solute carrier family 25 member 4
+SLC26A2: solute carrier family 26 member 2
+SLC26A4: solute carrier family 26 member 4
+SLC29A3: solute carrier family 29 member 3
+SLC30A10: solute carrier family 30 member 10
+SLC34A1: solute carrier family 34 member 1
+SLC34A2: solute carrier family 34 member 2
+SLC35A2: solute carrier family 35 member A2
+SLC37A4: solute carrier family 37 member 4
+SLC39A14: solute carrier family 39 member 14
+SLC40A1: solute carrier family 40 member 1
+SLC45A2: solute carrier family 45 member 2
+SLC46A1: solute carrier family 46 member 1
+SLC52A2: solute carrier family 52 member 2
+SLC52A3: solute carrier family 52 member 3
+SLCO1B1: solute carrier organic anion transporter family member 1B1
+SLCO1B3: solute carrier organic anion transporter family member 1B3
+SLITRK1: SLIT and NTRK like family member 1
+SLITRK6: SLIT and NTRK like family member 6
+SLURP1: secreted LY6/PLAUR domain containing 1
+SMAD3: SMAD family member 3
+SMAD4: SMAD family member 4
+SMARCA2: SWI/SNF related BAF chromatin remodeling complex subunit ATPase 2
+SMARCA4: SWI/SNF related BAF chromatin remodeling complex subunit ATPase 4
+SMARCAD1: SNF2 related chromatin remodeling ATPase with DExD box 1
+SMARCAL1: SNF2 related chromatin remodeling annealing helicase 1
+SMARCB1: SWI/SNF related BAF chromatin remodeling complex subunit B1
+SMARCE1: SWI/SNF related BAF chromatin remodeling complex subunit E1
+SMC1A: structural maintenance of chromosomes 1A
+SMC3: structural maintenance of chromosomes 3
+SMCHD1: structural maintenance of chromosomes flexible hinge domain containing 1
+SMN1: survival of motor neuron 1, telomeric
+SMN2: survival of motor neuron 2, centromeric
+SMOC1: SPARC related modular calcium binding 1
+SMPD1: sphingomyelin phosphodiesterase 1
+SMS: spermine synthase
+SNAI2: snail family transcriptional repressor 2
+SNCA: synuclein alpha
+SNCB: synuclein beta
+SOD1: superoxide dismutase 1
+SOS1: SOS Ras/Rac guanine nucleotide exchange factor 1
+SOST: sclerostin
+SOX2: SRY-box transcription factor 2
+SOX9: SRY-box transcription factor 9
+SOX10: SRY-box transcription factor 10
+SOX11: SRY-box transcription factor 11
+SP110: SP110 nuclear body protein
+SPART: spartin
+SPAST: spastin
+SPECC1L: sperm antigen with calponin homology and coiled-coil domains 1 like
+SPG7: SPG7 matrix AAA peptidase subunit, paraplegin
+SPG11: SPG11 vesicle trafficking associated, spatacsin
+SPINK5: serine peptidase inhibitor Kazal type 5
+SPR: sepiapterin reductase
+SPRED1: sprouty related EVH1 domain containing 1
+SPTLC1: serine palmitoyltransferase long chain base subunit 1
+SQSTM1: sequestosome 1
+SRCAP: Snf2 related CREBBP activator protein
+SRD5A2: steroid 5 alpha-reductase 2
+SRD5A3: steroid 5 alpha-reductase 3
+SRY: sex determining region Y
+ST3GAL5: ST3 beta-galactoside alpha-2,3-sialyltransferase 5
+STAC3: SH3 and cysteine rich domain 3
+STAMBP: STAM binding protein
+STAT1: signal transducer and activator of transcription 1
+STAT3: signal transducer and activator of transcription 3
+STAT4: signal transducer and activator of transcription 4
+STIM1: stromal interaction molecule 1
+STING1: stimulator of interferon response cGAMP interactor 1
+STK11: serine/threonine kinase 11
+STRC: stereocilin
+STXBP1: syntaxin binding protein 1
+SUCLA2: succinate-CoA ligase ADP-forming subunit beta
+SUCLG1: succinate-CoA ligase GDP/ADP-forming subunit alpha
+SUMF1: sulfatase modifying factor 1
+SUOX: sulfite oxidase
+SURF1: SURF1 cytochrome c oxidase assembly factor
+SYNE1: spectrin repeat containing nuclear envelope protein 1
+SYNGAP1: synaptic Ras GTPase activating protein 1
+
+TAF1: TATA-box binding protein associated factor 1
+TAFAZZIN: tafazzin, phospholipid-lysophospholipid transacylase
+TAP1: transporter 1, ATP binding cassette subfamily B member
+TAP2: transporter 2, ATP binding cassette subfamily B member
+TARDBP: TAR DNA binding protein
+TAT: tyrosine aminotransferase
+TBC1D24: TBC1 domain family member 24
+TBC1D20: TBC1 domain family member 20
+TBP: TATA-box binding protein
+TBX1: T-box transcription factor 1
+TBX5: T-box transcription factor 5
+TBXAS1: thromboxane A synthase 1
+TBXT: T-box transcription factor T
+TCF4: transcription factor 4
+TCHH: trichohyalin
+TCIRG1: T cell immune regulator 1, ATPase H+ transporting V0 subunit a3
+TCN2: transcobalamin 2
+TCOF1: treacle ribosome biogenesis factor 1
+TECPR2: tectonin beta-propeller repeat containing 2
+TECTA: tectorin alpha
+TEK: TEK receptor tyrosine kinase
+TERC: telomerase RNA component
+TERT: telomerase reverse transcriptase
+TET2: tet methylcytosine dioxygenase 2
+TFAP2A: transcription factor AP-2 alpha
+TFAP2B: transcription factor AP-2 beta
+TFR2: transferrin receptor 2
+TG: thyroglobulin
+TGFB1: transforming growth factor beta 1
+TGFB2: transforming growth factor beta 2
+TGFB3: transforming growth factor beta 3
+TGFBI: transforming growth factor beta induced
+TGFBR1: transforming growth factor beta receptor 1
+TGFBR2: transforming growth factor beta receptor 2
+TGIF1: TGFB induced factor homeobox 1
+TGM1: transglutaminase 1
+TGM3: transglutaminase 3
+TGM5: transglutaminase 5
+TH: tyrosine hydroxylase
+THAP1: THAP domain containing 1
+THPO: thrombopoietin
+TIMM8A: translocase of inner mitochondrial membrane 8A
+TINF2: TERF1 interacting nuclear factor 2
+TK2: thymidine kinase 2
+TMCO1: transmembrane and coiled-coil domains 1
+TMEM70: transmembrane protein 70
+TMEM127: transmembrane protein 127
+TMPRSS6: transmembrane serine protease 6
+TNFRSF1A: TNF receptor superfamily member 1A
+TNFRSF11B: TNF receptor superfamily member 11b
+TNFRSF11A: TNF receptor superfamily member 11a
+TNFRSF13B: TNF receptor superfamily member 13B
+TNNI2: troponin I2, fast skeletal type
+TNNI3: troponin I3, cardiac type
+TNNT2: troponin T2, cardiac type
+TNNT3: troponin T3, fast skeletal type
+TNXB: tenascin XB
+TOR1A: torsin family 1 member A
+TP53: tumor protein p53
+TP63: tumor protein p63
+TPI1: triosephosphate isomerase 1
+TPM2: tropomyosin 2
+TPM3: tropomyosin 3
+TPMT: thiopurine S-methyltransferase
+TPO: thyroid peroxidase
+TPP1: tripeptidyl peptidase 1
+TRAPPC2: trafficking protein particle complex subunit 2
+TREM2: triggering receptor expressed on myeloid cells 2
+TREX1: three prime repair exonuclease 1
+TRIP11: thyroid hormone receptor interactor 11
+TRIP13: thyroid hormone receptor interactor 13
+TRNT1: tRNA nucleotidyl transferase 1
+TRPM1: transient receptor potential cation channel subfamily M member 1
+TRPM4: transient receptor potential cation channel subfamily M member 4
+TRPM6: transient receptor potential cation channel subfamily M member 6
+TRPS1: transcriptional repressor GATA binding 1
+TRPV4: transient receptor potential cation channel subfamily V member 4
+TSC1: TSC complex subunit 1
+TSC2: TSC complex subunit 2
+TSEN2: tRNA splicing endonuclease subunit 2
+TSEN34: tRNA splicing endonuclease subunit 34
+TSEN54: tRNA splicing endonuclease subunit 54
+TSHB: thyroid stimulating hormone subunit beta
+TSHR: thyroid stimulating hormone receptor
+TSPYL1: TSPY like 1
+TTN: titin
+TTPA: alpha tocopherol transfer protein
+TTR: transthyretin
+TUBA1A: tubulin alpha 1a
+TUBB2B: tubulin beta 2B class IIb
+TUBB3: tubulin beta 3 class III
+TUBB4A: tubulin beta 4A class IVa
+TWIST1: twist family bHLH transcription factor 1
+TWNK: twinkle mtDNA helicase
+TXNL4A: thioredoxin like 4A
+TYMP: thymidine phosphorylase
+TYR: tyrosinase
+TYROBP: transmembrane immune signaling adaptor TYROBP
+TYRP1: tyrosinase related protein 1
+
+UBA1: ubiquitin like modifier activating enzyme 1
+UBE3B: ubiquitin protein ligase E3B
+UBE3A: ubiquitin protein ligase E3A
+UCHL1: ubiquitin C-terminal hydrolase L1
+UGT1A1: UDP glucuronosyltransferase family 1 member A1
+UMOD: uromodulin
+UNC13D: unc-13 homolog D
+UNC80: unc-80 homolog, NALCN channel complex subunit
+UPB1: beta-ureidopropionase 1
+UROD: uroporphyrinogen decarboxylase
+UROS: uroporphyrinogen III synthase
+USB1: U6 snRNA biogenesis phosphodiesterase 1
+USH2A: usherin
+UTP4: UTP4 small subunit processome component
+UVSSA: UV stimulated scaffold protein A
+
+VCAN: versican
+VCP: valosin containing protein
+VDR: vitamin D receptor
+VHL: von Hippel-Lindau tumor suppressor
+VKORC1: vitamin K epoxide reductase complex subunit 1
+VLDLR: very low density lipoprotein receptor
+VPS13A: vacuolar protein sorting 13 homolog A
+VPS13B: vacuolar protein sorting 13 homolog B
+VRK1: VRK serine/threonine kinase 1
+VWF: von Willebrand factor
+
+WAS: WASP actin nucleation promoting factor
+WASHC5: WASH complex subunit 5
+WDR19: WD repeat domain 19
+WDR35: WD repeat domain 35
+WDR45: WD repeat domain 45
+WFS1: wolframin ER transmembrane glycoprotein
+WNK1: WNK lysine deficient protein kinase 1
+WNK4: WNK lysine deficient protein kinase 4
+WNT3: Wnt family member 3
+WNT4: Wnt family member 4
+WNT5A: Wnt family member 5A
+WNT10A: Wnt family member 10A
+WRN: WRN RecQ like helicase
+WT1: WT1 transcription factor
+WWP1: WW domain containing E3 ubiquitin protein ligase 1
+
+XDH: xanthine dehydrogenase
+XIAP: X-linked inhibitor of apoptosis
+XK: X-linked Kx blood group antigen, Kell and VPS13A binding protein
+XPA: XPA, DNA damage recognition and repair factor
+XPC: XPC complex subunit, DNA damage recognition and repair factor
+
+YWHAE: tyrosine 3-monooxygenase/tryptophan 5-monooxygenase activation protein epsilon
+YY1AP1: YY1 associated protein 1
+
+ZAP70: zeta chain of T cell receptor associated protein kinase 70
+ZEB2: zinc finger E-box binding homeobox 2
+ZFP57: ZFP57 zinc finger protein
+ZFYVE26: zinc finger FYVE-type containing 26
+ZIC2: Zic family member 2
+ZMPSTE24: zinc metallopeptidase STE24
+ZMYM2: zinc finger MYM-type containing 2
+ZNF341: zinc finger protein 341
+
+Here are **8 advanced code examples** integrating **KATNAL2**—a gene linked to conscientiousness and self-discipline—with **biology, computing, and management strategy**. Each example emphasizes real scientific methods, proven computational techniques, and management frameworks.
+
+---
+
+### 1. **Gene-Expression Analysis for KATNAL2 in Conscientiousness**  
+   **Purpose**: Analyze gene expression across tissue types and correlate with personality traits.  
+   **Key Logic**: Use transcriptomics datasets to find expression levels and co-expressed genes.  
+   ```python
+   import scanpy as sc
+   data = sc.read_h5ad("katnal2_expression.h5ad")
+   sc.pp.highly_variable_genes(data)
+   sc.tl.rank_genes_groups(data, groupby='trait', method='t-test')
+   ```
+   **Application**: Identifies how KATNAL2 expression differs in conscientious individuals.  
+   **Fields**: **Biology, Personality Psychology**  
+   **File Name**: `katnal2_expression_analysis.py`
+
+---
+
+### 2. **KATNAL2-Linked Neural Network Model**  
+   **Purpose**: Build a neural network that predicts conscientious behavior from gene profiles.  
+   **Key Logic**: Use omics data as input to train a predictive model for personality traits.  
+   ```python
+   from tensorflow.keras.models import Sequential
+   from tensorflow.keras.layers import Dense
+   model = Sequential([
+       Dense(128, activation='relu', input_shape=(500,)),
+       Dense(64, activation='relu'),
+       Dense(1, activation='sigmoid')
+   ])
+   model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+   model.fit(X_train, y_train, epochs=50, batch_size=32)
+   ```
+   **Application**: Predicts self-discipline based on genetic and transcriptomic data.  
+   **Fields**: **Computational Biology, AI**  
+   **File Name**: `katnal2_personality_nn.py`
+
+---
+
+### 3. **CRISPR Guide Design for KATNAL2 Modification**  
+   **Purpose**: Design CRISPR guides to modulate KATNAL2 expression in cellular models.  
+   **Key Logic**: Generate sgRNAs for precise targeting using the CRISPOR API.  
+   ```bash
+   crispor -i katnal2_sequence.fa -o guides.txt --genome hg38
+   ```
+   **Application**: Tests whether altering KATNAL2 impacts self-discipline and goal achievement.  
+   **Fields**: **Genomics, Molecular Biology**  
+   **File Name**: `katnal2_crispr_design.sh`
+
+---
+
+### 4. **System Dynamics Model of Goal Achievement**  
+   **Purpose**: Simulate goal-setting and performance improvement based on KATNAL2-driven behavior.  
+   **Key Logic**: Use stocks and flows to represent discipline and outcomes over time.  
+   ```python
+   from pysd import read_xmile
+   model = read_xmile('goal_achievement_model.stmx')
+   results = model.run({'discipline': 0.8})
+   ```
+   **Application**: Optimizes strategies for achieving long-term objectives using genetic insights.  
+   **Fields**: **Management, Systems Thinking**  
+   **File Name**: `goal_discipline_model.py`
+
+---
+
+### 5. **Personality Trait Clustering Using Multi-Omics Data**  
+   **Purpose**: Cluster individuals based on KATNAL2 expression and other omics data.  
+   **Key Logic**: Apply k-means clustering on integrated datasets to find personality subtypes.  
+   ```python
+   from sklearn.cluster import KMeans
+   kmeans = KMeans(n_clusters=3)
+   labels = kmeans.fit_predict(omics_data)
+   ```
+   **Application**: Identifies conscientious subtypes for targeted interventions.  
+   **Fields**: **Data Science, Behavioral Genomics**  
+   **File Name**: `katnal2_trait_clustering.py`
+
+---
+
+### 6. **Gene Regulatory Network Inference for KATNAL2**  
+   **Purpose**: Infer regulatory interactions involving KATNAL2 using time-series data.  
+   **Key Logic**: Use dynamic Bayesian networks for regulatory inference.  
+   ```python
+   from bnlearn import structure_learning
+   bn = structure_learning(omics_data, method='hc')
+   ```
+   **Application**: Maps pathways affecting discipline-related traits.  
+   **Fields**: **Bioinformatics, Systems Biology**  
+   **File Name**: `katnal2_network_inference.py`
+
+---
+
+### 7. **Monte Carlo Simulation of Self-Discipline Outcomes**  
+   **Purpose**: Simulate outcomes of different strategies affecting self-discipline.  
+   **Key Logic**: Use stochastic simulations to predict goal achievement under uncertainty.  
+   ```python
+   import numpy as np
+   outcomes = np.random.normal(loc=0.7, scale=0.1, size=1000)
+   success_rate = np.mean(outcomes > 0.6)
+   ```
+   **Application**: Tests strategies for enhancing conscientiousness-driven outcomes.  
+   **Fields**: **Management Strategy, Decision Science**  
+   **File Name**: `discipline_monte_carlo.py`
+
+---
+
+### 8. **Multi-Omics Visualization Dashboard for KATNAL2**  
+   **Purpose**: Create an interactive dashboard for exploring KATNAL2-related datasets.  
+   **Key Logic**: Use Dash to build a multi-omics exploration tool.  
+   ```python
+   import dash
+   from dash import dcc, html
+   app = dash.Dash(__name__)
+   app.layout = html.Div([
+       dcc.Graph(id='omics-graph')
+   ])
+   ```
+   **Application**: Enables researchers to explore how KATNAL2 impacts personality and discipline.  
+   **Fields**: **Data Visualization, Scientific Computing**  
+   **File Name**: `katnal2_dashboard.py`
+
+---
+
+These examples leverage biological insights, computational tools, and management strategies to explore KATNAL2's role in self-discipline and conscientiousness, providing robust, practical applications across fields.
+
+### **In-Depth Analysis of MAOA Gene Variants and Their Role in Emotional Regulation and Social Behavior**
+
+---
+
+#### **1. Overview of MAOA Gene**  
+The **monoamine oxidase A (MAOA)** gene encodes an enzyme responsible for breaking down neurotransmitters such as dopamine, serotonin, and norepinephrine. These neurotransmitters play critical roles in emotional regulation, mood, and social behavior. Variants of the MAOA gene have been linked to differences in personality traits, empathy, patience, and even susceptibility to stress and aggression.
+
+---
+
+#### **2. Key Variants of MAOA and Their Effects**
+
+- **MAOA-uVNTR Polymorphism**:  
+  This variant refers to a **variable number tandem repeat (VNTR)** in the promoter region of the gene. It influences MAOA expression levels:  
+  - **Low-expression allele (MAOA-L)**: Associated with reduced enzyme activity, leading to higher levels of neurotransmitters. It has been linked to impulsive behaviors, but also increased emotional sensitivity and empathy in supportive environments.  
+  - **High-expression allele (MAOA-H)**: Linked to greater enzyme activity, faster neurotransmitter breakdown, and increased emotional regulation and patience.
+
+- **rs6323 (G/T SNP)**:  
+  A single nucleotide polymorphism (SNP) that can impact the function of the enzyme. The **G allele** is associated with higher activity, while the **T allele** is linked to lower enzyme activity.
+
+- **Epigenetic Modifications**:  
+  Methylation of the MAOA promoter can affect gene expression independently of genetic variants, influencing emotional regulation and social behaviors.
+
+---
+
+#### **3. Biological Mechanisms of MAOA Variants in Empathy and Patience**
+
+- **Neurotransmitter Regulation**: MAOA-L carriers may experience heightened emotional responses due to slower neurotransmitter clearance. In the right environments, this can foster empathy and compassion.
+- **Prefrontal Cortex Function**: MAOA activity influences prefrontal cortex function, which is critical for impulse control and decision-making. Higher MAOA activity supports patience and long-term goal planning.
+- **Gene-Environment Interaction**: The effects of MAOA variants are often modulated by environmental factors, including childhood experiences and social support.
+
+---
+
+### **Advanced Code Example: Modeling MAOA Variants and Emotional Regulation**  
+This C++ code simulates the effect of different MAOA variants on neurotransmitter levels and emotional regulation using a simplified neural model.
+
+```cpp
+#include <iostream>
+#include <cmath>
+#include <vector>
+
+// Define constants for neurotransmitter synthesis and degradation
+const double SYNTHESIS_RATE = 0.05;
+const double DEGRADATION_RATE_LOW = 0.02; // For MAOA-L
+const double DEGRADATION_RATE_HIGH = 0.04; // For MAOA-H
+
+// Function to simulate neurotransmitter dynamics
+double simulate_neurotransmitter(double initial_level, double degradation_rate, int time_steps) {
+    double level = initial_level;
+    for (int t = 0; t < time_steps; ++t) {
+        level += SYNTHESIS_RATE - degradation_rate * level;
+        if (level < 0) level = 0;
+    }
+    return level;
+}
+
+// Function to model emotional response based on neurotransmitter level
+std::string emotional_response(double neurotransmitter_level) {
+    if (neurotransmitter_level > 1.5) return "Heightened empathy and emotional sensitivity";
+    else if (neurotransmitter_level > 1.0) return "Balanced emotional regulation";
+    else return "Reduced emotional response, potential for irritability";
+}
+
+int main() {
+    // Simulate for both MAOA-L and MAOA-H variants
+    double initial_level = 1.0;
+    int time_steps = 100;
+
+    double level_low = simulate_neurotransmitter(initial_level, DEGRADATION_RATE_LOW, time_steps);
+    double level_high = simulate_neurotransmitter(initial_level, DEGRADATION_RATE_HIGH, time_steps);
+
+    std::cout << "MAOA-L variant neurotransmitter level: " << level_low << std::endl;
+    std::cout << "Emotional response: " << emotional_response(level_low) << std::endl;
+
+    std::cout << "\nMAOA-H variant neurotransmitter level: " << level_high << std::endl;
+    std::cout << "Emotional response: " << emotional_response(level_high) << std::endl;
+
+    return 0;
+}
+```
+
+---
+
+### **Code Analysis and Key Insights**:
+
+1. **Neurotransmitter Dynamics**:  
+   The code models neurotransmitter levels based on synthesis and degradation rates, reflecting how different MAOA variants modulate these processes.
+
+2. **Emotional Response Interpretation**:  
+   A simple decision structure interprets the neurotransmitter levels in terms of emotional regulation, empathy, and potential behavioral outcomes.
+
+3. **Real-World Application**:  
+   This model can be expanded with real-world data from genetic studies, integrating additional environmental variables to simulate complex gene-environment interactions.
+
+---
+
+### **Conclusion**  
+The **MAOA gene** plays a crucial role in emotional regulation and social behavior. Understanding its variants, especially the MAOA-uVNTR polymorphism, provides insights into empathy, patience, and behavioral tendencies. The provided C++ code models the biochemical dynamics influenced by MAOA variants, offering a robust computational framework for further exploration and analysis.
+
+### **In-Depth Analysis of the COMT Gene and Its Role in Emotional Regulation, Cognitive Performance, and Decision-Making**
+
+---
+
+#### **1. Overview of the COMT Gene**
+
+The **Catechol-O-Methyltransferase (COMT)** gene encodes an enzyme that degrades catecholamines, including dopamine, epinephrine, and norepinephrine. These neurotransmitters are involved in cognition, emotion, and stress response. The COMT enzyme is particularly active in the prefrontal cortex, where it plays a critical role in executive functions such as decision-making, attention, and emotional regulation.
+
+---
+
+#### **2. Key COMT Variants and Their Effects**
+
+- **Val158Met (rs4680)**:  
+  The most studied single nucleotide polymorphism (SNP) in the COMT gene involves a substitution of valine (Val) with methionine (Met) at codon 158. This polymorphism affects the enzyme's activity and, consequently, dopamine levels:
+  
+  - **Val/Val (High activity)**: Leads to increased COMT activity and lower dopamine levels. Associated with better stress resilience but reduced cognitive performance under low-stress conditions.
+  - **Met/Met (Low activity)**: Results in decreased COMT activity and higher dopamine levels in the prefrontal cortex. Linked to improved working memory and cognitive flexibility but heightened sensitivity to stress.
+  - **Val/Met (Intermediate activity)**: Represents a balanced phenotype with moderate enzyme activity and dopamine levels.
+
+---
+
+#### **3. Biological Mechanisms of COMT in Emotional Regulation and Cognition**
+
+- **Dopamine Clearance**: COMT regulates the breakdown of dopamine, especially in the prefrontal cortex, affecting cognitive control, emotional balance, and decision-making.
+  
+- **Stress Response**: High COMT activity (Val/Val) may confer resilience to stress by reducing dopamine overload, while low activity (Met/Met) can enhance cognitive performance but increase stress sensitivity.
+  
+- **Cognitive Function**: COMT activity influences working memory, attention, and problem-solving abilities, with the Met allele being advantageous for complex cognitive tasks but disadvantageous under stress.
+
+---
+
+### **Advanced Code Example: Simulating COMT Variants and Cognitive Performance**
+
+This C++ program models dopamine levels and cognitive performance based on COMT variants and environmental stress.
+
+```cpp
+#include <iostream>
+#include <cmath>
+#include <string>
+
+// Constants for dopamine dynamics
+const double BASE_DOPAMINE = 1.0;
+const double STRESS_IMPACT = 0.3;
+const double COMT_HIGH_ACTIVITY = 0.4;  // Val/Val
+const double COMT_LOW_ACTIVITY = 0.1;   // Met/Met
+const double COMT_MEDIUM_ACTIVITY = 0.25; // Val/Met
+
+// Function to simulate dopamine regulation
+double simulate_dopamine(double base_level, double comt_activity, double stress_factor) {
+    return base_level - comt_activity + (stress_factor * STRESS_IMPACT);
+}
+
+// Function to evaluate cognitive performance
+std::string cognitive_performance(double dopamine_level) {
+    if (dopamine_level > 1.5) return "Enhanced cognitive flexibility and working memory";
+    else if (dopamine_level > 1.0) return "Optimal cognitive performance";
+    else return "Reduced cognitive performance due to low dopamine";
+}
+
+int main() {
+    double stress_factor = 1.0;  // Adjust for stress level (1.0 = no stress, >1.0 = high stress)
+
+    // Simulate for Val/Val, Val/Met, and Met/Met
+    double dopamine_val_val = simulate_dopamine(BASE_DOPAMINE, COMT_HIGH_ACTIVITY, stress_factor);
+    double dopamine_val_met = simulate_dopamine(BASE_DOPAMINE, COMT_MEDIUM_ACTIVITY, stress_factor);
+    double dopamine_met_met = simulate_dopamine(BASE_DOPAMINE, COMT_LOW_ACTIVITY, stress_factor);
+
+    std::cout << "Val/Val dopamine level: " << dopamine_val_val << std::endl;
+    std::cout << "Cognitive performance: " << cognitive_performance(dopamine_val_val) << std::endl;
+
+    std::cout << "\nVal/Met dopamine level: " << dopamine_val_met << std::endl;
+    std::cout << "Cognitive performance: " << cognitive_performance(dopamine_val_met) << std::endl;
+
+    std::cout << "\nMet/Met dopamine level: " << dopamine_met_met << std::endl;
+    std::cout << "Cognitive performance: " << cognitive_performance(dopamine_met_met) << std::endl;
+
+    return 0;
+}
+```
+
+---
+
+### **Code Insights**:
+
+1. **Dopamine Dynamics**: The code models how different COMT variants regulate dopamine levels in the prefrontal cortex under varying stress conditions.
+2. **Cognitive Performance Interpretation**: A function evaluates cognitive outcomes based on simulated dopamine levels, reflecting the influence of COMT activity.
+3. **Real-World Application**: This model can be extended with more complex environmental and genetic factors for personalized cognitive performance prediction.
+
+---
+
+### **Conclusion**  
+The **COMT gene**, particularly the Val158Met polymorphism, plays a significant role in modulating dopamine levels, influencing emotional regulation, cognitive performance, and stress response. The provided C++ code offers a robust framework for simulating the effects of COMT variants, demonstrating their impact on cognitive flexibility, working memory, and decision-making. This approach integrates biology, computational modeling, and management strategy insights, offering valuable tools for research and practical applications.
+
+### **In-Depth Analysis of the BDNF Gene and Its Role in Brain Plasticity, Learning, and Mental Health**
+
+---
+
+### **1. Overview of BDNF (Brain-Derived Neurotrophic Factor)**  
+BDNF is a key neurotrophin that supports the survival, growth, and differentiation of neurons. It plays a critical role in synaptic plasticity, which underlies learning, memory, and cognitive function. BDNF also influences mood regulation, making it a target for understanding and treating neuropsychiatric disorders such as depression and anxiety.
+
+---
+
+### **2. Key BDNF Polymorphisms and Their Effects**  
+
+- **Val66Met (rs6265)**:  
+  The most well-known polymorphism involves a substitution of valine (Val) with methionine (Met) at position 66. This affects BDNF secretion and impacts brain function:
+  
+  - **Val/Val (High BDNF secretion)**: Associated with better memory performance, learning, and brain plasticity.
+  - **Val/Met (Moderate BDNF secretion)**: Intermediate effects on cognitive function and emotional regulation.
+  - **Met/Met (Low BDNF secretion)**: Linked to reduced synaptic plasticity, increased vulnerability to stress, and higher risk of neuropsychiatric disorders.
+
+---
+
+### **3. Biological Mechanisms of BDNF**  
+
+- **Neurogenesis and Synaptic Plasticity**: BDNF promotes the formation of new neurons and strengthens synaptic connections, crucial for learning and memory.
+  
+- **Mood Regulation**: BDNF modulates pathways involved in stress response and emotional regulation, influencing mental health outcomes.
+  
+- **Cognitive Flexibility**: BDNF enhances the brain's ability to adapt to new information, essential for problem-solving and decision-making.
+
+---
+
+### **4. Real-World Applications in Neuroscience and Management Strategy**
+
+- **Neurorehabilitation**: BDNF-based therapies are explored for recovery from brain injuries and neurodegenerative diseases.
+  
+- **Learning and Development**: Understanding BDNF's role can inform strategies for cognitive enhancement and skill acquisition in educational and professional settings.
+
+---
+
+### **Advanced Code Example: Modeling BDNF Levels and Cognitive Performance**
+
+This C++ program simulates BDNF levels and cognitive outcomes based on genetic variants and environmental enrichment.
+
+```cpp
+#include <iostream>
+#include <cmath>
+#include <string>
+
+// Constants for BDNF dynamics
+const double BASE_BDNF = 1.0;
+const double ENRICHMENT_FACTOR = 0.5;
+const double BDNF_HIGH = 1.2;   // Val/Val
+const double BDNF_MEDIUM = 1.0; // Val/Met
+const double BDNF_LOW = 0.8;    // Met/Met
+
+// Function to simulate BDNF regulation
+double simulate_bdnf(double base_level, double bdnf_activity, double enrichment) {
+    return base_level + (bdnf_activity * enrichment);
+}
+
+// Function to evaluate cognitive outcomes
+std::string cognitive_outcome(double bdnf_level) {
+    if (bdnf_level > 1.5) return "Enhanced learning and memory retention";
+    else if (bdnf_level > 1.2) return "Optimal cognitive performance";
+    else return "Reduced cognitive function due to low BDNF levels";
+}
+
+int main() {
+    double enrichment = ENRICHMENT_FACTOR;  // Environmental stimulation level
+
+    // Simulate for Val/Val, Val/Met, and Met/Met
+    double bdnf_val_val = simulate_bdnf(BASE_BDNF, BDNF_HIGH, enrichment);
+    double bdnf_val_met = simulate_bdnf(BASE_BDNF, BDNF_MEDIUM, enrichment);
+    double bdnf_met_met = simulate_bdnf(BASE_BDNF, BDNF_LOW, enrichment);
+
+    std::cout << "Val/Val BDNF level: " << bdnf_val_val << std::endl;
+    std::cout << "Cognitive outcome: " << cognitive_outcome(bdnf_val_val) << std::endl;
+
+    std::cout << "\nVal/Met BDNF level: " << bdnf_val_met << std::endl;
+    std::cout << "Cognitive outcome: " << cognitive_outcome(bdnf_val_met) << std::endl;
+
+    std::cout << "\nMet/Met BDNF level: " << bdnf_met_met << std::endl;
+    std::cout << "Cognitive outcome: " << cognitive_outcome(bdnf_met_met) << std::endl;
+
+    return 0;
+}
+```
+
+---
+
+### **Code Insights**:
+
+1. **BDNF Dynamics**: The code models how genetic variants influence BDNF levels in response to environmental enrichment.
+2. **Cognitive Outcomes**: A function evaluates cognitive performance based on BDNF levels, reflecting the gene’s role in learning and memory.
+3. **Practical Extensions**: This framework can integrate additional factors such as diet, exercise, and stress management for personalized cognitive enhancement strategies.
+
+---
+
+### **Conclusion**  
+The **BDNF gene** is a cornerstone of neuroplasticity, influencing learning, memory, and emotional resilience. The Val66Met polymorphism highlights individual differences in BDNF secretion and their implications for cognitive and mental health. The provided C++ simulation offers a robust model to explore these dynamics, integrating biological insights with practical applications in education, neuroscience, and management strategy.
