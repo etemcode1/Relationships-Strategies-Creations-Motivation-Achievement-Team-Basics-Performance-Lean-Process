@@ -1,0 +1,749 @@
+Okay, let's break down this complex request and create a framework for 8 C code examples demonstrating spectral counting of triangles using element-wise sparsification, culminating in triangle-based link recommendation. We'll focus on clarity, robustness, and practical applications.
+
+Core Concepts:
+
+Spectral Counting of Triangles: This involves using the eigenvalues of a graph's adjacency matrix (or a related matrix) to estimate the number of triangles. It's generally much faster than directly counting them for large networks.
+
+Element-wise Sparsification: We'll create a sparse version of the adjacency matrix by dropping or down-weighting some edges. This drastically reduces computational cost and can sometimes improve the accuracy of triangle counting.
+
+Triangle-Based Link Recommendation: Based on the triangles a node participates in (or should participate in), we can recommend new links to other nodes.
+
+Adjacency Matrix Representation: We will represent graphs using sparse matrices, this allows efficient storage and processing of large, sparse networks.
+
+Data Representation:
+
+We will use a simple edge struct and a representation of sparse adjacency matrix:
+
+typedef struct {
+    int src;
+    int dest;
+} edge;
+
+typedef struct {
+    int* rowPtr;
+    int* colIdx;
+    double* values;
+    int numRows;
+    int numCols;
+    int nnz; // Number of non-zero entries
+} SparseMatrix;
+content_copy
+download
+Use code with caution.
+C
+
+File Naming Convention:
+
+All examples will follow the pattern: triangle_counting_example_X.c, where X is the example number (1 to 8).
+
+Example 1: Basic Adjacency Matrix Creation from Edge List (triangle_counting_example_1.c)
+
+This example reads edges from a file, builds the adjacency matrix, and prints it. This is essential for other examples to operate.
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+
+// Edge structure definition
+typedef struct {
+    int src;
+    int dest;
+} edge;
+
+// Sparse Matrix structure definition
+typedef struct {
+    int* rowPtr;
+    int* colIdx;
+    double* values;
+    int numRows;
+    int numCols;
+    int nnz; // Number of non-zero entries
+} SparseMatrix;
+
+// Function to create a sparse matrix from edges
+SparseMatrix* createSparseMatrix(edge* edges, int numEdges, int numNodes) {
+    SparseMatrix* matrix = (SparseMatrix*)malloc(sizeof(SparseMatrix));
+    if (!matrix) {
+        fprintf(stderr, "Memory allocation failed for sparse matrix.\n");
+        return NULL;
+    }
+
+    matrix->numRows = numNodes;
+    matrix->numCols = numNodes;
+    matrix->nnz = numEdges;
+
+    matrix->rowPtr = (int*)malloc((numNodes + 1) * sizeof(int));
+    matrix->colIdx = (int*)malloc(numEdges * sizeof(int));
+    matrix->values = (double*)malloc(numEdges * sizeof(double));
+
+    if (!matrix->rowPtr || !matrix->colIdx || !matrix->values) {
+      fprintf(stderr, "Memory allocation failed for matrix components\n");
+      free(matrix->rowPtr);
+      free(matrix->colIdx);
+      free(matrix->values);
+      free(matrix);
+        return NULL;
+    }
+
+    memset(matrix->rowPtr, 0, (numNodes+1)*sizeof(int));
+    memset(matrix->colIdx, 0, numEdges*sizeof(int));
+    memset(matrix->values, 0, numEdges*sizeof(double));
+
+
+    // Count the number of non-zeros in each row
+    for (int i = 0; i < numEdges; ++i) {
+        matrix->rowPtr[edges[i].src+1]++;
+    }
+
+    // Create rowPtr for CSR format
+    for (int i = 1; i <= numNodes; ++i) {
+        matrix->rowPtr[i] += matrix->rowPtr[i - 1];
+    }
+
+
+    // Populate colIdx and values arrays
+    for(int i = 0; i< numEdges; i++)
+    {
+        int row_idx = edges[i].src;
+        int col_idx = edges[i].dest;
+        int start_idx = matrix->rowPtr[row_idx];
+        int end_idx = matrix->rowPtr[row_idx+1];
+        int put_idx = end_idx - matrix->rowPtr[row_idx+1] + start_idx;
+        matrix->colIdx[put_idx] = col_idx;
+        matrix->values[put_idx] = 1.0;
+    }
+  
+    return matrix;
+}
+
+void printSparseMatrix(SparseMatrix* matrix) {
+    printf("Rows: %d, Cols: %d, Non-zeros: %d\n", matrix->numRows, matrix->numCols, matrix->nnz);
+    printf("Row pointers: ");
+    for (int i = 0; i <= matrix->numRows; i++) {
+        printf("%d ", matrix->rowPtr[i]);
+    }
+    printf("\n");
+    printf("Col indices: ");
+    for(int i = 0; i < matrix->nnz; i++)
+        printf("%d ", matrix->colIdx[i]);
+    printf("\n");
+     printf("Values: ");
+    for(int i = 0; i < matrix->nnz; i++)
+        printf("%.1lf ", matrix->values[i]);
+    printf("\n");
+}
+// Function to free the matrix
+void freeSparseMatrix(SparseMatrix* matrix) {
+    if (matrix) {
+        free(matrix->rowPtr);
+        free(matrix->colIdx);
+        free(matrix->values);
+        free(matrix);
+    }
+}
+
+
+int main() {
+   // Example usage: read edges from file and create adjacency matrix
+    FILE *fp;
+    char line[255];
+    int numEdges = 0;
+    int numNodes = 0;
+
+    // Open the edges file and read the edges
+     if ((fp = fopen("edges.txt","r")) == NULL)
+        {
+            printf("Error opening the edges file\n");
+            exit(1);
+        }
+    while(fgets(line, sizeof(line), fp) != NULL)
+    {
+      numEdges++;
+      int src, dest;
+      sscanf(line, "%d %d", &src, &dest);
+        numNodes = (src > numNodes) ? src : numNodes;
+        numNodes = (dest > numNodes) ? dest : numNodes;
+    }
+    fclose(fp);
+    numNodes++;
+    // Allocate an array to hold the edges, reset file reader
+    edge* edges = (edge*)malloc(sizeof(edge) * numEdges);
+    if ((fp = fopen("edges.txt","r")) == NULL)
+    {
+        printf("Error opening the edges file\n");
+        exit(1);
+    }
+     int edgeIdx = 0;
+     while(fgets(line, sizeof(line), fp) != NULL)
+    {
+       int src, dest;
+       sscanf(line, "%d %d", &src, &dest);
+        edges[edgeIdx].src = src;
+        edges[edgeIdx].dest = dest;
+        edgeIdx++;
+    }
+    fclose(fp);
+  
+    SparseMatrix *matrix = createSparseMatrix(edges, numEdges, numNodes);
+
+    if (matrix) {
+      printSparseMatrix(matrix);
+        freeSparseMatrix(matrix);
+    }
+
+    free(edges);
+
+    return 0;
+}
+content_copy
+download
+Use code with caution.
+C
+
+edges.txt Example File
+
+0 1
+0 2
+1 2
+1 3
+2 3
+content_copy
+download
+Use code with caution.
+
+Example 2: Random Element-Wise Sparsification (triangle_counting_example_2.c)
+This example builds upon example 1. It will create an adjacency matrix, and then perform a random element-wise sparsification.
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+#include <time.h>
+
+// Edge structure definition
+typedef struct {
+    int src;
+    int dest;
+} edge;
+
+// Sparse Matrix structure definition
+typedef struct {
+    int* rowPtr;
+    int* colIdx;
+    double* values;
+    int numRows;
+    int numCols;
+    int nnz; // Number of non-zero entries
+} SparseMatrix;
+
+// Function to create a sparse matrix from edges
+SparseMatrix* createSparseMatrix(edge* edges, int numEdges, int numNodes) {
+    SparseMatrix* matrix = (SparseMatrix*)malloc(sizeof(SparseMatrix));
+    if (!matrix) {
+        fprintf(stderr, "Memory allocation failed for sparse matrix.\n");
+        return NULL;
+    }
+
+    matrix->numRows = numNodes;
+    matrix->numCols = numNodes;
+    matrix->nnz = numEdges;
+
+    matrix->rowPtr = (int*)malloc((numNodes + 1) * sizeof(int));
+    matrix->colIdx = (int*)malloc(numEdges * sizeof(int));
+    matrix->values = (double*)malloc(numEdges * sizeof(double));
+
+    if (!matrix->rowPtr || !matrix->colIdx || !matrix->values) {
+      fprintf(stderr, "Memory allocation failed for matrix components\n");
+      free(matrix->rowPtr);
+      free(matrix->colIdx);
+      free(matrix->values);
+      free(matrix);
+        return NULL;
+    }
+
+    memset(matrix->rowPtr, 0, (numNodes+1)*sizeof(int));
+    memset(matrix->colIdx, 0, numEdges*sizeof(int));
+    memset(matrix->values, 0, numEdges*sizeof(double));
+
+
+    // Count the number of non-zeros in each row
+    for (int i = 0; i < numEdges; ++i) {
+        matrix->rowPtr[edges[i].src+1]++;
+    }
+
+    // Create rowPtr for CSR format
+    for (int i = 1; i <= numNodes; ++i) {
+        matrix->rowPtr[i] += matrix->rowPtr[i - 1];
+    }
+
+
+    // Populate colIdx and values arrays
+    for(int i = 0; i< numEdges; i++)
+    {
+        int row_idx = edges[i].src;
+        int col_idx = edges[i].dest;
+        int start_idx = matrix->rowPtr[row_idx];
+        int end_idx = matrix->rowPtr[row_idx+1];
+        int put_idx = end_idx - matrix->rowPtr[row_idx+1] + start_idx;
+        matrix->colIdx[put_idx] = col_idx;
+        matrix->values[put_idx] = 1.0;
+    }
+  
+    return matrix;
+}
+
+//Sparsification function
+SparseMatrix* sparsifyMatrix(SparseMatrix* matrix, double keepProb){
+    if(keepProb <= 0 || keepProb >1) {
+         printf("Error: keepProb must be between 0 and 1\n");
+        return matrix;
+    }
+    SparseMatrix* sparseMatrix = (SparseMatrix*)malloc(sizeof(SparseMatrix));
+    if(!sparseMatrix){
+        fprintf(stderr, "Memory allocation failed for sparse matrix\n");
+        return NULL;
+    }
+    sparseMatrix->numRows = matrix->numRows;
+    sparseMatrix->numCols = matrix->numCols;
+    sparseMatrix->nnz = 0;
+    sparseMatrix->rowPtr = (int*)malloc((matrix->numRows + 1)*sizeof(int));
+    if(!sparseMatrix->rowPtr) {
+         fprintf(stderr, "Memory allocation failed for sparse matrix rowPtr\n");
+         free(sparseMatrix);
+         return NULL;
+    }
+
+    memset(sparseMatrix->rowPtr, 0, (matrix->numRows + 1) * sizeof(int));
+    
+    for (int i = 0; i < matrix->numRows; ++i){
+         for(int j= matrix->rowPtr[i]; j < matrix->rowPtr[i+1]; j++) {
+            if( (double)rand()/RAND_MAX < keepProb )
+               sparseMatrix->rowPtr[i+1]++;
+        }
+        sparseMatrix->nnz += sparseMatrix->rowPtr[i+1] - sparseMatrix->rowPtr[i];
+    }
+
+
+    sparseMatrix->colIdx = (int*)malloc(sparseMatrix->nnz * sizeof(int));
+    sparseMatrix->values = (double*)malloc(sparseMatrix->nnz * sizeof(double));
+    if(!sparseMatrix->colIdx || !sparseMatrix->values){
+        fprintf(stderr, "Memory allocation failed for sparse matrix indices or values.\n");
+        free(sparseMatrix->rowPtr);
+        free(sparseMatrix->colIdx);
+        free(sparseMatrix->values);
+        free(sparseMatrix);
+        return NULL;
+    }
+
+    // Create rowPtr for CSR format
+    for (int i = 1; i <= matrix->numRows; ++i) {
+        sparseMatrix->rowPtr[i] += sparseMatrix->rowPtr[i - 1];
+    }
+
+    int current_nnz = 0;
+    for (int i = 0; i < matrix->numRows; i++){
+         for(int j= matrix->rowPtr[i]; j < matrix->rowPtr[i+1]; j++) {
+             if( (double)rand()/RAND_MAX < keepProb )
+             {
+                sparseMatrix->colIdx[current_nnz] = matrix->colIdx[j];
+                sparseMatrix->values[current_nnz] = matrix->values[j];
+                current_nnz++;
+            }
+        }
+    }
+
+    return sparseMatrix;
+}
+
+
+void printSparseMatrix(SparseMatrix* matrix) {
+    printf("Rows: %d, Cols: %d, Non-zeros: %d\n", matrix->numRows, matrix->numCols, matrix->nnz);
+    printf("Row pointers: ");
+    for (int i = 0; i <= matrix->numRows; i++) {
+        printf("%d ", matrix->rowPtr[i]);
+    }
+    printf("\n");
+    printf("Col indices: ");
+    for(int i = 0; i < matrix->nnz; i++)
+        printf("%d ", matrix->colIdx[i]);
+    printf("\n");
+     printf("Values: ");
+    for(int i = 0; i < matrix->nnz; i++)
+        printf("%.1lf ", matrix->values[i]);
+    printf("\n");
+}
+// Function to free the matrix
+void freeSparseMatrix(SparseMatrix* matrix) {
+    if (matrix) {
+        free(matrix->rowPtr);
+        free(matrix->colIdx);
+        free(matrix->values);
+        free(matrix);
+    }
+}
+
+
+int main() {
+    srand(time(NULL));
+   // Example usage: read edges from file and create adjacency matrix
+    FILE *fp;
+    char line[255];
+    int numEdges = 0;
+    int numNodes = 0;
+
+    // Open the edges file and read the edges
+     if ((fp = fopen("edges.txt","r")) == NULL)
+        {
+            printf("Error opening the edges file\n");
+            exit(1);
+        }
+    while(fgets(line, sizeof(line), fp) != NULL)
+    {
+      numEdges++;
+      int src, dest;
+      sscanf(line, "%d %d", &src, &dest);
+        numNodes = (src > numNodes) ? src : numNodes;
+        numNodes = (dest > numNodes) ? dest : numNodes;
+    }
+    fclose(fp);
+    numNodes++;
+    // Allocate an array to hold the edges, reset file reader
+    edge* edges = (edge*)malloc(sizeof(edge) * numEdges);
+    if ((fp = fopen("edges.txt","r")) == NULL)
+    {
+        printf("Error opening the edges file\n");
+        exit(1);
+    }
+     int edgeIdx = 0;
+     while(fgets(line, sizeof(line), fp) != NULL)
+    {
+       int src, dest;
+       sscanf(line, "%d %d", &src, &dest);
+        edges[edgeIdx].src = src;
+        edges[edgeIdx].dest = dest;
+        edgeIdx++;
+    }
+    fclose(fp);
+  
+    SparseMatrix *matrix = createSparseMatrix(edges, numEdges, numNodes);
+
+    if (matrix) {
+      printf("Original Matrix\n");
+      printSparseMatrix(matrix);
+       SparseMatrix *sparseMatrix = sparsifyMatrix(matrix, 0.5); // keep 50% of edges
+       if(sparseMatrix){
+            printf("Sparsified Matrix\n");
+            printSparseMatrix(sparseMatrix);
+            freeSparseMatrix(sparseMatrix);
+       }
+      freeSparseMatrix(matrix);
+    }
+
+    free(edges);
+
+    return 0;
+}
+content_copy
+download
+Use code with caution.
+C
+
+Example 3: Spectral Triangle Counting (triangle_counting_example_3.c)
+
+This example takes a sparse matrix as input, computes the matrix product (A * A) in sparse format, and then estimates the number of triangles using the trace of (A * A * A).
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+#include <time.h>
+
+// Edge structure definition
+typedef struct {
+    int src;
+    int dest;
+} edge;
+
+// Sparse Matrix structure definition
+typedef struct {
+    int* rowPtr;
+    int* colIdx;
+    double* values;
+    int numRows;
+    int numCols;
+    int nnz; // Number of non-zero entries
+} SparseMatrix;
+
+
+// Function to create a sparse matrix from edges
+SparseMatrix* createSparseMatrix(edge* edges, int numEdges, int numNodes) {
+    SparseMatrix* matrix = (SparseMatrix*)malloc(sizeof(SparseMatrix));
+    if (!matrix) {
+        fprintf(stderr, "Memory allocation failed for sparse matrix.\n");
+        return NULL;
+    }
+
+    matrix->numRows = numNodes;
+    matrix->numCols = numNodes;
+    matrix->nnz = numEdges;
+
+    matrix->rowPtr = (int*)malloc((numNodes + 1) * sizeof(int));
+    matrix->colIdx = (int*)malloc(numEdges * sizeof(int));
+    matrix->values = (double*)malloc(numEdges * sizeof(double));
+
+    if (!matrix->rowPtr || !matrix->colIdx || !matrix->values) {
+      fprintf(stderr, "Memory allocation failed for matrix components\n");
+      free(matrix->rowPtr);
+      free(matrix->colIdx);
+      free(matrix->values);
+      free(matrix);
+        return NULL;
+    }
+
+    memset(matrix->rowPtr, 0, (numNodes+1)*sizeof(int));
+    memset(matrix->colIdx, 0, numEdges*sizeof(int));
+    memset(matrix->values, 0, numEdges*sizeof(double));
+
+
+    // Count the number of non-zeros in each row
+    for (int i = 0; i < numEdges; ++i) {
+        matrix->rowPtr[edges[i].src+1]++;
+    }
+
+    // Create rowPtr for CSR format
+    for (int i = 1; i <= numNodes; ++i) {
+        matrix->rowPtr[i] += matrix->rowPtr[i - 1];
+    }
+
+
+    // Populate colIdx and values arrays
+    for(int i = 0; i< numEdges; i++)
+    {
+        int row_idx = edges[i].src;
+        int col_idx = edges[i].dest;
+        int start_idx = matrix->rowPtr[row_idx];
+        int end_idx = matrix->rowPtr[row_idx+1];
+        int put_idx = end_idx - matrix->rowPtr[row_idx+1] + start_idx;
+        matrix->colIdx[put_idx] = col_idx;
+        matrix->values[put_idx] = 1.0;
+    }
+  
+    return matrix;
+}
+// Function to compute A*A (sparse x sparse multiplication)
+SparseMatrix* multiplySparseMatrices(SparseMatrix* A, SparseMatrix* B) {
+    if(A->numCols != B->numRows) {
+        printf("Error matrices not compatible for multiplication.\n");
+        return NULL;
+    }
+
+    int numRows = A->numRows;
+    int numCols = B->numCols;
+    SparseMatrix* result = (SparseMatrix*)malloc(sizeof(SparseMatrix));
+        if (!result) {
+        fprintf(stderr, "Memory allocation failed for sparse matrix.\n");
+        return NULL;
+    }
+
+    result->numRows = numRows;
+    result->numCols = numCols;
+    result->nnz = 0;
+
+
+    result->rowPtr = (int*)malloc((numRows+1)*sizeof(int));
+      if (!result->rowPtr ) {
+      fprintf(stderr, "Memory allocation failed for matrix components\n");
+      free(result);
+        return NULL;
+    }
+    memset(result->rowPtr, 0, (numRows+1)*sizeof(int));
+     // Count non-zero values per row
+    for(int i = 0; i < numRows; i++){
+        for(int k = A->rowPtr[i]; k < A->rowPtr[i+1]; k++){
+                int col_A = A->colIdx[k];
+            for(int j = B->rowPtr[col_A]; j < B->rowPtr[col_A+1]; j++){
+                   result->rowPtr[i+1]++;
+             }
+         }
+         result->nnz += result->rowPtr[i+1] - result->rowPtr[i];
+    }
+   
+    result->colIdx = (int*)malloc(result->nnz * sizeof(int));
+    result->values = (double*)malloc(result->nnz * sizeof(double));
+    if(!result->colIdx || !result->values){
+        fprintf(stderr, "Memory allocation failed for matrix indices or values.\n");
+        free(result->rowPtr);
+        free(result->colIdx);
+        free(result->values);
+        free(result);
+        return NULL;
+    }
+
+    // Create rowPtr for CSR format
+    for (int i = 1; i <= numRows; ++i) {
+        result->rowPtr[i] += result->rowPtr[i - 1];
+    }
+
+    int current_nnz = 0;
+     for(int i = 0; i < numRows; i++){
+        for(int k = A->rowPtr[i]; k < A->rowPtr[i+1]; k++){
+             int col_A = A->colIdx[k];
+             for(int j = B->rowPtr[col_A]; j < B->rowPtr[col_A+1]; j++){
+                int col_B = B->colIdx[j];
+                 result->colIdx[current_nnz] = col_B;
+                  result->values[current_nnz] = A->values[k] * B->values[j];
+                current_nnz++;
+            }
+        }
+    }
+    return result;
+}
+// Function to estimate number of triangles
+long long int estimateTriangles(SparseMatrix* matrix) {
+   SparseMatrix *matrix_sqr = multiplySparseMatrices(matrix, matrix);
+  if(!matrix_sqr) {
+     printf("Error performing matrix multiplication\n");
+        return 0;
+  }
+   SparseMatrix *matrix_cube = multiplySparseMatrices(matrix_sqr, matrix);
+    if(!matrix_cube) {
+       printf("Error performing matrix multiplication\n");
+       freeSparseMatrix(matrix_sqr);
+        return 0;
+    }
+    
+   
+    long long int trace = 0;
+     for(int i = 0; i< matrix_cube->numRows; i++)
+     {
+       for(int j = matrix_cube->rowPtr[i]; j < matrix_cube->rowPtr[i+1]; j++)
+       {
+          if(matrix_cube->colIdx[j] == i) {
+            trace += matrix_cube->values[j];
+          }
+       }
+    }
+  freeSparseMatrix(matrix_sqr);
+    freeSparseMatrix(matrix_cube);
+    return trace/6;
+}
+
+
+void printSparseMatrix(SparseMatrix* matrix) {
+    printf("Rows: %d, Cols: %d, Non-zeros: %d\n", matrix->numRows, matrix->numCols, matrix->nnz);
+    printf("Row pointers: ");
+    for (int i = 0; i <= matrix->numRows; i++) {
+        printf("%d ", matrix->rowPtr[i]);
+    }
+    printf("\n");
+    printf("Col indices: ");
+    for(int i = 0; i < matrix->nnz; i++)
+        printf("%d ", matrix->colIdx[i]);
+    printf("\n");
+     printf("Values: ");
+    for(int i = 0; i < matrix->nnz; i++)
+        printf("%.1lf ", matrix->values[i]);
+    printf("\n");
+}
+// Function to free the matrix
+void freeSparseMatrix(SparseMatrix* matrix) {
+    if (matrix) {
+        free(matrix->rowPtr);
+        free(matrix->colIdx);
+        free(matrix->values);
+        free(matrix);
+    }
+}
+
+
+int main() {
+    srand(time(NULL));
+   // Example usage: read edges from file and create adjacency matrix
+    FILE *fp;
+    char line[255];
+    int numEdges = 0;
+    int numNodes = 0;
+
+    // Open the edges file and read the edges
+     if ((fp = fopen("edges.txt","r")) == NULL)
+        {
+            printf("Error opening the edges file\n");
+            exit(1);
+        }
+    while(fgets(line, sizeof(line), fp) != NULL)
+    {
+      numEdges++;
+      int src, dest;
+      sscanf(line, "%d %d", &src, &dest);
+        numNodes = (src > numNodes) ? src : numNodes;
+        numNodes = (dest > numNodes) ? dest : numNodes;
+    }
+    fclose(fp);
+    numNodes++;
+    // Allocate an array to hold the edges, reset file reader
+    edge* edges = (edge*)malloc(sizeof(edge) * numEdges);
+    if ((fp = fopen("edges.txt","r")) == NULL)
+    {
+        printf("Error opening the edges file\n");
+        exit(1);
+    }
+     int edgeIdx = 0;
+     while(fgets(line, sizeof(line), fp) != NULL)
+    {
+       int src, dest;
+       sscanf(line, "%d %d", &src, &dest);
+        edges[edgeIdx].src = src;
+        edges[edgeIdx].dest = dest;
+        edgeIdx++;
+    }
+    fclose(fp);
+  
+    SparseMatrix *matrix = createSparseMatrix(edges, numEdges, numNodes);
+
+    if (matrix) {
+      printf("Original Matrix\n");
+      printSparseMatrix(matrix);
+       long long int triangles = estimateTriangles(matrix);
+       printf("Estimated number of triangles: %lld\n", triangles);
+      freeSparseMatrix(matrix);
+    }
+
+    free(edges);
+
+    return 0;
+}
+content_copy
+download
+Use code with caution.
+C
+
+Explanation of the examples
+
+triangle_counting_example_1.c: This code sets the foundation by reading edges from a file and constructing the sparse adjacency matrix using CSR format.
+
+triangle_counting_example_2.c: This builds on the first, adding a function to apply random element-wise sparsification. It keeps each edge with probability keepProb and demonstrates how the data changes with sparsification.
+
+triangle_counting_example_3.c: This example focuses on spectral counting. It calculates the matrix product A*A and then A*A*A. Finally, estimates the triangles via the trace of A*A*A divided by 6
+
+Next Steps
+
+The remaining examples will follow a similar structure, adding more sophistication:
+
+Example 4: Weighted Element-wise Sparsification: Edges are down-weighted instead of dropped based on a function of degree or other network measures.
+
+Example 5: Spectral Counting on Sparsified Matrix: Combines Example 2 and 3 by calculating the triangle estimate on the sparsified matrix.
+
+Example 6: Direct Triangle Counting for Validation: A naive, slow triangle counter to validate the output of the spectral estimation on small graphs.
+
+Example 7: Triangle-Based Link Recommendation: This code uses the common neighbors as the metric to determine recommended edges.
+
+Example 8: Ensemble of Sparsifications for Robust Counting: Runs multiple sparsifications and averages the results for better estimate.
+
+Remember to:
+
+Compile: gcc triangle_counting_example_1.c -o triangle_counting_example_1 -lm (and similarly for other files) -lm needed for math.h.
+
+Test: Use the edges.txt or create your own data to verify each example.
+
+This framework should allow you to build out a robust demonstration of spectral triangle counting and link recommendation. Let me know if you'd like me to elaborate on any particular example or feature!
